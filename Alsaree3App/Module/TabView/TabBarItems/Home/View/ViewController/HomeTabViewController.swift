@@ -133,13 +133,32 @@ class HomeTabViewController: UIViewController {
         self.hometabTableView.reloadData()
     }
     
+    func setupSteckyHeader(_ scrollView: UIScrollView){
+        if viewModel.recentlyAddedStores == nil || viewModel.homeScreenStoreListData == nil {
+            return
+        }
+        let headerRect = hometabTableView.rect(forSection: 1)
+        if headerRect.origin.y <= scrollView.contentOffset.y && scrollView.contentOffset.y <= headerRect.origin.y + headerRect.size.height {
+            headerView?.hideImages()
+            headerView?.setCustomConstrain()
+            showProgressView()
+            headerView?.categroyBackView.backgroundColor = ColorConstant.borderColorGray
+        } else {
+            headerView?.backgroundColor = UIColor.clear
+            headerView?.showImages()// Reset to original height here
+            headerView?.setDefaultConstrain()
+            hideProgressView()
+            headerView?.categroyBackView.backgroundColor = UIColor.clear
+        }
+    }
+    
 }
 
 
 extension HomeTabViewController:UITableViewDataSource{
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return viewModel.getTableViewCount() == 1 ? 1 : 2
+        return (viewModel.recentlyAddedStores == nil || viewModel.homeScreenStoreListData == nil) ? 1 : 2
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -155,11 +174,12 @@ extension HomeTabViewController:UITableViewDataSource{
             if LocationManager.shared.isLocationAccess{
                 let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTabShimmerCell", for: indexPath) as! HomeTabShimmerCell
                 return cell
+            }else{
+                let loadingCell = tableView.dequeueReusableCell(withIdentifier: "LoadingTableViewCell", for: indexPath) as! LoadingTableViewCell
+                loadingCell.homeTabdeilgate = self
+                loadingCell.showRetryButton()
+                return loadingCell
             }
-            let loadingCell = tableView.dequeueReusableCell(withIdentifier: "LoadingTableViewCell", for: indexPath) as! LoadingTableViewCell
-            loadingCell.homeTabdeilgate = self
-            loadingCell.showRetryButton()
-            return loadingCell
         }
         
         if indexPath.section == 0 {
@@ -169,7 +189,6 @@ extension HomeTabViewController:UITableViewDataSource{
                 if true{
                     let cell = tableView.getCell(identifier: CellConstant.activeOrderHomeTabCell.rawValue) as! ActiveOrderHomeTabCell
                     cell.selectionStyle = .none
-                    
                     return cell
                 }else{
                     let cell = tableView.getCell(identifier: CellConstant.goldCategoryCardCellTableViewCell.rawValue) as! GoldCategoryCardCellTableViewCell
@@ -178,7 +197,7 @@ extension HomeTabViewController:UITableViewDataSource{
                 }
             case 1:
                 let cell = tableView.getCell(identifier: CellConstant.bannerHomeTabCell.rawValue) as! BannerHomeTabCell
-                //                cell.bannerData = viewModel.loyaltyDetail
+                cell.bannerData = viewModel.loyaltyDetail
                 cell.selectionStyle = .none
                 cell.setupUi()
                 return cell
@@ -219,6 +238,13 @@ extension HomeTabViewController:UITableViewDataSource{
                 cell.selectionStyle = .none
                 return cell
             default:
+                
+                if let homeScreenStorelistCount = viewModel.homeScreenStoreListData?.count{
+                    if homeScreenStorelistCount-1 == indexPath.row{
+                        viewModel.callHomeScreenStorelistNextPageApi()
+                    }
+                }
+                
                 let cell = tableView.getCell(identifier: CellConstant.resturentDetailsTableViewCell.rawValue) as! ResturentDetailsTableViewCell
                 cell.resturentDetailsTableViewCellData = viewModel.homeScreenStoreListData?[indexPath.row - 5]
                 cell.reloadCellData()
@@ -234,7 +260,7 @@ extension HomeTabViewController:UITableViewDataSource{
 extension HomeTabViewController : UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if viewModel.getTableViewCount()==1{
+        if viewModel.recentlyAddedStores == nil || viewModel.homeScreenStoreListData == nil {
             return tableView.bounds.height
         }
         switch (indexPath.section, indexPath.row) {
@@ -260,7 +286,7 @@ extension HomeTabViewController : UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if viewModel.getTableViewCount() == 1{
+        if viewModel.recentlyAddedStores == nil || viewModel.homeScreenStoreListData == nil {
             return 0
         }
         if section == 0{
@@ -280,22 +306,10 @@ extension HomeTabViewController : UIScrollViewDelegate{
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
         //MARK:  for sticky header
-        if viewModel.getTableViewCount()==1{
+        if viewModel.recentlyAddedStores == nil || viewModel.homeScreenStoreListData == nil {
             return
         }
-        let headerRect = hometabTableView.rect(forSection: 1)
-        if headerRect.origin.y <= scrollView.contentOffset.y && scrollView.contentOffset.y <= headerRect.origin.y + headerRect.size.height {
-            headerView?.hideImages()
-            headerView?.setCustomConstrain()
-            showProgressView()
-            headerView?.categroyBackView.backgroundColor = ColorConstant.borderColorGray
-        } else {
-            headerView?.backgroundColor = UIColor.clear
-            headerView?.showImages()// Reset to original height here
-            headerView?.setDefaultConstrain()
-            hideProgressView()
-            headerView?.categroyBackView.backgroundColor = UIColor.clear
-        }
+        setupSteckyHeader(scrollView)
         
         //MARK: For tab bar hide/show
         let currentScrollOffset = scrollView.contentOffset.y

@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "5E35D85C-6DFF-4A32-8D83-A081F4960EB2"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B842A351-6DBE-4665-9675-8E6975583232"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Alsaree3App/Module/TabView/TabBarItems/Home/View/ViewController/HomeTabViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "245"
+            endingLineNumber = "245"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5AE3B8FB-EA59-42C8-837F-0D507881ED59"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Alsaree3App/Module/TabView/TabBarItems/Home/View/ViewController/HomeTabViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "244"
+            endingLineNumber = "244"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0D033F1C-F5A8-470A-B8A4-822E12FD522D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Alsaree3App/Module/TabView/TabBarItems/Home/ViewModel/HomeVMApiCalls.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "128"
+            endingLineNumber = "128"
+            landmarkName = "callHomeScreenStoreListApi(pageNo:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0D033F1C-F5A8-470A-B8A4-822E12FD522D - 34ece3a11dbf73ca"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Alsaree3App.HomeTabViewModel.callHomeScreenStoreListApi(pageNo: Swift.String) -&gt; ()"
+                  moduleName = "Alsaree3App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Module/TabView/TabBarItems/Home/ViewModel/HomeVMApiCalls.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "127"
+                  endingLineNumber = "127"
+                  offsetFromSymbolStart = "1354">
+               </Location>
+               <Location
+                  uuid = "0D033F1C-F5A8-470A-B8A4-822E12FD522D - 1fef4f43984dda11"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Alsaree3App.StoreListModel, Alsaree3App.APIError&gt;) -&gt; () in Alsaree3App.HomeTabViewModel.callHomeScreenStoreListApi(pageNo: Swift.String) -&gt; ()"
+                  moduleName = "Alsaree3App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Module/TabView/TabBarItems/Home/ViewModel/HomeVMApiCalls.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "127"
+                  endingLineNumber = "127"
+                  offsetFromSymbolStart = "266">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "66ECABF8-0971-4499-AE4B-DABDFE193B42"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Alsaree3App/Module/TabView/TabBarItems/Home/ViewModel/HomeVMApiCalls.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
+            landmarkName = "callHomeScreenStoreListApi(pageNo:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "66ECABF8-0971-4499-AE4B-DABDFE193B42 - 1fef4f43984dda95"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Alsaree3App.StoreListModel, Alsaree3App.APIError&gt;) -&gt; () in Alsaree3App.HomeTabViewModel.callHomeScreenStoreListApi(pageNo: Swift.String) -&gt; ()"
+                  moduleName = "Alsaree3App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Module/TabView/TabBarItems/Home/ViewModel/HomeVMApiCalls.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "131"
+                  endingLineNumber = "131"
+                  offsetFromSymbolStart = "602">
+               </Location>
+               <Location
+                  uuid = "66ECABF8-0971-4499-AE4B-DABDFE193B42 - 1fef4f43984dda95"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Alsaree3App.StoreListModel, Alsaree3App.APIError&gt;) -&gt; () in Alsaree3App.HomeTabViewModel.callHomeScreenStoreListApi(pageNo: Swift.String) -&gt; ()"
+                  moduleName = "Alsaree3App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Module/TabView/TabBarItems/Home/ViewModel/HomeVMApiCalls.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "131"
+                  endingLineNumber = "131"
+                  offsetFromSymbolStart = "660">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E3EC9AC1-36B1-47DD-A034-A3A17880C218"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Alsaree3App/Module/TabView/TabBarItems/Home/ViewModel/HomeVMApiCalls.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
+            landmarkName = "callHomeScreenStoreListApi(pageNo:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C2276484-3CAF-499E-8136-50DD020AAD88"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Alsaree3App/NetwrokingServices/DataTaskServices/ModuleServices/HomeScreenServices.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
+            landmarkName = "getHomeScreenStoreList(parameters:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C2276484-3CAF-499E-8136-50DD020AAD88 - 3a2ebfe757141b2d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Alsaree3App.HomeScreenServices.getHomeScreenStoreList(parameters: Alsaree3App.HomeScreenStoreListParams, completion: (Swift.Result&lt;Alsaree3App.StoreListModel, Alsaree3App.APIError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Alsaree3App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/NetwrokingServices/DataTaskServices/ModuleServices/HomeScreenServices.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "152"
+                  endingLineNumber = "152"
+                  offsetFromSymbolStart = "1222">
+               </Location>
+               <Location
+                  uuid = "C2276484-3CAF-499E-8136-50DD020AAD88 - c54d70f798095d53"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Foundation.Data, Swift.Error&gt;) -&gt; () in Alsaree3App.HomeScreenServices.getHomeScreenStoreList(parameters: Alsaree3App.HomeScreenStoreListParams, completion: (Swift.Result&lt;Alsaree3App.StoreListModel, Alsaree3App.APIError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Alsaree3App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/NetwrokingServices/DataTaskServices/ModuleServices/HomeScreenServices.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "152"
+                  endingLineNumber = "152"
+                  offsetFromSymbolStart = "203">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6A593A72-5CCC-4CA4-B4D1-B68BA876BDC4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Alsaree3App/NetwrokingServices/DataTaskServices/APIs/APIManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "performRequest(serviceType:completionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5AEE0440-5688-47F8-B7AD-2A4DCD673F11"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Alsaree3App/NetwrokingServices/DataTaskServices/APIs/APIManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "performRequest(serviceType:completionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3FED6258-A321-4129-9A63-6A797933B482"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Alsaree3App/NetwrokingServices/DataTaskServices/APIs/APIManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "performRequest(serviceType:completionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "338FABB3-7CEB-4163-ABDC-6FAE8FA9C176"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Alsaree3App/NetwrokingServices/DataTaskServices/APIs/APIManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "performRequest(serviceType:completionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

@@ -45,16 +45,16 @@ class HomeTabViewModel{
     var pushZoneData : PushZoneModel?
     var homeTabDeligate : HomeTabViewController?
     
+    // MARK: paging count
+    var currentPage = 1
     
     var HomeTabData = [
         SectionAboveHeader.allCases,
         SectionBelowScrollingHeader.allCases
     ] as [Any]
     
-    func getTableViewCount(Section:Int = 0) -> Int{
-        if homeScreenStoreListData == nil || recentlyAddedStores == nil {
-            return 1
-        }else if Section == 0{
+    func getTableViewCount(Section:Int) -> Int{
+        if Section == 0{
             return SectionAboveHeader.allCases.count
         }else if Section == 1{
             return (SectionBelowScrollingHeader.allCases.count + ((homeScreenStoreListData?.count ?? 0)-1))
@@ -66,7 +66,7 @@ class HomeTabViewModel{
     
     func callHomeScreenApis(){
         dispatchGroup.enter()
-        callApi()
+        callAppSettingApi()
         dispatchGroup.wait()
         dispatchGroup.enter()
         callFeedBackApi()
@@ -106,5 +106,10 @@ class HomeTabViewModel{
         }
     }
     
+    
+    func callHomeScreenStorelistNextPageApi(){
+        currentPage += 1
+        callHomeScreenStoreListApi(pageNo: String(currentPage))
+    }
     
 }

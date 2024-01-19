@@ -7,7 +7,7 @@
 
 import Foundation
 extension HomeTabViewModel{
-    func callApi(){
+    func callAppSettingApi(){
         let parameters = AppSettingParams(device_type: DeviceInfo.deviceType.rawValue, type: DeviceInfo.type.rawValue, device_token:kDeviceToken, device_unique_id:kDeviceUniqueId )
         HomeScreenServices().getAppSettings(parameters: parameters) { responce  in
             switch responce{
@@ -113,10 +113,10 @@ extension HomeTabViewModel{
         }
     }
     
-    func callHomeScreenStoreListApi(){
+    func callHomeScreenStoreListApi(pageNo:String = "1"){
         let parameter = HomeScreenStoreListParams(
             city_id: kCityId,
-            page: "1",
+            page: pageNo,
             longitude: String(describing: LocationManager.shared.currentLocation?.longitude ?? 0) ,
             cart_unique_token: kCartUniqueToken,
             store_delivery_id: kStoreDeliveryId,
@@ -124,12 +124,25 @@ extension HomeTabViewModel{
             latitude: String(describing: LocationManager.shared.currentLocation?.latitude ?? 0),
             language: DeviceInfo.englishLang.rawValue,
             server_token: kServerToken)
+        
         HomeScreenServices().getHomeScreenStoreList(parameters: parameter) { responce in
             switch responce{
             case .success(let data):
                 print(data)
-                self.homeScreenStoreListData = data.stores
-                self.dispatchGroup.leave()
+                if let storeData = data.stores{
+                    if self.homeScreenStoreListData == nil {
+                           self.homeScreenStoreListData = []
+                    }
+                    self.homeScreenStoreListData! += storeData
+                }
+                if pageNo != "1"{
+                    DispatchQueue.main.async {
+                        self.homeTabDeligate?.hometabTableView.reloadData()
+                    }
+                }else{
+                    self.dispatchGroup.leave()
+                }
+                
             case .failure(let error):
                 print(error.localizedDescription)
             }
