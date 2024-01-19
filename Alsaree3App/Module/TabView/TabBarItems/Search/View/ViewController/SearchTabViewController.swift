@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import UIView_Shimmer
 class SearchTabViewController: UIViewController{
     
     
@@ -24,7 +23,6 @@ class SearchTabViewController: UIViewController{
         registerTableViewCell()
         searchtabTableView.separatorStyle = .none
         searchtabTableView.backgroundColor = ColorConstant.primaryWhiteBgcolor
-        view.setTemplateWithSubviews(true, animate: true, viewBackgroundColor: .systemBackground)
         self.navigationController?.isNavigationBarHidden = true
     }
     

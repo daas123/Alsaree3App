@@ -10,7 +10,6 @@ import UIKit
 extension UITableViewCell{
     func showErrorMessage(nameNib:String, uiView:UIView) {
         if let customErrorView = loadErrorViewFromNib(nibName:nameNib) {
-            customErrorView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2598803185)
             uiView.addSubview(customErrorView)
             customErrorView.translatesAutoresizingMaskIntoConstraints = false
             NSLayoutConstraint.activate([

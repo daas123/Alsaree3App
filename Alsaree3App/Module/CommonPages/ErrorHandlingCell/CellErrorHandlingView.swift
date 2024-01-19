@@ -8,6 +8,14 @@
 import UIKit
 
 class CellErrorHandlingView: UIView {
-    @IBOutlet weak var customView: UIView!
     
+    @IBOutlet weak var onRetryBtn: UIButton!
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
+    
+    @IBAction func OnRetryClick(_ sender: UIButton) {
+        print("hello")
+    }
 }

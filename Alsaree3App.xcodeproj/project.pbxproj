@@ -8,18 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		3DB14185B53306056442B37E /* Pods_Alsaree3App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B95A90DC06A8AE08B3C09F00 /* Pods_Alsaree3App.framework */; };
+		4A043ADF2B5A48DE005B8AFA /* HomeTabShimmerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A043ADD2B5A48DE005B8AFA /* HomeTabShimmerCell.swift */; };
+		4A043AE02B5A48DE005B8AFA /* HomeTabShimmerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A043ADE2B5A48DE005B8AFA /* HomeTabShimmerCell.xib */; };
+		4A043AE22B5A4D8F005B8AFA /* CellErrorHandlingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A043AE12B5A4D8F005B8AFA /* CellErrorHandlingView.xib */; };
 		7B9D7E1BDD1F12D8013ABC95 /* Pods_Alsaree3AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B683BDB30B428A9D94F98F8A /* Pods_Alsaree3AppTests.framework */; };
 		7C9E9745AED076F6DCDE13C8 /* Pods_Alsaree3App_Alsaree3AppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A77A3FCDF4E06BE4CB7F9084 /* Pods_Alsaree3App_Alsaree3AppUITests.framework */; };
 		92112F572B306513005CA584 /* CollectionViewFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92112F562B306513005CA584 /* CollectionViewFiles.swift */; };
 		92112F5B2B30667F005CA584 /* FeatureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92112F592B30667F005CA584 /* FeatureCell.swift */; };
 		92112F5C2B30667F005CA584 /* FeatureCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92112F5A2B30667F005CA584 /* FeatureCell.xib */; };
-		921350112B57EE3D00E6A1B5 /* CellErrorHandlingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 921350102B57EE3D00E6A1B5 /* CellErrorHandlingView.xib */; };
 		921350152B57EE8500E6A1B5 /* CellErrorHandlingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921350142B57EE8500E6A1B5 /* CellErrorHandlingView.swift */; };
 		921350182B57FC6C00E6A1B5 /* UITableView+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921350172B57FC6C00E6A1B5 /* UITableView+Extention.swift */; };
 		921453A12B317DB600F54890 /* ProfileTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921453A02B317DB600F54890 /* ProfileTabViewController.swift */; };
 		921453A52B318BF400F54890 /* ErrorStateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921453A32B318BF400F54890 /* ErrorStateTableViewCell.swift */; };
 		921453A62B318BF400F54890 /* ErrorStateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 921453A42B318BF400F54890 /* ErrorStateTableViewCell.xib */; };
-		921453A92B319A9D00F54890 /* Shimmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921453A82B319A9D00F54890 /* Shimmer.swift */; };
+		921453A92B319A9D00F54890 /* ShimmeringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921453A82B319A9D00F54890 /* ShimmeringView.swift */; };
 		922CB7542B2E16330067805A /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922CB7522B2E16330067805A /* UITableView+Extension.swift */; };
 		922CB7552B2E16330067805A /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922CB7532B2E16330067805A /* UICollectionView+Extension.swift */; };
 		922CB7572B2E21CF0067805A /* SearchTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922CB7562B2E21CF0067805A /* SearchTabViewController.swift */; };
@@ -184,7 +186,6 @@
 		92BDA2382B39F8C3008E7228 /* HomeTabCategoryHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BDA2372B39F8C3008E7228 /* HomeTabCategoryHeader.swift */; };
 		92BDA23A2B39F8DC008E7228 /* HomeTabCategoryHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92BDA2392B39F8DC008E7228 /* HomeTabCategoryHeader.xib */; };
 		92C3CD692B4524BD00706D99 /* CenteredCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C3CD682B4524BD00706D99 /* CenteredCollectionViewFlowLayout.swift */; };
-		92D8910A2B45962C00BA32AA /* shimmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D891092B45962C00BA32AA /* shimmer.swift */; };
 		92FA14462B31E36800148974 /* Cairo-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 92FA14402B31E36600148974 /* Cairo-SemiBold.ttf */; };
 		92FA14472B31E36800148974 /* Cairo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 92FA14412B31E36600148974 /* Cairo-Regular.ttf */; };
 		92FA14482B31E36800148974 /* Cairo-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 92FA14422B31E36700148974 /* Cairo-Black.ttf */; };
@@ -218,18 +219,20 @@
 		0E1BDA9BBDC5767180A16E00 /* Pods-Alsaree3App-Alsaree3AppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alsaree3App-Alsaree3AppUITests.debug.xcconfig"; path = "Target Support Files/Pods-Alsaree3App-Alsaree3AppUITests/Pods-Alsaree3App-Alsaree3AppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		223DF934F0901276240A96EB /* Pods-Alsaree3App-Alsaree3AppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alsaree3App-Alsaree3AppUITests.release.xcconfig"; path = "Target Support Files/Pods-Alsaree3App-Alsaree3AppUITests/Pods-Alsaree3App-Alsaree3AppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		35E9534DFE5DF5D3EE6DABD1 /* Pods-Alsaree3AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alsaree3AppTests.debug.xcconfig"; path = "Target Support Files/Pods-Alsaree3AppTests/Pods-Alsaree3AppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4A043ADD2B5A48DE005B8AFA /* HomeTabShimmerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabShimmerCell.swift; sourceTree = "<group>"; };
+		4A043ADE2B5A48DE005B8AFA /* HomeTabShimmerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTabShimmerCell.xib; sourceTree = "<group>"; };
+		4A043AE12B5A4D8F005B8AFA /* CellErrorHandlingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellErrorHandlingView.xib; sourceTree = "<group>"; };
 		4B7FBCCA8D921124C6083754 /* Pods-Alsaree3App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alsaree3App.release.xcconfig"; path = "Target Support Files/Pods-Alsaree3App/Pods-Alsaree3App.release.xcconfig"; sourceTree = "<group>"; };
 		7AD5A803A4E58EFAB9E31ACC /* Pods-Alsaree3App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alsaree3App.debug.xcconfig"; path = "Target Support Files/Pods-Alsaree3App/Pods-Alsaree3App.debug.xcconfig"; sourceTree = "<group>"; };
 		92112F562B306513005CA584 /* CollectionViewFiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewFiles.swift; sourceTree = "<group>"; };
 		92112F592B30667F005CA584 /* FeatureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureCell.swift; sourceTree = "<group>"; };
 		92112F5A2B30667F005CA584 /* FeatureCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeatureCell.xib; sourceTree = "<group>"; };
-		921350102B57EE3D00E6A1B5 /* CellErrorHandlingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CellErrorHandlingView.xib; path = Alsaree3App/Module/CommonPages/CellErrorHandlingView.xib; sourceTree = SOURCE_ROOT; };
 		921350142B57EE8500E6A1B5 /* CellErrorHandlingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellErrorHandlingView.swift; sourceTree = "<group>"; };
 		921350172B57FC6C00E6A1B5 /* UITableView+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extention.swift"; sourceTree = "<group>"; };
 		921453A02B317DB600F54890 /* ProfileTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabViewController.swift; sourceTree = "<group>"; };
 		921453A32B318BF400F54890 /* ErrorStateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorStateTableViewCell.swift; sourceTree = "<group>"; };
 		921453A42B318BF400F54890 /* ErrorStateTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ErrorStateTableViewCell.xib; sourceTree = "<group>"; };
-		921453A82B319A9D00F54890 /* Shimmer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shimmer.swift; sourceTree = "<group>"; };
+		921453A82B319A9D00F54890 /* ShimmeringView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmeringView.swift; sourceTree = "<group>"; };
 		922CB7522B2E16330067805A /* UITableView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
 		922CB7532B2E16330067805A /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
 		922CB7562B2E21CF0067805A /* SearchTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTabViewController.swift; sourceTree = "<group>"; };
@@ -398,7 +401,6 @@
 		92BDA2372B39F8C3008E7228 /* HomeTabCategoryHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabCategoryHeader.swift; sourceTree = "<group>"; };
 		92BDA2392B39F8DC008E7228 /* HomeTabCategoryHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTabCategoryHeader.xib; sourceTree = "<group>"; };
 		92C3CD682B4524BD00706D99 /* CenteredCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenteredCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
-		92D891092B45962C00BA32AA /* shimmer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shimmer.swift; sourceTree = "<group>"; };
 		92FA14402B31E36600148974 /* Cairo-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-SemiBold.ttf"; sourceTree = "<group>"; };
 		92FA14412B31E36600148974 /* Cairo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Regular.ttf"; sourceTree = "<group>"; };
 		92FA14422B31E36700148974 /* Cairo-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Black.ttf"; sourceTree = "<group>"; };
@@ -453,6 +455,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4A043ADC2B5A4878005B8AFA /* HomeTabShimmer */ = {
+			isa = PBXGroup;
+			children = (
+				4A043ADD2B5A48DE005B8AFA /* HomeTabShimmerCell.swift */,
+				4A043ADE2B5A48DE005B8AFA /* HomeTabShimmerCell.xib */,
+			);
+			path = HomeTabShimmer;
+			sourceTree = "<group>";
+		};
 		58D8EF6972A597825B54822A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -486,7 +497,7 @@
 		9213500F2B57ED7100E6A1B5 /* ErrorHandlingCell */ = {
 			isa = PBXGroup;
 			children = (
-				921350102B57EE3D00E6A1B5 /* CellErrorHandlingView.xib */,
+				4A043AE12B5A4D8F005B8AFA /* CellErrorHandlingView.xib */,
 				921350142B57EE8500E6A1B5 /* CellErrorHandlingView.swift */,
 			);
 			path = ErrorHandlingCell;
@@ -576,7 +587,7 @@
 				922CB7612B2E3E500067805A /* CircluarProgressView.swift */,
 				926141682B3AFF27005D3A40 /* CustomtabBarController.swift */,
 				92112F562B306513005CA584 /* CollectionViewFiles.swift */,
-				921453A82B319A9D00F54890 /* Shimmer.swift */,
+				921453A82B319A9D00F54890 /* ShimmeringView.swift */,
 				92654B272B386CF000D1FB40 /* CustomUiProgresView.swift */,
 				925F46632B3D6ADC00083D65 /* UICollectionview+Extention.swift */,
 				92C3CD682B4524BD00706D99 /* CenteredCollectionViewFlowLayout.swift */,
@@ -676,6 +687,7 @@
 		929F1B982B480A5C00B0F08F /* CommonPages */ = {
 			isa = PBXGroup;
 			children = (
+				4A043ADC2B5A4878005B8AFA /* HomeTabShimmer */,
 				9213500F2B57ED7100E6A1B5 /* ErrorHandlingCell */,
 				929F51CD2B56994F00C468AA /* LocationAccessRequest */,
 			);
@@ -1166,7 +1178,6 @@
 				922CB7522B2E16330067805A /* UITableView+Extension.swift */,
 				929F8FA62B2F741400536E70 /* UIImage+Extention.swift */,
 				92AE0B0E2B43ED9A00E71A32 /* UserDefault+Extention.swift */,
-				92D891092B45962C00BA32AA /* shimmer.swift */,
 				921350172B57FC6C00E6A1B5 /* UITableView+Extention.swift */,
 			);
 			path = Extention;
@@ -1382,7 +1393,9 @@
 			files = (
 				92A26E712B35B62E008C9AFF /* TabBarTableViewHeader.xib in Resources */,
 				92FA14472B31E36800148974 /* Cairo-Regular.ttf in Resources */,
+				4A043AE02B5A48DE005B8AFA /* HomeTabShimmerCell.xib in Resources */,
 				929FF90F2B301F8C00E9C34A /* ResturentDetailsCollectionViewCell.xib in Resources */,
+				4A043AE22B5A4D8F005B8AFA /* CellErrorHandlingView.xib in Resources */,
 				929F8F952B2EF40F00536E70 /* AdvertisementCell.xib in Resources */,
 				929FF90A2B301F6400E9C34A /* ResturentTableViewCell.xib in Resources */,
 				92A66D552B2C185700CB8EF5 /* LaunchScreen.storyboard in Resources */,
@@ -1404,7 +1417,6 @@
 				929F8FA42B2F656700536E70 /* FoodCatCollectionViewCell.xib in Resources */,
 				922CB7682B2E43CC0067805A /* ActiveOrderHomeTabCell.xib in Resources */,
 				929F8F992B2F138900536E70 /* AdvCollectionViewCell.xib in Resources */,
-				921350112B57EE3D00E6A1B5 /* CellErrorHandlingView.xib in Resources */,
 				92FA14592B3221A900148974 /* ResturentDetailsTableViewCell.xib in Resources */,
 				92FA144A2B31E36800148974 /* Cairo-ExtraLight.ttf in Resources */,
 				929F8FAC2B2F8CEE00536E70 /* GoldCategoryCardCellTableViewCell.xib in Resources */,
@@ -1589,7 +1601,7 @@
 				929F1C4D2B48366C00B0F08F /* BlockEncryptor.swift in Sources */,
 				929F1C7F2B48366D00B0F08F /* DigestType.swift in Sources */,
 				929FF90E2B301F8C00E9C34A /* ResturentDetailsCollectionViewCell.swift in Sources */,
-				921453A92B319A9D00F54890 /* Shimmer.swift in Sources */,
+				921453A92B319A9D00F54890 /* ShimmeringView.swift in Sources */,
 				929F1C882B48366D00B0F08F /* PBKDF2.swift in Sources */,
 				929F1C942B48366D00B0F08F /* CTR.swift in Sources */,
 				929F1C8B2B48366D00B0F08F /* OCB.swift in Sources */,
@@ -1680,9 +1692,9 @@
 				929F51D32B56AB0000C468AA /* HomeVMApiCalls.swift in Sources */,
 				929FF9152B30231300E9C34A /* HomeTabViewModel.swift in Sources */,
 				929F1C822B48366D00B0F08F /* Checksum.swift in Sources */,
+				4A043ADF2B5A48DE005B8AFA /* HomeTabShimmerCell.swift in Sources */,
 				922CB7672B2E43CC0067805A /* ActiveOrderHomeTabCell.swift in Sources */,
 				929F1D032B4D2B2500B0F08F /* HomeTabApiErrorModel.swift in Sources */,
-				92D8910A2B45962C00BA32AA /* shimmer.swift in Sources */,
 				929F1C772B48366D00B0F08F /* Rabbit.swift in Sources */,
 				922CB7572B2E21CF0067805A /* SearchTabViewController.swift in Sources */,
 				92A8B0672B32EB4E0062628A /* LoderMnager.swift in Sources */,

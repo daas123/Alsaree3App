@@ -77,6 +77,7 @@ class HomeTabViewController: UIViewController {
         hometabTableView.registerNib(of: ResturentTableViewCell.self)
         hometabTableView.registerNib(of: ResturentDetailsTableViewCell.self)
         hometabTableView.registerNib(of: LoadingTableViewCell.self)
+        hometabTableView.registerNib(of:HomeTabShimmerCell.self)
     }
     
     func setupHeaderView(){
@@ -150,16 +151,14 @@ extension HomeTabViewController:UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if viewModel.getTableViewCount() == 1 {
+        if viewModel.recentlyAddedStores == nil || viewModel.homeScreenStoreListData == nil {
+            if LocationManager.shared.isLocationAccess{
+                let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTabShimmerCell", for: indexPath) as! HomeTabShimmerCell
+                return cell
+            }
             let loadingCell = tableView.dequeueReusableCell(withIdentifier: "LoadingTableViewCell", for: indexPath) as! LoadingTableViewCell
             loadingCell.homeTabdeilgate = self
-            
-            if isLoadingState{
-                loadingCell.showLoading()
-            }else{
-                loadingCell.showRetryButton()
-            }
-            
+            loadingCell.showRetryButton()
             return loadingCell
         }
         
@@ -170,7 +169,7 @@ extension HomeTabViewController:UITableViewDataSource{
                 if true{
                     let cell = tableView.getCell(identifier: CellConstant.activeOrderHomeTabCell.rawValue) as! ActiveOrderHomeTabCell
                     cell.selectionStyle = .none
-                
+                    
                     return cell
                 }else{
                     let cell = tableView.getCell(identifier: CellConstant.goldCategoryCardCellTableViewCell.rawValue) as! GoldCategoryCardCellTableViewCell
@@ -179,7 +178,7 @@ extension HomeTabViewController:UITableViewDataSource{
                 }
             case 1:
                 let cell = tableView.getCell(identifier: CellConstant.bannerHomeTabCell.rawValue) as! BannerHomeTabCell
-//                cell.bannerData = viewModel.loyaltyDetail
+                //                cell.bannerData = viewModel.loyaltyDetail
                 cell.selectionStyle = .none
                 cell.setupUi()
                 return cell

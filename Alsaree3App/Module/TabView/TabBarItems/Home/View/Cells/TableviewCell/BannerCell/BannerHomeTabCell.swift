@@ -19,12 +19,14 @@ class BannerHomeTabCell: UITableViewCell {
     
     
     func setupUi(){
+        bannerImageView.layer.borderWidth = 0.5
+        bannerImageView.layer.borderColor = ColorConstant.borderColorGray.cgColor
+        bannerImageView.contentMode = .scaleAspectFill
+        bannerImageView.layer.cornerRadius = 11
+        
         if bannerData == nil {
             showErrorMessage(nameNib: "CellErrorHandlingView", uiView:bannerImageView)
             SDWebImageManager.shared.loadImage(with:bannerData?.zero_point_image_url ?? "", into: bannerImageView, isbaseUrlRequired: false)
-            bannerImageView.contentMode = .scaleAspectFill
-            bannerImageView.layer.cornerRadius = 11
-            
         } else {
             loadBannerImage()
         }
@@ -33,8 +35,6 @@ class BannerHomeTabCell: UITableViewCell {
     
     private func loadBannerImage() {
         SDWebImageManager.shared.loadImage(with: bannerData?.zero_point_image_url ?? "", into: bannerImageView, isbaseUrlRequired: false)
-        bannerImageView.contentMode = .scaleAspectFill
-        bannerImageView.layer.cornerRadius = 11
     }
     
 

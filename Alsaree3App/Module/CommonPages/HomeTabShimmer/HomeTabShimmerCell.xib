@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="503" id="KGk-i7-Jjw" customClass="HomeTabShimmerCell" customModule="Alsaree3App" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="338" height="503"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="338" height="503"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sXu-c8-TQY">
+                        <rect key="frame" x="20" y="5" width="298" height="76"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                    </view>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="G9P-9B-0k4">
+                        <rect key="frame" x="20" y="101" width="298" height="90"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f5E-jr-Mtl">
+                                <rect key="frame" x="0.0" y="0.0" width="67" height="90"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xxo-M1-KYg">
+                                <rect key="frame" x="77" y="0.0" width="67" height="90"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xBS-jZ-kkP">
+                                <rect key="frame" x="154" y="0.0" width="67" height="90"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zJz-Ek-KdZ">
+                                <rect key="frame" x="231" y="0.0" width="67" height="90"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                            </view>
+                        </subviews>
+                    </stackView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h0H-XH-Q0K">
+                        <rect key="frame" x="20" y="211" width="298" height="124"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                    </view>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="cEa-Kr-pID">
+                        <rect key="frame" x="20" y="355" width="298" height="67"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ao2-SB-fdm">
+                                <rect key="frame" x="0.0" y="0.0" width="67" height="67"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WNb-PA-TbE">
+                                <rect key="frame" x="77" y="0.0" width="67" height="67"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IUk-6r-72O">
+                                <rect key="frame" x="154" y="0.0" width="67" height="67"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g0V-NQ-WA3">
+                                <rect key="frame" x="231" y="0.0" width="67" height="67"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="Ao2-SB-fdm" firstAttribute="width" secondItem="cEa-Kr-pID" secondAttribute="height" multiplier="1:1" id="KNF-VG-0h3"/>
+                        </constraints>
+                    </stackView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hTF-6N-UU4">
+                        <rect key="frame" x="20" y="442" width="298" height="45.333333333333314"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="h0H-XH-Q0K" secondAttribute="trailing" constant="20" id="2IN-Pg-u1O"/>
+                    <constraint firstItem="sXu-c8-TQY" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.151093" id="95l-kA-47A"/>
+                    <constraint firstAttribute="trailing" secondItem="cEa-Kr-pID" secondAttribute="trailing" constant="20" id="AbF-RU-Ppv"/>
+                    <constraint firstItem="sXu-c8-TQY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="Aja-Xp-7Uh"/>
+                    <constraint firstAttribute="trailing" secondItem="hTF-6N-UU4" secondAttribute="trailing" constant="20" id="F44-j4-Bgn"/>
+                    <constraint firstItem="cEa-Kr-pID" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="FM9-bc-P6w"/>
+                    <constraint firstAttribute="trailing" secondItem="G9P-9B-0k4" secondAttribute="trailing" constant="20" id="Qhw-aZ-pHk"/>
+                    <constraint firstItem="h0H-XH-Q0K" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="R3C-wH-oxR"/>
+                    <constraint firstItem="h0H-XH-Q0K" firstAttribute="top" secondItem="G9P-9B-0k4" secondAttribute="bottom" constant="20" id="TNa-TL-f8F"/>
+                    <constraint firstItem="hTF-6N-UU4" firstAttribute="top" secondItem="cEa-Kr-pID" secondAttribute="bottom" constant="20" id="VMx-4P-KY9"/>
+                    <constraint firstItem="G9P-9B-0k4" firstAttribute="top" secondItem="sXu-c8-TQY" secondAttribute="bottom" constant="20" id="WFC-Qg-vf0"/>
+                    <constraint firstItem="G9P-9B-0k4" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.178926" id="eOo-Jb-HCe"/>
+                    <constraint firstItem="sXu-c8-TQY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="fbS-VA-hfv"/>
+                    <constraint firstItem="hTF-6N-UU4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="fsl-Fm-dEA"/>
+                    <constraint firstItem="h0H-XH-Q0K" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.246521" id="gN7-Uy-yKa"/>
+                    <constraint firstItem="cEa-Kr-pID" firstAttribute="top" secondItem="h0H-XH-Q0K" secondAttribute="bottom" constant="20" id="htr-Vn-LQT"/>
+                    <constraint firstAttribute="trailing" secondItem="sXu-c8-TQY" secondAttribute="trailing" constant="20" id="wIP-f0-aSs"/>
+                    <constraint firstItem="hTF-6N-UU4" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.09" id="xdE-FU-v7f"/>
+                    <constraint firstItem="G9P-9B-0k4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="yJb-4x-8h9"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outletCollection property="shimmmerViews" destination="sXu-c8-TQY" collectionClass="NSMutableArray" id="et9-gt-iQO"/>
+                <outletCollection property="circleShimmerViews" destination="Ao2-SB-fdm" collectionClass="NSMutableArray" id="7nN-H5-CXm"/>
+                <outletCollection property="circleShimmerViews" destination="WNb-PA-TbE" collectionClass="NSMutableArray" id="fjZ-bL-CtG"/>
+                <outletCollection property="circleShimmerViews" destination="IUk-6r-72O" collectionClass="NSMutableArray" id="1sg-pS-jvn"/>
+                <outletCollection property="circleShimmerViews" destination="g0V-NQ-WA3" collectionClass="NSMutableArray" id="gdZ-PH-zVn"/>
+                <outletCollection property="shimmmerViews" destination="f5E-jr-Mtl" collectionClass="NSMutableArray" id="LPE-KD-j9f"/>
+                <outletCollection property="shimmmerViews" destination="xxo-M1-KYg" collectionClass="NSMutableArray" id="ayf-iD-hRd"/>
+                <outletCollection property="shimmmerViews" destination="xBS-jZ-kkP" collectionClass="NSMutableArray" id="UQr-Xm-yBe"/>
+                <outletCollection property="shimmmerViews" destination="zJz-Ek-KdZ" collectionClass="NSMutableArray" id="uoQ-v4-wgk"/>
+                <outletCollection property="shimmmerViews" destination="h0H-XH-Q0K" collectionClass="NSMutableArray" id="ILb-oD-dMO"/>
+                <outletCollection property="shimmmerViews" destination="hTF-6N-UU4" collectionClass="NSMutableArray" id="aF7-i7-pl0"/>
+            </connections>
+            <point key="canvasLocation" x="140.45801526717557" y="181.33802816901408"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

@@ -6,7 +6,6 @@ target 'Alsaree3App' do
   use_frameworks!
 
   # Pods for Alsaree3App
-    pod 'UIView-Shimmer', '~> 1.0'
     pod 'SDWebImage', '~> 5.0'
 
   target 'Alsaree3AppTests' do
