@@ -17,7 +17,7 @@ extension HomeTabViewModel{
                 SDWebImageManager.shared.imageBaseUrl = data.imageBaseURL
                 self.dispatchGroup.leave()
                 LoaderManager.hideLoader()
-                print("AppSetting done")
+                print("callAppSettingApi Done")
             case.failure(let error):
                 print(error.localizedDescription)
             }
@@ -30,7 +30,7 @@ extension HomeTabViewModel{
         HomeScreenServices().getFeedBackResponce(parameters: parameter) { responce in
             switch responce{
             case .success(let data):
-                print(data)
+                print("callFeedBackApi Done")
                 self.dispatchGroup.leave()
                 self.checkFeedBackData = data
             case .failure(let error):
@@ -44,7 +44,7 @@ extension HomeTabViewModel{
         HomeScreenServices().getLoyaltyDetail(parameters: parameter) { responce in
             switch responce{
             case .success(let data):
-                print(data)
+                print("callLoyaltyDetailApi Done")
                 self.dispatchGroup.leave()
                 self.loyaltyDetail = data
             case .failure(let error):
@@ -72,7 +72,7 @@ extension HomeTabViewModel{
         HomeScreenServices().getDeliveryListForNearestCity(parameters: parameter) { responce in
             switch responce{
             case .success(let data):
-                print(data)
+                print("callDeliveryListForNearestCityApi Done")
                 self.dispatchGroup.leave()
                 kCityId = data.city.id
                 kStoreDeliveryId = data.deliveries[0].id
@@ -100,6 +100,7 @@ extension HomeTabViewModel{
         HomeScreenServices().getHomeScreenMainDetailWithBannerImagesOffers(parameters: parameter) { responce in
             switch responce{
             case .success(let data):
+                print("callHomeScreenMainDetailWithBannerImagesOffersApi Done")
                 self.recentlyAddedTitle = data.horizontal_store_title
                 self.mostPopularTitle = data.ads_title
                 self.nearbyResturentTitle = data.store_listing_title
@@ -132,7 +133,7 @@ extension HomeTabViewModel{
         HomeScreenServices().getHomeScreenStoreList(parameters: parameter) { responce in
             switch responce{
             case .success(let data):
-                print(data)
+                print("callHomeScreenStoreListApi Done")
                 if let storeData = data.stores{
                     if self.homeScreenStoreListData == nil {
                         self.homeScreenStoreListData = []
@@ -165,7 +166,7 @@ extension HomeTabViewModel{
         HomeScreenServices().getPushZoneData(parameters: parameter) { responce in
             switch responce{
             case .success(let data):
-                print(data)
+                print("callPushZoneApi Done")
                 self.pushZoneData = data
                 self.dispatchGroup.leave()
             case .failure(let error):
@@ -190,7 +191,7 @@ extension HomeTabViewModel{
         HomeScreenServices().getHomeScreenGetCloseStoreListData(parameters: parameter) { responce in
             switch responce{
             case .success(let data):
-                print(data)
+                print("callHomeScreenGetCloseStoreListApi Done")
                 if let storeData = data.stores{
                     if self.homeScreenStoreListData == nil {
                         self.homeScreenStoreListData = []

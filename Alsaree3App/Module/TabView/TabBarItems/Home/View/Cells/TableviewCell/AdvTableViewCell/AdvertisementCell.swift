@@ -15,9 +15,11 @@ class AdvertisementCell: UITableViewCell {
     
     var advertisementBannerData : [Banner]?
     var isHeigthChnaged = false
+    var isScrollingLeft = false
+
     
     // MARK: Local Variables
-    var currentscrollIndex = 1
+    var currentscrollIndex = 0
     var contentOffset = CGPoint()
     var timer : Timer?
     var centeredCollectionViewFlowLayout: CenteredCollectionViewFlowLayout!
@@ -26,6 +28,7 @@ class AdvertisementCell: UITableViewCell {
         super.awakeFromNib()
         setCollectionview()
         setupPageControl()
+        startTimer()
         self.backgroundColor = UIColor.clear
     }
     
@@ -33,6 +36,33 @@ class AdvertisementCell: UITableViewCell {
         advCollectionView.reloadData()
         setupPageControl()
     }
+    
+    func startTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 3.5, target: self, selector: #selector(autoScroll), userInfo: nil, repeats: true)
+    }
+    
+    @objc func autoScroll() {
+        let totalItems = advertisementBannerData?.count ?? 5
+
+        if isScrollingLeft {
+            if currentscrollIndex > 0 {
+                currentscrollIndex -= 1
+            } else {
+                isScrollingLeft = false
+                currentscrollIndex += 1
+            }
+        } else {
+            if currentscrollIndex < totalItems - 1 {
+                currentscrollIndex += 1
+            } else {
+                currentscrollIndex = 0
+            }
+        }
+        let indexPath = IndexPath(item: currentscrollIndex, section: 0)
+        advCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+    }
+
+
     
     override func systemLayoutSizeFitting(_ targetSize: CGSize, withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority, verticalFittingPriority: UILayoutPriority) -> CGSize {
         
@@ -52,19 +82,14 @@ class AdvertisementCell: UITableViewCell {
     func setCollectionview() {
         advCollectionView.delegate = self
         advCollectionView.dataSource = self
-        
         advCollectionView.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
 
         centeredCollectionViewFlowLayout = (advCollectionView.collectionViewLayout as! CenteredCollectionViewFlowLayout)
         centeredCollectionViewFlowLayout.itemSize = CGSize(width: advCollectionView.bounds.width * 0.9, height: advCollectionView.bounds.height)
 
         advCollectionView.decelerationRate = UIScrollView.DecelerationRate.fast
-        
         centeredCollectionViewFlowLayout.minimumLineSpacing = 23
-        
         advCollectionView.showsHorizontalScrollIndicator = false
-
-
         advCollectionView.registerNib(of: AdvCollectionViewCell.self)
         advCollectionView.backgroundColor = UIColor.clear
         advCollectionView.showsHorizontalScrollIndicator = false
@@ -97,11 +122,7 @@ extension AdvertisementCell: UICollectionViewDelegate, UICollectionViewDataSourc
     }
     
 }
-
-
 extension AdvertisementCell : UICollectionViewDelegateFlowLayout{
-    
-  
 }
 
 extension AdvertisementCell :UIScrollViewDelegate {
