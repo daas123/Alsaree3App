@@ -41,6 +41,7 @@ enum APIServices {
     case HomeScreenMainDetailWithBannerImagesOffers(parameters: AnyDict)
     case HomeScreenStoreList(parameters: AnyDict)
     case Push_Zone(parameters: AnyDict)
+    case HomeScreenGetCloseStoreList(parameters: AnyDict)
     
     //dummycase
     case get
@@ -59,6 +60,7 @@ extension APIServices {
         case .HomeScreenMainDetailWithBannerImagesOffers : servicePath = apiDomain + "user/get_home_screen_main_detail_with_banner_images_offers"
         case .HomeScreenStoreList : servicePath = apiDomain + "user/get_home_screen_store_list"
         case .Push_Zone : servicePath = apiDomain + "user/get_push_zone"
+        case .HomeScreenGetCloseStoreList : servicePath = apiDomain + "user/home_screen_get_close_store_list_new_version"
             
             //dummmy
         case .get: "dummy"
@@ -86,6 +88,8 @@ extension APIServices {
         case .HomeScreenStoreList(parameters: let param):
             return param
         case .Push_Zone(let param):
+            return param
+        case .HomeScreenGetCloseStoreList(parameters: let param):
             return param
         default:
             return nil
@@ -122,7 +126,7 @@ extension APIServices {
             switch self{
             case .AppSettings:
                 auth_key = try EncriptionManager().aesEncrypt(value: KeyConstant.authKey.rawValue, key: KeyConstant.key.rawValue, iv: KeyConstant.iv16.rawValue)
-            case.CheckFeedBack,.LoyalityDetails,.CartWithCampaignDiscount,.DeliveryListForNearestCity,.HomeScreenMainDetailWithBannerImagesOffers,.HomeScreenStoreList,.Push_Zone:
+            case.CheckFeedBack,.LoyalityDetails,.CartWithCampaignDiscount,.DeliveryListForNearestCity,.HomeScreenMainDetailWithBannerImagesOffers,.HomeScreenStoreList,.Push_Zone,.HomeScreenGetCloseStoreList:
                 auth_key = try EncriptionManager().aesEncrypt(value: authKey, key: KeyConstant.key2.rawValue, iv: KeyConstant.iv162.rawValue)
                 //dummy
             case .get : break

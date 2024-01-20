@@ -7,7 +7,7 @@
 
 import UIKit
 
-class NVActivityIndicatorAnimationBallClipRotateMultiple: NVActivityIndicatorAnimationDelegate {
+class ActivityIndicatorAnimationBallClipRotateMultiple: NVActivityIndicatorAnimationDelegate {
 
     func setUpAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
         let bigCircleSize: CGFloat = size.width
@@ -70,8 +70,6 @@ class NVActivityIndicatorAnimationBallClipRotateMultiple: NVActivityIndicatorAni
 protocol NVActivityIndicatorAnimationDelegate {
     func setUpAnimation(in layer: CALayer, size: CGSize, color: UIColor)
 }
-
-
 
 enum NVActivityIndicatorShape {
     case circle
@@ -228,7 +226,7 @@ public enum NVActivityIndicatorType: CaseIterable {
         switch self {
             
         case .ballClipRotateMultiple:
-            return NVActivityIndicatorAnimationBallClipRotateMultiple()
+            return ActivityIndicatorAnimationBallClipRotateMultiple()
             
             
         }

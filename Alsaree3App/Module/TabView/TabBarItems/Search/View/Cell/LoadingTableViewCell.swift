@@ -34,7 +34,6 @@ class LoadingTableViewCell: UITableViewCell {
         retryButton.isHidden = true
         loadingView.isHidden = false
         loadingTitle.isHidden = false
-        LoaderManager.showLoader(in: loadingView)
     }
     
     func showRetryButton(){

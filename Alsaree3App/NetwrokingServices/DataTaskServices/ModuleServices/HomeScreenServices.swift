@@ -14,7 +14,6 @@ class HomeScreenServices{
                                     "device_unique_id":parameters.device_unique_id,
                                     "device_type":parameters.device_type,
                                     "type":parameters.type]
-
         APIManager.sharedInstance.performRequest(serviceType: .AppSettings(parameters: param)) { response in
             switch response {
             case .success(let responseData):
@@ -109,7 +108,7 @@ class HomeScreenServices{
         }
     }
     
-    func getHomeScreenMainDetailWithBannerImagesOffers(parameters:HomeScreenMainDetailWithBannerImagesOffersParams, completion: @escaping (Result<HomeScreenMainDetailWithBannerImagesOffersModel, APIError>) -> Void){
+    func getHomeScreenMainDetailWithBannerImagesOffers(parameters:HomeScreenStoreListParams, completion: @escaping (Result<HomeScreenMainDetailWithBannerImagesOffersModel, APIError>) -> Void){
         let param:[String : Any] = ["latitude":parameters.latitude,
                                     "longitude":parameters.longitude,
                                     "language":parameters.language,
@@ -176,6 +175,35 @@ class HomeScreenServices{
             case .success(let responseData):
 
                 if let decodedResponseData = try? JSONDecoder().decode(PushZoneModel.self, from: responseData){
+                    completion(.success((decodedResponseData)))
+                } else if let apiError = try? JSONDecoder().decode(ApiErrorModel.self, from: responseData) {
+                    completion(.failure(.apiError(success: apiError.success, errorCode: apiError.error_code)))
+                } else {
+                    completion(.failure(.decodingError))
+                }
+
+            case .failure(_):
+                completion(.failure(.decodingError))
+            }
+        }
+    }
+    
+    func getHomeScreenGetCloseStoreListData(parameters:HomeScreenStoreListParams, completion: @escaping (Result<StoreListModel, APIError>) -> Void){
+        let param:[String : Any] = ["city_id":parameters.city_id,
+                                    "page":parameters.page,
+                                    "longitude":parameters.longitude,
+                                    "cart_unique_token":parameters.cart_unique_token,
+                                    "store_delivery_id":parameters.store_delivery_id,
+                                    "user_id":parameters.user_id,
+                                    "latitude":parameters.latitude,
+                                    "language":parameters.language,
+                                    "server_token":parameters.server_token]
+
+        APIManager.sharedInstance.performRequest(serviceType: .HomeScreenGetCloseStoreList(parameters: param)) { response in
+            switch response{
+            case .success(let responseData):
+
+                if let decodedResponseData = try? JSONDecoder().decode(StoreListModel.self, from: responseData){
                     completion(.success((decodedResponseData)))
                 } else if let apiError = try? JSONDecoder().decode(ApiErrorModel.self, from: responseData) {
                     completion(.failure(.apiError(success: apiError.success, errorCode: apiError.error_code)))

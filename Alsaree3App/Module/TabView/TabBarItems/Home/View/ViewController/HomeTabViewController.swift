@@ -31,11 +31,11 @@ class HomeTabViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         viewModel.homeTabDeligate = self
-        viewModel.checkLocationAccess()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.checkLocationAccess()
         viewModel.homeTabDeligate = self
         settingDelegate()
         setupTableview()
@@ -187,6 +187,7 @@ extension HomeTabViewController:UITableViewDataSource{
             switch indexPath.row{
             case 0 :
                 if true{
+                    LoaderManager.hideLoader()
                     let cell = tableView.getCell(identifier: CellConstant.activeOrderHomeTabCell.rawValue) as! ActiveOrderHomeTabCell
                     cell.selectionStyle = .none
                     return cell

@@ -46,17 +46,8 @@ struct DeliveryListForNearestCityParams{
     let longitude : String
 }
 
-struct HomeScreenMainDetailWithBannerImagesOffersParams{
-    let latitude : String
-    let longitude : String
-    let language : String
-    let page : String
-    let store_delivery_id : String
-    let city_id : String
-    let user_id : String
-    let server_token : String
-    let cart_unique_token : String
-}
+
+// HomeScreenMainDetailWithBannerImagesOffersParams ,HomeScreenStoreListParams,HomeScreenGetCloseStoreList
 
 struct HomeScreenStoreListParams{
     let city_id : String
@@ -74,3 +65,5 @@ struct PushZoneParams{
     let longitude : String
     let latitude : String
 }
+
+

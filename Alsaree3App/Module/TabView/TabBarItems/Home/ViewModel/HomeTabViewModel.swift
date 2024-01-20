@@ -18,10 +18,6 @@ protocol NavigateFormHomeTab{
 class HomeTabViewModel{
     
     var activeOrder = false
-    var isAppsettingApiFailed = true
-    var isHomeScreenStoreListDataFailed = true
-    var isDeliveryListForNearestCityApiFailed = true
-    var isHomeScreenStoreListApiFailed = true
     
     let dispatchGroup = DispatchGroup()
     // All APi Data
@@ -47,6 +43,8 @@ class HomeTabViewModel{
     
     // MARK: paging count
     var currentPage = 1
+    var closeStorePage = 1
+    var isCallCloseStore = false
     
     var HomeTabData = [
         SectionAboveHeader.allCases,
@@ -85,7 +83,7 @@ class HomeTabViewModel{
             self.homeTabDeligate?.hometabTableView.reloadData()
         }
     }
-
+    
     func reloadOnPull(){
         dispatchGroup.enter()
         callHomeScreenMainDetailWithBannerImagesOffersApi()
@@ -108,8 +106,13 @@ class HomeTabViewModel{
     
     
     func callHomeScreenStorelistNextPageApi(){
-        currentPage += 1
-        callHomeScreenStoreListApi(pageNo: String(currentPage))
+        if isCallCloseStore{
+            closeStorePage += 1
+            callHomeScreenGetCloseStoreListApi(pageNo:String(closeStorePage))
+        }else{
+            currentPage += 1
+            callHomeScreenStoreListApi(pageNo: String(currentPage))
+        }
     }
     
 }

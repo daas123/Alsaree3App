@@ -11,6 +11,8 @@
 		4A043ADF2B5A48DE005B8AFA /* HomeTabShimmerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A043ADD2B5A48DE005B8AFA /* HomeTabShimmerCell.swift */; };
 		4A043AE02B5A48DE005B8AFA /* HomeTabShimmerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A043ADE2B5A48DE005B8AFA /* HomeTabShimmerCell.xib */; };
 		4A043AE22B5A4D8F005B8AFA /* CellErrorHandlingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A043AE12B5A4D8F005B8AFA /* CellErrorHandlingView.xib */; };
+		4AB41BF42B5C5C9400BA70C4 /* ClosedStoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB41BF22B5C5C9400BA70C4 /* ClosedStoreCell.swift */; };
+		4AB41BF52B5C5C9400BA70C4 /* ClosedStoreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AB41BF32B5C5C9400BA70C4 /* ClosedStoreCell.xib */; };
 		7B9D7E1BDD1F12D8013ABC95 /* Pods_Alsaree3AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B683BDB30B428A9D94F98F8A /* Pods_Alsaree3AppTests.framework */; };
 		7C9E9745AED076F6DCDE13C8 /* Pods_Alsaree3App_Alsaree3AppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A77A3FCDF4E06BE4CB7F9084 /* Pods_Alsaree3App_Alsaree3AppUITests.framework */; };
 		92112F572B306513005CA584 /* CollectionViewFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92112F562B306513005CA584 /* CollectionViewFiles.swift */; };
@@ -124,7 +126,6 @@
 		929F1CA12B4BE79D00B0F08F /* HomeTabAppSettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929F1CA02B4BE79D00B0F08F /* HomeTabAppSettingModel.swift */; };
 		929F1CA32B4BE7E900B0F08F /* HomeTabLoyaltyDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929F1CA22B4BE7E900B0F08F /* HomeTabLoyaltyDetailsModel.swift */; };
 		929F1CA52B4BE81300B0F08F /* HomeTabDeliveryListForNearestCityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929F1CA42B4BE81300B0F08F /* HomeTabDeliveryListForNearestCityModel.swift */; };
-		929F1CA92B4C03C600B0F08F /* HomeTabStoreListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929F1CA82B4C03C600B0F08F /* HomeTabStoreListModel.swift */; };
 		929F1CAB2B4C057C00B0F08F /* HomeTabPushZoneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929F1CAA2B4C057C00B0F08F /* HomeTabPushZoneModel.swift */; };
 		929F1CED2B4D085300B0F08F /* Campaign_detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929F1CE12B4D085300B0F08F /* Campaign_detail.swift */; };
 		929F1CEE2B4D085300B0F08F /* Store_time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929F1CE22B4D085300B0F08F /* Store_time.swift */; };
@@ -222,6 +223,8 @@
 		4A043ADD2B5A48DE005B8AFA /* HomeTabShimmerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabShimmerCell.swift; sourceTree = "<group>"; };
 		4A043ADE2B5A48DE005B8AFA /* HomeTabShimmerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTabShimmerCell.xib; sourceTree = "<group>"; };
 		4A043AE12B5A4D8F005B8AFA /* CellErrorHandlingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellErrorHandlingView.xib; sourceTree = "<group>"; };
+		4AB41BF22B5C5C9400BA70C4 /* ClosedStoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosedStoreCell.swift; sourceTree = "<group>"; };
+		4AB41BF32B5C5C9400BA70C4 /* ClosedStoreCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClosedStoreCell.xib; sourceTree = "<group>"; };
 		4B7FBCCA8D921124C6083754 /* Pods-Alsaree3App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alsaree3App.release.xcconfig"; path = "Target Support Files/Pods-Alsaree3App/Pods-Alsaree3App.release.xcconfig"; sourceTree = "<group>"; };
 		7AD5A803A4E58EFAB9E31ACC /* Pods-Alsaree3App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alsaree3App.debug.xcconfig"; path = "Target Support Files/Pods-Alsaree3App/Pods-Alsaree3App.debug.xcconfig"; sourceTree = "<group>"; };
 		92112F562B306513005CA584 /* CollectionViewFiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewFiles.swift; sourceTree = "<group>"; };
@@ -335,7 +338,6 @@
 		929F1CA02B4BE79D00B0F08F /* HomeTabAppSettingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabAppSettingModel.swift; sourceTree = "<group>"; };
 		929F1CA22B4BE7E900B0F08F /* HomeTabLoyaltyDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabLoyaltyDetailsModel.swift; sourceTree = "<group>"; };
 		929F1CA42B4BE81300B0F08F /* HomeTabDeliveryListForNearestCityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabDeliveryListForNearestCityModel.swift; sourceTree = "<group>"; };
-		929F1CA82B4C03C600B0F08F /* HomeTabStoreListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabStoreListModel.swift; sourceTree = "<group>"; };
 		929F1CAA2B4C057C00B0F08F /* HomeTabPushZoneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabPushZoneModel.swift; sourceTree = "<group>"; };
 		929F1CE12B4D085300B0F08F /* Campaign_detail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Campaign_detail.swift; sourceTree = "<group>"; };
 		929F1CE22B4D085300B0F08F /* Store_time.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store_time.swift; sourceTree = "<group>"; };
@@ -462,6 +464,15 @@
 				4A043ADE2B5A48DE005B8AFA /* HomeTabShimmerCell.xib */,
 			);
 			path = HomeTabShimmer;
+			sourceTree = "<group>";
+		};
+		4AB41BF12B5C5C6D00BA70C4 /* ClosedStore */ = {
+			isa = PBXGroup;
+			children = (
+				4AB41BF22B5C5C9400BA70C4 /* ClosedStoreCell.swift */,
+				4AB41BF32B5C5C9400BA70C4 /* ClosedStoreCell.xib */,
+			);
+			path = ClosedStore;
 			sourceTree = "<group>";
 		};
 		58D8EF6972A597825B54822A /* Pods */ = {
@@ -687,6 +698,7 @@
 		929F1B982B480A5C00B0F08F /* CommonPages */ = {
 			isa = PBXGroup;
 			children = (
+				4AB41BF12B5C5C6D00BA70C4 /* ClosedStore */,
 				4A043ADC2B5A4878005B8AFA /* HomeTabShimmer */,
 				9213500F2B57ED7100E6A1B5 /* ErrorHandlingCell */,
 				929F51CD2B56994F00C468AA /* LocationAccessRequest */,
@@ -974,7 +986,6 @@
 				929F1CA02B4BE79D00B0F08F /* HomeTabAppSettingModel.swift */,
 				929F1CA22B4BE7E900B0F08F /* HomeTabLoyaltyDetailsModel.swift */,
 				929F1CA42B4BE81300B0F08F /* HomeTabDeliveryListForNearestCityModel.swift */,
-				929F1CA82B4C03C600B0F08F /* HomeTabStoreListModel.swift */,
 				929F1CAA2B4C057C00B0F08F /* HomeTabPushZoneModel.swift */,
 				929F1D002B4D2B1100B0F08F /* HomeTabCheckFeedBackModel.swift */,
 				929F1D022B4D2B2500B0F08F /* HomeTabApiErrorModel.swift */,
@@ -1398,6 +1409,7 @@
 				4A043AE22B5A4D8F005B8AFA /* CellErrorHandlingView.xib in Resources */,
 				929F8F952B2EF40F00536E70 /* AdvertisementCell.xib in Resources */,
 				929FF90A2B301F6400E9C34A /* ResturentTableViewCell.xib in Resources */,
+				4AB41BF52B5C5C9400BA70C4 /* ClosedStoreCell.xib in Resources */,
 				92A66D552B2C185700CB8EF5 /* LaunchScreen.storyboard in Resources */,
 				92FA14462B31E36800148974 /* Cairo-SemiBold.ttf in Resources */,
 				92FA144B2B31E36800148974 /* Cairo-Light.ttf in Resources */,
@@ -1622,6 +1634,7 @@
 				929F1C4B2B48366C00B0F08F /* AES.swift in Sources */,
 				929F1C8D2B48366D00B0F08F /* CBC.swift in Sources */,
 				92A8B0642B32EAB80062628A /* Loaderfiles.swift in Sources */,
+				4AB41BF42B5C5C9400BA70C4 /* ClosedStoreCell.swift in Sources */,
 				92AE0B142B43EF3B00E71A32 /* Reachability.swift in Sources */,
 				929F1C532B48366C00B0F08F /* AEADChaCha20Poly1305.swift in Sources */,
 				929F1C6E2B48366C00B0F08F /* CompactMap.swift in Sources */,
@@ -1678,7 +1691,6 @@
 				929F1CED2B4D085300B0F08F /* Campaign_detail.swift in Sources */,
 				929F1CA12B4BE79D00B0F08F /* HomeTabAppSettingModel.swift in Sources */,
 				929F1C5A2B48366C00B0F08F /* CMAC.swift in Sources */,
-				929F1CA92B4C03C600B0F08F /* HomeTabStoreListModel.swift in Sources */,
 				929F1C8E2B48366D00B0F08F /* ECB.swift in Sources */,
 				929F1C712B48366C00B0F08F /* SecureBytes.swift in Sources */,
 				929F1CF42B4D085300B0F08F /* Day_time.swift in Sources */,

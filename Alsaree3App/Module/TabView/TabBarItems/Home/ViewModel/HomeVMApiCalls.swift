@@ -9,12 +9,14 @@ import Foundation
 extension HomeTabViewModel{
     func callAppSettingApi(){
         let parameters = AppSettingParams(device_type: DeviceInfo.deviceType.rawValue, type: DeviceInfo.type.rawValue, device_token:kDeviceToken, device_unique_id:kDeviceUniqueId )
+        LoaderManager.showLoading()
         HomeScreenServices().getAppSettings(parameters: parameters) { responce  in
             switch responce{
             case.success(let data):
                 authKey = data.authKey
                 SDWebImageManager.shared.imageBaseUrl = data.imageBaseURL
                 self.dispatchGroup.leave()
+                LoaderManager.hideLoader()
                 print("AppSetting done")
             case.failure(let error):
                 print(error.localizedDescription)
@@ -83,17 +85,18 @@ extension HomeTabViewModel{
     
     //error Calling the data
     func callHomeScreenMainDetailWithBannerImagesOffersApi(){
-        let parameter = HomeScreenMainDetailWithBannerImagesOffersParams(
-            latitude: String(describing: LocationManager.shared.currentLocation?.latitude ?? 0),
-            longitude: String(describing: LocationManager.shared.currentLocation?.longitude ?? 0),
-            language: DeviceInfo.englishLang.rawValue,
-            page: "1",
-            store_delivery_id: kStoreDeliveryId,
+        let parameter = HomeScreenStoreListParams(
             city_id: kCityId,
+            page: "1",
+            longitude: String(describing: LocationManager.shared.currentLocation?.longitude ?? 0),
+            cart_unique_token: kCartUniqueToken,
+            store_delivery_id: kStoreDeliveryId,
             user_id: kUserId,
-            server_token: kServerToken,
-            cart_unique_token: kCartUniqueToken
+            latitude: String(describing: LocationManager.shared.currentLocation?.latitude ?? 0),
+            language:  DeviceInfo.englishLang.rawValue,
+            server_token: kServerToken
         )
+        
         HomeScreenServices().getHomeScreenMainDetailWithBannerImagesOffers(parameters: parameter) { responce in
             switch responce{
             case .success(let data):
@@ -117,23 +120,29 @@ extension HomeTabViewModel{
         let parameter = HomeScreenStoreListParams(
             city_id: kCityId,
             page: pageNo,
-            longitude: String(describing: LocationManager.shared.currentLocation?.longitude ?? 0) ,
+            longitude: String(describing: LocationManager.shared.currentLocation?.longitude ?? 0),
             cart_unique_token: kCartUniqueToken,
             store_delivery_id: kStoreDeliveryId,
             user_id: kUserId,
             latitude: String(describing: LocationManager.shared.currentLocation?.latitude ?? 0),
-            language: DeviceInfo.englishLang.rawValue,
-            server_token: kServerToken)
-        
+            language:  DeviceInfo.englishLang.rawValue,
+            server_token: kServerToken
+            
+        )
         HomeScreenServices().getHomeScreenStoreList(parameters: parameter) { responce in
             switch responce{
             case .success(let data):
                 print(data)
                 if let storeData = data.stores{
                     if self.homeScreenStoreListData == nil {
-                           self.homeScreenStoreListData = []
+                        self.homeScreenStoreListData = []
                     }
                     self.homeScreenStoreListData! += storeData
+                }
+                
+                if data.message == nil || data.success == false{
+                    self.isCallCloseStore = true
+                    self.callHomeScreenGetCloseStoreListApi()
                 }
                 if pageNo != "1"{
                     DispatchQueue.main.async {
@@ -163,5 +172,39 @@ extension HomeTabViewModel{
                 print(error.localizedDescription)
             }
         }
+    }
+    
+    func callHomeScreenGetCloseStoreListApi(pageNo:String = "1"){
+        let parameter = HomeScreenStoreListParams(
+            city_id: kCityId,
+            page: pageNo,
+            longitude: String(describing: LocationManager.shared.currentLocation?.longitude ?? 0),
+            cart_unique_token: kCartUniqueToken,
+            store_delivery_id: kStoreDeliveryId,
+            user_id: kUserId,
+            latitude: String(describing: LocationManager.shared.currentLocation?.latitude ?? 0),
+            language:  DeviceInfo.englishLang.rawValue,
+            server_token: kServerToken
+        )
+        
+        HomeScreenServices().getHomeScreenGetCloseStoreListData(parameters: parameter) { responce in
+            switch responce{
+            case .success(let data):
+                print(data)
+                if let storeData = data.stores{
+                    if self.homeScreenStoreListData == nil {
+                        self.homeScreenStoreListData = []
+                    }
+                    self.homeScreenStoreListData! += storeData
+                }
+                
+                DispatchQueue.main.async {
+                    self.homeTabDeligate?.hometabTableView.reloadData()
+                }
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+        
     }
 }
