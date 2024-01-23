@@ -13,6 +13,7 @@ import UIKit
 protocol NavigateFormHomeTab{
     func seeMoreBtnNavigation()
     func showLocationAccessScreen()
+    func setValueOfCurrentLocation(value:String)
 }
 
 class HomeTabViewModel{
@@ -39,11 +40,12 @@ class HomeTabViewModel{
     
     var homeScreenStoreListData : [Stores]?
     var pushZoneData : PushZoneModel?
-    var homeTabDeligate : HomeTabViewController?
+    weak var homeTabDeligate : HomeTabViewController?
     
     // MARK: paging count
     var currentPage = 1
     var closeStorePage = 1
+    var isApiCallFailed = false
     var isCallCloseStore = false
     
     var HomeTabData = [
@@ -86,6 +88,8 @@ class HomeTabViewModel{
     
     func reloadOnPull(){
         dispatchGroup.enter()
+        callLoyaltyDetailApi()
+        dispatchGroup.enter()
         callHomeScreenMainDetailWithBannerImagesOffersApi()
         dispatchGroup.enter()
         callHomeScreenStoreListApi()
@@ -115,4 +119,10 @@ class HomeTabViewModel{
         }
     }
     
+    func apiCallFailed(isRemoveDispatchGroup : Bool = true){
+        if isRemoveDispatchGroup{
+            dispatchGroup.leave()
+        }
+        isApiCallFailed = true
+    }
 }

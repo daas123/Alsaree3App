@@ -18,6 +18,7 @@ class ResturentDetailsTableViewCell: UITableViewCell {
     @IBOutlet weak var resturentImage: UIImageView!
     @IBOutlet weak var resturentFutrCollectionView: UICollectionView!
     
+    var isStoreClose : Bool = false
     var resturentDetailsTableViewCellData : Stores?
     var resturentFeatureDate : [featureDetails]?
     
@@ -47,6 +48,9 @@ class ResturentDetailsTableViewCell: UITableViewCell {
             setLabelText(lblrefrence: selectedItemOffLbl, lbltext: resturentDetailsTableViewCellData?.offer ?? "Get off on selected items", fontSize: 12,alignmentLeft:true)
         }
         setupFeatureDetails()
+        if isStoreClose{
+            setupCloseStore()
+        }
     }
     
     func setDeligate(){
@@ -138,6 +142,10 @@ class ResturentDetailsTableViewCell: UITableViewCell {
         triangleLayer.fillColor = UIColor(red: 0.67, green: 0.66, blue: 0.66, alpha: 1).cgColor
         triangleLayer.zPosition = -1
         self.layer.addSublayer(triangleLayer)
+    }
+    
+    func setupCloseStore(){
+        showErrorMessage(nameNib: "CloseStoreView", uiView: self)
     }
     
     

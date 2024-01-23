@@ -10,11 +10,11 @@ class APIManager {
     
     public func performRequest(serviceType: APIServices, completionHandler: @escaping(Result<Data,Error>)->Void){
         
-              //  Reachability to check network connected or not
-                        if !Reachability.isConnectedToNetwork(){
-                            completionHandler(.failure("no internet" as! Error))
-                            return
-                        }
+        //  Reachability to check network connected or not
+        if !Reachability.isConnectedToNetwork(){
+            completionHandler(.failure("no internet" as! Error))
+            return
+        }
         
         let session = URLSession.shared
         
@@ -59,13 +59,14 @@ class APIManager {
                 return
             }
             
-            // serialise the data / NSData object into Dictionary [String : Any]
-            guard (try? JSONSerialization.jsonObject(with: content, options: JSONSerialization.ReadingOptions.mutableContainers)) as? AnyDict != nil else {
-                
-                print("Not containing JSON")
-                return
+            do {
+                let json = try JSONSerialization.jsonObject(with: content, options: JSONSerialization.ReadingOptions.mutableContainers)
+                completionHandler(.success(content))
+            } catch let decodingError {
+                completionHandler(.failure(decodingError))
+                print("Decoding error: \(decodingError)")
             }
-            completionHandler(.success(content))
+            
         }
         task.resume()
     }

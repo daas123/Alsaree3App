@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="eJh-SY-7kV">
+            <rect key="frame" x="0.0" y="0.0" width="424" height="258"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L3y-CZ-9aL">
+                    <rect key="frame" x="151" y="111.66666666666669" width="122.33333333333331" height="35"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="tinted" title="Store Closed"/>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="TlC-aR-M35"/>
+            <constraints>
+                <constraint firstItem="L3y-CZ-9aL" firstAttribute="centerY" secondItem="eJh-SY-7kV" secondAttribute="centerY" id="25a-Yj-zdt"/>
+                <constraint firstItem="L3y-CZ-9aL" firstAttribute="centerX" secondItem="eJh-SY-7kV" secondAttribute="centerX" id="aOD-Hd-cTe"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-209" y="-123"/>
+        </view>
+    </objects>
+</document>

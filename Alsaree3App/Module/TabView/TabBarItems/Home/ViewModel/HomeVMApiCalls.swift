@@ -19,6 +19,7 @@ extension HomeTabViewModel{
                 LoaderManager.hideLoader()
                 print("callAppSettingApi Done")
             case.failure(let error):
+                self.apiCallFailed()
                 print(error.localizedDescription)
             }
             
@@ -34,6 +35,7 @@ extension HomeTabViewModel{
                 self.dispatchGroup.leave()
                 self.checkFeedBackData = data
             case .failure(let error):
+                self.apiCallFailed()
                 print(error.localizedDescription)
             }
         }
@@ -48,6 +50,7 @@ extension HomeTabViewModel{
                 self.dispatchGroup.leave()
                 self.loyaltyDetail = data
             case .failure(let error):
+                self.dispatchGroup.leave()
                 print(error.localizedDescription)
             }
         }
@@ -76,8 +79,11 @@ extension HomeTabViewModel{
                 self.dispatchGroup.leave()
                 kCityId = data.city.id
                 kStoreDeliveryId = data.deliveries[0].id
+                self.homeTabDeligate?.setValueOfCurrentLocation(value: data.city.cityCode)
                 self.deliveryListForNearestCityData = data
+                
             case .failure(let error):
+                self.apiCallFailed()
                 print(error.localizedDescription)
             }
         }
@@ -112,6 +118,7 @@ extension HomeTabViewModel{
                 self.banner = data.banner
                 self.dispatchGroup.leave()
             case .failure(let error):
+                self.apiCallFailed()
                 print(error.localizedDescription)
             }
         }
@@ -154,6 +161,7 @@ extension HomeTabViewModel{
                 }
                 
             case .failure(let error):
+                self.apiCallFailed()
                 print(error.localizedDescription)
             }
         }
@@ -170,6 +178,7 @@ extension HomeTabViewModel{
                 self.pushZoneData = data
                 self.dispatchGroup.leave()
             case .failure(let error):
+                self.apiCallFailed()
                 print(error.localizedDescription)
             }
         }
@@ -203,6 +212,7 @@ extension HomeTabViewModel{
                     self.homeTabDeligate?.hometabTableView.reloadData()
                 }
             case .failure(let error):
+                self.apiCallFailed()
                 print(error.localizedDescription)
             }
         }

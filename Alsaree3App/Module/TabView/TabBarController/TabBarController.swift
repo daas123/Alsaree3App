@@ -8,6 +8,13 @@
 import UIKit
 
 class TabBarController: UITabBarController,UITabBarControllerDelegate {
+    private var bounceAnimation: CAKeyframeAnimation = {
+        let bounceAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
+        bounceAnimation.values = [1.0, 1.4, 0.9, 1.02, 1.0]
+        bounceAnimation.duration = TimeInterval(0.3)
+        bounceAnimation.calculationMode = CAAnimationCalculationMode.cubic
+        return bounceAnimation
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTabBar()
@@ -18,16 +25,32 @@ class TabBarController: UITabBarController,UITabBarControllerDelegate {
         tabBar.addTopBorderWithColor(color: ColorConstant.borderColorGray, width: 1.0)
     }
     
-    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
-            guard let fromView = selectedViewController?.view, let toView = viewController.view else {
-                return false // Make sure you want this as false
+    //MARK: Creating the tab bar bounce
+    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+            guard let idx = tabBar.items?.firstIndex(of: item), tabBar.subviews.count > idx + 1, let imageView = tabBar.subviews[idx + 1].subviews.first as? UIImageView else {
+                return
             }
-            if fromView != toView {
-                UIView.transition(from: fromView, to: toView, duration: 0.3, options: [.transitionCrossDissolve], completion: nil)
-            }
-            return true
+            imageView.layer.add(bounceAnimation, forKey: nil)
         }
-    
+
+    //MARK: Creaiting the View Bounce
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+            viewController.view.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+            
+            UIView.animate(
+                withDuration: 0.3,
+                delay: 0,
+                usingSpringWithDamping: 0.5,
+                initialSpringVelocity: 0.5,
+                options: [.curveEaseInOut],
+                animations: {
+                    viewController.view.transform = .identity
+                },
+                completion: nil
+            )
+        }
+        
+
     func setupTabBar(){
         let normalTextAttributes: [NSAttributedString.Key: Any] = [
             .foregroundColor: ColorConstant.blackcolor,
@@ -67,4 +90,3 @@ class TabBarController: UITabBarController,UITabBarControllerDelegate {
         }
     }
 }
-

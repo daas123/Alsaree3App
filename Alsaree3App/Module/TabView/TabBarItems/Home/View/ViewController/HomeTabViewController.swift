@@ -20,7 +20,7 @@ class HomeTabViewController: UIViewController {
     @IBOutlet weak var progressLbl: UILabel!
     
     var circularProgressView: CircularProgressView!
-    let viewModel = HomeTabViewModel()
+    var viewModel = HomeTabViewModel()
     var headerView : HomeTabCategoryHeader?
     var refreshControl = UIRefreshControl()
     var isLoadingState = false
@@ -30,13 +30,12 @@ class HomeTabViewController: UIViewController {
     private var tabBarVisible = true
     
     override func viewWillAppear(_ animated: Bool) {
-        viewModel.homeTabDeligate = self
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.checkLocationAccess()
         viewModel.homeTabDeligate = self
+        viewModel.checkLocationAccess()
         settingDelegate()
         setupTableview()
         registerTableViewCell()
@@ -141,7 +140,7 @@ class HomeTabViewController: UIViewController {
         if headerRect.origin.y <= scrollView.contentOffset.y && scrollView.contentOffset.y <= headerRect.origin.y + headerRect.size.height {
             headerView?.hideImages()
             headerView?.setCustomConstrain()
-            showProgressView()
+            //            showProgressView()
             headerView?.categroyBackView.backgroundColor = ColorConstant.borderColorGray
         } else {
             headerView?.backgroundColor = UIColor.clear
@@ -152,8 +151,29 @@ class HomeTabViewController: UIViewController {
         }
     }
     
+    func animateCellSelection(at indexPath: IndexPath) {
+        if let cell = hometabTableView.cellForRow(at: indexPath) {
+            UIView.animate(withDuration: 0.3, animations: {
+                cell.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
+            }) { (_) in
+                UIView.animate(withDuration: 0.3) {
+                    cell.transform = .identity
+                }completion: { (_) in
+                    self.pushToNextScreen(indexPath: indexPath)
+                }
+            }
+        }
+    }
+    
+    func pushToNextScreen(indexPath: IndexPath) {
+        let newViewController = storyboard?.instantiateViewController(withIdentifier: "RestaurantDetailsVC") as! RestaurantDetailsVC
+        viewModel.activeOrder = true
+        newViewController.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(newViewController, animated: true)
+    }
+    
+    
 }
-
 
 extension HomeTabViewController:UITableViewDataSource{
     
@@ -171,7 +191,7 @@ extension HomeTabViewController:UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if viewModel.recentlyAddedStores == nil || viewModel.homeScreenStoreListData == nil {
-            if LocationManager.shared.isLocationAccess{
+            if (LocationManager.shared.isLocationAccess && (viewModel.isApiCallFailed == false)){
                 let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTabShimmerCell", for: indexPath) as! HomeTabShimmerCell
                 return cell
             }else{
@@ -259,6 +279,9 @@ extension HomeTabViewController:UITableViewDataSource{
     
 }
 extension HomeTabViewController : UITableViewDelegate{
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        animateCellSelection(at: indexPath)
+    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if viewModel.recentlyAddedStores == nil || viewModel.homeScreenStoreListData == nil {
@@ -361,6 +384,13 @@ extension HomeTabViewController{
 }
 
 extension HomeTabViewController:NavigateFormHomeTab{
+    func setValueOfCurrentLocation(value: String) {
+        DispatchQueue.main.async{
+            self.locationLbl.text = value
+        }
+    }
+    
+    
     func seeMoreBtnNavigation() {
         let newViewController = storyboard?.instantiateViewController(withIdentifier: "RestaurantDetailsVC") as! RestaurantDetailsVC
         // extra function
@@ -375,7 +405,6 @@ extension HomeTabViewController:NavigateFormHomeTab{
         let viewController = storyboard.instantiateViewController(withIdentifier:"LocationAccessViewController") as! LocationAccessViewController
         self.present(viewController, animated: true, completion: nil)
     }
-    
     
 }
 

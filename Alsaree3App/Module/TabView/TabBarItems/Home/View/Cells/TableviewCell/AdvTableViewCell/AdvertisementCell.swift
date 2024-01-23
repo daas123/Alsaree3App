@@ -82,13 +82,12 @@ class AdvertisementCell: UITableViewCell {
     func setCollectionview() {
         advCollectionView.delegate = self
         advCollectionView.dataSource = self
-        advCollectionView.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
 
         centeredCollectionViewFlowLayout = (advCollectionView.collectionViewLayout as! CenteredCollectionViewFlowLayout)
-        centeredCollectionViewFlowLayout.itemSize = CGSize(width: advCollectionView.bounds.width * 0.9, height: advCollectionView.bounds.height)
+        centeredCollectionViewFlowLayout.itemSize = CGSize(width: UIScreen.main.bounds.width - 40, height: advCollectionView.bounds.height)
 
         advCollectionView.decelerationRate = UIScrollView.DecelerationRate.fast
-        centeredCollectionViewFlowLayout.minimumLineSpacing = 23
+        centeredCollectionViewFlowLayout.minimumLineSpacing = 20
         advCollectionView.showsHorizontalScrollIndicator = false
         advCollectionView.registerNib(of: AdvCollectionViewCell.self)
         advCollectionView.backgroundColor = UIColor.clear
