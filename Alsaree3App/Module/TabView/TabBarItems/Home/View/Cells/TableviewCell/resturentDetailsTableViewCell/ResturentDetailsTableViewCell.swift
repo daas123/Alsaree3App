@@ -160,7 +160,7 @@ extension ResturentDetailsTableViewCell : UICollectionViewDelegate,UICollectionV
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FeatureCell", for: indexPath) as! FeatureCell
         cell.feature = resturentFeatureDate?[indexPath.row]
-        cell.featurelbl.preferredMaxLayoutWidth = collectionView.frame.width - 40
+//        cell.featurelbl.preferredMaxLayoutWidth = collectionView.frame.width/1.5
         cell.fillDetails()
         return cell
     }

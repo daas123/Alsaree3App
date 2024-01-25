@@ -12,7 +12,12 @@ class APIManager {
         
         //  Reachability to check network connected or not
         if !Reachability.isConnectedToNetwork(){
-            completionHandler(.failure("no internet" as! Error))
+            NotificationManager().postNetworkStatusChanged()
+            return
+        }
+        
+        if !LocationManager.shared.isLocationAccess{
+            NotificationManager().postLocationAccessRestricted()
             return
         }
         

@@ -14,27 +14,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var locationManager: LocationManager?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        LocationManager.shared.requestLocationPermission { _ in}
         
-        locationManager = LocationManager.shared
-
-        locationManager?.requestLocationPermission { granted in
-            if granted {
-                self.locationManager?.getCurrentLocation { coordinates in
-                    if let coordinates = coordinates {
-                        print("Latitude: \(coordinates.latitude), Longitude: \(coordinates.longitude)")
-                    } else {
-                        print("Location not available")
-                    }
-                }
-            } else {
-                print("Location permission not granted")
-            }
-        }
         return true
     }
-    
-   
-
     // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {

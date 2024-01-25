@@ -11,6 +11,9 @@
 		4A043ADF2B5A48DE005B8AFA /* HomeTabShimmerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A043ADD2B5A48DE005B8AFA /* HomeTabShimmerCell.swift */; };
 		4A043AE02B5A48DE005B8AFA /* HomeTabShimmerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A043ADE2B5A48DE005B8AFA /* HomeTabShimmerCell.xib */; };
 		4A043AE22B5A4D8F005B8AFA /* CellErrorHandlingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A043AE12B5A4D8F005B8AFA /* CellErrorHandlingView.xib */; };
+		4A8D3A862B61050000D8F29C /* NotificationManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D3A852B61050000D8F29C /* NotificationManger.swift */; };
+		4A8D3A8E2B625D3600D8F29C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D3A8D2B625D3600D8F29C /* BaseViewController.swift */; };
+		4AA89D2F2B62613E00DEBD35 /* InternetAccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA89D2E2B62613E00DEBD35 /* InternetAccessViewController.swift */; };
 		4ABC9D2A2B5E5419006EFCBD /* CloseStoreView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4ABC9D292B5E5419006EFCBD /* CloseStoreView.xib */; };
 		4ABC9D2C2B5E5471006EFCBD /* CloseStoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABC9D2B2B5E5471006EFCBD /* CloseStoreView.swift */; };
 		7B9D7E1BDD1F12D8013ABC95 /* Pods_Alsaree3AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B683BDB30B428A9D94F98F8A /* Pods_Alsaree3AppTests.framework */; };
@@ -223,6 +226,9 @@
 		4A043ADD2B5A48DE005B8AFA /* HomeTabShimmerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabShimmerCell.swift; sourceTree = "<group>"; };
 		4A043ADE2B5A48DE005B8AFA /* HomeTabShimmerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTabShimmerCell.xib; sourceTree = "<group>"; };
 		4A043AE12B5A4D8F005B8AFA /* CellErrorHandlingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellErrorHandlingView.xib; sourceTree = "<group>"; };
+		4A8D3A852B61050000D8F29C /* NotificationManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManger.swift; sourceTree = "<group>"; };
+		4A8D3A8D2B625D3600D8F29C /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		4AA89D2E2B62613E00DEBD35 /* InternetAccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetAccessViewController.swift; sourceTree = "<group>"; };
 		4ABC9D292B5E5419006EFCBD /* CloseStoreView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CloseStoreView.xib; sourceTree = "<group>"; };
 		4ABC9D2B2B5E5471006EFCBD /* CloseStoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseStoreView.swift; sourceTree = "<group>"; };
 		4B7FBCCA8D921124C6083754 /* Pods-Alsaree3App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alsaree3App.release.xcconfig"; path = "Target Support Files/Pods-Alsaree3App/Pods-Alsaree3App.release.xcconfig"; sourceTree = "<group>"; };
@@ -466,6 +472,22 @@
 			path = HomeTabShimmer;
 			sourceTree = "<group>";
 		};
+		4A8D3A842B6104E400D8F29C /* NotificartionManager */ = {
+			isa = PBXGroup;
+			children = (
+				4A8D3A852B61050000D8F29C /* NotificationManger.swift */,
+			);
+			path = NotificartionManager;
+			sourceTree = "<group>";
+		};
+		4A8D3A8C2B6257FB00D8F29C /* BaseViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4A8D3A8D2B625D3600D8F29C /* BaseViewController.swift */,
+			);
+			path = BaseViewController;
+			sourceTree = "<group>";
+		};
 		4AB41BF12B5C5C6D00BA70C4 /* ClosedStore */ = {
 			isa = PBXGroup;
 			children = (
@@ -698,10 +720,11 @@
 		929F1B982B480A5C00B0F08F /* CommonPages */ = {
 			isa = PBXGroup;
 			children = (
+				4A8D3A8C2B6257FB00D8F29C /* BaseViewController */,
 				4AB41BF12B5C5C6D00BA70C4 /* ClosedStore */,
 				4A043ADC2B5A4878005B8AFA /* HomeTabShimmer */,
 				9213500F2B57ED7100E6A1B5 /* ErrorHandlingCell */,
-				929F51CD2B56994F00C468AA /* LocationAccessRequest */,
+				929F51CD2B56994F00C468AA /* AccessRequest */,
 			);
 			path = CommonPages;
 			sourceTree = "<group>";
@@ -887,12 +910,13 @@
 			path = UserDefaults;
 			sourceTree = "<group>";
 		};
-		929F51CD2B56994F00C468AA /* LocationAccessRequest */ = {
+		929F51CD2B56994F00C468AA /* AccessRequest */ = {
 			isa = PBXGroup;
 			children = (
 				929F51CE2B5699F100C468AA /* LocationAccessViewController.swift */,
+				4AA89D2E2B62613E00DEBD35 /* InternetAccessViewController.swift */,
 			);
-			path = LocationAccessRequest;
+			path = AccessRequest;
 			sourceTree = "<group>";
 		};
 		929F8F912B2EF3A000536E70 /* AdvTableViewCell */ = {
@@ -1241,6 +1265,7 @@
 		92AE0B122B43EED200E71A32 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				4A8D3A842B6104E400D8F29C /* NotificartionManager */,
 				929F51CA2B566EA500C468AA /* UserDefaults */,
 				929F1C9B2B4AB5C200B0F08F /* LocationService */,
 				929F1C982B4A6EBE00B0F08F /* AesEncryption */,
@@ -1606,6 +1631,7 @@
 				929F1C922B48366D00B0F08F /* GCM.swift in Sources */,
 				929F1C4E2B48366C00B0F08F /* UInt64+Extension.swift in Sources */,
 				929F1C842B48366D00B0F08F /* Padding.swift in Sources */,
+				4A8D3A862B61050000D8F29C /* NotificationManger.swift in Sources */,
 				929F1C592B48366C00B0F08F /* HMAC.swift in Sources */,
 				929F1D062B4D5CCE00B0F08F /* SDWebImageManager.swift in Sources */,
 				922CB7542B2E16330067805A /* UITableView+Extension.swift in Sources */,
@@ -1623,6 +1649,7 @@
 				929F51C72B56492300C468AA /* Application_keyConstant.swift in Sources */,
 				929F1C852B48366D00B0F08F /* PKCS7Padding.swift in Sources */,
 				92C3CD692B4524BD00706D99 /* CenteredCollectionViewFlowLayout.swift in Sources */,
+				4A8D3A8E2B625D3600D8F29C /* BaseViewController.swift in Sources */,
 				929F1CA32B4BE7E900B0F08F /* HomeTabLoyaltyDetailsModel.swift in Sources */,
 				92A66DA32B2C30A500CB8EF5 /* UIView+Extention.swift in Sources */,
 				929F1C8C2B48366D00B0F08F /* CFB.swift in Sources */,
@@ -1670,6 +1697,7 @@
 				929F1C5F2B48366C00B0F08F /* UInt128.swift in Sources */,
 				929F1CF22B4D085300B0F08F /* Tags.swift in Sources */,
 				929F51CF2B5699F100C468AA /* LocationAccessViewController.swift in Sources */,
+				4AA89D2F2B62613E00DEBD35 /* InternetAccessViewController.swift in Sources */,
 				929F1C7B2B48366D00B0F08F /* Updatable.swift in Sources */,
 				929F1C952B48366D00B0F08F /* OFB.swift in Sources */,
 				92112F572B306513005CA584 /* CollectionViewFiles.swift in Sources */,
@@ -1903,8 +1931,9 @@
 				DEVELOPMENT_TEAM = DV48BW2GWL;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Alsaree3App/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location for better user experience.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
@@ -1914,7 +1943,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = abc.test.Alsaree3App;
+				PRODUCT_BUNDLE_IDENTIFIER = abc.test.AlsareeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1933,8 +1962,9 @@
 				DEVELOPMENT_TEAM = DV48BW2GWL;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Alsaree3App/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location for better user experience.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
@@ -1944,7 +1974,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = abc.test.Alsaree3App;
+				PRODUCT_BUNDLE_IDENTIFIER = abc.test.AlsareeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

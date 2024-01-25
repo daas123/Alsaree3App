@@ -7,30 +7,35 @@
 import UIKit
 
 class LoaderManager {
-    private static let activityIndicator = ActivityIndicatorAnimationBallClipRotateMultiple()
-    private static var loaderView: UIView?
+    static var shared = LoaderManager()
+    private init() {}
+    
+    private let activityIndicator = ActivityIndicatorAnimationBallClipRotateMultiple()
+    private var loaderView: UIView?
 
-    class func showLoading(on view: UIView? = nil,backgroundColor : UIColor = UIColor.clear) {
-        let parentView = view ?? UIApplication.shared.windows.filter {$0.isKeyWindow}.first
-        loaderView = UIView(frame: parentView?.bounds ?? CGRect.zero)
-        loaderView?.backgroundColor = backgroundColor
-        parentView?.addSubview(loaderView!)
-
-        guard let layer = loaderView?.layer else { return }
-
-        activityIndicator.setUpAnimation(
-            in: layer,
-            size: CGSize(width: 30, height: 30),
-            color: ColorConstant.primaryYellowColor
-        )
-
-        loaderView?.center = parentView?.center ?? CGPoint.zero
+    func showLoading(on view: UIView? = nil,backgroundColor : UIColor = UIColor.clear) {
+        DispatchQueue.main.async {
+            let parentView = view ?? UIApplication.shared.windows.filter {$0.isKeyWindow}.first
+            self.loaderView = UIView(frame: parentView?.bounds ?? CGRect.zero)
+            self.loaderView?.backgroundColor = backgroundColor
+            parentView?.addSubview(self.loaderView!)
+            
+            guard let layer = self.loaderView?.layer else { return }
+            
+            self.activityIndicator.setUpAnimation(
+                in: layer,
+                size: CGSize(width: 30, height: 30),
+                color: ColorConstant.primaryYellowColor
+            )
+            
+            self.loaderView?.center = parentView?.center ?? CGPoint.zero
+        }
     }
 
-    class func hideLoader() {
+    func hideLoader() {
         DispatchQueue.main.async {
-            loaderView?.removeFromSuperview()
-            loaderView = nil
+            self.loaderView?.removeFromSuperview()
+            self.loaderView = nil
         }
     }
 }

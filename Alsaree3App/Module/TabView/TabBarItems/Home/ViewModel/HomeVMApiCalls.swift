@@ -9,16 +9,17 @@ import Foundation
 extension HomeTabViewModel{
     func callAppSettingApi(){
         let parameters = AppSettingParams(device_type: DeviceInfo.deviceType.rawValue, type: DeviceInfo.type.rawValue, device_token:kDeviceToken, device_unique_id:kDeviceUniqueId )
-        LoaderManager.showLoading()
+        LoaderManager.shared.showLoading()
         HomeScreenServices().getAppSettings(parameters: parameters) { responce  in
             switch responce{
             case.success(let data):
                 authKey = data.authKey
                 SDWebImageManager.shared.imageBaseUrl = data.imageBaseURL
                 self.dispatchGroup.leave()
-                LoaderManager.hideLoader()
+                LoaderManager.shared.hideLoader()
                 print("callAppSettingApi Done")
             case.failure(let error):
+                print("callAppSettingApi falied")
                 self.apiCallFailed()
                 print(error.localizedDescription)
             }
@@ -32,10 +33,11 @@ extension HomeTabViewModel{
             switch responce{
             case .success(let data):
                 print("callFeedBackApi Done")
-                self.dispatchGroup.leave()
                 self.checkFeedBackData = data
+                self.dispatchGroup.leave()
             case .failure(let error):
                 self.apiCallFailed()
+                print("callFeedBackApi failed")
                 print(error.localizedDescription)
             }
         }
@@ -47,10 +49,11 @@ extension HomeTabViewModel{
             switch responce{
             case .success(let data):
                 print("callLoyaltyDetailApi Done")
-                self.dispatchGroup.leave()
                 self.loyaltyDetail = data
-            case .failure(let error):
                 self.dispatchGroup.leave()
+            case .failure(let error):
+                self.apiCallFailed()
+                print("callLoyaltyDetailApi failed")
                 print(error.localizedDescription)
             }
         }
@@ -81,8 +84,8 @@ extension HomeTabViewModel{
                 kStoreDeliveryId = data.deliveries[0].id
                 self.homeTabDeligate?.setValueOfCurrentLocation(value: data.city.cityCode)
                 self.deliveryListForNearestCityData = data
-                
             case .failure(let error):
+                print("callDeliveryListForNearestCityApi failed")
                 self.apiCallFailed()
                 print(error.localizedDescription)
             }
@@ -118,6 +121,7 @@ extension HomeTabViewModel{
                 self.banner = data.banner
                 self.dispatchGroup.leave()
             case .failure(let error):
+                print("callHomeScreenMainDetailWithBannerImagesOffersApi failed")
                 self.apiCallFailed()
                 print(error.localizedDescription)
             }
@@ -159,9 +163,9 @@ extension HomeTabViewModel{
                 }else{
                     self.dispatchGroup.leave()
                 }
-                
             case .failure(let error):
                 self.apiCallFailed()
+                print("callHomeScreenStoreListApi failed")
                 print(error.localizedDescription)
             }
         }
@@ -179,6 +183,7 @@ extension HomeTabViewModel{
                 self.dispatchGroup.leave()
             case .failure(let error):
                 self.apiCallFailed()
+                print("callPushZoneApi failed")
                 print(error.localizedDescription)
             }
         }
@@ -213,6 +218,7 @@ extension HomeTabViewModel{
                 }
             case .failure(let error):
                 self.apiCallFailed()
+                print("callHomeScreenGetCloseStoreListApi failed")
                 print(error.localizedDescription)
             }
         }

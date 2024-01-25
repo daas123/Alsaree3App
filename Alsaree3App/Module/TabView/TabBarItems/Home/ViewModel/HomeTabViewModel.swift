@@ -19,7 +19,7 @@ protocol NavigateFormHomeTab{
 class HomeTabViewModel{
     
     var activeOrder = false
-    
+    let operationQueue = OperationQueue()
     let dispatchGroup = DispatchGroup()
     // All APi Data
     var appSettingData : AppSettingModel?
@@ -55,6 +55,9 @@ class HomeTabViewModel{
     
     func getTableViewCount(Section:Int) -> Int{
         if Section == 0{
+            if recentlyAddedStores == nil || homeScreenStoreListData == nil {
+                return 1
+            }
             return SectionAboveHeader.allCases.count
         }else if Section == 1{
             return (SectionBelowScrollingHeader.allCases.count + ((homeScreenStoreListData?.count ?? 0)-1))

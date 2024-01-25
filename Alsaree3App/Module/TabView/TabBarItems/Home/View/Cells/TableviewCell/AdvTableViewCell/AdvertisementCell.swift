@@ -96,6 +96,7 @@ class AdvertisementCell: UITableViewCell {
     }
 
     func setupPageControl() {
+        advPageControl.isUserInteractionEnabled = false
         advPageControl.currentPageIndicatorTintColor = ColorConstant.primaryYellowColor
         advPageControl.pageIndicatorTintColor = ColorConstant.borderColorGray
         advPageControl.currentPage = 0

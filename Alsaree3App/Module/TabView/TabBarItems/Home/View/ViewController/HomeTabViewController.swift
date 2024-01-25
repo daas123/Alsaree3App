@@ -7,7 +7,7 @@
 //
 
 import UIKit
-class HomeTabViewController: UIViewController {
+class HomeTabViewController: BaseViewController {
     
     // MARK: IBOutlet
     @IBOutlet weak var scooterimg: UIImageView!
@@ -34,6 +34,7 @@ class HomeTabViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupObserver()
         viewModel.homeTabDeligate = self
         viewModel.checkLocationAccess()
         settingDelegate()
@@ -113,6 +114,13 @@ class HomeTabViewController: UIViewController {
         
     }
     
+    func setupObserver(){
+        NotificationManager().addObserver(forName: .reloadData) { _ in
+            self.dismiss(animated: true)
+            self.viewModel.checkLocationAccess()
+        }
+    }
+    
     func setupUI(){
         self.navigationController?.isNavigationBarHidden = true
     }
@@ -159,7 +167,7 @@ class HomeTabViewController: UIViewController {
                 UIView.animate(withDuration: 0.3) {
                     cell.transform = .identity
                 }completion: { (_) in
-                    self.pushToNextScreen(indexPath: indexPath)
+//                    self.pushToNextScreen(indexPath: indexPath)
                 }
             }
         }
@@ -191,14 +199,14 @@ extension HomeTabViewController:UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if viewModel.recentlyAddedStores == nil || viewModel.homeScreenStoreListData == nil {
-            if (LocationManager.shared.isLocationAccess && (viewModel.isApiCallFailed == false)){
-                let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTabShimmerCell", for: indexPath) as! HomeTabShimmerCell
-                return cell
-            }else{
+            if viewModel.isApiCallFailed{
                 let loadingCell = tableView.dequeueReusableCell(withIdentifier: "LoadingTableViewCell", for: indexPath) as! LoadingTableViewCell
                 loadingCell.homeTabdeilgate = self
                 loadingCell.showRetryButton()
                 return loadingCell
+            }else{
+                let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTabShimmerCell", for: indexPath) as! HomeTabShimmerCell
+                return cell
             }
         }
         
@@ -207,7 +215,6 @@ extension HomeTabViewController:UITableViewDataSource{
             switch indexPath.row{
             case 0 :
                 if true{
-                    LoaderManager.hideLoader()
                     let cell = tableView.getCell(identifier: CellConstant.activeOrderHomeTabCell.rawValue) as! ActiveOrderHomeTabCell
                     cell.selectionStyle = .none
                     return cell
@@ -401,9 +408,13 @@ extension HomeTabViewController:NavigateFormHomeTab{
     }
     
     func showLocationAccessScreen() {
-        let storyboard = UIStoryboard(name: "CommonScreens", bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier:"LocationAccessViewController") as! LocationAccessViewController
-        self.present(viewController, animated: true, completion: nil)
+        LocationManager.shared.requestLocationPermission { islocationAccess in
+            if !islocationAccess{
+                let storyboard = UIStoryboard(name: "CommonScreens", bundle: nil)
+                let viewController = storyboard.instantiateViewController(withIdentifier:"LocationAccessViewController") as! LocationAccessViewController
+                self.present(viewController, animated: true, completion: nil)
+            }
+        }
     }
     
 }

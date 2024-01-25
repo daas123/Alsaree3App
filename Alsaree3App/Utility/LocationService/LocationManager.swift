@@ -27,12 +27,11 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     
     func requestLocationPermission(completion: @escaping (Bool) -> Void) {
         let status = CLLocationManager.authorizationStatus()
-        
         switch status {
         case .authorizedWhenInUse, .authorizedAlways:
             completion(true)
         case .denied, .restricted:
-//            showLocationAccessAlert()
+            locationManager.requestWhenInUseAuthorization()
             completion(false)
         case .notDetermined:
             locationManager.requestWhenInUseAuthorization()
@@ -67,6 +66,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
                 } else {
                     self.currentLocation?.longitude = 44.416270
                     self.currentLocation?.latitude = 33.341658
+                    NotificationManager().postReloadData()
                     completion(self.currentLocation)
                 }
             } else {
@@ -75,42 +75,15 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
             
         }
     }
-    
-    func openAppSettings() {
-        guard let settingsURL = URL(string: UIApplication.openSettingsURLString) else {
-            return
-        }
-        
-        if UIApplication.shared.canOpenURL(settingsURL) {
-            UIApplication.shared.open(settingsURL, completionHandler: nil)
-        }
-    }
-    
-    private func showLocationAccessAlert() {
-        let alert = UIAlertController(
-            title: "Location Access Required",
-            message: "Please enable location access for a better user experience.",
-            preferredStyle: .alert
-        )
-        
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        alert.addAction(UIAlertAction(title: "Settings", style: .default) { _ in
-            self.openAppSettings()
-        })
-        
-        UIApplication.shared.windows.first?.rootViewController?.present(alert, animated: true, completion: nil)
-    }
-    
-    // MARK: - CLLocationManagerDelegate
+        // MARK: - CLLocationManagerDelegate
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         switch status {
         case .authorizedWhenInUse, .authorizedAlways:
-            isLocationAccess = true
             startMonitoringSignificantLocationChanges()
         case .denied, .restricted:
+            locationManager.requestWhenInUseAuthorization()
             isLocationAccess = false
-//            showLocationAccessAlert()
         case .notDetermined:
             break
         @unknown default:
@@ -121,11 +94,13 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let newLocation = locations.last?.coordinate else { return }
 //        currentLocation = newLocation
-        
+        isLocationAccess = true
         if self.isSimulator {
             currentLocation = newLocation
+            NotificationManager().postReloadData()
         } else {
             currentLocation = CLLocationCoordinate2D(latitude: 33.341658, longitude: 44.416270)
+            NotificationManager().postReloadData()
         }
     }
     
