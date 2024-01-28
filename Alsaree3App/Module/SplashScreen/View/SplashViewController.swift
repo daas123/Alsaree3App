@@ -31,7 +31,7 @@ class SplashViewController: UIViewController {
     }
     
     func setupAnimation(){
-        animationView = .init(name: "alsaree_animation",subdirectory: "Animation")
+        animationView = .init(name: AnimationConstant.alsaree_animation.rawValue,subdirectory: "Animation")
         animationView!.frame = animationviewLayout.bounds
         animationView!.contentMode = .scaleAspectFit
         animationView!.loopMode = .loop
@@ -44,21 +44,21 @@ class SplashViewController: UIViewController {
 
 extension SplashViewController : splashScreenActions{
     func navigateToAppSettingErrorState() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard = UIStoryboard(name: StoryBoardConstant.main.rawValue, bundle: nil)
         if let initialViewController = storyboard.instantiateInitialViewController() {
             self.view.window?.rootViewController = initialViewController
         }
     }
     
     func navigateToInValidAreaLocation() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard = UIStoryboard(name: StoryBoardConstant.main.rawValue, bundle: nil)
         if let initialViewController = storyboard.instantiateInitialViewController() {
             self.view.window?.rootViewController = initialViewController
         }
     }
     
     func navigateToHomeTab() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard = UIStoryboard(name: StoryBoardConstant.main.rawValue, bundle: nil)
         if let initialViewController = storyboard.instantiateInitialViewController() {
             self.view.window?.rootViewController = initialViewController
         }

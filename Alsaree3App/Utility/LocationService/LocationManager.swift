@@ -105,6 +105,6 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print("Location manager failed with error: \(error.localizedDescription)")
+        debugPrint("Location manager failed with error: \(error.localizedDescription)")
     }
 }

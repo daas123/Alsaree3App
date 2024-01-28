@@ -23,21 +23,21 @@ class BaseViewController: UIViewController {
     }
     
     func networkStatusDidChange() {
-            let storyboard = UIStoryboard(name: "CommonScreens", bundle: nil)
-            let viewController = storyboard.instantiateViewController(withIdentifier:"InternetAccessViewController") as! InternetAccessViewController
+        let storyboard = UIStoryboard(name: StoryBoardConstant.commonScreens.rawValue, bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: ViewControllerConstant.internetAccessViewController.rawValue) as! InternetAccessViewController
             self.present(viewController, animated: true, completion: nil)
     }
     
     func locationStatusChanged(){
-            let storyboard = UIStoryboard(name: "CommonScreens", bundle: nil)
-            let viewController = storyboard.instantiateViewController(withIdentifier:"LocationAccessViewController") as! LocationAccessViewController
+            let storyboard = UIStoryboard(name: StoryBoardConstant.commonScreens.rawValue, bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier:ViewControllerConstant.locationAccessViewController.rawValue) as! LocationAccessViewController
             self.present(viewController, animated: true, completion: nil)
     }
     
     
     func noLocationDeliverable(){
-            let storyboard = UIStoryboard(name: "CommonScreens", bundle: nil)
-            let viewController = storyboard.instantiateViewController(withIdentifier:"LocationAccessViewController") as! LocationAccessViewController
+            let storyboard = UIStoryboard(name: StoryBoardConstant.commonScreens.rawValue, bundle: nil)
+            let viewController = storyboard.instantiateViewController(withIdentifier:ViewControllerConstant.noLocationDeliverableVc.rawValue) as! NoLocationDeliverableVc
             self.present(viewController, animated: true, completion: nil)
     }
     

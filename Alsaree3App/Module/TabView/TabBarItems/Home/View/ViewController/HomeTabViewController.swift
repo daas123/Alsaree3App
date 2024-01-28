@@ -26,8 +26,8 @@ class HomeTabViewController: BaseViewController {
     var refreshControl = UIRefreshControl()
     
     // For Tabbar visible/ hide
-    private var previousScrollOffset: CGFloat = 0
-    private var tabBarVisible = true
+    var previousScrollOffset: CGFloat = 0
+    var tabBarVisible = true
     
     override func viewWillAppear(_ animated: Bool) {
     }
@@ -86,8 +86,8 @@ class HomeTabViewController: BaseViewController {
         
         // Setting the label and button values Manually
         view.setLabelText(lblrefrence: applicationNamelbl, lbltext: TextConstant.alsaree3App.rawValue, fontSize: 16,alignmentLeft: true)
-        view.setLabelText(lblrefrence: locationLbl, lbltext: "Al Furjan Area", fontSize: 12,lineHeightMultiple: 0.8)
-        view.setImage(imageView: downArrowImage, imageName: "downArrow")
+        view.setLabelText(lblrefrence: locationLbl, lbltext: TextConstant.alFurjanArea.rawValue, fontSize: 12,lineHeightMultiple: 0.8)
+        view.setImage(imageView: downArrowImage, imageName: ImageConstant.downArrow.rawValue)
         view.setImage(imageView: scooterimg, imageName: ImageConstant.scooter.rawValue)
         view.setCircleWithBorderColor(imageView: scooterimg, borderColor: ColorConstant.borderColorYellow, borderWidth: 1)
     }
@@ -124,7 +124,7 @@ class HomeTabViewController: BaseViewController {
         self.navigationController?.isNavigationBarHidden = true
         
         // set Back to top button
-        view.setButtonWithTextAndImage(button: backButton, label: "     Back to Top", image: "arrow_up", textColor: UIColor.white, fontSize: 12, imageSize: CGSize(width: 15, height: 15),imagePosition: .left,imageTintColor: UIColor.white,backColor: UIColor.black,cornerRadius: 35/2)
+        view.setButtonWithTextAndImage(button: backButton, label: ButtonTextConstant.backtoTop.rawValue, image: ImageConstant.arrow_up.rawValue, textColor: UIColor.white, fontSize: 12, imageSize: CGSize(width: 15, height: 15),imagePosition: .left,imageTintColor: UIColor.white,backColor: UIColor.black,cornerRadius: 35/2)
         
         backButton.addTarget(self, action: #selector(scrollToFirstRow), for: .touchUpInside)
         let buttonY : CGFloat?
@@ -161,47 +161,6 @@ class HomeTabViewController: BaseViewController {
         self.hometabTableView.scrollToRow(at: indexPath, at: .top, animated: true)
     }
     
-    func setupSteckyHeader(_ scrollView: UIScrollView){
-        if viewModel.recentlyAddedStores == nil || viewModel.homeScreenStoreListData == nil {
-            return
-        }
-        let headerRect = hometabTableView.rect(forSection: 1)
-        if headerRect.origin.y <= scrollView.contentOffset.y && scrollView.contentOffset.y <= headerRect.origin.y + headerRect.size.height {
-            headerView?.hideImages()
-            headerView?.setCustomConstrain(heigtht: 40)
-            //            showProgressView()
-            headerView?.categroyBackView.backgroundColor = ColorConstant.borderColorGray
-        } else {
-            headerView?.backgroundColor = UIColor.clear
-            headerView?.showImages()// Reset to original height here
-            headerView?.setDefaultConstrain()
-            hideProgressView()
-            headerView?.categroyBackView.backgroundColor = UIColor.clear
-        }
-    }
-    
-    func setupScrollToTop(_ scrollView: UIScrollView ){
-        if viewModel.recentlyAddedStores == nil || viewModel.homeScreenStoreListData == nil {
-            return
-        }
-        
-        let yOffset = scrollView.contentOffset.y
-        let threshold: CGFloat = hometabTableView.bounds.height
-        
-        if yOffset >= threshold {
-            // The user has scrolled beyond the threshold, make the button visible
-            UIView.animate(withDuration: 0.5) {
-                self.backButton.isHidden = false
-            }
-        } else {
-            // The user is above the threshold, hide the button
-            UIView.animate(withDuration: 0.5) {
-                self.backButton.isHidden = true
-            }
-        }
-        
-    }
-    
     func animateCellSelection(at indexPath: IndexPath) {
         if let cell = hometabTableView.cellForRow(at: indexPath) {
             UIView.animate(withDuration: 0.3, animations: {
@@ -217,7 +176,7 @@ class HomeTabViewController: BaseViewController {
     }
     
     func pushToNextScreen(indexPath: IndexPath) {
-        let newViewController = storyboard?.instantiateViewController(withIdentifier: "RestaurantDetailsVC") as! RestaurantDetailsVC
+        let newViewController = storyboard?.instantiateViewController(withIdentifier: ViewControllerConstant.restaurantDetailsVC.rawValue) as! RestaurantDetailsVC
         viewModel.activeOrder = true
         newViewController.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(newViewController, animated: true)
@@ -229,206 +188,6 @@ class HomeTabViewController: BaseViewController {
     
 }
 
-extension HomeTabViewController:UITableViewDataSource{
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return (viewModel.recentlyAddedStores == nil || viewModel.homeScreenStoreListData == nil) ? 1 : 2
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0{
-            return viewModel.getTableViewCount(Section: 0)
-        }else{
-            return viewModel.getTableViewCount(Section: 1)
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if viewModel.recentlyAddedStores == nil || viewModel.homeScreenStoreListData == nil {
-            if viewModel.isApiCallFailed{
-                let loadingCell = tableView.dequeueReusableCell(withIdentifier: "LoadingTableViewCell", for: indexPath) as! LoadingTableViewCell
-                loadingCell.homeTabdeilgate = self
-                loadingCell.showRetryButton()
-                return loadingCell
-            }else{
-                let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTabShimmerCell", for: indexPath) as! HomeTabShimmerCell
-                return cell
-            }
-        }
-        
-        if indexPath.section == 0 {
-            
-            switch indexPath.row{
-            case 0 :
-                if true{
-                    let cell = tableView.getCell(identifier: CellConstant.activeOrderHomeTabCell.rawValue) as! ActiveOrderHomeTabCell
-                    cell.selectionStyle = .none
-                    return cell
-                }else{
-                    let cell = tableView.getCell(identifier: CellConstant.goldCategoryCardCellTableViewCell.rawValue) as! GoldCategoryCardCellTableViewCell
-                    cell.selectionStyle = .none
-                    return cell
-                }
-            case 1:
-                let cell = tableView.getCell(identifier: CellConstant.bannerHomeTabCell.rawValue) as! BannerHomeTabCell
-                cell.bannerData = viewModel.loyaltyDetail
-                cell.selectionStyle = .none
-                cell.setupUi()
-                return cell
-            default:
-                return UITableViewCell()
-            }
-        }else{
-            
-            switch indexPath.row{
-            case 0 :
-                let cell = tableView.getCell(identifier: CellConstant.advertisementCell.rawValue) as! AdvertisementCell
-                cell.advertisementBannerData = viewModel.banner
-                cell.reloadData()
-                cell.selectionStyle = .none
-                return cell
-            case 1:
-                let cell = tableView.getCell(identifier: CellConstant.foodCatrgoryCell.rawValue) as! FoodCatrgoryCell
-                cell.foodCategoryData = viewModel.tags
-                cell.selectionStyle = .none
-                return cell
-            case 2:
-                let cell = tableView.getCell(identifier: CellConstant.resturentTableViewCell.rawValue) as! ResturentTableViewCell
-                cell.hometabDelegate = self
-                cell.resturentTableViewCellData = viewModel.recentlyAddedStores
-                cell.setText(StoreTitile: viewModel.recentlyAddedTitle ?? "Resturent")
-                cell.selectionStyle = .none
-                return cell
-            case 3:
-                let cell = tableView.getCell(identifier: CellConstant.resturentTableViewCell.rawValue) as! ResturentTableViewCell
-                cell.resturentTableViewCellData = viewModel.nearbyResturentStore
-                cell.setText(StoreTitile: viewModel.nearbyResturentTitle ?? "Resturent")
-                cell.selectionStyle = .none
-                return cell
-            case 4:
-                let cell = tableView.getCell(identifier: CellConstant.resturentTableViewCell.rawValue) as! ResturentTableViewCell
-                cell.resturentTableViewCellData = viewModel.mostPopularStore
-                cell.setText(StoreTitile: viewModel.mostPopularTitle ?? "Resturent")
-                cell.selectionStyle = .none
-                return cell
-            default:
-                
-                if let homeScreenStorelistCount = viewModel.homeScreenStoreListData?.count{
-                    if homeScreenStorelistCount-1 == indexPath.row{
-                        viewModel.callHomeScreenStorelistNextPageApi()
-                    }
-                }
-                
-                let cell = tableView.getCell(identifier: CellConstant.resturentDetailsTableViewCell.rawValue) as! ResturentDetailsTableViewCell
-                cell.resturentDetailsTableViewCellData = viewModel.homeScreenStoreListData?[indexPath.row - 5]
-                cell.reloadCellData()
-                cell.selectionStyle = .none
-                return cell
-            }
-        }
-        
-    }
-    
-    
-}
-extension HomeTabViewController : UITableViewDelegate{
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        animateCellSelection(at: indexPath)
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if viewModel.recentlyAddedStores == nil || viewModel.homeScreenStoreListData == nil {
-            return tableView.bounds.height
-        }
-        switch (indexPath.section, indexPath.row) {
-        case (0, 0):
-            return viewModel.activeOrder ? UITableView.automaticDimension : 0
-        case (1, _):
-            return UITableView.automaticDimension
-        default:
-            return UITableView.automaticDimension
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        
-        switch section{
-        case 1:
-            headerView = Bundle.main.loadNibNamed("HomeTabCategoryHeader", owner: self, options: nil)?.first as? HomeTabCategoryHeader
-            return headerView
-            
-        default:
-            return nil
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if viewModel.recentlyAddedStores == nil || viewModel.homeScreenStoreListData == nil {
-            return 0
-        }
-        if section == 0{
-            return 0
-        }else{
-            return UITableView.automaticDimension
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        hometabTableView.bounds.height*0.7
-    }
-    
-}
-
-extension HomeTabViewController : UIScrollViewDelegate{
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
-        //MARK:  for sticky header
-        if viewModel.recentlyAddedStores == nil || viewModel.homeScreenStoreListData == nil {
-            return
-        }
-        setupSteckyHeader(scrollView)
-        setupScrollToTop(scrollView)
-        
-        //MARK: For tab bar hide/show
-        let currentScrollOffset = scrollView.contentOffset.y
-        let scrollDirection: ScrollDirection
-        if currentScrollOffset > previousScrollOffset {
-            scrollDirection = .down
-        } else if currentScrollOffset < previousScrollOffset {
-            scrollDirection = .up
-        } else {
-            scrollDirection = .none
-        }
-        
-        let threshold: CGFloat = 100
-        if currentScrollOffset > threshold {
-            updateTabBarVisibility(for: scrollDirection)
-        }
-        
-        previousScrollOffset = currentScrollOffset
-        
-        
-    }
-    
-    private func updateTabBarVisibility(for scrollDirection: ScrollDirection) {
-        let isScrollingDown = scrollDirection == .down
-        let isScrollingUp = scrollDirection == .up
-        
-        let animationDuration: TimeInterval = 0.3
-        
-        UIView.animate(withDuration: animationDuration, animations: {
-            // Adjust the Y-coordinate based on the scroll direction
-            self.tabBarController?.tabBar.frame.origin.y = isScrollingDown ?
-            (self.view.frame.origin.y + self.view.frame.size.height) :
-            (self.view.frame.origin.y + self.view.frame.size.height - self.tabBarController!.tabBar.frame.size.height)
-        }) { (_) in
-            // Optionally, you can add completion code here if needed
-        }
-        
-    }
-    
-}
-
 //MARK: implimentation of pull to reload
 extension HomeTabViewController{
     @objc func refreshData(_ sender: Any) {
@@ -436,39 +195,3 @@ extension HomeTabViewController{
         viewModel.reloadOnPull()
     }
 }
-
-extension HomeTabViewController:NavigateFormHomeTab{
-    func reloadTableView() {
-        self.hometabTableView.reloadData()
-    }
-    
-    func setValueOfCurrentLocation(value: String) {
-        DispatchQueue.main.async{
-            self.locationLbl.text = value
-        }
-    }
-    
-    
-    func seeMoreBtnNavigation() {
-        let newViewController = storyboard?.instantiateViewController(withIdentifier: "RestaurantDetailsVC") as! RestaurantDetailsVC
-        // extra function
-        viewModel.activeOrder = true
-        newViewController.hidesBottomBarWhenPushed = true
-        //        navigationController?.pushViewController(newViewController, animated: true)
-        showLocationAccessScreen()
-    }
-    
-    func showLocationAccessScreen() {
-        LocationManager.shared.requestLocationPermission { islocationAccess in
-            if !islocationAccess{
-                let storyboard = UIStoryboard(name: "CommonScreens", bundle: nil)
-                let viewController = storyboard.instantiateViewController(withIdentifier:"LocationAccessViewController") as! LocationAccessViewController
-                self.present(viewController, animated: true, completion: nil)
-            }
-        }
-    }
-    
-    
-}
-
-

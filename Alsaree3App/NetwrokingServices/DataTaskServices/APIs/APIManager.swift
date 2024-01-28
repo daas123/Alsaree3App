@@ -58,14 +58,14 @@ class APIManager {
             // ensure there is no error for this HTTP response
             guard error == nil else {
                 completionHandler(.failure(error!))
-                print ("error: \(error!)")
+                debugPrint ("error: \(error!)")
                 return
             }
             
             // ensure there is data returned from this HTTP response
             guard let content = data else {
                 completionHandler(.failure(error!))
-                print("No data")
+                debugPrint("No data")
                 return
             }
             
@@ -74,7 +74,7 @@ class APIManager {
                 completionHandler(.success(content))
             } catch let decodingError {
                 completionHandler(.failure(decodingError))
-                print("Decoding error: \(decodingError)")
+                debugPrint("Decoding error: \(decodingError)")
             }
             
         }

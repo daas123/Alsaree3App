@@ -20,7 +20,7 @@ class FoodCatCollectionViewCell: UICollectionViewCell {
     }
     
     func setupUI(){
-        setLabelText(lblrefrence: categoryTitle, lbltext: singleFoodCategoryData?.name ?? "Brand", fontSize: 12)
+        setLabelText(lblrefrence: categoryTitle, lbltext: singleFoodCategoryData?.name ?? "", fontSize: 12)
         SDWebImageManager.shared.loadImage(with: singleFoodCategoryData?.image_url ?? "", into: foodImage)
         foodImage.layer.cornerRadius = ((self.bounds.width-5)/2)
         foodImage.clipsToBounds = true

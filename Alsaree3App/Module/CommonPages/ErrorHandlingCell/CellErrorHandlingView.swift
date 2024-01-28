@@ -14,8 +14,7 @@ class CellErrorHandlingView: UIView {
         super.awakeFromNib()
     }
     
-    
     @IBAction func OnRetryClick(_ sender: UIButton) {
-        print("hello")
+        debugPrint("OnRetryClick")
     }
 }

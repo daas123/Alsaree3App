@@ -14,7 +14,7 @@ class SDWebImageManager {
 
     private init() {}
 
-    func loadImage(with urlString: String, into imageView: UIImageView, placeholder: UIImage? = UIImage(named: "placeholder"),isbaseUrlRequired : Bool = true) {
+    func loadImage(with urlString: String, into imageView: UIImageView, placeholder: UIImage? = UIImage(named: ImageConstant.placeholder.rawValue),isbaseUrlRequired : Bool = true) {
         var url : URL?
         if isbaseUrlRequired{
             url = URL(string: (imageBaseUrl+urlString))

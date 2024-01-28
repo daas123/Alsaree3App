@@ -186,7 +186,7 @@ extension ResturentDetailsCollectionViewCell : UICollectionViewDataSource{
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FeatureCell", for: indexPath) as! FeatureCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellConstant.featureCell.rawValue, for: indexPath) as! FeatureCell
         cell.feature = resturentFeatureDate?[indexPath.row]
         cell.fillDetails()
         cell.featurelbl.preferredMaxLayoutWidth = collectionView.frame.width - 16

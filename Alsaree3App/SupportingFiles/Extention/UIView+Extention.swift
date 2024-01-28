@@ -152,7 +152,7 @@ extension UIView{
         if let cairoFont = UIFont(name: FontConstant.bold.rawValue, size: 12) {
             attributedString.addAttribute(.font, value: cairoFont, range: range)
         } else {
-            print("Error loading Cairo-Bold font")
+            debugPrint("Error loading Cairo-Bold font")
         }
         attributedString.addAttribute(.foregroundColor, value: color, range: range)
         return attributedString

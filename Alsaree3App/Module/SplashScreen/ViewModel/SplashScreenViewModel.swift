@@ -35,11 +35,11 @@ class SplashScreenViewModel{
                 SDWebImageManager.shared.imageBaseUrl = data.imageBaseURL
                 self.dispatchGroup.leave()
 //                LoaderManager.shared.hideLoader()
-                print("callAppSettingApi Done")
+                debugPrint("callAppSettingApi Done")
             case.failure(let error):
-                print("callAppSettingApi falied")
+                debugPrint("callAppSettingApi falied")
                 self.apiCallFailed()
-                print(error.localizedDescription)
+                debugPrint(error.localizedDescription)
             }
             
         }

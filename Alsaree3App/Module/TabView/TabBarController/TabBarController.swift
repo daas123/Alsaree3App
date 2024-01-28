@@ -9,7 +9,7 @@ import UIKit
 
 class TabBarController: UITabBarController,UITabBarControllerDelegate {
     private var bounceAnimation: CAKeyframeAnimation = {
-        let bounceAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
+        let bounceAnimation = CAKeyframeAnimation(keyPath: AnimationConstant.transformscale.rawValue)
         bounceAnimation.values = [1.0, 1.4, 0.9, 1.02, 1.0]
         bounceAnimation.duration = TimeInterval(0.3)
         bounceAnimation.calculationMode = CAAnimationCalculationMode.cubic

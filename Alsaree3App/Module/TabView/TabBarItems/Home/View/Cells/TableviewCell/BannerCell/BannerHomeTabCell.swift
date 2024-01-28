@@ -25,7 +25,7 @@ class BannerHomeTabCell: UITableViewCell {
         bannerImageView.layer.cornerRadius = 11
         
         if bannerData == nil {
-            showErrorMessage(nameNib: "CellErrorHandlingView", uiView:bannerImageView)
+            showErrorMessage(nameNib: nibNamesConstant.cellErrorHandlingView.rawValue, uiView:bannerImageView)
             SDWebImageManager.shared.loadImage(with:bannerData?.zero_point_image_url ?? "", into: bannerImageView, isbaseUrlRequired: false)
         } else {
             loadBannerImage()

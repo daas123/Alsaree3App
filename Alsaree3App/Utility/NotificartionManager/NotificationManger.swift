@@ -7,10 +7,10 @@
 
 import Foundation
 extension Notification.Name {
-    static let networkStatusChanged = Notification.Name("NetworkStatusChanged")
-    static let locationAccessRestricted = Notification.Name("locationAccessRestricted")
-    static let reloadData = Notification.Name("ReloadData")
-    static let noLocationDeliverable = Notification.Name("noLocationDeliverable")
+    static let networkStatusChanged = Notification.Name(NotificationConstant.networkStatusChanged.rawValue)
+    static let locationAccessRestricted = Notification.Name(NotificationConstant.locationAccessRestricted.rawValue)
+    static let reloadData = Notification.Name(NotificationConstant.reloadData.rawValue)
+    static let noLocationDeliverable = Notification.Name(NotificationConstant.noLocationDeliverable.rawValue)
 }
 
 class NotificationManager {

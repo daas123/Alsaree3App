@@ -33,17 +33,17 @@ enum TextConstant:String{
     case orderNumber5thAvenueAlFurjanArea = "Order Number - 5th Avenue - Al Furjan Area"
     case yourGoldCategoryCard = "Your Gold Category Card"
     case goldCategoryCard = "Gold Category Card"
-    
     case youveplacedthreeorderswithusOrdermoretoobtainour = "You've placed three orders with us. Order more to obtain our "
-    
-    
-    
-    
+    case alFurjanArea = "Al Furjan Area"
+    case resturent = "Resturent"
+    case getoffonselecteditems = "Get off on selected items"
+    case lowdeliveryfee = "Low delivery fee"
 }
 
 enum ButtonTextConstant:String{
     case alFurjanArea = "Al Furjan Area"
     case seeMore = "See More"
+    case backtoTop = "Back to Top"
     
 }
 
@@ -53,6 +53,15 @@ enum ImageConstant:String{
     case orderUpdate = "orderUpdate"
     case arrowRight = "arrowRight"
     case bannerAdvertisement = "bannerAdvertisement"
+    case arrow_up = "arrow_up"
+    case placeholder = "placeholder"
+}
+
+enum ViewControllerConstant : String {
+    case restaurantDetailsVC = "RestaurantDetailsVC"
+    case locationAccessViewController = "LocationAccessViewController"
+    case internetAccessViewController = "InternetAccessViewController"
+    case noLocationDeliverableVc = "NoLocationDeliverableVc"
 }
 
 enum CellConstant : String{
@@ -65,9 +74,34 @@ enum CellConstant : String{
     case goldCategoryCardCellTableViewCell = "GoldCategoryCardCellTableViewCell"
     case resturentDetailsTableViewCell = "ResturentDetailsTableViewCell"
     case errorStateTableViewCell = "ErrorStateTableViewCell"
+    case loadingTableViewCell = "LoadingTableViewCell"
+    case homeTabShimmerCell = "HomeTabShimmerCell"
+    case featureCell = "FeatureCell"
     
+}
+
+enum nibNamesConstant:String{
+    case homeTabCategoryHeader = "HomeTabCategoryHeader"
+    case commonScreens = "CommonScreens"
+    case cellErrorHandlingView = "CellErrorHandlingView"
+    case closeStoreView = "CloseStoreView"
 }
 
 enum AnimationConstant:String{
     case transformrotationz = "transform.rotation.z"
+    case transformscale = "transform.scale"
+    case alsaree_animation = "alsaree_animation"
+    
+}
+
+enum StoryBoardConstant : String {
+    case commonScreens = "CommonScreens"
+    case main = "Main"
+}
+
+enum NotificationConstant :  String{
+    case networkStatusChanged = "NetworkStatusChanged"
+    case locationAccessRestricted = "locationAccessRestricted"
+    case reloadData = "ReloadData"
+    case noLocationDeliverable = "noLocationDeliverable"
 }

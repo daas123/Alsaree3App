@@ -133,7 +133,7 @@ extension APIServices {
                 
             }
         } catch {
-            print(error)
+            debugPrint(error)
         }
         let device_type = "ios"
         let language = "en"

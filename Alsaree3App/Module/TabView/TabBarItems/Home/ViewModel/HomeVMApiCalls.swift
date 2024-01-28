@@ -13,13 +13,13 @@ extension HomeTabViewModel{
         HomeScreenServices().getFeedBackResponce(parameters: parameter) { responce in
             switch responce{
             case .success(let data):
-                print("callFeedBackApi Done")
+                debugPrint("callFeedBackApi Done")
                 self.checkFeedBackData = data
                 self.dispatchGroup.leave()
             case .failure(let error):
                 self.apiCallFailed()
-                print("callFeedBackApi failed")
-                print(error.localizedDescription)
+                debugPrint("callFeedBackApi failed")
+                debugPrint(error.localizedDescription)
             }
         }
     }
@@ -29,13 +29,13 @@ extension HomeTabViewModel{
         HomeScreenServices().getLoyaltyDetail(parameters: parameter) { responce in
             switch responce{
             case .success(let data):
-                print("callLoyaltyDetailApi Done")
+                debugPrint("callLoyaltyDetailApi Done")
                 self.loyaltyDetail = data
                 self.dispatchGroup.leave()
             case .failure(let error):
                 self.apiCallFailed()
-                print("callLoyaltyDetailApi failed")
-                print(error.localizedDescription)
+                debugPrint("callLoyaltyDetailApi failed")
+                debugPrint(error.localizedDescription)
             }
         }
     }
@@ -59,16 +59,16 @@ extension HomeTabViewModel{
         HomeScreenServices().getDeliveryListForNearestCity(parameters: parameter) { responce in
             switch responce{
             case .success(let data):
-                print("callDeliveryListForNearestCityApi Done")
+                debugPrint("callDeliveryListForNearestCityApi Done")
                 self.dispatchGroup.leave()
                 kCityId = data.city.id
                 kStoreDeliveryId = data.deliveries[0].id
                 self.homeTabDeligate?.setValueOfCurrentLocation(value: data.city.cityCode)
                 self.deliveryListForNearestCityData = data
             case .failure(let error):
-                print("callDeliveryListForNearestCityApi failed")
+                debugPrint("callDeliveryListForNearestCityApi failed")
                 self.apiCallFailed()
-                print(error.localizedDescription)
+                debugPrint(error.localizedDescription)
             }
         }
     }
@@ -90,7 +90,7 @@ extension HomeTabViewModel{
         HomeScreenServices().getHomeScreenMainDetailWithBannerImagesOffers(parameters: parameter) { responce in
             switch responce{
             case .success(let data):
-                print("callHomeScreenMainDetailWithBannerImagesOffersApi Done")
+                debugPrint("callHomeScreenMainDetailWithBannerImagesOffersApi Done")
                 self.recentlyAddedTitle = data.horizontal_store_title
                 self.mostPopularTitle = data.ads_title
                 self.nearbyResturentTitle = data.store_listing_title
@@ -102,9 +102,9 @@ extension HomeTabViewModel{
                 self.banner = data.banner
                 self.dispatchGroup.leave()
             case .failure(let error):
-                print("callHomeScreenMainDetailWithBannerImagesOffersApi failed")
+                debugPrint("callHomeScreenMainDetailWithBannerImagesOffersApi failed")
                 self.apiCallFailed(isApicallfailed: true)
-                print(error.localizedDescription)
+                debugPrint(error.localizedDescription)
             }
         }
     }
@@ -125,7 +125,7 @@ extension HomeTabViewModel{
         HomeScreenServices().getHomeScreenStoreList(parameters: parameter) { responce in
             switch responce{
             case .success(let data):
-                print("callHomeScreenStoreListApi Done")
+                debugPrint("callHomeScreenStoreListApi Done")
                 if let storeData = data.stores{
                     if self.homeScreenStoreListData == nil {
                         self.homeScreenStoreListData = []
@@ -146,8 +146,8 @@ extension HomeTabViewModel{
                 }
             case .failure(let error):
                 self.apiCallFailed(isApicallfailed: true)
-                print("callHomeScreenStoreListApi failed")
-                print(error.localizedDescription)
+                debugPrint("callHomeScreenStoreListApi failed")
+                debugPrint(error.localizedDescription)
             }
         }
     }
@@ -159,13 +159,13 @@ extension HomeTabViewModel{
         HomeScreenServices().getPushZoneData(parameters: parameter) { responce in
             switch responce{
             case .success(let data):
-                print("callPushZoneApi Done")
+                debugPrint("callPushZoneApi Done")
                 self.pushZoneData = data
                 self.dispatchGroup.leave()
             case .failure(let error):
                 self.apiCallFailed()
-                print("callPushZoneApi failed")
-                print(error.localizedDescription)
+                debugPrint("callPushZoneApi failed")
+                debugPrint(error.localizedDescription)
             }
         }
     }
@@ -186,7 +186,7 @@ extension HomeTabViewModel{
         HomeScreenServices().getHomeScreenGetCloseStoreListData(parameters: parameter) { responce in
             switch responce{
             case .success(let data):
-                print("callHomeScreenGetCloseStoreListApi Done")
+                debugPrint("callHomeScreenGetCloseStoreListApi Done")
                 if let storeData = data.stores{
                     if self.homeScreenStoreListData == nil {
                         self.homeScreenStoreListData = []
@@ -199,8 +199,8 @@ extension HomeTabViewModel{
                 }
             case .failure(let error):
                 self.apiCallFailed()
-                print("callHomeScreenGetCloseStoreListApi failed")
-                print(error.localizedDescription)
+                debugPrint("callHomeScreenGetCloseStoreListApi failed")
+                debugPrint(error.localizedDescription)
             }
         }
         

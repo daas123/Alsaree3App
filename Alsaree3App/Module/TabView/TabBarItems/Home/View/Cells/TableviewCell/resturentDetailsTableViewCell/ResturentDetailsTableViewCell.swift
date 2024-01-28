@@ -43,9 +43,9 @@ class ResturentDetailsTableViewCell: UITableViewCell {
         SDWebImageManager.shared.loadImage(with: resturentDetailsTableViewCellData?.image_url ?? "", into: resturentImage)
         setLabelText(lblrefrence: resturentTitle, lbltext: resturentDetailsTableViewCellData?.name ?? "", fontSize: 20,alignmentLeft:true)
         if resturentDetailsTableViewCellData?.offer == "" {
-            setLabelText(lblrefrence: selectedItemOffLbl, lbltext: "Get off on selected items", fontSize: 12,alignmentLeft:true)
+            setLabelText(lblrefrence: selectedItemOffLbl, lbltext: TextConstant.getoffonselecteditems.rawValue, fontSize: 12,alignmentLeft:true)
         }else{
-            setLabelText(lblrefrence: selectedItemOffLbl, lbltext: resturentDetailsTableViewCellData?.offer ?? "Get off on selected items", fontSize: 12,alignmentLeft:true)
+            setLabelText(lblrefrence: selectedItemOffLbl, lbltext: resturentDetailsTableViewCellData?.offer ?? TextConstant.getoffonselecteditems.rawValue, fontSize: 12,alignmentLeft:true)
         }
         setupFeatureDetails()
         if isStoreClose{
@@ -68,7 +68,7 @@ class ResturentDetailsTableViewCell: UITableViewCell {
         selectedItemView.backgroundColor = ColorConstant.primaryYellowColor
         applyCornerRadius(to: selectedItemView, radius: 5)
         
-        setLabelText(lblrefrence: lowDeleveryfeelbl, lbltext: "Low delivery fee", fontSize: 12,alignmentLeft: true)
+        setLabelText(lblrefrence: lowDeleveryfeelbl, lbltext: TextConstant.lowdeliveryfee.rawValue, fontSize: 12,alignmentLeft: true)
         
         resturentFutrCollectionView.showsHorizontalScrollIndicator = false
         
@@ -145,7 +145,7 @@ class ResturentDetailsTableViewCell: UITableViewCell {
     }
     
     func setupCloseStore(){
-        showErrorMessage(nameNib: "CloseStoreView", uiView: self)
+        showErrorMessage(nameNib: nibNamesConstant.closeStoreView.rawValue, uiView: self)
     }
     
     
@@ -158,7 +158,7 @@ extension ResturentDetailsTableViewCell : UICollectionViewDelegate,UICollectionV
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FeatureCell", for: indexPath) as! FeatureCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellConstant.featureCell.rawValue, for: indexPath) as! FeatureCell
         cell.feature = resturentFeatureDate?[indexPath.row]
 //        cell.featurelbl.preferredMaxLayoutWidth = collectionView.frame.width/1.5
         cell.fillDetails()
