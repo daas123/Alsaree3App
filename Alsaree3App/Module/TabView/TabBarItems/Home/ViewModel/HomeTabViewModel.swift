@@ -14,15 +14,14 @@ protocol NavigateFormHomeTab{
     func seeMoreBtnNavigation()
     func showLocationAccessScreen()
     func setValueOfCurrentLocation(value:String)
+    func reloadTableView()
 }
 
 class HomeTabViewModel{
     
     var activeOrder = false
-    let operationQueue = OperationQueue()
     let dispatchGroup = DispatchGroup()
     // All APi Data
-    var appSettingData : AppSettingModel?
     var checkFeedBackData : CheckFeedBackModel?
     var loyaltyDetail : LoyaltyDetailsModel?
     var deliveryListForNearestCityData : DeliveryListForNearestCityModel?
@@ -40,7 +39,7 @@ class HomeTabViewModel{
     
     var homeScreenStoreListData : [Stores]?
     var pushZoneData : PushZoneModel?
-    weak var homeTabDeligate : HomeTabViewController?
+    var homeTabDeligate : NavigateFormHomeTab?
     
     // MARK: paging count
     var currentPage = 1
@@ -69,9 +68,6 @@ class HomeTabViewModel{
     
     func callHomeScreenApis(){
         dispatchGroup.enter()
-        callAppSettingApi()
-        dispatchGroup.wait()
-        dispatchGroup.enter()
         callFeedBackApi()
         dispatchGroup.enter()
         callLoyaltyDetailApi()
@@ -85,7 +81,7 @@ class HomeTabViewModel{
         dispatchGroup.enter()
         callPushZoneApi()
         dispatchGroup.notify(queue: .main) {
-            self.homeTabDeligate?.hometabTableView.reloadData()
+            self.homeTabDeligate?.reloadTableView()
         }
     }
     
@@ -97,14 +93,13 @@ class HomeTabViewModel{
         dispatchGroup.enter()
         callHomeScreenStoreListApi()
         dispatchGroup.notify(queue: .main) {
-            self.homeTabDeligate?.hometabTableView.reloadData()
+            self.homeTabDeligate?.reloadTableView()
         }
     }
     
     func checkLocationAccess(){
         if LocationManager.shared.isLocationAccess{
-            homeTabDeligate?.isLoadingState = true
-            homeTabDeligate?.hometabTableView.reloadData()
+            self.homeTabDeligate?.reloadTableView()
             callHomeScreenApis()
         }else{
             homeTabDeligate?.showLocationAccessScreen()
@@ -122,10 +117,13 @@ class HomeTabViewModel{
         }
     }
     
-    func apiCallFailed(isRemoveDispatchGroup : Bool = true){
+    func apiCallFailed(isRemoveDispatchGroup : Bool = true , isApicallfailed : Bool = false){
         if isRemoveDispatchGroup{
             dispatchGroup.leave()
         }
-        isApiCallFailed = true
+        
+        if isApicallfailed{
+            isApiCallFailed = true
+        }
     }
 }

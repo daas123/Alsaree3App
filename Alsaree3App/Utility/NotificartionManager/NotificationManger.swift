@@ -10,6 +10,7 @@ extension Notification.Name {
     static let networkStatusChanged = Notification.Name("NetworkStatusChanged")
     static let locationAccessRestricted = Notification.Name("locationAccessRestricted")
     static let reloadData = Notification.Name("ReloadData")
+    static let noLocationDeliverable = Notification.Name("noLocationDeliverable")
 }
 
 class NotificationManager {
@@ -24,6 +25,10 @@ class NotificationManager {
     
     func postReloadData(){
         NotificationCenter.default.post(name: .reloadData, object: nil)
+    }
+    
+    func postnoLocationDeliverable(){
+        NotificationCenter.default.post(name: .noLocationDeliverable, object: nil)
     }
     
     func addObserver(forName name: Notification.Name, using block: @escaping (Notification) -> Void) {

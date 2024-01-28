@@ -15,7 +15,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var locationManager: LocationManager?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         LocationManager.shared.requestLocationPermission { _ in}
-        
         return true
     }
     // MARK: UISceneSession Lifecycle

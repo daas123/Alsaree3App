@@ -18,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4RX-9e-gyu">
-                        <rect key="frame" x="10" y="12" width="344" height="106"/>
+                        <rect key="frame" x="20" y="12" width="324" height="106"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="106" id="e43-IA-FmM"/>
                         </constraints>
@@ -27,8 +27,8 @@
                 <constraints>
                     <constraint firstItem="4RX-9e-gyu" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="0Ug-BE-s7T"/>
                     <constraint firstAttribute="bottom" secondItem="4RX-9e-gyu" secondAttribute="bottom" constant="5" id="JEN-89-DUH"/>
-                    <constraint firstAttribute="trailing" secondItem="4RX-9e-gyu" secondAttribute="trailing" constant="10" id="TtI-kv-EIs"/>
-                    <constraint firstItem="4RX-9e-gyu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="gKa-VM-OdB"/>
+                    <constraint firstAttribute="trailing" secondItem="4RX-9e-gyu" secondAttribute="trailing" constant="20" id="TtI-kv-EIs"/>
+                    <constraint firstItem="4RX-9e-gyu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="gKa-VM-OdB"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

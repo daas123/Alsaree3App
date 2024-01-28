@@ -59,11 +59,9 @@ class HomeTabCategoryHeader: UIView {
         }
     }
     
-    func setCustomConstrain(){
-        
-        
+    func setCustomConstrain(heigtht:Int = 40){
         UIView.animate(withDuration: 0.9) {
-                self.floatingBottomConstrian.constant = 40
+            self.floatingBottomConstrian.constant = CGFloat(heigtht)
             }
     }
     

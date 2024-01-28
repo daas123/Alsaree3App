@@ -16,10 +16,15 @@ class APIManager {
             return
         }
         
-        if !LocationManager.shared.isLocationAccess{
+        if !LocationManager.shared.isLocationAccess {
             NotificationManager().postLocationAccessRestricted()
-            return
+            if case .AppSettings = serviceType {
+                
+            }else{
+                return
+            }
         }
+
         
         let session = URLSession.shared
         

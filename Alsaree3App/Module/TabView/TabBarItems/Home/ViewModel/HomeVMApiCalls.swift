@@ -7,25 +7,6 @@
 
 import Foundation
 extension HomeTabViewModel{
-    func callAppSettingApi(){
-        let parameters = AppSettingParams(device_type: DeviceInfo.deviceType.rawValue, type: DeviceInfo.type.rawValue, device_token:kDeviceToken, device_unique_id:kDeviceUniqueId )
-        LoaderManager.shared.showLoading()
-        HomeScreenServices().getAppSettings(parameters: parameters) { responce  in
-            switch responce{
-            case.success(let data):
-                authKey = data.authKey
-                SDWebImageManager.shared.imageBaseUrl = data.imageBaseURL
-                self.dispatchGroup.leave()
-                LoaderManager.shared.hideLoader()
-                print("callAppSettingApi Done")
-            case.failure(let error):
-                print("callAppSettingApi falied")
-                self.apiCallFailed()
-                print(error.localizedDescription)
-            }
-            
-        }
-    }
     
     func callFeedBackApi(){
         let parameter = CheckFeedBackParams(user_id: kUserId, server_token: kServerToken)
@@ -122,7 +103,7 @@ extension HomeTabViewModel{
                 self.dispatchGroup.leave()
             case .failure(let error):
                 print("callHomeScreenMainDetailWithBannerImagesOffersApi failed")
-                self.apiCallFailed()
+                self.apiCallFailed(isApicallfailed: true)
                 print(error.localizedDescription)
             }
         }
@@ -158,13 +139,13 @@ extension HomeTabViewModel{
                 }
                 if pageNo != "1"{
                     DispatchQueue.main.async {
-                        self.homeTabDeligate?.hometabTableView.reloadData()
+                        self.homeTabDeligate?.reloadTableView()
                     }
                 }else{
                     self.dispatchGroup.leave()
                 }
             case .failure(let error):
-                self.apiCallFailed()
+                self.apiCallFailed(isApicallfailed: true)
                 print("callHomeScreenStoreListApi failed")
                 print(error.localizedDescription)
             }
@@ -214,7 +195,7 @@ extension HomeTabViewModel{
                 }
                 
                 DispatchQueue.main.async {
-                    self.homeTabDeligate?.hometabTableView.reloadData()
+                    self.homeTabDeligate?.reloadTableView()
                 }
             case .failure(let error):
                 self.apiCallFailed()

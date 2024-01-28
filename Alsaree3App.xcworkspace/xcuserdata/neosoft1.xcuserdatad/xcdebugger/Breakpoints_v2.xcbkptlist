@@ -7,1163 +7,287 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "BEAFFD88-6E72-44D2-9AE9-B2EBE0D8B538"
-            shouldBeEnabled = "No"
+            uuid = "FBC1FA76-05BD-404A-8D25-7A38065F620A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Alsaree3App/Module/TabView/TabBarItems/Home/ViewModel/HomeTabViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "callHomeScreenApis()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "04FE16B7-AEC0-46D9-BACE-9D307B8B2114"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Alsaree3App/Module/TabView/TabBarItems/Home/View/ViewController/HomeTabViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
-            landmarkName = "hideProgressView()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "BEAFFD88-6E72-44D2-9AE9-B2EBE0D8B538 - 6b74ca2940426ee7"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Alsaree3App.HomeTabViewController.setUpObserver() -&gt; ()"
-                  moduleName = "Alsaree3App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Module/TabView/TabBarItems/Home/View/ViewController/HomeTabViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "120"
-                  endingLineNumber = "120"
-                  offsetFromSymbolStart = "211">
-               </Location>
-               <Location
-                  uuid = "BEAFFD88-6E72-44D2-9AE9-B2EBE0D8B538 - 5b8959c3f6492112"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Foundation.Notification) -&gt; () in Alsaree3App.HomeTabViewController.setUpObserver() -&gt; ()"
-                  moduleName = "Alsaree3App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Module/TabView/TabBarItems/Home/View/ViewController/HomeTabViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "120"
-                  endingLineNumber = "120"
-                  offsetFromSymbolStart = "54">
-               </Location>
-               <Location
-                  uuid = "BEAFFD88-6E72-44D2-9AE9-B2EBE0D8B538 - 6b74ca2940426ee7"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Alsaree3App.HomeTabViewController.setUpObserver() -&gt; ()"
-                  moduleName = "Alsaree3App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Module/TabView/TabBarItems/Home/View/ViewController/HomeTabViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "120"
-                  endingLineNumber = "120"
-                  offsetFromSymbolStart = "204">
-               </Location>
-               <Location
-                  uuid = "BEAFFD88-6E72-44D2-9AE9-B2EBE0D8B538 - 5b8959c3f6492112"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Foundation.Notification) -&gt; () in Alsaree3App.HomeTabViewController.setUpObserver() -&gt; ()"
-                  moduleName = "Alsaree3App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Module/TabView/TabBarItems/Home/View/ViewController/HomeTabViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "120"
-                  endingLineNumber = "120"
-                  offsetFromSymbolStart = "48">
-               </Location>
-               <Location
-                  uuid = "BEAFFD88-6E72-44D2-9AE9-B2EBE0D8B538 - c9bd8ccdee335493"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Alsaree3App.HomeTabViewController.hideProgressView() -&gt; ()"
-                  moduleName = "Alsaree3App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Module/TabView/TabBarItems/Home/View/ViewController/HomeTabViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "120"
-                  endingLineNumber = "120"
-                  offsetFromSymbolStart = "72">
-               </Location>
-               <Location
-                  uuid = "BEAFFD88-6E72-44D2-9AE9-B2EBE0D8B538 - c9bd8ccdee3355f8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Alsaree3App.HomeTabViewController.hideProgressView() -&gt; ()"
-                  moduleName = "Alsaree3App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Module/TabView/TabBarItems/Home/View/ViewController/HomeTabViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "127"
-                  endingLineNumber = "127"
-                  offsetFromSymbolStart = "72">
-               </Location>
-            </Locations>
+            startingLineNumber = "235"
+            endingLineNumber = "235"
+            landmarkName = "HomeTabViewController"
+            landmarkType = "21">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B9F0FC5C-C0F6-42C6-962A-C4BE9F0D6E1D"
+            uuid = "3300DD26-5F12-4BD3-9618-3C0316096AEF"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Alsaree3App/Module/CommonPages/LoadingtableViewCell/LoadingTableViewCell.swift"
+            filePath = "Alsaree3App/Module/TabView/TabBarItems/Home/View/ViewController/HomeTabViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "onRetryClick(_:)"
+            startingLineNumber = "240"
+            endingLineNumber = "240"
+            landmarkName = "tableView(_:numberOfRowsInSection:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "B9F0FC5C-C0F6-42C6-962A-C4BE9F0D6E1D - 1c5ef5d593c812b1"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Alsaree3App.LoadingTableViewCell.onRetryClick(__C.UIButton) -&gt; ()"
-                  moduleName = "Alsaree3App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Module/CommonPages/LoadingtableViewCell/LoadingTableViewCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "29"
-                  endingLineNumber = "29"
-                  offsetFromSymbolStart = "80">
-               </Location>
-               <Location
-                  uuid = "B9F0FC5C-C0F6-42C6-962A-C4BE9F0D6E1D - 1c5ef5d593c812b1"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Alsaree3App.LoadingTableViewCell.onRetryClick(__C.UIButton) -&gt; ()"
-                  moduleName = "Alsaree3App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Module/CommonPages/LoadingtableViewCell/LoadingTableViewCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "29"
-                  endingLineNumber = "29"
-                  offsetFromSymbolStart = "68">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "878DDCF0-39FA-4C43-80B3-D8DBDECF1A7F"
+            uuid = "EEF629C9-D0A6-4434-AEFF-0621363C66CE"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Alsaree3App/Module/CommonPages/LoadingtableViewCell/LoadingTableViewCell.swift"
+            filePath = "Alsaree3App/Module/TabView/TabBarItems/Home/View/ViewController/HomeTabViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "onRetryClick(_:)"
+            startingLineNumber = "242"
+            endingLineNumber = "242"
+            landmarkName = "tableView(_:numberOfRowsInSection:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "878DDCF0-39FA-4C43-80B3-D8DBDECF1A7F - 1c5ef5d593c812de"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Alsaree3App.LoadingTableViewCell.onRetryClick(__C.UIButton) -&gt; ()"
-                  moduleName = "Alsaree3App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Module/CommonPages/LoadingtableViewCell/LoadingTableViewCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "30"
-                  endingLineNumber = "30"
-                  offsetFromSymbolStart = "211">
-               </Location>
-               <Location
-                  uuid = "878DDCF0-39FA-4C43-80B3-D8DBDECF1A7F - 1c5ef5d593c812de"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Alsaree3App.LoadingTableViewCell.onRetryClick(__C.UIButton) -&gt; ()"
-                  moduleName = "Alsaree3App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Module/CommonPages/LoadingtableViewCell/LoadingTableViewCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "30"
-                  endingLineNumber = "30"
-                  offsetFromSymbolStart = "224">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "0566C426-1094-403D-B75C-E76734500571"
-            shouldBeEnabled = "No"
+            uuid = "A61925BB-7715-46D7-8396-F6F07435C1B7"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Alsaree3App/Module/TabView/TabBarItems/Home/ViewModel/HomeTabViewModel.swift"
+            filePath = "Alsaree3App/Module/TabView/TabBarItems/Home/View/ViewController/HomeTabViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
-            landmarkName = "checkLocationAccess()"
+            startingLineNumber = "248"
+            endingLineNumber = "248"
+            landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "0566C426-1094-403D-B75C-E76734500571 - e04c9111ec693904"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Alsaree3App.HomeTabViewModel.checkLocationAccess() -&gt; ()"
-                  moduleName = "Alsaree3App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Module/TabView/TabBarItems/Home/ViewModel/HomeTabViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "105"
-                  endingLineNumber = "105"
-                  offsetFromSymbolStart = "55">
-               </Location>
-               <Location
-                  uuid = "0566C426-1094-403D-B75C-E76734500571 - e04c9111ec693904"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Alsaree3App.HomeTabViewModel.checkLocationAccess() -&gt; ()"
-                  moduleName = "Alsaree3App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Module/TabView/TabBarItems/Home/ViewModel/HomeTabViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "105"
-                  endingLineNumber = "105"
-                  offsetFromSymbolStart = "104">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "F373D38A-03A9-481E-A95A-8389AB63E4BC"
-            shouldBeEnabled = "No"
+            uuid = "98E0CAC3-61DD-48FB-B331-E053A17E18EA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Alsaree3App/Module/TabView/TabBarItems/Home/View/ViewController/HomeTabViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "250"
+            endingLineNumber = "250"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4C4B13FD-C0DC-4FA0-9A80-B2959604AA0F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Alsaree3App/Module/TabView/TabBarItems/Home/View/ViewController/HomeTabViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "247"
+            endingLineNumber = "247"
+            landmarkName = "HomeTabViewController"
+            landmarkType = "21">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "32FA86FE-5AE6-4FB4-B2A3-244DB1980771"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Alsaree3App/Module/TabView/TabBarItems/Home/ViewModel/HomeVMApiCalls.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
-            landmarkName = "callDeliveryListForNearestCityApi()"
+            startingLineNumber = "128"
+            endingLineNumber = "128"
+            landmarkName = "callHomeScreenStoreListApi(pageNo:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "F373D38A-03A9-481E-A95A-8389AB63E4BC - 566fa095b3999aa8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Alsaree3App.HomeTabViewModel.callDeliveryListForNearestCityApi() -&gt; ()"
-                  moduleName = "Alsaree3App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Module/TabView/TabBarItems/Home/ViewModel/HomeVMApiCalls.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "78"
-                  endingLineNumber = "78"
-                  offsetFromSymbolStart = "1812">
-               </Location>
-               <Location
-                  uuid = "F373D38A-03A9-481E-A95A-8389AB63E4BC - 380c8a08018c7966"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;Alsaree3App.DeliveryListForNearestCityModel, Alsaree3App.APIError&gt;) -&gt; () in Alsaree3App.HomeTabViewModel.callDeliveryListForNearestCityApi() -&gt; ()"
-                  moduleName = "Alsaree3App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Module/TabView/TabBarItems/Home/ViewModel/HomeVMApiCalls.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "78"
-                  endingLineNumber = "78"
-                  offsetFromSymbolStart = "119">
-               </Location>
-               <Location
-                  uuid = "F373D38A-03A9-481E-A95A-8389AB63E4BC - 566fa095b3999aa8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Alsaree3App.HomeTabViewModel.callDeliveryListForNearestCityApi() -&gt; ()"
-                  moduleName = "Alsaree3App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Module/TabView/TabBarItems/Home/ViewModel/HomeVMApiCalls.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "78"
-                  endingLineNumber = "78"
-                  offsetFromSymbolStart = "1412">
-               </Location>
-               <Location
-                  uuid = "F373D38A-03A9-481E-A95A-8389AB63E4BC - 380c8a08018c7966"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;Alsaree3App.DeliveryListForNearestCityModel, Alsaree3App.APIError&gt;) -&gt; () in Alsaree3App.HomeTabViewModel.callDeliveryListForNearestCityApi() -&gt; ()"
-                  moduleName = "Alsaree3App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Module/TabView/TabBarItems/Home/ViewModel/HomeVMApiCalls.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "78"
-                  endingLineNumber = "78"
-                  offsetFromSymbolStart = "136">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "95B7F63E-669A-4278-975B-C37CD393FED0"
-            shouldBeEnabled = "No"
+            uuid = "7E3DBEFF-C90F-4229-BFED-5EF7AEDE49B5"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Alsaree3App/NetwrokingServices/DataTaskServices/APIs/APIServices.swift"
+            filePath = "Alsaree3App/Module/TabView/TabBarItems/Home/ViewModel/HomeVMApiCalls.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "142"
-            endingLineNumber = "142"
-            landmarkName = "appSettingsHeader()"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
+            landmarkName = "callHomeScreenMainDetailWithBannerImagesOffersApi()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "95B7F63E-669A-4278-975B-C37CD393FED0 - 7a80eab8b524eecf"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Alsaree3App.APIServices.appSettingsHeader() -&gt; Swift.Dictionary&lt;Swift.String, Swift.String&gt;"
-                  moduleName = "Alsaree3App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/NetwrokingServices/DataTaskServices/APIs/APIServices.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "142"
-                  endingLineNumber = "142"
-                  offsetFromSymbolStart = "2176">
-               </Location>
-               <Location
-                  uuid = "95B7F63E-669A-4278-975B-C37CD393FED0 - 7a80eab8b524eecf"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Alsaree3App.APIServices.appSettingsHeader() -&gt; Swift.Dictionary&lt;Swift.String, Swift.String&gt;"
-                  moduleName = "Alsaree3App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/NetwrokingServices/DataTaskServices/APIs/APIServices.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "142"
-                  endingLineNumber = "142"
-                  offsetFromSymbolStart = "1708">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "53E40EDF-3A87-45E9-A9D2-BDB136D85E67"
-            shouldBeEnabled = "No"
+            uuid = "947B7354-81B0-4729-B84B-F2033C872C43"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Alsaree3App/NetwrokingServices/DataTaskServices/APIs/APIServices.swift"
+            filePath = "Alsaree3App/Module/SplashScreen/ViewModel/SplashScreenViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "143"
-            endingLineNumber = "143"
-            landmarkName = "appSettingsHeader()"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "callSplashScreeenApis()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "53E40EDF-3A87-45E9-A9D2-BDB136D85E67 - 7a80eab8b524e928"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Alsaree3App.APIServices.appSettingsHeader() -&gt; Swift.Dictionary&lt;Swift.String, Swift.String&gt;"
-                  moduleName = "Alsaree3App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/NetwrokingServices/DataTaskServices/APIs/APIServices.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "143"
-                  endingLineNumber = "143"
-                  offsetFromSymbolStart = "2261">
-               </Location>
-               <Location
-                  uuid = "53E40EDF-3A87-45E9-A9D2-BDB136D85E67 - 7a80eab8b524e928"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Alsaree3App.APIServices.appSettingsHeader() -&gt; Swift.Dictionary&lt;Swift.String, Swift.String&gt;"
-                  moduleName = "Alsaree3App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/NetwrokingServices/DataTaskServices/APIs/APIServices.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "143"
-                  endingLineNumber = "143"
-                  offsetFromSymbolStart = "1780">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "1247C202-22E0-4DCB-BC58-F02F7DE5292F"
-            shouldBeEnabled = "No"
+            uuid = "46BBBDCD-0E00-4EBA-8FCB-067EC421A76E"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Alsaree3App/Utility/LocationService/LocationManager.swift"
+            filePath = "Alsaree3App/Module/SplashScreen/ViewModel/SplashScreenViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
-            landmarkName = "locationManager(_:didUpdateLocations:)"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "callSplashScreeenApis()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "1247C202-22E0-4DCB-BC58-F02F7DE5292F - 67b35a5d7b0cb39d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Alsaree3App.LocationManager.locationManager(_: __C.CLLocationManager, didUpdateLocations: Swift.Array&lt;__C.CLLocation&gt;) -&gt; ()"
-                  moduleName = "Alsaree3App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Utility/LocationService/LocationManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "97"
-                  endingLineNumber = "97"
-                  offsetFromSymbolStart = "96">
-               </Location>
-               <Location
-                  uuid = "1247C202-22E0-4DCB-BC58-F02F7DE5292F - 67b35a5d7b0cb39d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Alsaree3App.LocationManager.locationManager(_: __C.CLLocationManager, didUpdateLocations: Swift.Array&lt;__C.CLLocation&gt;) -&gt; ()"
-                  moduleName = "Alsaree3App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Utility/LocationService/LocationManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "97"
-                  endingLineNumber = "97"
-                  offsetFromSymbolStart = "84">
-               </Location>
-               <Location
-                  uuid = "1247C202-22E0-4DCB-BC58-F02F7DE5292F - 67b35a5d7b0cb39d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Alsaree3App.LocationManager.locationManager(_: __C.CLLocationManager, didUpdateLocations: Swift.Array&lt;__C.CLLocation&gt;) -&gt; ()"
-                  moduleName = "Alsaree3App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Utility/LocationService/LocationManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "97"
-                  endingLineNumber = "97"
-                  offsetFromSymbolStart = "109">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "DE469023-4D6D-4B9A-B54D-C581CE133202"
-            shouldBeEnabled = "No"
+            uuid = "BE0CC06B-3FC2-4633-89BB-4CB3386E505D"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Alsaree3App/Utility/LocationService/LocationManager.swift"
+            filePath = "Alsaree3App/Module/SplashScreen/ViewModel/SplashScreenViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
-            landmarkName = "locationManager(_:didUpdateLocations:)"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "callAppSettingApi()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "DE469023-4D6D-4B9A-B54D-C581CE133202 - 67b35a5d7b0cb320"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Alsaree3App.LocationManager.locationManager(_: __C.CLLocationManager, didUpdateLocations: Swift.Array&lt;__C.CLLocation&gt;) -&gt; ()"
-                  moduleName = "Alsaree3App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Utility/LocationService/LocationManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "102"
-                  endingLineNumber = "102"
-                  offsetFromSymbolStart = "484">
-               </Location>
-               <Location
-                  uuid = "DE469023-4D6D-4B9A-B54D-C581CE133202 - 67b35a5d7b0cb320"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Alsaree3App.LocationManager.locationManager(_: __C.CLLocationManager, didUpdateLocations: Swift.Array&lt;__C.CLLocation&gt;) -&gt; ()"
-                  moduleName = "Alsaree3App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Utility/LocationService/LocationManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "102"
-                  endingLineNumber = "102"
-                  offsetFromSymbolStart = "456">
-               </Location>
-               <Location
-                  uuid = "DE469023-4D6D-4B9A-B54D-C581CE133202 - 67b35a5d7b0cb320"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Alsaree3App.LocationManager.locationManager(_: __C.CLLocationManager, didUpdateLocations: Swift.Array&lt;__C.CLLocation&gt;) -&gt; ()"
-                  moduleName = "Alsaree3App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Utility/LocationService/LocationManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "102"
-                  endingLineNumber = "102"
-                  offsetFromSymbolStart = "562">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "0A56C68D-7AF5-4C00-8D8C-BDB66B7FDA19"
-            shouldBeEnabled = "No"
+            uuid = "4A62C6E8-114B-4CFA-A715-D2FA3D2C95E1"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Alsaree3App/Utility/LocationService/LocationManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
-            landmarkName = "locationManager(_:didUpdateLocations:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "0A56C68D-7AF5-4C00-8D8C-BDB66B7FDA19 - 67b35a5d7b0cbcc7"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Alsaree3App.LocationManager.locationManager(_: __C.CLLocationManager, didUpdateLocations: Swift.Array&lt;__C.CLLocation&gt;) -&gt; ()"
-                  moduleName = "Alsaree3App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Utility/LocationService/LocationManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "103"
-                  endingLineNumber = "103"
-                  offsetFromSymbolStart = "520">
-               </Location>
-               <Location
-                  uuid = "0A56C68D-7AF5-4C00-8D8C-BDB66B7FDA19 - 67b35a5d7b0cbcc7"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Alsaree3App.LocationManager.locationManager(_: __C.CLLocationManager, didUpdateLocations: Swift.Array&lt;__C.CLLocation&gt;) -&gt; ()"
-                  moduleName = "Alsaree3App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Utility/LocationService/LocationManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "103"
-                  endingLineNumber = "103"
-                  offsetFromSymbolStart = "484">
-               </Location>
-               <Location
-                  uuid = "0A56C68D-7AF5-4C00-8D8C-BDB66B7FDA19 - 67b35a5d7b0cbcc7"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Alsaree3App.LocationManager.locationManager(_: __C.CLLocationManager, didUpdateLocations: Swift.Array&lt;__C.CLLocation&gt;) -&gt; ()"
-                  moduleName = "Alsaree3App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Utility/LocationService/LocationManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "103"
-                  endingLineNumber = "103"
-                  offsetFromSymbolStart = "584">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B18AF295-52C2-4CF2-AF64-8626EE4A0DB5"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Alsaree3App/Utility/LocationService/LocationManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
-            landmarkName = "locationManager(_:didUpdateLocations:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "B18AF295-52C2-4CF2-AF64-8626EE4A0DB5 - 67b35a5d7b0cb343"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Alsaree3App.LocationManager.locationManager(_: __C.CLLocationManager, didUpdateLocations: Swift.Array&lt;__C.CLLocation&gt;) -&gt; ()"
-                  moduleName = "Alsaree3App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Utility/LocationService/LocationManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "99"
-                  endingLineNumber = "99"
-                  offsetFromSymbolStart = "368">
-               </Location>
-               <Location
-                  uuid = "B18AF295-52C2-4CF2-AF64-8626EE4A0DB5 - 67b35a5d7b0cb3bc"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Alsaree3App.LocationManager.locationManager(_: __C.CLLocationManager, didUpdateLocations: Swift.Array&lt;__C.CLLocation&gt;) -&gt; ()"
-                  moduleName = "Alsaree3App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Utility/LocationService/LocationManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "98"
-                  endingLineNumber = "98"
-                  offsetFromSymbolStart = "96">
-               </Location>
-               <Location
-                  uuid = "B18AF295-52C2-4CF2-AF64-8626EE4A0DB5 - 67b35a5d7b0cb3bc"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Alsaree3App.LocationManager.locationManager(_: __C.CLLocationManager, didUpdateLocations: Swift.Array&lt;__C.CLLocation&gt;) -&gt; ()"
-                  moduleName = "Alsaree3App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Utility/LocationService/LocationManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "98"
-                  endingLineNumber = "98"
-                  offsetFromSymbolStart = "127">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "44AECF35-C062-4EC2-8195-C2E6C5EFEE03"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Alsaree3App/Utility/LocationService/LocationManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "7"
-            endingLineNumber = "7"
-            landmarkName = "LocationManager"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  uuid = "44AECF35-C062-4EC2-8195-C2E6C5EFEE03 - 6fb3cac27d083675"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Alsaree3App.LocationManager.locationManager.getter : __C.CLLocationManager"
-                  moduleName = "Alsaree3App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Utility/LocationService/LocationManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "16">
-               </Location>
-               <Location
-                  uuid = "44AECF35-C062-4EC2-8195-C2E6C5EFEE03 - 8b74b7a1fd83ab18"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Alsaree3App.LocationManager.locationManager.setter : __C.CLLocationManager"
-                  moduleName = "Alsaree3App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Utility/LocationService/LocationManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "7"
-                  endingLineNumber = "7"
-                  offsetFromSymbolStart = "0">
-               </Location>
-               <Location
-                  uuid = "44AECF35-C062-4EC2-8195-C2E6C5EFEE03 - 338c8d09b504ca09"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Alsaree3App.LocationManager.locationManager.modify : __C.CLLocationManager"
-                  moduleName = "Alsaree3App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Utility/LocationService/LocationManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "7"
-                  endingLineNumber = "7"
-                  offsetFromSymbolStart = "0">
-               </Location>
-               <Location
-                  uuid = "44AECF35-C062-4EC2-8195-C2E6C5EFEE03 - b9e7a6e4a93108ce"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Alsaree3App.LocationManager.locationManager.modify : __C.CLLocationManager with unmangled suffix &quot;.resume.0&quot;"
-                  moduleName = "Alsaree3App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/%3Ccompiler-generated%3E"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "15">
-               </Location>
-               <Location
-                  uuid = "44AECF35-C062-4EC2-8195-C2E6C5EFEE03 - b9e7a6e4a93108ce"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Alsaree3App.LocationManager.locationManager.modify : __C.CLLocationManager with unmangled suffix &quot;.resume.0&quot;"
-                  moduleName = "Alsaree3App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/%3Ccompiler-generated%3E"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "16">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "4690297F-9491-45BE-A31D-30895A99900F"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Alsaree3App/Utility/LocationService/LocationManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "8"
-            endingLineNumber = "8"
-            landmarkName = "LocationManager"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  uuid = "4690297F-9491-45BE-A31D-30895A99900F - 76115e4ec4b95e4e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Alsaree3App.LocationManager.currentLocation.getter : Swift.Optional&lt;__C.CLLocationCoordinate2D&gt;"
-                  moduleName = "Alsaree3App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Utility/LocationService/LocationManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "16">
-               </Location>
-               <Location
-                  uuid = "4690297F-9491-45BE-A31D-30895A99900F - 19b2dbf7ca078762"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Alsaree3App.LocationManager.currentLocation.setter : Swift.Optional&lt;__C.CLLocationCoordinate2D&gt;"
-                  moduleName = "Alsaree3App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Utility/LocationService/LocationManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "8"
-                  endingLineNumber = "8"
-                  offsetFromSymbolStart = "0">
-               </Location>
-               <Location
-                  uuid = "4690297F-9491-45BE-A31D-30895A99900F - 5def9891eee6a155"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Alsaree3App.LocationManager.currentLocation.modify : Swift.Optional&lt;__C.CLLocationCoordinate2D&gt;"
-                  moduleName = "Alsaree3App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Utility/LocationService/LocationManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "8"
-                  endingLineNumber = "8"
-                  offsetFromSymbolStart = "0">
-               </Location>
-               <Location
-                  uuid = "4690297F-9491-45BE-A31D-30895A99900F - 9f3c08476685bbb0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Alsaree3App.LocationManager.currentLocation.modify : Swift.Optional&lt;__C.CLLocationCoordinate2D&gt; with unmangled suffix &quot;.resume.0&quot;"
-                  moduleName = "Alsaree3App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/%3Ccompiler-generated%3E"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "15">
-               </Location>
-               <Location
-                  uuid = "4690297F-9491-45BE-A31D-30895A99900F - 2478c5998b3010b3"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Alsaree3App.LocationManager.() -&gt; Alsaree3App.LocationManager.init() -&gt; Alsaree3App.LocationManager"
-                  moduleName = "Alsaree3App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Utility/LocationService/LocationManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "8"
-                  endingLineNumber = "8"
-                  offsetFromSymbolStart = "76">
-               </Location>
-               <Location
-                  uuid = "4690297F-9491-45BE-A31D-30895A99900F - 9f3c08476685bbb0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Alsaree3App.LocationManager.currentLocation.modify : Swift.Optional&lt;__C.CLLocationCoordinate2D&gt; with unmangled suffix &quot;.resume.0&quot;"
-                  moduleName = "Alsaree3App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/%3Ccompiler-generated%3E"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "16">
-               </Location>
-               <Location
-                  uuid = "4690297F-9491-45BE-A31D-30895A99900F - 2478c5998b3010b3"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Alsaree3App.LocationManager.() -&gt; Alsaree3App.LocationManager.init() -&gt; Alsaree3App.LocationManager"
-                  moduleName = "Alsaree3App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Utility/LocationService/LocationManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "8"
-                  endingLineNumber = "8"
-                  offsetFromSymbolStart = "68">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "F4B5F350-EF26-4B66-95EB-D25379EEB166"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Alsaree3App/Utility/LocationService/LocationManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
-            landmarkName = "locationManager(_:didChangeAuthorization:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "F4B5F350-EF26-4B66-95EB-D25379EEB166 - 64023334c66b1276"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Alsaree3App.LocationManager.locationManager(_: __C.CLLocationManager, didChangeAuthorization: __C.CLAuthorizationStatus) -&gt; ()"
-                  moduleName = "Alsaree3App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Utility/LocationService/LocationManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "84"
-                  endingLineNumber = "84"
-                  offsetFromSymbolStart = "204">
-               </Location>
-               <Location
-                  uuid = "F4B5F350-EF26-4B66-95EB-D25379EEB166 - 64023334c66b1276"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Alsaree3App.LocationManager.locationManager(_: __C.CLLocationManager, didChangeAuthorization: __C.CLAuthorizationStatus) -&gt; ()"
-                  moduleName = "Alsaree3App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Utility/LocationService/LocationManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "84"
-                  endingLineNumber = "84"
-                  offsetFromSymbolStart = "108">
-               </Location>
-               <Location
-                  uuid = "F4B5F350-EF26-4B66-95EB-D25379EEB166 - 64023334c66b1276"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Alsaree3App.LocationManager.locationManager(_: __C.CLLocationManager, didChangeAuthorization: __C.CLAuthorizationStatus) -&gt; ()"
-                  moduleName = "Alsaree3App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Utility/LocationService/LocationManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "84"
-                  endingLineNumber = "84"
-                  offsetFromSymbolStart = "65">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "EA184F18-01E9-435D-8211-DAE853F163B3"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Alsaree3App/Utility/LocationService/LocationManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
-            landmarkName = "locationManager(_:didChangeAuthorization:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "EA184F18-01E9-435D-8211-DAE853F163B3 - 64023334c66b11d3"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Alsaree3App.LocationManager.locationManager(_: __C.CLLocationManager, didChangeAuthorization: __C.CLAuthorizationStatus) -&gt; ()"
-                  moduleName = "Alsaree3App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Utility/LocationService/LocationManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "87"
-                  endingLineNumber = "87"
-                  offsetFromSymbolStart = "308">
-               </Location>
-               <Location
-                  uuid = "EA184F18-01E9-435D-8211-DAE853F163B3 - 64023334c66b11d3"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Alsaree3App.LocationManager.locationManager(_: __C.CLLocationManager, didChangeAuthorization: __C.CLAuthorizationStatus) -&gt; ()"
-                  moduleName = "Alsaree3App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Utility/LocationService/LocationManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "87"
-                  endingLineNumber = "87"
-                  offsetFromSymbolStart = "268">
-               </Location>
-               <Location
-                  uuid = "EA184F18-01E9-435D-8211-DAE853F163B3 - 64023334c66b11d3"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Alsaree3App.LocationManager.locationManager(_: __C.CLLocationManager, didChangeAuthorization: __C.CLAuthorizationStatus) -&gt; ()"
-                  moduleName = "Alsaree3App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Utility/LocationService/LocationManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "87"
-                  endingLineNumber = "87"
-                  offsetFromSymbolStart = "196">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "A6D1F079-7535-47CA-B863-27FCB9D317D4"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Alsaree3App/Utility/LocationService/LocationManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
-            landmarkName = "requestLocationPermission(completion:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "A6D1F079-7535-47CA-B863-27FCB9D317D4 - 8f94fad53f259bcc"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Alsaree3App.LocationManager.requestLocationPermission(completion: (Swift.Bool) -&gt; ()) -&gt; ()"
-                  moduleName = "Alsaree3App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Utility/LocationService/LocationManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "31"
-                  endingLineNumber = "31"
-                  offsetFromSymbolStart = "136">
-               </Location>
-               <Location
-                  uuid = "A6D1F079-7535-47CA-B863-27FCB9D317D4 - 8f94fad53f259bcc"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Alsaree3App.LocationManager.requestLocationPermission(completion: (Swift.Bool) -&gt; ()) -&gt; ()"
-                  moduleName = "Alsaree3App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Utility/LocationService/LocationManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "31"
-                  endingLineNumber = "31"
-                  offsetFromSymbolStart = "106">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D95BCE78-6D1C-4F2D-93D9-0C4E1A50D9AF"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Alsaree3App/Utility/LocationService/LocationManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "requestLocationPermission(completion:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "D95BCE78-6D1C-4F2D-93D9-0C4E1A50D9AF - 8f94fad53f259a50"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Alsaree3App.LocationManager.requestLocationPermission(completion: (Swift.Bool) -&gt; ()) -&gt; ()"
-                  moduleName = "Alsaree3App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Utility/LocationService/LocationManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "35"
-                  endingLineNumber = "35"
-                  offsetFromSymbolStart = "356">
-               </Location>
-               <Location
-                  uuid = "D95BCE78-6D1C-4F2D-93D9-0C4E1A50D9AF - 8f94fad53f259a50"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Alsaree3App.LocationManager.requestLocationPermission(completion: (Swift.Bool) -&gt; ()) -&gt; ()"
-                  moduleName = "Alsaree3App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Utility/LocationService/LocationManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "35"
-                  endingLineNumber = "35"
-                  offsetFromSymbolStart = "285">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "BC5ED72C-FF05-484F-A647-828B81B8C610"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Alsaree3App/Utility/LocationService/LocationManager.swift"
+            filePath = "Alsaree3App/Module/SplashScreen/ViewModel/SplashScreenViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "36"
             endingLineNumber = "36"
-            landmarkName = "requestLocationPermission(completion:)"
+            landmarkName = "callAppSettingApi()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4ED65099-822A-49CB-8C87-1159D3B9DDAF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Alsaree3App/Module/SplashScreen/ViewModel/SplashScreenViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "callAppSettingApi()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B9491224-2C49-4DBC-A101-92A0071889F0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Alsaree3App/Module/SplashScreen/ViewModel/SplashScreenViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "callAppSettingApi()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "04E297C3-74DA-4EFD-8866-933826A4FC68"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Alsaree3App/Module/SplashScreen/ViewModel/SplashScreenViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "callAppSettingApi()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "BC5ED72C-FF05-484F-A647-828B81B8C610 - 8f94fad53f259ab3"
+                  uuid = "04E297C3-74DA-4EFD-8866-933826A4FC68 - 74e18be81184e90"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Alsaree3App.LocationManager.requestLocationPermission(completion: (Swift.Bool) -&gt; ()) -&gt; ()"
+                  symbolName = "Alsaree3App.SplashScreenViewModel.callAppSettingApi() -&gt; ()"
                   moduleName = "Alsaree3App"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Utility/LocationService/LocationManager.swift"
+                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Module/SplashScreen/ViewModel/SplashScreenViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "38"
-                  endingLineNumber = "38"
-                  offsetFromSymbolStart = "472">
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "365">
                </Location>
                <Location
-                  uuid = "BC5ED72C-FF05-484F-A647-828B81B8C610 - 8f94fad53f259ab3"
+                  uuid = "04E297C3-74DA-4EFD-8866-933826A4FC68 - ddd106de8c5b42e1"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Alsaree3App.LocationManager.requestLocationPermission(completion: (Swift.Bool) -&gt; ()) -&gt; ()"
+                  symbolName = "closure #1 (Swift.Result&lt;Alsaree3App.AppSettingModel, Alsaree3App.APIError&gt;) -&gt; () in Alsaree3App.SplashScreenViewModel.callAppSettingApi() -&gt; ()"
                   moduleName = "Alsaree3App"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Utility/LocationService/LocationManager.swift"
+                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Module/SplashScreen/ViewModel/SplashScreenViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "38"
-                  endingLineNumber = "38"
-                  offsetFromSymbolStart = "399">
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "93">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1171,189 +295,47 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5A0F281D-33DF-4B39-B9D6-57494D5FCF74"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Alsaree3App/Utility/LocationService/LocationManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
-            landmarkName = "locationManager(_:didChangeAuthorization:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "5A0F281D-33DF-4B39-B9D6-57494D5FCF74 - 64023334c66b11b0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Alsaree3App.LocationManager.locationManager(_: __C.CLLocationManager, didChangeAuthorization: __C.CLAuthorizationStatus) -&gt; ()"
-                  moduleName = "Alsaree3App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Utility/LocationService/LocationManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "90"
-                  endingLineNumber = "90"
-                  offsetFromSymbolStart = "380">
-               </Location>
-               <Location
-                  uuid = "5A0F281D-33DF-4B39-B9D6-57494D5FCF74 - 64023334c66b11b0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Alsaree3App.LocationManager.locationManager(_: __C.CLLocationManager, didChangeAuthorization: __C.CLAuthorizationStatus) -&gt; ()"
-                  moduleName = "Alsaree3App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Utility/LocationService/LocationManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "90"
-                  endingLineNumber = "90"
-                  offsetFromSymbolStart = "303">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "489CE816-DA2E-4599-85D8-181961C9AFB4"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Alsaree3App/Module/TabView/TabBarItems/Home/ViewModel/HomeVMApiCalls.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "callLoyaltyDetailApi()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "489CE816-DA2E-4599-85D8-181961C9AFB4 - a50b58335da7c329"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Alsaree3App.HomeTabViewModel.callLoyaltyDetailApi() -&gt; ()"
-                  moduleName = "Alsaree3App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Module/TabView/TabBarItems/Home/ViewModel/HomeVMApiCalls.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "49"
-                  endingLineNumber = "49"
-                  offsetFromSymbolStart = "180">
-               </Location>
-               <Location
-                  uuid = "489CE816-DA2E-4599-85D8-181961C9AFB4 - a23cdf7a242d327c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;Alsaree3App.LoyaltyDetailsModel, Alsaree3App.APIError&gt;) -&gt; () in Alsaree3App.HomeTabViewModel.callLoyaltyDetailApi() -&gt; ()"
-                  moduleName = "Alsaree3App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Module/TabView/TabBarItems/Home/ViewModel/HomeVMApiCalls.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "49"
-                  endingLineNumber = "49"
-                  offsetFromSymbolStart = "124">
-               </Location>
-               <Location
-                  uuid = "489CE816-DA2E-4599-85D8-181961C9AFB4 - a50b58335da7c2eb"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Alsaree3App.HomeTabViewModel.callLoyaltyDetailApi() -&gt; ()"
-                  moduleName = "Alsaree3App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Module/TabView/TabBarItems/Home/ViewModel/HomeVMApiCalls.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "47"
-                  endingLineNumber = "47"
-                  offsetFromSymbolStart = "148">
-               </Location>
-               <Location
-                  uuid = "489CE816-DA2E-4599-85D8-181961C9AFB4 - a23cdf7a242d33be"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;Alsaree3App.LoyaltyDetailsModel, Alsaree3App.APIError&gt;) -&gt; () in Alsaree3App.HomeTabViewModel.callLoyaltyDetailApi() -&gt; ()"
-                  moduleName = "Alsaree3App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Module/TabView/TabBarItems/Home/ViewModel/HomeVMApiCalls.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "47"
-                  endingLineNumber = "47"
-                  offsetFromSymbolStart = "124">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E5F8FB3D-E661-41E8-A174-064AD89F758E"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Alsaree3App/Utility/LocationService/LocationManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "requestLocationPermission(completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "DEC894BB-6CE6-41D5-8865-9129787861E9"
-            shouldBeEnabled = "No"
+            uuid = "A184767E-358A-4AC2-9852-F61A1E003F47"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Alsaree3App/NetwrokingServices/DataTaskServices/ModuleServices/HomeScreenServices.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
-            landmarkName = "getLoyaltyDetail(parameters:completion:)"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "getAppSettings(parameters:completion:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "DEC894BB-6CE6-41D5-8865-9129787861E9 - 34e319740421d21b"
+                  uuid = "A184767E-358A-4AC2-9852-F61A1E003F47 - 678dd5d4fae98b48"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Alsaree3App.HomeScreenServices.getLoyaltyDetail(parameters: Alsaree3App.LoyaltyDetailParams, completion: (Swift.Result&lt;Alsaree3App.LoyaltyDetailsModel, Alsaree3App.APIError&gt;) -&gt; ()) -&gt; ()"
+                  symbolName = "Alsaree3App.HomeScreenServices.getAppSettings(parameters: Alsaree3App.AppSettingParams, completion: (Swift.Result&lt;Alsaree3App.AppSettingModel, Alsaree3App.APIError&gt;) -&gt; ()) -&gt; ()"
                   moduleName = "Alsaree3App"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/NetwrokingServices/DataTaskServices/ModuleServices/HomeScreenServices.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "61"
-                  endingLineNumber = "61"
-                  offsetFromSymbolStart = "280">
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "610">
                </Location>
                <Location
-                  uuid = "DEC894BB-6CE6-41D5-8865-9129787861E9 - 64e8309004bc6eef"
+                  uuid = "A184767E-358A-4AC2-9852-F61A1E003F47 - 4b97ddeedce6c62"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;Foundation.Data, Swift.Error&gt;) -&gt; () in Alsaree3App.HomeScreenServices.getLoyaltyDetail(parameters: Alsaree3App.LoyaltyDetailParams, completion: (Swift.Result&lt;Alsaree3App.LoyaltyDetailsModel, Alsaree3App.APIError&gt;) -&gt; ()) -&gt; ()"
+                  symbolName = "closure #1 (Swift.Result&lt;Foundation.Data, Swift.Error&gt;) -&gt; () in Alsaree3App.HomeScreenServices.getAppSettings(parameters: Alsaree3App.AppSettingParams, completion: (Swift.Result&lt;Alsaree3App.AppSettingModel, Alsaree3App.APIError&gt;) -&gt; ()) -&gt; ()"
                   moduleName = "Alsaree3App"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/NetwrokingServices/DataTaskServices/ModuleServices/HomeScreenServices.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "61"
-                  endingLineNumber = "61"
-                  offsetFromSymbolStart = "176">
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "239">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1361,33 +343,81 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "6927C84F-0A3E-4E42-BB94-4A92D9FC104B"
-            shouldBeEnabled = "No"
+            uuid = "6C29C6E5-10E6-49C9-9129-E8B83FBBEF2F"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Alsaree3App/NetwrokingServices/DataTaskServices/APIs/APIManager.swift"
+            filePath = "Alsaree3App/NetwrokingServices/DataTaskServices/ModuleServices/HomeScreenServices.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "performRequest(serviceType:completionHandler:)"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "getAppSettings(parameters:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "247FD3FA-59E5-4142-9C8C-9567FCC466C7"
+            uuid = "6409F0A2-45E5-4731-B5DA-6F4525AC4844"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Alsaree3App/Module/TabView/TabBarItems/Home/ViewModel/HomeTabViewModel.swift"
+            filePath = "Alsaree3App/NetwrokingServices/DataTaskServices/ModuleServices/HomeScreenServices.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
-            landmarkName = "checkLocationAccess()"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "getAppSettings(parameters:completion:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1751ED47-D562-4A0B-8C14-70F2F9031DB5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Alsaree3App/Module/SplashScreen/ViewModel/SplashScreenViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "callAppSettingApi()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "1751ED47-D562-4A0B-8C14-70F2F9031DB5 - ddd106de8c5b42e1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Alsaree3App.AppSettingModel, Alsaree3App.APIError&gt;) -&gt; () in Alsaree3App.SplashScreenViewModel.callAppSettingApi() -&gt; ()"
+                  moduleName = "Alsaree3App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Module/SplashScreen/ViewModel/SplashScreenViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "93">
+               </Location>
+               <Location
+                  uuid = "1751ED47-D562-4A0B-8C14-70F2F9031DB5 - ddd106de8c5b42e1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Alsaree3App.AppSettingModel, Alsaree3App.APIError&gt;) -&gt; () in Alsaree3App.SplashScreenViewModel.callAppSettingApi() -&gt; ()"
+                  moduleName = "Alsaree3App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Module/SplashScreen/ViewModel/SplashScreenViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "642">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

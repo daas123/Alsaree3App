@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -23,7 +24,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jKE-Xt-E9y">
-                                <rect key="frame" x="110.5" y="427.5" width="154.5" height="35"/>
+                                <rect key="frame" x="110" y="427.5" width="155" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Grant Permission"/>
                                 <connections>
@@ -100,9 +101,93 @@
             </objects>
             <point key="canvasLocation" x="817" y="-2"/>
         </scene>
+        <!--No Location Deliverable Vc-->
+        <scene sceneID="eMa-JY-Z0F">
+            <objects>
+                <viewController id="kLg-Gx-Pp0" customClass="NoLocationDeliverableVc" customModule="Alsaree3App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2h7-8c-fWF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty_delivery" translatesAutoresizingMaskIntoConstraints="NO" id="uQl-ts-YiS">
+                                <rect key="frame" x="27.5" y="102" width="320" height="463"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sorry we are not delivering in your area" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9B0-D3-SKe">
+                                <rect key="frame" x="20" y="480.5" width="335" height="53"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g8M-2w-SPk">
+                                <rect key="frame" x="149.5" y="135" width="76" height="35"/>
+                                <color key="tintColor" systemColor="systemOrangeColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="RETRY"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="4t2-jP-99p"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="9B0-D3-SKe" firstAttribute="centerX" secondItem="2h7-8c-fWF" secondAttribute="centerX" id="4u3-L4-JyP"/>
+                            <constraint firstItem="uQl-ts-YiS" firstAttribute="centerX" secondItem="2h7-8c-fWF" secondAttribute="centerX" id="6eb-IJ-LdY"/>
+                            <constraint firstItem="4t2-jP-99p" firstAttribute="trailing" secondItem="9B0-D3-SKe" secondAttribute="trailing" constant="20" id="IiI-fJ-CKa"/>
+                            <constraint firstItem="g8M-2w-SPk" firstAttribute="centerX" secondItem="2h7-8c-fWF" secondAttribute="centerX" id="e7N-vf-GeP"/>
+                            <constraint firstItem="uQl-ts-YiS" firstAttribute="centerY" secondItem="2h7-8c-fWF" secondAttribute="centerY" id="eOR-JZ-9dv"/>
+                            <constraint firstItem="g8M-2w-SPk" firstAttribute="centerX" secondItem="2h7-8c-fWF" secondAttribute="centerX" id="hro-PL-TvZ"/>
+                            <constraint firstItem="uQl-ts-YiS" firstAttribute="top" secondItem="g8M-2w-SPk" secondAttribute="bottom" multiplier="0.6" id="qad-dd-xBA"/>
+                            <constraint firstItem="9B0-D3-SKe" firstAttribute="leading" secondItem="4t2-jP-99p" secondAttribute="leading" constant="20" id="wrB-mu-TfF"/>
+                            <constraint firstItem="9B0-D3-SKe" firstAttribute="top" secondItem="uQl-ts-YiS" secondAttribute="bottom" multiplier="0.85" id="zgw-YI-igO"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BSz-fg-RWL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1513" y="-2"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="CYH-UT-Bnz">
+            <objects>
+                <viewController id="KfT-3B-KuC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BhW-2Z-BrY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SomeThing Went wrong" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EQi-ga-MGW">
+                                <rect key="frame" x="97" y="323" width="181.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e5o-ov-cUI">
+                                <rect key="frame" x="132" y="364" width="111.5" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Retry Again"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fIW-vw-ChG"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="e5o-ov-cUI" firstAttribute="top" secondItem="EQi-ga-MGW" secondAttribute="bottom" constant="20" id="Cqe-jr-KXU"/>
+                            <constraint firstItem="EQi-ga-MGW" firstAttribute="centerX" secondItem="BhW-2Z-BrY" secondAttribute="centerX" id="H1T-E5-jSf"/>
+                            <constraint firstItem="e5o-ov-cUI" firstAttribute="centerX" secondItem="BhW-2Z-BrY" secondAttribute="centerX" id="lib-Ap-nFZ"/>
+                            <constraint firstItem="EQi-ga-MGW" firstAttribute="centerY" secondItem="BhW-2Z-BrY" secondAttribute="centerY" id="qEx-JO-4J7"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q9B-bN-ZHE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2210" y="-2"/>
+        </scene>
     </scenes>
     <resources>
         <image name="aaset_no_location" width="128" height="128"/>
+        <image name="empty_delivery" width="320" height="463"/>
         <image name="nointernet" width="4000" height="4000"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

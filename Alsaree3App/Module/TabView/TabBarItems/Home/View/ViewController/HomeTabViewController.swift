@@ -19,11 +19,11 @@ class HomeTabViewController: BaseViewController {
     @IBOutlet weak var circularProgresView: UIView!
     @IBOutlet weak var progressLbl: UILabel!
     
+    let backButton = UIButton(type: .system)
     var circularProgressView: CircularProgressView!
     var viewModel = HomeTabViewModel()
     var headerView : HomeTabCategoryHeader?
     var refreshControl = UIRefreshControl()
-    var isLoadingState = false
     
     // For Tabbar visible/ hide
     private var previousScrollOffset: CGFloat = 0
@@ -83,7 +83,6 @@ class HomeTabViewController: BaseViewController {
     func setupHeaderView(){
         headerNavigationView.backgroundColor = ColorConstant.whitecolor
         headerNavigationView.addBottomBorderWithColor(color: ColorConstant.borderColorGray, width: 1)
-        view.applyShadow(to: headerNavigationView)
         
         // Setting the label and button values Manually
         view.setLabelText(lblrefrence: applicationNamelbl, lbltext: TextConstant.alsaree3App.rawValue, fontSize: 16,alignmentLeft: true)
@@ -123,6 +122,23 @@ class HomeTabViewController: BaseViewController {
     
     func setupUI(){
         self.navigationController?.isNavigationBarHidden = true
+        
+        // set Back to top button
+        view.setButtonWithTextAndImage(button: backButton, label: "     Back to Top", image: "arrow_up", textColor: UIColor.white, fontSize: 12, imageSize: CGSize(width: 15, height: 15),imagePosition: .left,imageTintColor: UIColor.white,backColor: UIColor.black,cornerRadius: 35/2)
+        
+        backButton.addTarget(self, action: #selector(scrollToFirstRow), for: .touchUpInside)
+        let buttonY : CGFloat?
+        if UIScreen.main.bounds.height > 900 {
+            buttonY = hometabTableView.frame.origin.y + 60 + 40
+        }else if UIScreen.main.bounds.height > 700 {
+            buttonY = hometabTableView.frame.origin.y + 60 + 25
+        }else{
+            buttonY = hometabTableView.frame.origin.y + 60
+        }
+        backButton.frame = CGRect(x: view.bounds.width / 2 - 50, y: buttonY!, width: 100, height: 35)
+        view.addSubview(backButton)
+        
+        backButton.isHidden = true
     }
     
     func hideProgressView(){
@@ -140,6 +156,11 @@ class HomeTabViewController: BaseViewController {
         self.hometabTableView.reloadData()
     }
     
+    @objc func scrollToFirstRow() {
+        let indexPath = IndexPath(row: 0, section: 0)
+        self.hometabTableView.scrollToRow(at: indexPath, at: .top, animated: true)
+    }
+    
     func setupSteckyHeader(_ scrollView: UIScrollView){
         if viewModel.recentlyAddedStores == nil || viewModel.homeScreenStoreListData == nil {
             return
@@ -147,7 +168,7 @@ class HomeTabViewController: BaseViewController {
         let headerRect = hometabTableView.rect(forSection: 1)
         if headerRect.origin.y <= scrollView.contentOffset.y && scrollView.contentOffset.y <= headerRect.origin.y + headerRect.size.height {
             headerView?.hideImages()
-            headerView?.setCustomConstrain()
+            headerView?.setCustomConstrain(heigtht: 40)
             //            showProgressView()
             headerView?.categroyBackView.backgroundColor = ColorConstant.borderColorGray
         } else {
@@ -159,6 +180,28 @@ class HomeTabViewController: BaseViewController {
         }
     }
     
+    func setupScrollToTop(_ scrollView: UIScrollView ){
+        if viewModel.recentlyAddedStores == nil || viewModel.homeScreenStoreListData == nil {
+            return
+        }
+        
+        let yOffset = scrollView.contentOffset.y
+        let threshold: CGFloat = hometabTableView.bounds.height
+        
+        if yOffset >= threshold {
+            // The user has scrolled beyond the threshold, make the button visible
+            UIView.animate(withDuration: 0.5) {
+                self.backButton.isHidden = false
+            }
+        } else {
+            // The user is above the threshold, hide the button
+            UIView.animate(withDuration: 0.5) {
+                self.backButton.isHidden = true
+            }
+        }
+        
+    }
+    
     func animateCellSelection(at indexPath: IndexPath) {
         if let cell = hometabTableView.cellForRow(at: indexPath) {
             UIView.animate(withDuration: 0.3, animations: {
@@ -167,7 +210,7 @@ class HomeTabViewController: BaseViewController {
                 UIView.animate(withDuration: 0.3) {
                     cell.transform = .identity
                 }completion: { (_) in
-//                    self.pushToNextScreen(indexPath: indexPath)
+                    //                    self.pushToNextScreen(indexPath: indexPath)
                 }
             }
         }
@@ -180,6 +223,9 @@ class HomeTabViewController: BaseViewController {
         navigationController?.pushViewController(newViewController, animated: true)
     }
     
+    deinit{
+        NotificationCenter.default.removeObserver(self, name: .reloadData, object: nil)
+    }
     
 }
 
@@ -341,6 +387,7 @@ extension HomeTabViewController : UIScrollViewDelegate{
             return
         }
         setupSteckyHeader(scrollView)
+        setupScrollToTop(scrollView)
         
         //MARK: For tab bar hide/show
         let currentScrollOffset = scrollView.contentOffset.y
@@ -391,6 +438,10 @@ extension HomeTabViewController{
 }
 
 extension HomeTabViewController:NavigateFormHomeTab{
+    func reloadTableView() {
+        self.hometabTableView.reloadData()
+    }
+    
     func setValueOfCurrentLocation(value: String) {
         DispatchQueue.main.async{
             self.locationLbl.text = value
@@ -416,6 +467,7 @@ extension HomeTabViewController:NavigateFormHomeTab{
             }
         }
     }
+    
     
 }
 

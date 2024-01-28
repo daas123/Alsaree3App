@@ -7,6 +7,7 @@ target 'Alsaree3App' do
 
   # Pods for Alsaree3App
     pod 'SDWebImage', '~> 5.0'
+    pod 'lottie-ios'
 
   target 'Alsaree3AppTests' do
     inherit! :search_paths

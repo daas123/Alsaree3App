@@ -15,7 +15,10 @@ class BaseViewController: UIViewController {
             self.networkStatusDidChange()
         }
         NotificationManager().addObserver(forName: .networkStatusChanged) { _  in
-            self.LocationStatusChanged()
+            self.locationStatusChanged()
+        }
+        NotificationManager().addObserver(forName: .noLocationDeliverable) { _ in
+            
         }
     }
     
@@ -25,15 +28,25 @@ class BaseViewController: UIViewController {
             self.present(viewController, animated: true, completion: nil)
     }
     
-    func LocationStatusChanged(){
+    func locationStatusChanged(){
             let storyboard = UIStoryboard(name: "CommonScreens", bundle: nil)
             let viewController = storyboard.instantiateViewController(withIdentifier:"LocationAccessViewController") as! LocationAccessViewController
             self.present(viewController, animated: true, completion: nil)
     }
     
+    
+    func noLocationDeliverable(){
+            let storyboard = UIStoryboard(name: "CommonScreens", bundle: nil)
+            let viewController = storyboard.instantiateViewController(withIdentifier:"LocationAccessViewController") as! LocationAccessViewController
+            self.present(viewController, animated: true, completion: nil)
+    }
+    
+   
+    
     deinit{
         NotificationCenter.default.removeObserver(self, name: .networkStatusChanged, object: nil)
         NotificationCenter.default.removeObserver(self, name: .locationAccessRestricted, object: nil)
+        NotificationCenter.default.removeObserver(self, name: .noLocationDeliverable, object: nil)
     }
     
 }
