@@ -85,6 +85,15 @@ class HomeTabViewModel{
         }
     }
     
+    func callFullHomeScreenApi(){
+        self.homeTabDeligate?.reloadTableView()
+        dispatchGroup.enter()
+        callAppSettingApi()
+        dispatchGroup.notify(queue: .main) {
+            self.callHomeScreenApis()
+        }
+    }
+    
     func reloadOnPull(){
         dispatchGroup.enter()
         callLoyaltyDetailApi()

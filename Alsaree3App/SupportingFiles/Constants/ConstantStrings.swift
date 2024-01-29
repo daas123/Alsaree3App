@@ -43,7 +43,7 @@ enum TextConstant:String{
 enum ButtonTextConstant:String{
     case alFurjanArea = "Al Furjan Area"
     case seeMore = "See More"
-    case backtoTop = "Back to Top"
+    case backtoTop = "    Back to Top"
     
 }
 
@@ -62,6 +62,7 @@ enum ViewControllerConstant : String {
     case locationAccessViewController = "LocationAccessViewController"
     case internetAccessViewController = "InternetAccessViewController"
     case noLocationDeliverableVc = "NoLocationDeliverableVc"
+    case someThingwentWrong = "SomeThingwentWrong"
 }
 
 enum CellConstant : String{

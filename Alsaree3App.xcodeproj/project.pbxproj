@@ -15,11 +15,12 @@
 		4A8D3A8E2B625D3600D8F29C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D3A8D2B625D3600D8F29C /* BaseViewController.swift */; };
 		4AA831D22B664482003185AB /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AA831D12B664482003185AB /* Splash.storyboard */; };
 		4AA831D52B6693A6003185AB /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA831D42B6693A6003185AB /* SplashViewController.swift */; };
-		4AA831D72B66CC31003185AB /* HomeTabViewDeligate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA831D62B66CC31003185AB /* HomeTabViewDeligate.swift */; };
+		4AA831D72B66CC31003185AB /* HomeTabViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA831D62B66CC31003185AB /* HomeTabViewDelegate.swift */; };
 		4AA831D92B66CC40003185AB /* HomeTabViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA831D82B66CC40003185AB /* HomeTabViewDataSource.swift */; };
-		4AA831DC2B66CD18003185AB /* HomeTabViewScrollViewDeligate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA831DB2B66CD18003185AB /* HomeTabViewScrollViewDeligate.swift */; };
+		4AA831DC2B66CD18003185AB /* HomeTabViewScrollViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA831DB2B66CD18003185AB /* HomeTabViewScrollViewDelegate.swift */; };
 		4AA89D2F2B62613E00DEBD35 /* InternetAccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA89D2E2B62613E00DEBD35 /* InternetAccessViewController.swift */; };
 		4AA89D322B626E1500DEBD35 /* NoLocationDeliverableVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA89D312B626E1500DEBD35 /* NoLocationDeliverableVc.swift */; };
+		4AB152872B6793AA008CD7A5 /* SomeThingwentWrong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB152862B6793AA008CD7A5 /* SomeThingwentWrong.swift */; };
 		4ABC9D2A2B5E5419006EFCBD /* CloseStoreView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4ABC9D292B5E5419006EFCBD /* CloseStoreView.xib */; };
 		4ABC9D2C2B5E5471006EFCBD /* CloseStoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABC9D2B2B5E5471006EFCBD /* CloseStoreView.swift */; };
 		4AEEB7A32B669C19008C3347 /* Animation in Resources */ = {isa = PBXBuildFile; fileRef = 4AEEB7A12B669C18008C3347 /* Animation */; };
@@ -240,11 +241,12 @@
 		4A8D3A8D2B625D3600D8F29C /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		4AA831D12B664482003185AB /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
 		4AA831D42B6693A6003185AB /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
-		4AA831D62B66CC31003185AB /* HomeTabViewDeligate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabViewDeligate.swift; sourceTree = "<group>"; };
+		4AA831D62B66CC31003185AB /* HomeTabViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabViewDelegate.swift; sourceTree = "<group>"; };
 		4AA831D82B66CC40003185AB /* HomeTabViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabViewDataSource.swift; sourceTree = "<group>"; };
-		4AA831DB2B66CD18003185AB /* HomeTabViewScrollViewDeligate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabViewScrollViewDeligate.swift; sourceTree = "<group>"; };
+		4AA831DB2B66CD18003185AB /* HomeTabViewScrollViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabViewScrollViewDelegate.swift; sourceTree = "<group>"; };
 		4AA89D2E2B62613E00DEBD35 /* InternetAccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetAccessViewController.swift; sourceTree = "<group>"; };
 		4AA89D312B626E1500DEBD35 /* NoLocationDeliverableVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoLocationDeliverableVc.swift; sourceTree = "<group>"; };
+		4AB152862B6793AA008CD7A5 /* SomeThingwentWrong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomeThingwentWrong.swift; sourceTree = "<group>"; };
 		4ABC9D292B5E5419006EFCBD /* CloseStoreView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CloseStoreView.xib; sourceTree = "<group>"; };
 		4ABC9D2B2B5E5471006EFCBD /* CloseStoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseStoreView.swift; sourceTree = "<group>"; };
 		4AEEB7A12B669C18008C3347 /* Animation */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Animation; sourceTree = "<group>"; };
@@ -492,12 +494,12 @@
 			path = HomeTabShimmer;
 			sourceTree = "<group>";
 		};
-		4A8D3A842B6104E400D8F29C /* NotificartionManager */ = {
+		4A8D3A842B6104E400D8F29C /* NotificationManager */ = {
 			isa = PBXGroup;
 			children = (
 				4A8D3A852B61050000D8F29C /* NotificationManger.swift */,
 			);
-			path = NotificartionManager;
+			path = NotificationManager;
 			sourceTree = "<group>";
 		};
 		4A8D3A8C2B6257FB00D8F29C /* BaseViewController */ = {
@@ -532,6 +534,33 @@
 				4AA89D312B626E1500DEBD35 /* NoLocationDeliverableVc.swift */,
 			);
 			path = NoLocationDeliverable;
+			sourceTree = "<group>";
+		};
+		4AB152852B679380008CD7A5 /* SomethingWentWrong */ = {
+			isa = PBXGroup;
+			children = (
+				4AB152862B6793AA008CD7A5 /* SomeThingwentWrong.swift */,
+			);
+			path = SomethingWentWrong;
+			sourceTree = "<group>";
+		};
+		4AB152882B6794B8008CD7A5 /* StoryBoardController */ = {
+			isa = PBXGroup;
+			children = (
+				4AB152892B6794DD008CD7A5 /* InternetAccessVc */,
+				929F51CD2B56994F00C468AA /* LocationAccessVc */,
+				4AA89D302B626D7200DEBD35 /* NoLocationDeliverable */,
+				4AB152852B679380008CD7A5 /* SomethingWentWrong */,
+			);
+			path = StoryBoardController;
+			sourceTree = "<group>";
+		};
+		4AB152892B6794DD008CD7A5 /* InternetAccessVc */ = {
+			isa = PBXGroup;
+			children = (
+				4AA89D2E2B62613E00DEBD35 /* InternetAccessViewController.swift */,
+			);
+			path = InternetAccessVc;
 			sourceTree = "<group>";
 		};
 		4AB41BF12B5C5C6D00BA70C4 /* ClosedStore */ = {
@@ -585,8 +614,8 @@
 			children = (
 				92A66D882B2C20D700CB8EF5 /* HomeTabViewController.swift */,
 				4AA831D82B66CC40003185AB /* HomeTabViewDataSource.swift */,
-				4AA831D62B66CC31003185AB /* HomeTabViewDeligate.swift */,
-				4AA831DB2B66CD18003185AB /* HomeTabViewScrollViewDeligate.swift */,
+				4AA831D62B66CC31003185AB /* HomeTabViewDelegate.swift */,
+				4AA831DB2B66CD18003185AB /* HomeTabViewScrollViewDelegate.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -639,7 +668,6 @@
 		9214538B2B3176A300F54890 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				92FA144C2B321E8700148974 /* Cell */,
 				9214538C2B3176A800F54890 /* ViewController */,
 			);
 			path = View;
@@ -793,12 +821,12 @@
 		929F1B982B480A5C00B0F08F /* CommonPages */ = {
 			isa = PBXGroup;
 			children = (
-				4AA89D302B626D7200DEBD35 /* NoLocationDeliverable */,
+				92FA144C2B321E8700148974 /* LoadingTableViewCell */,
+				4AB152882B6794B8008CD7A5 /* StoryBoardController */,
 				4A8D3A8C2B6257FB00D8F29C /* BaseViewController */,
 				4AB41BF12B5C5C6D00BA70C4 /* ClosedStore */,
 				4A043ADC2B5A4878005B8AFA /* HomeTabShimmer */,
 				9213500F2B57ED7100E6A1B5 /* ErrorHandlingCell */,
-				929F51CD2B56994F00C468AA /* LocationAndInternetAccessRequest */,
 			);
 			path = CommonPages;
 			sourceTree = "<group>";
@@ -984,13 +1012,12 @@
 			path = UserDefaults;
 			sourceTree = "<group>";
 		};
-		929F51CD2B56994F00C468AA /* LocationAndInternetAccessRequest */ = {
+		929F51CD2B56994F00C468AA /* LocationAccessVc */ = {
 			isa = PBXGroup;
 			children = (
 				929F51CE2B5699F100C468AA /* LocationAccessViewController.swift */,
-				4AA89D2E2B62613E00DEBD35 /* InternetAccessViewController.swift */,
 			);
-			path = LocationAndInternetAccessRequest;
+			path = LocationAccessVc;
 			sourceTree = "<group>";
 		};
 		929F8F912B2EF3A000536E70 /* AdvTableViewCell */ = {
@@ -1180,8 +1207,8 @@
 		92A66D7A2B2C18B700CB8EF5 /* Module */ = {
 			isa = PBXGroup;
 			children = (
-				4AA831D32B66938F003185AB /* SplashScreen */,
 				929F1B982B480A5C00B0F08F /* CommonPages */,
+				4AA831D32B66938F003185AB /* SplashScreen */,
 				92FA145A2B32329B00148974 /* Pages */,
 				92A66D852B2C207000CB8EF5 /* TabView */,
 			);
@@ -1335,7 +1362,7 @@
 		92AE0B122B43EED200E71A32 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				4A8D3A842B6104E400D8F29C /* NotificartionManager */,
+				4A8D3A842B6104E400D8F29C /* NotificationManager */,
 				929F51CA2B566EA500C468AA /* UserDefaults */,
 				929F1C9B2B4AB5C200B0F08F /* LocationService */,
 				929F1C982B4A6EBE00B0F08F /* AesEncryption */,
@@ -1362,13 +1389,13 @@
 			path = FlotingHeader;
 			sourceTree = "<group>";
 		};
-		92FA144C2B321E8700148974 /* Cell */ = {
+		92FA144C2B321E8700148974 /* LoadingTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
 				92FA144D2B321EAF00148974 /* LoadingTableViewCell.swift */,
 				92FA144E2B321EAF00148974 /* LoadingTableViewCell.xib */,
 			);
-			path = Cell;
+			path = LoadingTableViewCell;
 			sourceTree = "<group>";
 		};
 		92FA14512B32212E00148974 /* resturentDetailsTableViewCell */ = {
@@ -1715,7 +1742,7 @@
 				929F1C7F2B48366D00B0F08F /* DigestType.swift in Sources */,
 				929FF90E2B301F8C00E9C34A /* ResturentDetailsCollectionViewCell.swift in Sources */,
 				921453A92B319A9D00F54890 /* ShimmeringView.swift in Sources */,
-				4AA831DC2B66CD18003185AB /* HomeTabViewScrollViewDeligate.swift in Sources */,
+				4AA831DC2B66CD18003185AB /* HomeTabViewScrollViewDelegate.swift in Sources */,
 				929F1C882B48366D00B0F08F /* PBKDF2.swift in Sources */,
 				929F1C942B48366D00B0F08F /* CTR.swift in Sources */,
 				929F1C8B2B48366D00B0F08F /* OCB.swift in Sources */,
@@ -1741,7 +1768,7 @@
 				929F1C532B48366C00B0F08F /* AEADChaCha20Poly1305.swift in Sources */,
 				929F1C6E2B48366C00B0F08F /* CompactMap.swift in Sources */,
 				929F1C8F2B48366D00B0F08F /* CCM.swift in Sources */,
-				4AA831D72B66CC31003185AB /* HomeTabViewDeligate.swift in Sources */,
+				4AA831D72B66CC31003185AB /* HomeTabViewDelegate.swift in Sources */,
 				92654B282B386CF000D1FB40 /* CustomUiProgresView.swift in Sources */,
 				929F1C7E2B48366D00B0F08F /* StreamEncryptor.swift in Sources */,
 				929F8F9E2B2F653800536E70 /* FoodCatrgoryCell.swift in Sources */,
@@ -1784,6 +1811,7 @@
 				929F1C502B48366C00B0F08F /* HKDF.swift in Sources */,
 				929F1C802B48366D00B0F08F /* Utils.swift in Sources */,
 				929F1C5D2B48366C00B0F08F /* UInt32+Extension.swift in Sources */,
+				4AB152872B6793AA008CD7A5 /* SomeThingwentWrong.swift in Sources */,
 				921350152B57EE8500E6A1B5 /* CellErrorHandlingView.swift in Sources */,
 				929F1C652B48366C00B0F08F /* HMAC+Foundation.swift in Sources */,
 				4AEEB7AB2B66A72F008C3347 /* SplashScreenModel.swift in Sources */,

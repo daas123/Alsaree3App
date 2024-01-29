@@ -55,12 +55,16 @@ extension HomeTabViewController : UITableViewDelegate{
 }
 
 extension HomeTabViewController:NavigateFormHomeTab{
+
     func reloadTableView() {
         self.hometabTableView.reloadData()
+        self.hometabTableView.layoutIfNeeded()
+        self.setupSteckyHeader(hometabTableView)
     }
     
     func setValueOfCurrentLocation(value: String) {
         DispatchQueue.main.async{
+            ShimmeringView().stopShining(self.locationLbl)
             self.locationLbl.text = value
         }
     }

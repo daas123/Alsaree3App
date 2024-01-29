@@ -21,13 +21,13 @@ class LoadingTableViewCell: UITableViewCell {
         self.selectionStyle = .none
         setLabelText(lblrefrence: loadingTitle, lbltext: "Try searching with food emojis today", fontSize: 20,lineHeightMultiple: 0.7)
         let imageSize = CGSize(width: 25, height: 25)
-        setButtonWithTextAndImage(button: retryButton, label: "Retry Loading  ", image: "retry", fontSize: 20, imageSize: imageSize)
+        setButtonWithTextAndImage(button: retryButton, label: "  Retry Loading", image: "retry", fontSize: 20, imageSize: imageSize)
     }
     
     
     @IBAction func onRetryClick(_ sender: UIButton) {
         homeTabdeilgate?.viewModel.isApiCallFailed = false
-        homeTabdeilgate?.viewModel.checkLocationAccess()
+        homeTabdeilgate?.viewModel.callFullHomeScreenApi()
     }
     
     func showLoading(){
