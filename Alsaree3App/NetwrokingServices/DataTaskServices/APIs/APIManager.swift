@@ -2,6 +2,9 @@
 
 import Foundation
 
+enum NetworkError: Error {
+    case noNetwork
+}
 class APIManager {
     
     static let sharedInstance = APIManager()
@@ -11,8 +14,9 @@ class APIManager {
     public func performRequest(serviceType: APIServices, completionHandler: @escaping(Result<Data,Error>)->Void){
         
         //  Reachability to check network connected or not
-        if !Reachability.isConnectedToNetwork(){
+        if !Reachability.isConnectedToNetwork() {
             NotificationManager().postNetworkStatusChanged()
+            completionHandler(.failure(NetworkError.noNetwork))
             return
         }
         
@@ -24,7 +28,7 @@ class APIManager {
                 return
             }
         }
-
+        
         
         let session = URLSession.shared
         

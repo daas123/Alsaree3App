@@ -122,18 +122,17 @@ class HomeTabViewController: BaseViewController {
     
     func setupUI(){
         self.navigationController?.isNavigationBarHidden = true
-        
         // set Back to top button
         view.setButtonWithTextAndImage(button: backButton, label: ButtonTextConstant.backtoTop.rawValue, image: ImageConstant.arrow_up.rawValue, textColor: UIColor.white, fontSize: 12, imageSize: CGSize(width: 15, height: 15),imagePosition: .left,imageTintColor: UIColor.white,backColor: UIColor.black,cornerRadius: 35/2)
         
         backButton.addTarget(self, action: #selector(scrollToFirstRow), for: .touchUpInside)
         let buttonY : CGFloat?
         if UIScreen.main.bounds.height > 900 {
-            buttonY = hometabTableView.frame.origin.y + 60 + 40
+            buttonY = hometabTableView.frame.origin.y + 170 + 82
         }else if UIScreen.main.bounds.height > 700 {
-            buttonY = hometabTableView.frame.origin.y + 60 + 25
+            buttonY = hometabTableView.frame.origin.y + 170 + 25
         }else{
-            buttonY = hometabTableView.frame.origin.y + 60
+            buttonY = hometabTableView.frame.origin.y + 70
         }
         backButton.frame = CGRect(x: view.bounds.width / 2 - 50, y: buttonY!, width: 100, height: 35)
         view.addSubview(backButton)

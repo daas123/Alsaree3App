@@ -9,7 +9,7 @@ import UIKit
 import Lottie
 
 class SplashViewController: UIViewController {
-
+    
     @IBOutlet weak var animationviewLayout: UIView!
     
     private var animationView: LottieAnimationView?
@@ -17,8 +17,9 @@ class SplashViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        callApi()
+        navigationController?.navigationBar.isHidden = true
         setupAnimation()
+        checkInternet()
         viewmodel.splashScreenDeligate = self
         
     }
@@ -26,17 +27,23 @@ class SplashViewController: UIViewController {
         animationView?.stop()
     }
     
-    func callApi(){
-        viewmodel.callSplashScreeenApis()
+    func checkInternet() {
+        if !Reachability.isConnectedToNetwork() {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                self.navigateToHomeTab()
+            }
+        } else {
+            viewmodel.callSplashScreeenApis()
+        }
     }
     
     func setupAnimation(){
         animationView = .init(name: AnimationConstant.alsaree_animation.rawValue,subdirectory: "Animation")
-        animationView!.frame = animationviewLayout.bounds
+        animationView!.frame = view.bounds
         animationView!.contentMode = .scaleAspectFit
         animationView!.loopMode = .loop
         animationView?.backgroundBehavior = .pauseAndRestore
-        animationviewLayout.addSubview(animationView!)
+        view.addSubview(animationView!)
         animationView!.play()
     }
 }
@@ -44,10 +51,9 @@ class SplashViewController: UIViewController {
 
 extension SplashViewController : splashScreenActions{
     func navigateToAppSettingErrorState() {
-        let storyboard = UIStoryboard(name: StoryBoardConstant.main.rawValue, bundle: nil)
-        if let initialViewController = storyboard.instantiateInitialViewController() {
-            self.view.window?.rootViewController = initialViewController
-        }
+        let storyboard = UIStoryboard(name: StoryBoardConstant.commonScreens.rawValue, bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: ViewControllerConstant.someThingwentWrong.rawValue) as! SomeThingwentWrong
+        navigationController?.pushViewController(viewController, animated: true)
     }
     
     func navigateToInValidAreaLocation() {

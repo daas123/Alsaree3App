@@ -15,24 +15,10 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ob8-sH-Cee">
-                                <rect key="frame" x="0.0" y="103" width="393" height="749"/>
-                            </view>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.56470588235294117" blue="0.23137254901960785" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <constraints>
-                            <constraint firstItem="Ob8-sH-Cee" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="8dX-nq-5ez"/>
-                            <constraint firstItem="Ob8-sH-Cee" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="LgX-7n-6j9"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Ob8-sH-Cee" secondAttribute="trailing" id="kZl-oI-duv"/>
-                            <constraint firstAttribute="bottom" secondItem="Ob8-sH-Cee" secondAttribute="bottom" id="xwt-RE-jvQ"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="qHH-Ks-ZKi"/>
-                    <connections>
-                        <outlet property="animationviewLayout" destination="Ob8-sH-Cee" id="BUk-dq-IbH"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -91,7 +91,7 @@ extension HomeTabViewController:UITableViewDataSource{
             default:
                 
                 if let homeScreenStorelistCount = viewModel.homeScreenStoreListData?.count{
-                    if homeScreenStorelistCount-1 == indexPath.row{
+                    if homeScreenStorelistCount-2 == (indexPath.row - 5) {
                         viewModel.callHomeScreenStorelistNextPageApi()
                     }
                 }
