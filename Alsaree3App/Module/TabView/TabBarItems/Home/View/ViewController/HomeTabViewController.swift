@@ -41,7 +41,7 @@ class HomeTabViewController: BaseViewController {
         setupTableview()
         registerTableViewCell()
         setupUI()
-        setupHeaderView()
+        setupHeaderView(headerNavigationView: headerNavigationView, applicationNamelbl: applicationNamelbl, locationLbl: locationLbl, downArrowImage: downArrowImage, scooterimg: scooterimg)
         hideProgressView()
         setUpCircularprogress(currentProgress: 0.2)
         refreshControl.addTarget(self, action: #selector(refreshData(_:)), for: .valueChanged)
@@ -79,19 +79,7 @@ class HomeTabViewController: BaseViewController {
         hometabTableView.registerNib(of: LoadingTableViewCell.self)
         hometabTableView.registerNib(of:HomeTabShimmerCell.self)
     }
-    
-    func setupHeaderView(){
-        headerNavigationView.backgroundColor = ColorConstant.whitecolor
-        headerNavigationView.addBottomBorderWithColor(color: ColorConstant.borderColorGray, width: 1)
-        
-        // Setting the label and button values Manually
-        view.setLabelText(lblrefrence: applicationNamelbl, lbltext: TextConstant.alsaree3App.rawValue, fontSize: 16,alignmentLeft: true)
-        view.setLabelText(lblrefrence: locationLbl, lbltext: TextConstant.alFurjanArea.rawValue, fontSize: 12,lineHeightMultiple: 0.8)
-        view.setImage(imageView: downArrowImage, imageName: ImageConstant.downArrow.rawValue)
-        view.setImage(imageView: scooterimg, imageName: ImageConstant.scooter.rawValue)
-        view.setCircleWithBorderColor(imageView: scooterimg, borderColor: ColorConstant.borderColorYellow, borderWidth: 1)
-    }
-    
+  
     func setUpCircularprogress(currentProgress: Float){
         circularProgresView.layer.cornerRadius = (circularProgresView.bounds.width + 4)/2
         circularProgresView.backgroundColor = UIColor.clear

@@ -34,21 +34,21 @@ class TabBarController: UITabBarController,UITabBarControllerDelegate {
         }
 
     //MARK: Creaiting the View Bounce
-    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-            viewController.view.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
-            
-            UIView.animate(
-                withDuration: 0.3,
-                delay: 0,
-                usingSpringWithDamping: 0.5,
-                initialSpringVelocity: 0.5,
-                options: [.curveEaseInOut],
-                animations: {
-                    viewController.view.transform = .identity
-                },
-                completion: nil
-            )
-        }
+//    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+//            viewController.view.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+//            
+//            UIView.animate(
+//                withDuration: 0.3,
+//                delay: 0,
+//                usingSpringWithDamping: 0.5,
+//                initialSpringVelocity: 0.5,
+//                options: [.curveEaseInOut],
+//                animations: {
+//                    viewController.view.transform = .identity
+//                },
+//                completion: nil
+//            )
+//        }
         
 
     func setupTabBar(){

@@ -7,15 +7,21 @@
 
 import UIKit
 
-class ProfileTabViewController: UIViewController {
+class ProfileTabViewController: BaseViewController {
 
     @IBOutlet weak var ProfileTabTableView: UITableView!
+    @IBOutlet weak var scooterimg: UIImageView!
+    @IBOutlet weak var applicationNamelbl: UILabel!
+    @IBOutlet weak var locationLbl: UILabel!
+    @IBOutlet weak var downArrowImage: UIImageView!
+    @IBOutlet weak var headerNavigationView: UIView!
+    @IBOutlet weak var circularProgresView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         ProfileTabTableView.separatorStyle = .none
         setupdeligate()
+        setupHeaderView(headerNavigationView: headerNavigationView, applicationNamelbl: applicationNamelbl, locationLbl: locationLbl, downArrowImage: downArrowImage, scooterimg: scooterimg)
         registerCell()
     }
     
@@ -25,7 +31,8 @@ class ProfileTabViewController: UIViewController {
     }
     
     func registerCell(){
-        ProfileTabTableView.registerNib(of: ErrorStateTableViewCell.self)
+        ProfileTabTableView.registerNib(of: ProfileBannerAdvCell.self)
+        ProfileTabTableView.registerNib(of: ProfileInfoListCell.self)
     }
    
 }
@@ -36,15 +43,8 @@ extension ProfileTabViewController: UITableViewDataSource,UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.getCell(identifier: CellConstant.errorStateTableViewCell.rawValue) as ErrorStateTableViewCell
-        cell.isInternetError = true
+        let cell = tableView.getCell(identifier: "ProfileBannerAdvCell") as ProfileBannerAdvCell
         return cell
     }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let tableviewScreen = tableView.bounds.height
-        return tableviewScreen
-    }
-    
-    
+
 }
