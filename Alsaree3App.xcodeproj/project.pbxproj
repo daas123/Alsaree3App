@@ -25,6 +25,8 @@
 		4AB152952B67DB00008CD7A5 /* ProfileInfoListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AB152932B67DB00008CD7A5 /* ProfileInfoListCell.xib */; };
 		4AB1529C2B67DE74008CD7A5 /* ProfileBannerAdvCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB1529A2B67DE74008CD7A5 /* ProfileBannerAdvCell.swift */; };
 		4AB1529D2B67DE74008CD7A5 /* ProfileBannerAdvCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AB1529B2B67DE74008CD7A5 /* ProfileBannerAdvCell.xib */; };
+		4AB75D202B68E4E5008D3D64 /* ProfileTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB75D1F2B68E4E5008D3D64 /* ProfileTabViewModel.swift */; };
+		4AB75D222B68E4F2008D3D64 /* ProfileTabModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB75D212B68E4F2008D3D64 /* ProfileTabModel.swift */; };
 		4ABC9D2A2B5E5419006EFCBD /* CloseStoreView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4ABC9D292B5E5419006EFCBD /* CloseStoreView.xib */; };
 		4ABC9D2C2B5E5471006EFCBD /* CloseStoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABC9D2B2B5E5471006EFCBD /* CloseStoreView.swift */; };
 		4AEEB7A32B669C19008C3347 /* Animation in Resources */ = {isa = PBXBuildFile; fileRef = 4AEEB7A12B669C18008C3347 /* Animation */; };
@@ -253,6 +255,8 @@
 		4AB152932B67DB00008CD7A5 /* ProfileInfoListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileInfoListCell.xib; sourceTree = "<group>"; };
 		4AB1529A2B67DE74008CD7A5 /* ProfileBannerAdvCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileBannerAdvCell.swift; sourceTree = "<group>"; };
 		4AB1529B2B67DE74008CD7A5 /* ProfileBannerAdvCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileBannerAdvCell.xib; sourceTree = "<group>"; };
+		4AB75D1F2B68E4E5008D3D64 /* ProfileTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabViewModel.swift; sourceTree = "<group>"; };
+		4AB75D212B68E4F2008D3D64 /* ProfileTabModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabModel.swift; sourceTree = "<group>"; };
 		4ABC9D292B5E5419006EFCBD /* CloseStoreView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CloseStoreView.xib; sourceTree = "<group>"; };
 		4ABC9D2B2B5E5471006EFCBD /* CloseStoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseStoreView.swift; sourceTree = "<group>"; };
 		4AEEB7A12B669C18008C3347 /* Animation */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Animation; sourceTree = "<group>"; };
@@ -570,6 +574,7 @@
 		4AB1528A2B67D7B4008CD7A5 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				4AB75D1F2B68E4E5008D3D64 /* ProfileTabViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -577,6 +582,7 @@
 		4AB1528B2B67D7BD008CD7A5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4AB75D212B68E4F2008D3D64 /* ProfileTabModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1784,6 +1790,7 @@
 				929F51C72B56492300C468AA /* Application_keyConstant.swift in Sources */,
 				929F1C852B48366D00B0F08F /* PKCS7Padding.swift in Sources */,
 				92C3CD692B4524BD00706D99 /* CenteredCollectionViewFlowLayout.swift in Sources */,
+				4AB75D202B68E4E5008D3D64 /* ProfileTabViewModel.swift in Sources */,
 				4A8D3A8E2B625D3600D8F29C /* BaseViewController.swift in Sources */,
 				929F1CA32B4BE7E900B0F08F /* HomeTabLoyaltyDetailsModel.swift in Sources */,
 				92A66DA32B2C30A500CB8EF5 /* UIView+Extention.swift in Sources */,
@@ -1819,6 +1826,7 @@
 				929F1C672B48366C00B0F08F /* ChaCha20+Foundation.swift in Sources */,
 				922CB7552B2E16330067805A /* UICollectionView+Extension.swift in Sources */,
 				92A66D892B2C20D700CB8EF5 /* HomeTabViewController.swift in Sources */,
+				4AB75D222B68E4F2008D3D64 /* ProfileTabModel.swift in Sources */,
 				929F1C512B48366C00B0F08F /* ISO10126Padding.swift in Sources */,
 				92BB4ABD2B3E8FA400FCD513 /* RestaurantDetailsVC.swift in Sources */,
 				929F1C622B48366C00B0F08F /* String+FoundationExtension.swift in Sources */,

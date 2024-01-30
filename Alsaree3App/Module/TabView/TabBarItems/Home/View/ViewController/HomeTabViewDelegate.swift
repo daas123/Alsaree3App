@@ -12,14 +12,18 @@ extension HomeTabViewController : UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if viewModel.recentlyAddedStores == nil || viewModel.homeScreenStoreListData == nil {
+        if viewModel.recentlyAddedStores == nil && viewModel.homeScreenStoreListData == nil {
             return tableView.bounds.height
         }
         switch (indexPath.section, indexPath.row) {
         case (0, 0):
             return viewModel.activeOrder ? UITableView.automaticDimension : 0
-        case (1, _):
-            return UITableView.automaticDimension
+        case (1, 2):
+            return viewModel.recentlyAddedStores == nil ? 0 : UITableView.automaticDimension
+        case (1, 3):
+            return viewModel.nearbyResturentStore == nil ? 0 : UITableView.automaticDimension
+        case (1, 4):
+            return viewModel.mostPopularStore == nil ? 0 : UITableView.automaticDimension
         default:
             return UITableView.automaticDimension
         }
@@ -38,7 +42,7 @@ extension HomeTabViewController : UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if viewModel.recentlyAddedStores == nil || viewModel.homeScreenStoreListData == nil {
+        if viewModel.recentlyAddedStores == nil && viewModel.homeScreenStoreListData == nil {
             return 0
         }
         if section == 0{

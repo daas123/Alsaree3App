@@ -9,7 +9,7 @@ import UIKit
 extension HomeTabViewController:UITableViewDataSource{
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return (viewModel.recentlyAddedStores == nil || viewModel.homeScreenStoreListData == nil) ? 1 : 2
+        return (viewModel.recentlyAddedStores == nil && viewModel.homeScreenStoreListData == nil) ? 1 : 2
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -21,7 +21,7 @@ extension HomeTabViewController:UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if viewModel.recentlyAddedStores == nil || viewModel.homeScreenStoreListData == nil {
+        if viewModel.recentlyAddedStores == nil && viewModel.homeScreenStoreListData == nil {
             if viewModel.isApiCallFailed{
                 let loadingCell = tableView.getCell(identifier: CellConstant.loadingTableViewCell.rawValue) as! LoadingTableViewCell
                 loadingCell.homeTabdeilgate = self
@@ -91,7 +91,7 @@ extension HomeTabViewController:UITableViewDataSource{
             default:
                 
                 if let homeScreenStorelistCount = viewModel.homeScreenStoreListData?.count{
-                    if homeScreenStorelistCount-2 == (indexPath.row - 5) {
+                    if homeScreenStorelistCount == (indexPath.row - 4) {
                         viewModel.callHomeScreenStorelistNextPageApi()
                     }
                 }

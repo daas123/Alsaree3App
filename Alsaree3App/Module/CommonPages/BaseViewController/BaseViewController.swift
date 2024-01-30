@@ -9,7 +9,7 @@ import UIKit
 
 class BaseViewController: UIViewController {
     
-//    var circularProgressView: CircularProgressView!
+    var circularProgressView: CircularProgressView!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = true
@@ -56,26 +56,26 @@ class BaseViewController: UIViewController {
     }
     
     
-//    func setUpCircularprogress(circularProgresView:UIView , currentProgress: Float ,progressLbl : UILabel){
-//        circularProgresView.layer.cornerRadius = (circularProgresView.bounds.width + 4)/2
-//        circularProgresView.backgroundColor = UIColor.clear
-//        
-//        // Adding the Frame
-//        circularProgressView = CircularProgressView(frame: circularProgresView.bounds, lineWidth: 2, rounded: true)
-//        circularProgressView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-//        
-//        //Adding color to Progress view
-//        circularProgressView.progressColor = ColorConstant.primaryYellowColor
-//        circularProgressView.trackColor = ColorConstant.borderColorGray
-//        
-//        circularProgresView.addSubview(circularProgressView)
-//        
-//        // for demo Added some Value
-//        circularProgressView.setProgress(to: currentProgress)
-//        let percentage = Int(currentProgress * 100)
-//        view.setLabelText(lblrefrence: progressLbl, lbltext: "\(percentage)%", fontSize: 12)
-//        
-//    }
+    func setUpCircularprogress(circularProgresView:UIView , currentProgress: Float ,progressLbl : UILabel){
+        circularProgresView.layer.cornerRadius = (circularProgresView.bounds.width + 4)/2
+        circularProgresView.backgroundColor = UIColor.clear
+        
+        // Adding the Frame
+        circularProgressView = CircularProgressView(frame: circularProgresView.bounds, lineWidth: 2, rounded: true)
+        circularProgressView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        
+        //Adding color to Progress view
+        circularProgressView.progressColor = ColorConstant.primaryYellowColor
+        circularProgressView.trackColor = ColorConstant.borderColorGray
+        
+        circularProgresView.addSubview(circularProgressView)
+        
+        // for demo Added some Value
+        circularProgressView.setProgress(to: currentProgress)
+        let percentage = Int(currentProgress * 100)
+        view.setLabelText(lblrefrence: progressLbl, lbltext: "\(percentage)%", fontSize: 12)
+        
+    }
    
     
     deinit{

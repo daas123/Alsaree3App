@@ -219,7 +219,7 @@ extension HomeTabViewModel{
                     
                 }
             case .failure(let error):
-                self.apiCallFailed()
+//                self.apiCallFailed()
                 debugPrint("callHomeScreenGetCloseStoreListApi failed")
                 debugPrint(error.localizedDescription)
             }

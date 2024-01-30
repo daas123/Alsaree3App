@@ -20,7 +20,7 @@ class HomeTabViewController: BaseViewController {
     @IBOutlet weak var progressLbl: UILabel!
     
     let backButton = UIButton(type: .system)
-    var circularProgressView: CircularProgressView!
+//    var circularProgressView: CircularProgressView!
     var viewModel = HomeTabViewModel()
     var headerView : HomeTabCategoryHeader?
     var refreshControl = UIRefreshControl()
@@ -43,9 +43,24 @@ class HomeTabViewController: BaseViewController {
         setupUI()
         setupHeaderView(headerNavigationView: headerNavigationView, applicationNamelbl: applicationNamelbl, locationLbl: locationLbl, downArrowImage: downArrowImage, scooterimg: scooterimg)
         hideProgressView()
-        setUpCircularprogress(currentProgress: 0.2)
+        setUpCircularprogress(circularProgresView: circularProgresView, currentProgress: 0.2, progressLbl: progressLbl)
         refreshControl.addTarget(self, action: #selector(refreshData(_:)), for: .valueChanged)
         hometabTableView.addSubview(refreshControl)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+
+        let buttonY: CGFloat
+        if UIScreen.main.bounds.height > 900 {
+            buttonY = hometabTableView.frame.origin.y + 170 + 82
+        } else if UIScreen.main.bounds.height > 700 {
+            buttonY = hometabTableView.frame.origin.y + 170 + 25
+        } else {
+            buttonY = hometabTableView.frame.origin.y + 80
+        }
+        
+        backButton.frame = CGRect(x: view.bounds.width / 2 - 50, y: buttonY, width: 100, height: 35)
     }
     
     func setupTableview(){
@@ -79,27 +94,7 @@ class HomeTabViewController: BaseViewController {
         hometabTableView.registerNib(of: LoadingTableViewCell.self)
         hometabTableView.registerNib(of:HomeTabShimmerCell.self)
     }
-  
-    func setUpCircularprogress(currentProgress: Float){
-        circularProgresView.layer.cornerRadius = (circularProgresView.bounds.width + 4)/2
-        circularProgresView.backgroundColor = UIColor.clear
-        
-        // Adding the Frame
-        circularProgressView = CircularProgressView(frame: circularProgresView.bounds, lineWidth: 2, rounded: true)
-        circularProgressView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        
-        //Adding color to Progress view
-        circularProgressView.progressColor = ColorConstant.primaryYellowColor
-        circularProgressView.trackColor = ColorConstant.borderColorGray
-        
-        circularProgresView.addSubview(circularProgressView)
-        
-        // for demo Added some Value
-        circularProgressView.setProgress(to: currentProgress)
-        let percentage = Int(currentProgress * 100)
-        view.setLabelText(lblrefrence: progressLbl, lbltext: "\(percentage)%", fontSize: 12)
-        
-    }
+
     
     func setupObserver(){
         NotificationManager().addObserver(forName: .reloadData) { _ in
@@ -111,20 +106,11 @@ class HomeTabViewController: BaseViewController {
     func setupUI(){
         self.navigationController?.isNavigationBarHidden = true
         // set Back to top button
-        view.setButtonWithTextAndImage(button: backButton, label: ButtonTextConstant.backtoTop.rawValue, image: ImageConstant.arrow_up.rawValue, textColor: UIColor.white, fontSize: 12, imageSize: CGSize(width: 15, height: 15),imagePosition: .left,imageTintColor: UIColor.white,backColor: UIColor.black,cornerRadius: 35/2)
+        view.setButtonWithTextAndImage(button: backButton, label: ButtonTextConstant.backtoTop.rawValue, image: ImageConstant.arrow_up.rawValue, textColor: UIColor.white, fontSize: 12, imageSize: CGSize(width: 15, height: 15), imagePosition: .left, imageTintColor: UIColor.white, backColor: UIColor.black, cornerRadius: 35/2)
         
         backButton.addTarget(self, action: #selector(scrollToFirstRow), for: .touchUpInside)
-        let buttonY : CGFloat?
-        if UIScreen.main.bounds.height > 900 {
-            buttonY = hometabTableView.frame.origin.y + 170 + 82
-        }else if UIScreen.main.bounds.height > 700 {
-            buttonY = hometabTableView.frame.origin.y + 170 + 25
-        }else{
-            buttonY = hometabTableView.frame.origin.y + 70
-        }
-        backButton.frame = CGRect(x: view.bounds.width / 2 - 50, y: buttonY!, width: 100, height: 35)
-        view.addSubview(backButton)
         
+        view.addSubview(backButton)
         backButton.isHidden = true
     }
     

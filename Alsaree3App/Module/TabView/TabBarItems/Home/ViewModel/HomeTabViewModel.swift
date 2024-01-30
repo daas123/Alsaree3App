@@ -55,7 +55,7 @@ class HomeTabViewModel{
     func getTableViewCount(Section:Int) -> Int{
         if Section == 0{
             if recentlyAddedStores == nil || homeScreenStoreListData == nil {
-                return 1
+                return 2
             }
             return SectionAboveHeader.allCases.count
         }else if Section == 1{
