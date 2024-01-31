@@ -72,9 +72,9 @@ extension HomeTabViewModel{
             country_code_2: kCountryCode2,
             city_code: kCityCode,
             country_code: kCountryCode,
-            latitude: String(describing: LocationManager.shared.currentLocation?.latitude ?? 0),
+            latitude: String(describing: LocationManagerRevamp.shared.currentLocation?.latitude ?? 0),
             server_token: kServerToken,
-            longitude: String(describing: LocationManager.shared.currentLocation?.longitude ?? 0)
+            longitude: String(describing: LocationManagerRevamp.shared.currentLocation?.longitude ?? 0)
         )
         HomeScreenServices().getDeliveryListForNearestCity(parameters: parameter) { responce in
             switch responce{
@@ -98,11 +98,11 @@ extension HomeTabViewModel{
         let parameter = HomeScreenStoreListParams(
             city_id: kCityId,
             page: "1",
-            longitude: String(describing: LocationManager.shared.currentLocation?.longitude ?? 0),
+            longitude: String(describing: LocationManagerRevamp.shared.currentLocation?.longitude ?? 0),
             cart_unique_token: kCartUniqueToken,
             store_delivery_id: kStoreDeliveryId,
             user_id: kUserId,
-            latitude: String(describing: LocationManager.shared.currentLocation?.latitude ?? 0),
+            latitude: String(describing: LocationManagerRevamp.shared.currentLocation?.latitude ?? 0),
             language:  DeviceInfo.englishLang.rawValue,
             server_token: kServerToken
         )
@@ -133,11 +133,11 @@ extension HomeTabViewModel{
         let parameter = HomeScreenStoreListParams(
             city_id: kCityId,
             page: pageNo,
-            longitude: String(describing: LocationManager.shared.currentLocation?.longitude ?? 0),
+            longitude: String(describing: LocationManagerRevamp.shared.currentLocation?.longitude ?? 0),
             cart_unique_token: kCartUniqueToken,
             store_delivery_id: kStoreDeliveryId,
             user_id: kUserId,
-            latitude: String(describing: LocationManager.shared.currentLocation?.latitude ?? 0),
+            latitude: String(describing: LocationManagerRevamp.shared.currentLocation?.latitude ?? 0),
             language:  DeviceInfo.englishLang.rawValue,
             server_token: kServerToken
             
@@ -174,8 +174,8 @@ extension HomeTabViewModel{
     
     func callPushZoneApi(){
         let parameter = PushZoneParams(
-            longitude:String(describing: LocationManager.shared.currentLocation?.longitude ?? 0),
-            latitude: String(describing: LocationManager.shared.currentLocation?.latitude ?? 0))
+            longitude:String(describing: LocationManagerRevamp.shared.currentLocation?.longitude ?? 0),
+            latitude: String(describing: LocationManagerRevamp.shared.currentLocation?.latitude ?? 0))
         HomeScreenServices().getPushZoneData(parameters: parameter) { responce in
             switch responce{
             case .success(let data):
@@ -194,11 +194,11 @@ extension HomeTabViewModel{
         let parameter = HomeScreenStoreListParams(
             city_id: kCityId,
             page: pageNo,
-            longitude: String(describing: LocationManager.shared.currentLocation?.longitude ?? 0),
+            longitude: String(describing: LocationManagerRevamp.shared.currentLocation?.longitude ?? 0),
             cart_unique_token: kCartUniqueToken,
             store_delivery_id: kStoreDeliveryId,
             user_id: kUserId,
-            latitude: String(describing: LocationManager.shared.currentLocation?.latitude ?? 0),
+            latitude: String(describing: LocationManagerRevamp.shared.currentLocation?.latitude ?? 0),
             language:  DeviceInfo.englishLang.rawValue,
             server_token: kServerToken
         )

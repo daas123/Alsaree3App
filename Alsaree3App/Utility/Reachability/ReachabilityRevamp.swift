@@ -8,7 +8,7 @@
 import Foundation
 import SystemConfiguration
 
-public class Reachability {
+public class ReachabilityRevamp {
     
     class func isConnectedToNetwork() -> Bool {
         

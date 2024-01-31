@@ -12,7 +12,7 @@ class FoodCatCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var foodImage: UIImageView!
     @IBOutlet weak var categoryTitle: UILabel!
     
-    var singleFoodCategoryData : Tags?
+    var singleFoodCategoryData : TagsRevamp?
     
     override func awakeFromNib() {
         super.awakeFromNib()

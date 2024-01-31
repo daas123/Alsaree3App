@@ -13,7 +13,7 @@ class AdvertisementCell: UITableViewCell {
     @IBOutlet weak var advCollectionView: UICollectionView!
     @IBOutlet weak var advPageControl: UIPageControl!
     
-    var advertisementBannerData : [Banner]?
+    var advertisementBannerData : [BannerRevamp]?
     var isHeigthChnaged = false
     var isScrollingLeft = false
 

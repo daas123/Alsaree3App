@@ -19,11 +19,11 @@ class SomeThingwentWrong: BaseViewController {
     
     func checkErrorState(){
         
-        if !Reachability.isConnectedToNetwork(){
+        if !ReachabilityRevamp.isConnectedToNetwork(){
             NotificationManager().postNetworkStatusChanged()
         }
         
-        LocationManager.shared.requestLocationPermission(completion: { islocationaccess in
+        LocationManagerRevamp.shared.requestLocationPermission(completion: { islocationaccess in
             if !islocationaccess{
                 NotificationManager().postLocationAccessRestricted()
             }

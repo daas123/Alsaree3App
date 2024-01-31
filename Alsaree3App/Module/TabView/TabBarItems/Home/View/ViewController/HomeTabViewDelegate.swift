@@ -84,7 +84,7 @@ extension HomeTabViewController:NavigateFormHomeTab{
     }
     
     func showLocationAccessScreen() {
-        LocationManager.shared.requestLocationPermission { islocationAccess in
+        LocationManagerRevamp.shared.requestLocationPermission { islocationAccess in
             if !islocationAccess{
                 let storyboard = UIStoryboard(name: nibNamesConstant.commonScreens.rawValue, bundle: nil)
                 let viewController = storyboard.instantiateViewController(withIdentifier: ViewControllerConstant.locationAccessViewController.rawValue) as! LocationAccessViewController

@@ -1,7 +1,7 @@
 
 
 import Foundation
-struct Banner : Codable {
+struct BannerRevamp : Codable {
 	let _id : String?
 	let sequence_number : Int?
 	let city_id : String?

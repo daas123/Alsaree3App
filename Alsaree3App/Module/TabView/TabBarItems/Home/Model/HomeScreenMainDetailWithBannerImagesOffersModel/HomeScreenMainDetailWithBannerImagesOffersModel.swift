@@ -14,11 +14,11 @@ struct HomeScreenMainDetailWithBannerImagesOffersModel: Codable {
 	let horizontal_store_title : String?
 	let horizontal_store_title_2 : String?
 	let popular_searches : [String]?
-	let banner : [Banner]?
+	let banner : [BannerRevamp]?
 	let show_brand_scroll_after : Int?
-	let brands : [Brands]?
-	let tags : [Tags]?
-	let ads : [Ads]?
+	let brands : [BrandsRevamp]?
+	let tags : [TagsRevamp]?
+	let ads : [AdsRevamp]?
 	let store_offers : [Stores]?
 	let zone_id : String?
 	let horizontal_stores : [Stores]?
@@ -65,11 +65,11 @@ struct HomeScreenMainDetailWithBannerImagesOffersModel: Codable {
 		horizontal_store_title = try values.decodeIfPresent(String.self, forKey: .horizontal_store_title)
 		horizontal_store_title_2 = try values.decodeIfPresent(String.self, forKey: .horizontal_store_title_2)
 		popular_searches = try values.decodeIfPresent([String].self, forKey: .popular_searches)
-		banner = try values.decodeIfPresent([Banner].self, forKey: .banner)
+		banner = try values.decodeIfPresent([BannerRevamp].self, forKey: .banner)
 		show_brand_scroll_after = try values.decodeIfPresent(Int.self, forKey: .show_brand_scroll_after)
-		brands = try values.decodeIfPresent([Brands].self, forKey: .brands)
-		tags = try values.decodeIfPresent([Tags].self, forKey: .tags)
-		ads = try values.decodeIfPresent([Ads].self, forKey: .ads)
+		brands = try values.decodeIfPresent([BrandsRevamp].self, forKey: .brands)
+		tags = try values.decodeIfPresent([TagsRevamp].self, forKey: .tags)
+		ads = try values.decodeIfPresent([AdsRevamp].self, forKey: .ads)
 		store_offers = try values.decodeIfPresent([Stores].self, forKey: .store_offers)
 		zone_id = try values.decodeIfPresent(String.self, forKey: .zone_id)
 		horizontal_stores = try values.decodeIfPresent([Stores].self, forKey: .horizontal_stores)

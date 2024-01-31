@@ -4,7 +4,7 @@ struct Store_time : Codable {
 	let is_store_open : Bool?
 	let is_store_open_full_time : Bool?
 	let day : Int?
-	let day_time : [Day_time]?
+	let day_time : [Day_timeRevamp]?
 
 	enum CodingKeys: String, CodingKey {
 
@@ -19,7 +19,7 @@ struct Store_time : Codable {
 		is_store_open = try values.decodeIfPresent(Bool.self, forKey: .is_store_open)
 		is_store_open_full_time = try values.decodeIfPresent(Bool.self, forKey: .is_store_open_full_time)
 		day = try values.decodeIfPresent(Int.self, forKey: .day)
-		day_time = try values.decodeIfPresent([Day_time].self, forKey: .day_time)
+		day_time = try values.decodeIfPresent([Day_timeRevamp].self, forKey: .day_time)
 	}
 
 }

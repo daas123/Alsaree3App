@@ -11,7 +11,7 @@ class FoodCatrgoryCell: UITableViewCell {
 
     @IBOutlet weak var foodCategoryCollectionView: UICollectionView!
     
-    var foodCategoryData : [Tags]?
+    var foodCategoryData : [TagsRevamp]?
     var isHeigthChnaged = false
     
     override func awakeFromNib() {

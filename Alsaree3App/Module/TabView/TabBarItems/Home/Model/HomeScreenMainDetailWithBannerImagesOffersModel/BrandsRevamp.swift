@@ -1,7 +1,7 @@
  
 
 import Foundation
-struct Brands : Codable {
+struct BrandsRevamp: Codable {
 	let _id : String?
 	let name : String?
 	let unique_id : Int?

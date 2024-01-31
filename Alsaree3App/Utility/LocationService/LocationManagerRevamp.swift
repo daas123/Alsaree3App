@@ -1,8 +1,8 @@
 import CoreLocation
 import UIKit
 
-class LocationManager: NSObject, CLLocationManagerDelegate {
-    static let shared = LocationManager()
+class LocationManagerRevamp: NSObject, CLLocationManagerDelegate {
+    static let shared = LocationManagerRevamp()
     
     private var locationManager: CLLocationManager
     var currentLocation: CLLocationCoordinate2D?

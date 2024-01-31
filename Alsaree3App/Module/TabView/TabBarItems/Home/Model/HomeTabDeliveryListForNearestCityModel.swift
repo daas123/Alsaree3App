@@ -10,9 +10,9 @@ import Foundation
 struct DeliveryListForNearestCityModel: Codable {
     let success: Bool
     let serverTime, country, countryCode, currencySign: String
-    let city: City
-    let deliveries: [Delivery]
-    let cityData: CityData
+    let city: CityRevamp
+    let deliveries: [DeliveryRevamp]
+    let cityData: CityDataRevamp
 
     enum CodingKeys: String, CodingKey {
         case success
@@ -26,7 +26,7 @@ struct DeliveryListForNearestCityModel: Codable {
 }
 
 // City
-struct City: Codable {
+struct CityRevamp: Codable {
     let isOtherPaymentMode, isCashPaymentMode: Bool
     let id: String
     let uniqueID: Int
@@ -48,7 +48,7 @@ struct City: Codable {
 }
 
 // CityData
-struct CityData: Codable {
+struct CityDataRevamp: Codable {
     let userID, serverToken, cartUniqueToken, country: String
     let countryCode, countryCode2, cityCode, latitude: String
     let longitude, city1, city2, city3: String
@@ -66,7 +66,7 @@ struct CityData: Codable {
 }
 
 //  Delivery
-struct Delivery: Codable {
+struct DeliveryRevamp: Codable {
     let id, mapPinURL, iconURL, imageURL: String
     let deliveryName: String
 

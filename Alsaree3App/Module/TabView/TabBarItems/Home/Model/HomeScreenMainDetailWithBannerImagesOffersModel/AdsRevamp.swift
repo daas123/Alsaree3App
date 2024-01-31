@@ -1,7 +1,7 @@
 
 
 import Foundation
-struct Ads : Codable {
+struct AdsRevamp : Codable {
 	let _id : String?
 	let ads_detail : String?
 	let is_ads_cc : Bool?

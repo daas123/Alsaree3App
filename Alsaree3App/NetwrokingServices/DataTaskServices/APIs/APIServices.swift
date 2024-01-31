@@ -116,7 +116,7 @@ extension APIServices {
         var longitude: String = ""
         var latitude: String = ""
         
-        if let currentLocation = LocationManager.shared.currentLocation {
+        if let currentLocation = LocationManagerRevamp.shared.currentLocation {
             longitude = String(describing: currentLocation.longitude)
             latitude = String(describing: currentLocation.latitude)
         }

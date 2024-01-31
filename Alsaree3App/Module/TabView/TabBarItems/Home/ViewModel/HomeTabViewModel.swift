@@ -33,9 +33,9 @@ class HomeTabViewModel{
     var recentlyAddedStores : [Stores]?
     var mostPopularStore : [Stores]?
     var nearbyResturentStore : [Stores]?
-    var brands : [Brands]?
-    var tags : [Tags]?
-    var banner : [Banner]?
+    var brands : [BrandsRevamp]?
+    var tags : [TagsRevamp]?
+    var banner : [BannerRevamp]?
     
     var homeScreenStoreListData : [Stores]?
     var pushZoneData : PushZoneModel?
@@ -107,7 +107,7 @@ class HomeTabViewModel{
     }
     
     func checkLocationAccess(){
-        if LocationManager.shared.isLocationAccess{
+        if LocationManagerRevamp.shared.isLocationAccess{
             self.homeTabDeligate?.reloadTableView()
             callHomeScreenApis()
         }else{

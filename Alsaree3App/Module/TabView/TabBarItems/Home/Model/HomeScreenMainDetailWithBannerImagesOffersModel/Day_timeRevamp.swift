@@ -1,7 +1,7 @@
 
 
 import Foundation
-struct Day_time : Codable {
+struct Day_timeRevamp : Codable {
 	let store_open_time : String?
 	let store_close_time : String?
 

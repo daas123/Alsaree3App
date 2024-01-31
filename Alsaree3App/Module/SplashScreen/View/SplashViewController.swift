@@ -28,7 +28,7 @@ class SplashViewController: UIViewController {
     }
     
     func checkInternet() {
-        if !Reachability.isConnectedToNetwork() {
+        if !ReachabilityRevamp.isConnectedToNetwork() {
             DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
                 self.navigateToHomeTab()
             }

@@ -1,7 +1,7 @@
 
 
 import Foundation
-struct Tags : Codable {
+struct TagsRevamp : Codable {
 	let _id : String?
 	let name : String?
 	let image_url : String?

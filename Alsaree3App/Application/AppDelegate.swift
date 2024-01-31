@@ -12,9 +12,9 @@ import CoreLocation
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    var locationManager: LocationManager?
+    var locationManager: LocationManagerRevamp?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        LocationManager.shared.requestLocationPermission { _ in}
+        LocationManagerRevamp.shared.requestLocationPermission { _ in}
         return true
     }
     // MARK: UISceneSession Lifecycle
