@@ -19,8 +19,19 @@ class ResturentTableViewCell: UITableViewCell {
         setDelegate()
         registerCell()
         configureCollectionViewLayout()
-        resturentCollectionView.decelerationRate = .fast
     }
+    
+    func scrollToIndex(){
+        if ((resturentTableViewCellData != nil) && (resturentCollectionView.effectiveUserInterfaceLayoutDirection == .rightToLeft)){
+                resturentCollectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .centeredHorizontally, animated: true)
+        }
+    }
+    
+    func setUpCellData(storeTitle:String){
+        setText(StoreTitile: storeTitle )
+    }
+    
+
     func setText(StoreTitile : String){
         setLabelText(lblrefrence: collectionViewTitile, lbltext: StoreTitile, fontSize: 18,isBold : true)
     }
@@ -28,21 +39,15 @@ class ResturentTableViewCell: UITableViewCell {
     func setupUI(){
         setButtonText(button: seemoreBtn, label: ButtonTextConstant.seeMore.rawValue,color: ColorConstant.borderColorYellow, size: 14,isUnderline: true)
         self.backgroundColor = UIColor.clear
+        self.selectionStyle = .none
+        resturentCollectionView.backgroundColor = UIColor.clear
     }
     
     
     func configureCollectionViewLayout() {
-        
-        centeredCollectionViewFlowLayout = (resturentCollectionView.collectionViewLayout as! CenteredCollectionViewFlowLayout)
-        
-        centeredCollectionViewFlowLayout.itemSize = CGSize(width: resturentCollectionView.bounds.width * 0.65, height: resturentCollectionView.bounds.height)
-
         resturentCollectionView.decelerationRate = UIScrollView.DecelerationRate.fast
-        
-        centeredCollectionViewFlowLayout.minimumLineSpacing = 10
-        
         resturentCollectionView.showsHorizontalScrollIndicator = false
-
+        
     }
     
     func setDelegate() {
@@ -53,19 +58,7 @@ class ResturentTableViewCell: UITableViewCell {
     func registerCell() {
         resturentCollectionView.registerNib(of: ResturentDetailsCollectionViewCell.self)
     }
-    
-    override func systemLayoutSizeFitting(_ targetSize: CGSize, withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority, verticalFittingPriority: UILayoutPriority) -> CGSize {
-        self.resturentCollectionView.frame = self.bounds
-        self.resturentCollectionView.layoutIfNeeded()
-        
-        if isvalueChaged{
-            return self.resturentCollectionView.contentSize
-        }else{
-            resturentCollectionView.contentSize.height += 60
-            isvalueChaged = true
-            return self.resturentCollectionView.contentSize
-        }
-    }
+
     
     func animateCellSelection(at indexPath: IndexPath) {
         let cell = resturentCollectionView.cellForItem(at: indexPath)
@@ -98,6 +91,9 @@ extension ResturentTableViewCell: UICollectionViewDelegate, UICollectionViewDele
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
             animateCellSelection(at: indexPath)
         }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: resturentCollectionView.bounds.width * 0.80, height: resturentCollectionView.bounds.height)
+    }
 }
 
 

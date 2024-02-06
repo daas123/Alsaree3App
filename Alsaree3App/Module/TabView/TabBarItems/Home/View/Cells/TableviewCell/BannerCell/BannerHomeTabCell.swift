@@ -15,6 +15,7 @@ class BannerHomeTabCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.backgroundColor = UIColor.clear
+        self.selectionStyle = .none
     }
     
     
@@ -26,7 +27,7 @@ class BannerHomeTabCell: UITableViewCell {
         
         if bannerData == nil {
             showErrorMessage(nameNib: nibNamesConstant.cellErrorHandlingView.rawValue, uiView:bannerImageView)
-            SDWebImageManager.shared.loadImage(with:bannerData?.zero_point_image_url ?? "", into: bannerImageView, isbaseUrlRequired: false)
+            SDWebImageManagerRevamp.shared.loadImage(with:bannerData?.zero_point_image_url ?? "", into: bannerImageView, isbaseUrlRequired: false)
         } else {
             loadBannerImage()
         }
@@ -34,7 +35,7 @@ class BannerHomeTabCell: UITableViewCell {
     }
     
     private func loadBannerImage() {
-        SDWebImageManager.shared.loadImage(with: bannerData?.zero_point_image_url ?? "", into: bannerImageView, isbaseUrlRequired: false)
+        SDWebImageManagerRevamp.shared.loadImage(with: bannerData?.zero_point_image_url ?? "", into: bannerImageView, isbaseUrlRequired: false)
     }
     
 

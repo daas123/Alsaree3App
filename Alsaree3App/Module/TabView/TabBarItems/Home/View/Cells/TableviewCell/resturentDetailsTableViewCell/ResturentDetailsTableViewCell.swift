@@ -25,11 +25,15 @@ class ResturentDetailsTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         setupUI()
-        drawTriangleforlowdeleveryView()
-        drawTriangleforSelectedView()
         setupCollectionViewLayout()
         resturentFutrCollectionView.registerNib(of: FeatureCell.self)
         setDeligate()
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        drawTriangleforSelectedView()
+        drawTriangleforlowdeleveryView()
     }
     
     func setupCollectionViewLayout(){
@@ -40,13 +44,14 @@ class ResturentDetailsTableViewCell: UITableViewCell {
     }
     
     func reloadCellData(){
-        SDWebImageManager.shared.loadImage(with: resturentDetailsTableViewCellData?.image_url ?? "", into: resturentImage)
+        SDWebImageManagerRevamp.shared.loadImage(with: resturentDetailsTableViewCellData?.image_url ?? "", into: resturentImage)
         setLabelText(lblrefrence: resturentTitle, lbltext: resturentDetailsTableViewCellData?.name ?? "", fontSize: 20,alignmentLeft:true)
         if resturentDetailsTableViewCellData?.offer == "" {
             setLabelText(lblrefrence: selectedItemOffLbl, lbltext: TextConstant.getoffonselecteditems.rawValue, fontSize: 12,alignmentLeft:true)
         }else{
             setLabelText(lblrefrence: selectedItemOffLbl, lbltext: resturentDetailsTableViewCellData?.offer ?? TextConstant.getoffonselecteditems.rawValue, fontSize: 12,alignmentLeft:true)
         }
+        
         setupFeatureDetails()
         if isStoreClose{
             setupCloseStore()
@@ -59,30 +64,38 @@ class ResturentDetailsTableViewCell: UITableViewCell {
     }
     
     func setupUI(){
-        lowdeleveryView.backgroundColor = UIColor.white
-        lowdeleveryView.layer.borderColor = ColorConstant.borderColorGray.cgColor
-        lowdeleveryView.layer.borderWidth = 0.5
-        applyCornerRadius(to: lowdeleveryView, radius: 5)
+        // setup offer stricker
+        setupOfferView()
         
-        // setup for selectid view
-        selectedItemView.backgroundColor = ColorConstant.primaryYellowColor
-        applyCornerRadius(to: selectedItemView, radius: 5)
-        
-        setLabelText(lblrefrence: lowDeleveryfeelbl, lbltext: TextConstant.lowdeliveryfee.rawValue, fontSize: 12,alignmentLeft: true)
-        
+        // hide the scroll indicator
         resturentFutrCollectionView.showsHorizontalScrollIndicator = false
         
-        resturentImage.layer.cornerRadius = 15
-        resturentImage.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
-        resturentImage.layer.borderColor = ColorConstant.borderColorGray.cgColor
-        resturentImage.layer.borderWidth = 0.2
-        resturentImage.clipsToBounds = true
+        // setup rsturent details view
+        applyCornerRadius(to: resturentDetailsView, radius: 15, corners: .All, borderColor:ColorConstant.borderColorGray , borderWidth: 1)
         
+        // image Curve code
+        applyCornerRadius(to: resturentImage, radius: 15, corners: .Top, borderColor: ColorConstant.borderColorGray, borderWidth: 0.2)
+    }
+    
+    func setupOfferView(){
         
-        // setup resturent detils view
-        resturentDetailsView.layer.borderColor = ColorConstant.borderColorGray.cgColor
-        resturentDetailsView.layer.borderWidth = 1
-        resturentDetailsView.layer.cornerRadius = 15
+        //OfferView : LowDeliveryView
+        lowdeleveryView.backgroundColor = UIColor.white
+        
+        if UIApplication.shared.userInterfaceLayoutDirection == .rightToLeft {
+            applyCornerRadius(to: lowdeleveryView, radius: 5, corners: .Left,borderColor: ColorConstant.borderColorGray, borderWidth: 0.5)
+        }else{
+            applyCornerRadius(to: lowdeleveryView, radius: 5, corners: .Right,borderColor: ColorConstant.borderColorGray, borderWidth: 0.5)
+        }
+        setLabelText(lblrefrence: lowDeleveryfeelbl, lbltext: "Low delivery fee", fontSize: 12,alignmentLeft:true)
+        
+        //OfferView : selectedItemView
+        selectedItemView.backgroundColor = ColorConstant.primaryYellowColor
+        if UIApplication.shared.userInterfaceLayoutDirection == .rightToLeft {
+            applyCornerRadius(to: selectedItemView, radius: 5, corners: .Left,borderWidth: 0.5)
+        }else{
+            applyCornerRadius(to: selectedItemView, radius: 5, corners: .Right, borderWidth: 0.5)
+        }
         
     }
     
@@ -102,21 +115,33 @@ class ResturentDetailsTableViewCell: UITableViewCell {
         view.clipsToBounds = true
         view.layer.cornerRadius = radius
         view.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
-        }
+    }
+    
     
     func drawTriangleforSelectedView() {
         let triangleLayer = CAShapeLayer()
         let trianglePath = UIBezierPath()
         
-        // Starting point for the path (the bottom left of the triangle)
-        let startX = selectedItemView.frame.minX
-        let startY = selectedItemView.frame.maxY
-        
-        // Move to starting point
-        trianglePath.move(to: CGPoint(x: startX+10, y: startY)) //rigth side point
-        trianglePath.addLine(to: CGPoint(x: startX , y: startY)) // left side point
-        trianglePath.addLine(to: CGPoint(x: startX+10, y: startY+15)) // bottem point
-        trianglePath.close()
+        if UIApplication.shared.userInterfaceLayoutDirection == .rightToLeft{
+            let startX = resturentDetailsView.frame.maxX+5
+            let startY = selectedItemView.frame.maxY
+            
+            trianglePath.move(to: CGPoint(x: startX , y: startY))
+            trianglePath.addLine(to: CGPoint(x: startX-10 , y: startY+10))
+            trianglePath.addLine(to: CGPoint(x: startX-10, y: startY))
+            trianglePath.close()
+        }else{
+            // Starting point for the path (the bottom left of the triangle)
+            let startX = selectedItemView.frame.minX
+            let startY = selectedItemView.frame.maxY
+            
+            // Move to starting point
+            trianglePath.move(to: CGPoint(x: startX+10, y: startY)) //rigth side point
+            trianglePath.addLine(to: CGPoint(x: startX , y: startY)) // left side point
+            trianglePath.addLine(to: CGPoint(x: startX+10, y: startY+15)) // bottem point
+            trianglePath.close()
+            
+        }
         
         // Configure the layer
         triangleLayer.path = trianglePath.cgPath
@@ -129,14 +154,23 @@ class ResturentDetailsTableViewCell: UITableViewCell {
         let triangleLayer = CAShapeLayer()
         let trianglePath = UIBezierPath()
         
-        let startX = lowdeleveryView.frame.minX
-        let startY = lowdeleveryView.frame.maxY
-        
-        trianglePath.move(to: CGPoint(x: startX+10, y: startY))
-        trianglePath.addLine(to: CGPoint(x: startX , y: startY))
-        trianglePath.addLine(to: CGPoint(x: startX+10, y: startY+15))
-        trianglePath.close()
-        
+        if UIApplication.shared.userInterfaceLayoutDirection == .rightToLeft{
+            let startX = resturentDetailsView.frame.maxX+5
+            let startY = lowdeleveryView.frame.maxY
+            
+            trianglePath.move(to: CGPoint(x: startX , y: startY))
+            trianglePath.addLine(to: CGPoint(x: startX-10 , y: startY+10))
+            trianglePath.addLine(to: CGPoint(x: startX-10, y: startY))
+            trianglePath.close()
+        }else{
+            let startX = lowdeleveryView.frame.minX
+            let startY = lowdeleveryView.frame.maxY
+            
+            trianglePath.move(to: CGPoint(x: startX+10, y: startY))
+            trianglePath.addLine(to: CGPoint(x: startX , y: startY))
+            trianglePath.addLine(to: CGPoint(x: startX+10, y: startY+15))
+            trianglePath.close()
+        }
         // Configure the layer
         triangleLayer.path = trianglePath.cgPath
         triangleLayer.fillColor = UIColor(red: 0.67, green: 0.66, blue: 0.66, alpha: 1).cgColor
@@ -160,7 +194,7 @@ extension ResturentDetailsTableViewCell : UICollectionViewDelegate,UICollectionV
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellConstant.featureCell.rawValue, for: indexPath) as! FeatureCell
         cell.feature = resturentFeatureDate?[indexPath.row]
-//        cell.featurelbl.preferredMaxLayoutWidth = collectionView.frame.width/1.5
+        //        cell.featurelbl.preferredMaxLayoutWidth = collectionView.frame.width/1.5
         cell.fillDetails()
         return cell
     }

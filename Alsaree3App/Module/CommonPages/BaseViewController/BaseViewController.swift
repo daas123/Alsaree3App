@@ -48,7 +48,7 @@ class BaseViewController: UIViewController {
         headerNavigationView.addBottomBorderWithColor(color: ColorConstant.borderColorGray, width: 1)
         
         // Setting the label and button values Manually
-        view.setLabelText(lblrefrence: applicationNamelbl, lbltext: TextConstant.alsaree3App.rawValue, fontSize: 16,alignmentLeft: true)
+        view.setLabelText(lblrefrence: applicationNamelbl, lbltext: TextConstant.alsaree3App.localized, fontSize: 16,alignmentLeft: true)
         view.setLabelText(lblrefrence: locationLbl, lbltext: TextConstant.alFurjanArea.rawValue, fontSize: 12,lineHeightMultiple: 0.8)
         view.setImage(imageView: downArrowImage, imageName: ImageConstant.downArrow.rawValue)
         view.setImage(imageView: scooterimg, imageName: ImageConstant.scooter.rawValue)

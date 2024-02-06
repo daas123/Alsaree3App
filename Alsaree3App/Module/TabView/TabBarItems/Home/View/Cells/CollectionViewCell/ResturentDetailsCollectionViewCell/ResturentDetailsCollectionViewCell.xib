@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -28,11 +28,11 @@
                                 <rect key="frame" x="0.0" y="252" width="349" height="190"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="qD8-ue-RwF">
-                                        <rect key="frame" x="5" y="30.333333333333314" width="334" height="156.66666666666666"/>
+                                        <rect key="frame" x="10" y="30.333333333333314" width="319" height="156.66666666666666"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <viewLayoutGuide key="contentLayoutGuide" id="UN0-8X-rBT"/>
                                         <viewLayoutGuide key="frameLayoutGuide" id="JSy-XI-kvM"/>
-                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ZsG-Ue-Ywn">
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ZsG-Ue-Ywn" customClass="AlignedCollectionViewFlowLayout" customModule="Alsaree3App" customModuleProvider="target">
                                             <size key="itemSize" width="128" height="128"/>
                                             <size key="estimatedItemSize" width="200" height="300"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -40,8 +40,8 @@
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                     </collectionView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zla-59-H0H">
-                                        <rect key="frame" x="15" y="5" width="296.66666666666669" height="20.333333333333332"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zla-59-H0H">
+                                        <rect key="frame" x="20" y="5" width="309" height="20.333333333333332"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -49,11 +49,11 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="Zla-59-H0H" firstAttribute="width" secondItem="tNM-bX-ZtO" secondAttribute="width" multiplier="0.85" id="DI7-cj-rCG"/>
-                                    <constraint firstAttribute="trailing" secondItem="qD8-ue-RwF" secondAttribute="trailing" constant="10" id="F75-9n-csa"/>
+                                    <constraint firstAttribute="trailing" secondItem="qD8-ue-RwF" secondAttribute="trailing" constant="20" id="F75-9n-csa"/>
+                                    <constraint firstAttribute="trailing" secondItem="Zla-59-H0H" secondAttribute="trailing" constant="20" id="Z0J-YK-gEG"/>
                                     <constraint firstItem="qD8-ue-RwF" firstAttribute="top" secondItem="Zla-59-H0H" secondAttribute="bottom" constant="5" id="aGR-dK-KTg"/>
-                                    <constraint firstItem="Zla-59-H0H" firstAttribute="leading" secondItem="tNM-bX-ZtO" secondAttribute="leading" constant="15" id="o6q-Xp-W1H"/>
-                                    <constraint firstItem="qD8-ue-RwF" firstAttribute="leading" secondItem="tNM-bX-ZtO" secondAttribute="leading" constant="5" id="qMa-KO-3Uo"/>
+                                    <constraint firstItem="Zla-59-H0H" firstAttribute="leading" secondItem="tNM-bX-ZtO" secondAttribute="leading" constant="20" id="o6q-Xp-W1H"/>
+                                    <constraint firstItem="qD8-ue-RwF" firstAttribute="leading" secondItem="tNM-bX-ZtO" secondAttribute="leading" constant="10" id="qMa-KO-3Uo"/>
                                     <constraint firstAttribute="bottom" secondItem="qD8-ue-RwF" secondAttribute="bottom" constant="3" id="qdT-HY-G4d"/>
                                     <constraint firstItem="Zla-59-H0H" firstAttribute="top" secondItem="tNM-bX-ZtO" secondAttribute="top" constant="5" id="rgu-qE-myT"/>
                                 </constraints>

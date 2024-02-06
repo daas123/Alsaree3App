@@ -28,6 +28,10 @@ class ResturentDetailsCollectionViewCell: UICollectionViewCell {
         setDeligate()
         setupCollectionView()
         registerCell()
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
         drawTriangleforSelectedView()
         drawTriangleforlowdeleveryView()
     }
@@ -65,6 +69,7 @@ class ResturentDetailsCollectionViewCell: UICollectionViewCell {
         let layout = TagFlowLayout()
         layout.estimatedItemSize = CGSize(width: 140, height: 40)
         resturentFeatureCollectionView.collectionViewLayout = layout
+
     }
     
     func registerCell(){
@@ -80,15 +85,23 @@ class ResturentDetailsCollectionViewCell: UICollectionViewCell {
         let triangleLayer = CAShapeLayer()
         let trianglePath = UIBezierPath()
         
-        // Starting point for the path (the bottom left of the triangle)
-        let startX = selectedItemView.frame.minX
-        let startY = selectedItemView.frame.maxY
-        
-        // Move to starting point
-        trianglePath.move(to: CGPoint(x: startX, y: startY-13))
-        trianglePath.addLine(to: CGPoint(x: startX+10 , y: startY-13))
-        trianglePath.addLine(to: CGPoint(x: startX+10, y: startY))
-        trianglePath.close()
+        if UIApplication.shared.userInterfaceLayoutDirection == .rightToLeft{
+            let startX = parentCellView.frame.maxX+5
+            let startY = selectedItemView.frame.maxY
+            
+            trianglePath.move(to: CGPoint(x: startX , y: startY))
+            trianglePath.addLine(to: CGPoint(x: startX-10 , y: startY+10))
+            trianglePath.addLine(to: CGPoint(x: startX-10, y: startY))
+            trianglePath.close()
+        }else{
+            let startX = selectedItemView.frame.minX
+            let startY = selectedItemView.frame.maxY
+            
+            trianglePath.move(to: CGPoint(x: startX-2, y: startY-13))
+            trianglePath.addLine(to: CGPoint(x: startX+10 , y: startY-13))
+            trianglePath.addLine(to: CGPoint(x: startX+10, y: startY))
+            trianglePath.close()
+        }
         
         // Configure the layer
         triangleLayer.path = trianglePath.cgPath
@@ -101,16 +114,23 @@ class ResturentDetailsCollectionViewCell: UICollectionViewCell {
         let triangleLayer = CAShapeLayer()
         let trianglePath = UIBezierPath()
         
-        // Starting point for the path (the bottom left of the triangle)
-        let startX = lowdeleveryView.frame.minX
-        let startY = lowdeleveryView.frame.maxY
-        
-        // Move to starting point
-        trianglePath.move(to: CGPoint(x: startX, y: startY-26))
-        trianglePath.addLine(to: CGPoint(x: startX+10 , y: startY-26))
-        trianglePath.addLine(to: CGPoint(x: startX+10, y: startY-10))
-        trianglePath.close()
-        
+        if UIApplication.shared.userInterfaceLayoutDirection == .rightToLeft{
+            let startX = parentCellView.frame.maxX+5
+            let startY = lowdeleveryView.frame.maxY
+            
+            trianglePath.move(to: CGPoint(x: startX , y: startY))
+            trianglePath.addLine(to: CGPoint(x: startX-10 , y: startY+10))
+            trianglePath.addLine(to: CGPoint(x: startX-10, y: startY))
+            trianglePath.close()
+        }else{
+            let startX = lowdeleveryView.frame.minX
+            let startY = lowdeleveryView.frame.maxY
+            
+            trianglePath.move(to: CGPoint(x: startX-5, y: startY-26))
+            trianglePath.addLine(to: CGPoint(x: startX+15 , y: startY-26))
+            trianglePath.addLine(to: CGPoint(x: startX+10, y: startY-10))
+            trianglePath.close()
+        }
         // Configure the layer
         triangleLayer.path = trianglePath.cgPath
         triangleLayer.fillColor = UIColor(red: 0.67, green: 0.66, blue: 0.66, alpha: 1).cgColor
@@ -123,7 +143,8 @@ class ResturentDetailsCollectionViewCell: UICollectionViewCell {
         lowDeleveryfeelbl.isHidden = true
     }
     func setupReloadedData(){
-        SDWebImageManager.shared.loadImage(with: resturentDetailsData?.image_url ?? "", into: resturentImage)
+        SDWebImageManagerRevamp.shared.loadImage(with: resturentDetailsData?.image_url ?? "", into: resturentImage)
+        resturentTitle.text = resturentDetailsData?.name ?? ""
         setLabelText(lblrefrence: resturentTitle, lbltext: resturentDetailsData?.name ?? "", fontSize: 20,alignmentLeft:true)
         if resturentDetailsData?.offer == "" {
             setLabelText(lblrefrence: selectedItemOffLbl, lbltext: "Get off on selected items", fontSize: 12,alignmentLeft:true)
@@ -132,48 +153,42 @@ class ResturentDetailsCollectionViewCell: UICollectionViewCell {
         }
         
     }
-
+    
     func setupUI(){
-        
-        // setup low delevery sticker
-        lowdeleveryView.backgroundColor = UIColor.white
-        lowdeleveryView.layer.borderColor = ColorConstant.borderColorGray.cgColor
-        lowdeleveryView.layer.borderWidth = 0.5
-        setLabelText(lblrefrence: lowDeleveryfeelbl, lbltext: "Low delivery fee", fontSize: 12,alignmentLeft:true)
-        applyCornerRadius(to: lowdeleveryView, radius: 5)
-        
         // setup offer stricker
-
-        selectedItemView.backgroundColor = ColorConstant.primaryYellowColor
-        applyCornerRadius(to: selectedItemView, radius: 5)
+        setupOfferView()
         
         // hide the scroll indicator
         resturentFeatureCollectionView.showsHorizontalScrollIndicator = false
         
         // setup rsturent details view
-        resturentInternelView.layer.borderColor = ColorConstant.borderColorGray.cgColor
-        resturentInternelView.layer.borderWidth = 1
-        resturentInternelView.layer.cornerRadius = 15
-        resturentInternelView.layer.maskedCorners = [.layerMaxXMaxYCorner,.layerMinXMaxYCorner]
-        resturentInternelView.clipsToBounds = true
+        applyCornerRadius(to: resturentInternelView, radius: 15, corners: .Bottom, borderColor:ColorConstant.borderColorGray , borderWidth: 1)
         
         // image Curve code
-        resturentImage.layer.cornerRadius = 15
-        resturentImage.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
-        resturentImage.layer.borderColor = ColorConstant.borderColorGray.cgColor
-        resturentImage.layer.borderWidth = 0.2
-        resturentImage.clipsToBounds = true
-        
-        // adding the shadow
-        
+        applyCornerRadius(to: resturentImage, radius: 15, corners: .Top, borderColor: ColorConstant.borderColorGray, borderWidth: 0.2)
     }
     
-    func applyCornerRadius(to view: UIView, radius: CGFloat) {
-        view.clipsToBounds = true
-        view.layer.cornerRadius = radius
-        view.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
+    func setupOfferView(){
+        
+        //OfferView : LowDeliveryView
+        lowdeleveryView.backgroundColor = UIColor.white
+        
+        if UIApplication.shared.userInterfaceLayoutDirection == .rightToLeft {
+            applyCornerRadius(to: lowdeleveryView, radius: 5, corners: .Left,borderColor: ColorConstant.borderColorGray, borderWidth: 0.5)
+        }else{
+            applyCornerRadius(to: lowdeleveryView, radius: 5, corners: .Right,borderColor: ColorConstant.borderColorGray, borderWidth: 0.5)
+        }
+        setLabelText(lblrefrence: lowDeleveryfeelbl, lbltext: "Low delivery fee", fontSize: 12,alignmentLeft:true)
+        
+        //OfferView : selectedItemView
+        selectedItemView.backgroundColor = ColorConstant.primaryYellowColor
+        if UIApplication.shared.userInterfaceLayoutDirection == .rightToLeft {
+            applyCornerRadius(to: selectedItemView, radius: 5, corners: .Left,borderWidth: 0.5)
+        }else{
+            applyCornerRadius(to: selectedItemView, radius: 5, corners: .Right, borderWidth: 0.5)
+        }
+        
     }
-    
     
     
 }
@@ -196,7 +211,6 @@ extension ResturentDetailsCollectionViewCell : UICollectionViewDataSource{
 }
 
 extension ResturentDetailsCollectionViewCell:UICollectionViewDelegate{
-    
 }
 
 extension ResturentDetailsCollectionViewCell : UICollectionViewDelegateFlowLayout{

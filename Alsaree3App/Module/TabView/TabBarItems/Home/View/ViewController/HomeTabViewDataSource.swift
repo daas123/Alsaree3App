@@ -39,17 +39,14 @@ extension HomeTabViewController:UITableViewDataSource{
             case 0 :
                 if true{
                     let cell = tableView.getCell(identifier: CellConstant.activeOrderHomeTabCell.rawValue) as! ActiveOrderHomeTabCell
-                    cell.selectionStyle = .none
                     return cell
                 }else{
                     let cell = tableView.getCell(identifier: CellConstant.goldCategoryCardCellTableViewCell.rawValue) as! GoldCategoryCardCellTableViewCell
-                    cell.selectionStyle = .none
                     return cell
                 }
             case 1:
                 let cell = tableView.getCell(identifier: CellConstant.bannerHomeTabCell.rawValue) as! BannerHomeTabCell
                 cell.bannerData = viewModel.loyaltyDetail
-                cell.selectionStyle = .none
                 cell.setupUi()
                 return cell
             default:
@@ -62,31 +59,28 @@ extension HomeTabViewController:UITableViewDataSource{
                 let cell = tableView.getCell(identifier: CellConstant.advertisementCell.rawValue) as! AdvertisementCell
                 cell.advertisementBannerData = viewModel.banner
                 cell.reloadData()
-                cell.selectionStyle = .none
                 return cell
             case 1:
                 let cell = tableView.getCell(identifier: CellConstant.foodCatrgoryCell.rawValue) as! FoodCatrgoryCell
                 cell.foodCategoryData = viewModel.tags
-                cell.selectionStyle = .none
                 return cell
             case 2:
                 let cell = tableView.getCell(identifier: CellConstant.resturentTableViewCell.rawValue) as! ResturentTableViewCell
                 cell.hometabDelegate = self
                 cell.resturentTableViewCellData = viewModel.recentlyAddedStores
-                cell.setText(StoreTitile: viewModel.recentlyAddedTitle ?? TextConstant.resturent.rawValue)
-                cell.selectionStyle = .none
+                cell.setUpCellData(storeTitle: viewModel.recentlyAddedTitle ?? TextConstant.resturent.rawValue)
                 return cell
             case 3:
                 let cell = tableView.getCell(identifier: CellConstant.resturentTableViewCell.rawValue) as! ResturentTableViewCell
+                cell.hometabDelegate = self
                 cell.resturentTableViewCellData = viewModel.nearbyResturentStore
-                cell.setText(StoreTitile: viewModel.nearbyResturentTitle ?? TextConstant.resturent.rawValue)
-                cell.selectionStyle = .none
+                cell.setUpCellData(storeTitle: viewModel.nearbyResturentTitle ?? TextConstant.resturent.rawValue)
                 return cell
             case 4:
                 let cell = tableView.getCell(identifier: CellConstant.resturentTableViewCell.rawValue) as! ResturentTableViewCell
+                cell.hometabDelegate = self
                 cell.resturentTableViewCellData = viewModel.mostPopularStore
-                cell.setText(StoreTitile: viewModel.mostPopularTitle ?? TextConstant.resturent.rawValue)
-                cell.selectionStyle = .none
+                cell.setUpCellData(storeTitle: viewModel.mostPopularTitle ?? TextConstant.resturent.rawValue)
                 return cell
             default:
                 
@@ -99,7 +93,6 @@ extension HomeTabViewController:UITableViewDataSource{
                 let cell = tableView.getCell(identifier: CellConstant.resturentDetailsTableViewCell.rawValue) as! ResturentDetailsTableViewCell
                 cell.resturentDetailsTableViewCellData = viewModel.homeScreenStoreListData?[indexPath.row - 5]
                 cell.reloadCellData()
-                cell.selectionStyle = .none
                 return cell
             }
         }

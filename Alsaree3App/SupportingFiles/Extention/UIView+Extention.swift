@@ -9,14 +9,11 @@ import Foundation
 import UIKit
 
 extension UIView{
-    
-    
     enum ImagePosition {
         case left
         case right
     }
 
-    
     func setButtonText(button: UIButton, label: String, color: UIColor = ColorConstant.blackcolor, size: Int, font_Family: String = FontConstant.regular.rawValue, isBold: Bool = false, isUnderline: Bool = false, borderColor: UIColor = UIColor.clear,backcolor : UIColor = UIColor.clear,cornerRadius : Int = 0) {
         
         var attributes: [NSAttributedString.Key: Any] = [
@@ -70,10 +67,12 @@ extension UIView{
     }
     
     func setLabelText(lblrefrence: UILabel, lbltext: String, fontSize: Int, font_Family: String = FontConstant.regular.rawValue, isBold: Bool = false, color: UIColor = UIColor.black, alignmentLeft: Bool = false, lineHeightMultiple: CGFloat? = nil) {
-        lblrefrence.text = lbltext
+        
+        let localizedText = NSLocalizedString(lbltext, comment: "")
+        lblrefrence.text = localizedText
         
         if let font = isBold ? UIFont.boldSystemFont(ofSize: CGFloat(fontSize)) : UIFont(name: font_Family, size: CGFloat(fontSize)) {
-            let attributedString = NSMutableAttributedString(string: lbltext)
+            let attributedString = NSMutableAttributedString(string: localizedText)
             
             if let lineHeightMultiple = lineHeightMultiple {
                 let paragraphStyle = NSMutableParagraphStyle()
@@ -87,12 +86,13 @@ extension UIView{
         
         lblrefrence.textColor = color
         
-        if alignmentLeft {
-            lblrefrence.textAlignment = .left
+        if UIView.userInterfaceLayoutDirection(for: lblrefrence.semanticContentAttribute) == .rightToLeft {
+            lblrefrence.textAlignment = alignmentLeft ? .right : .center
         } else {
-            lblrefrence.textAlignment = .center
+            lblrefrence.textAlignment = alignmentLeft ? .left : .center
         }
     }
+
     
     func setImage(imageView: UIImageView, imageName: String, isAspectFit: Bool = true, isSystemImage: Bool = false) {
         if isSystemImage {
@@ -157,8 +157,28 @@ extension UIView{
         attributedString.addAttribute(.foregroundColor, value: color, range: range)
         return attributedString
     }
-  
     
+    enum Corner {
+        case Left, Right, Bottom, Top, All
+    }
+    
+    func applyCornerRadius(to view: UIView, radius: CGFloat, corners: Corner = .All ,borderColor : UIColor = UIColor.clear,borderWidth : CGFloat = 0) {
+        view.clipsToBounds = true
+        view.layer.borderColor = borderColor.cgColor
+        view.layer.cornerRadius = radius
+        view.layer.borderWidth = borderWidth
+        
+        switch corners {
+        case .Top:
+            view.layer.maskedCorners = [.layerMinXMinYCorner,.layerMaxXMinYCorner]
+        case .Right:
+            view.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMaxXMaxYCorner]
+        case .Left:
+            view.layer.maskedCorners = [.layerMinXMinYCorner,.layerMinXMaxYCorner]
+        case .Bottom:
+            view.layer.maskedCorners = [.layerMaxXMaxYCorner,.layerMinXMaxYCorner]
+        case .All:
+            view.layer.cornerRadius = radius
+        }
+    }
 }
-
-

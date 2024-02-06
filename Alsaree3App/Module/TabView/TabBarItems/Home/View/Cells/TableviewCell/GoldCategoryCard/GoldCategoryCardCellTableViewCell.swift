@@ -37,6 +37,8 @@ class GoldCategoryCardCellTableViewCell: UITableViewCell {
         }
         
         progressBtn.layer.cornerRadius = progressBtn.bounds.height/2
+        
+        self.selectionStyle = .none
     }
     
     

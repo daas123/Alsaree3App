@@ -62,6 +62,7 @@ class ActiveOrderHomeTabCell: UITableViewCell {
         // setup background color
         self.backgroundColor = UIColor.clear
         subViewWithBorder.backgroundColor = ColorConstant.whitecolor
+        self.selectionStyle = .none
     }
     
     @IBAction func onDetailsBtnClick(_ sender: UIButton) {

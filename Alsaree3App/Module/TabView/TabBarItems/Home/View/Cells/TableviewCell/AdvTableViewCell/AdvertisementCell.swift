@@ -16,7 +16,6 @@ class AdvertisementCell: UITableViewCell {
     var advertisementBannerData : [BannerRevamp]?
     var isHeigthChnaged = false
     var isScrollingLeft = false
-
     
     // MARK: Local Variables
     var currentscrollIndex = 0
@@ -30,6 +29,10 @@ class AdvertisementCell: UITableViewCell {
         setupPageControl()
         startTimer()
         self.backgroundColor = UIColor.clear
+        self.selectionStyle = .none
+//        if UIApplication.shared.userInterfaceLayoutDirection == .rightToLeft{
+//            isScrollingLeft = true
+//        }
     }
     
     func reloadData(){
@@ -64,32 +67,32 @@ class AdvertisementCell: UITableViewCell {
 
 
     
-    override func systemLayoutSizeFitting(_ targetSize: CGSize, withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority, verticalFittingPriority: UILayoutPriority) -> CGSize {
-        
-        self.advCollectionView.frame = self.bounds
-        self.advCollectionView.layoutIfNeeded()
-        
-        if isHeigthChnaged{
-            return self.advCollectionView.contentSize
-        }else{
-            advCollectionView.contentSize.height += 50
-            isHeigthChnaged = true
-            return self.advCollectionView.contentSize
-        }
-        
-    }
+//    override func systemLayoutSizeFitting(_ targetSize: CGSize, withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority, verticalFittingPriority: UILayoutPriority) -> CGSize {
+//        
+//        self.advCollectionView.frame = self.bounds
+//        self.advCollectionView.layoutIfNeeded()
+//        
+//        if isHeigthChnaged{
+//            return self.advCollectionView.contentSize
+//        }else{
+//            advCollectionView.contentSize.height += 50
+//            isHeigthChnaged = true
+//            return self.advCollectionView.contentSize
+//        }
+//        
+//    }
 
     func setCollectionview() {
         advCollectionView.delegate = self
         advCollectionView.dataSource = self
-
+        advCollectionView.registerNib(of: AdvCollectionViewCell.self)
+        
         centeredCollectionViewFlowLayout = (advCollectionView.collectionViewLayout as! CenteredCollectionViewFlowLayout)
-        centeredCollectionViewFlowLayout.itemSize = CGSize(width: UIScreen.main.bounds.width - 40, height: advCollectionView.bounds.height)
+//        centeredCollectionViewFlowLayout.itemSize = CGSize(width: UIScreen.main.bounds.width - 40, height: advCollectionView.bounds.height)
 
         advCollectionView.decelerationRate = UIScrollView.DecelerationRate.fast
         centeredCollectionViewFlowLayout.minimumLineSpacing = 20
         advCollectionView.showsHorizontalScrollIndicator = false
-        advCollectionView.registerNib(of: AdvCollectionViewCell.self)
         advCollectionView.backgroundColor = UIColor.clear
         advCollectionView.showsHorizontalScrollIndicator = false
         advCollectionView.contentInset = UIEdgeInsets.zero
@@ -123,6 +126,9 @@ extension AdvertisementCell: UICollectionViewDelegate, UICollectionViewDataSourc
     
 }
 extension AdvertisementCell : UICollectionViewDelegateFlowLayout{
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: (collectionView.bounds.width - 40) , height: collectionView.bounds.height)
+    }
 }
 
 extension AdvertisementCell :UIScrollViewDelegate {

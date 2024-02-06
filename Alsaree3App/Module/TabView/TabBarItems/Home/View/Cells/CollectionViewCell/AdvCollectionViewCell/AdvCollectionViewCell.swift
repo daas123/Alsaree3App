@@ -19,10 +19,8 @@ class AdvCollectionViewCell: UICollectionViewCell {
     
     func setupUI(){
 //        advCollectionView.image = UIImage(named: DealsList(rawValue: indexPath)?.title ?? "")
-        SDWebImageManager.shared.loadImage(with: imageUrl , into: advCollectionViewImage)
+        SDWebImageManagerRevamp.shared.loadImage(with: imageUrl , into: advCollectionViewImage)
         advCollectionViewImage.layer.cornerRadius = 20
         parentView.backgroundColor = UIColor.clear
-
-        
     }
 }

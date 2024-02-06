@@ -43,7 +43,7 @@ class SplashScreenViewModel{
             switch responce{
             case.success(let data):
                 authKey = data.authKey
-                SDWebImageManager.shared.imageBaseUrl = data.imageBaseURL
+                SDWebImageManagerRevamp.shared.imageBaseUrl = data.imageBaseURL
                 self.dispatchGroup.leave()
                 //                LoaderManager.shared.hideLoader()
                 debugPrint("callAppSettingApi Done")

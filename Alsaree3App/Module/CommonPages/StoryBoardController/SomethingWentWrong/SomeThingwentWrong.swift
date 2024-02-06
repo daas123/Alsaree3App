@@ -44,7 +44,7 @@ class SomeThingwentWrong: BaseViewController {
             switch responce{
             case.success(let data):
                 authKey = data.authKey
-                SDWebImageManager.shared.imageBaseUrl = data.imageBaseURL
+                SDWebImageManagerRevamp.shared.imageBaseUrl = data.imageBaseURL
                 DispatchQueue.main.async {
                     self.pushToHometab()
                 }

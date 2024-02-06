@@ -38,6 +38,10 @@ enum TextConstant:String{
     case resturent = "Resturent"
     case getoffonselecteditems = "Get off on selected items"
     case lowdeliveryfee = "Low delivery fee"
+    
+    var localized: String {
+            return NSLocalizedString(rawValue, comment: "")
+        }
 }
 
 enum ButtonTextConstant:String{

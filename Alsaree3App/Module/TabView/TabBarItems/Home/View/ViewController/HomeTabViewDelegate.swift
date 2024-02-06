@@ -15,19 +15,52 @@ extension HomeTabViewController : UITableViewDelegate{
         if viewModel.recentlyAddedStores == nil && viewModel.homeScreenStoreListData == nil {
             return tableView.bounds.height
         }
+        let screenHeight = UIScreen.main.bounds.height
         switch (indexPath.section, indexPath.row) {
         case (0, 0):
             return viewModel.activeOrder ? UITableView.automaticDimension : 0
+        case (1,0):
+            guard !((viewModel.banner?.isEmpty ?? true) || (viewModel.banner == nil)) else{
+                return 0
+            }
+            if screenHeight > 900 {
+                return tableView.bounds.height*0.36
+            } else if screenHeight > 700 {
+                return tableView.bounds.height*0.36
+            } else {
+                return tableView.bounds.height*0.45
+            }
+        case (1,1):
+            guard !((viewModel.tags?.isEmpty ?? true) || (viewModel.tags == nil)) else{
+                return 0
+            }
+            if screenHeight > 900 {
+                return tableView.bounds.height*0.155
+            } else if screenHeight > 700 {
+                return tableView.bounds.height*0.155
+            } else {
+                return tableView.bounds.height*0.18
+            }
         case (1, 2):
-            return viewModel.recentlyAddedStores == nil ? 0 : UITableView.automaticDimension
+            guard !((viewModel.recentlyAddedStores?.isEmpty ?? true) || viewModel.recentlyAddedStores == nil) else{
+                return 0
+            }
+            return heightForStore(screenHeight: screenHeight, store: viewModel.recentlyAddedStores, tableView: hometabTableView)
         case (1, 3):
-            return viewModel.nearbyResturentStore == nil ? 0 : UITableView.automaticDimension
+            guard !((viewModel.nearbyResturentStore?.isEmpty ?? true) || viewModel.nearbyResturentStore == nil) else{
+                return 0
+            }
+            return heightForStore(screenHeight: screenHeight, store: viewModel.nearbyResturentStore, tableView: hometabTableView)
         case (1, 4):
-            return viewModel.mostPopularStore == nil ? 0 : UITableView.automaticDimension
+            guard !((viewModel.mostPopularStore?.isEmpty ?? true) || viewModel.mostPopularStore == nil) else{
+                return 0
+            }
+            return heightForStore(screenHeight: screenHeight, store: viewModel.mostPopularStore, tableView: hometabTableView)
         default:
             return UITableView.automaticDimension
         }
     }
+    
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
@@ -52,8 +85,17 @@ extension HomeTabViewController : UITableViewDelegate{
         }
     }
     
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        hometabTableView.bounds.height*0.7
+    func heightForStore(screenHeight: CGFloat, store: [Stores]?,tableView:UITableView) -> CGFloat {
+        guard !((store?.isEmpty ?? true) || store == nil) else{
+            return 0
+        }
+        if screenHeight > 900 {
+            return tableView.bounds.height*0.48
+        } else if screenHeight > 700 {
+            return tableView.bounds.height*0.52
+        } else {
+            return tableView.bounds.height*0.65
+        }
     }
     
 }

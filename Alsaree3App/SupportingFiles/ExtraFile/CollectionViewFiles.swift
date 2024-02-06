@@ -19,13 +19,20 @@ class Row {
     }
     
     func tagLayout(collectionViewWidth: CGFloat) {
-        let padding = 10
-        var offset = padding
+        let padding: CGFloat = 10
+        var offset: CGFloat = UIApplication.shared.userInterfaceLayoutDirection == .rightToLeft ? collectionViewWidth - padding : padding
         for attribute in attributes {
-            attribute.frame.origin.x = CGFloat(offset)
-            offset += Int(attribute.frame.width + spacing)
+            if UIApplication.shared.userInterfaceLayoutDirection == .rightToLeft {
+                offset -= attribute.frame.width
+                attribute.frame.origin.x = offset
+                offset -= spacing
+            } else {
+                attribute.frame.origin.x = offset
+                offset += attribute.frame.width + spacing
+            }
         }
     }
+
 }
 
 class TagFlowLayout: UICollectionViewFlowLayout {
@@ -40,14 +47,16 @@ class TagFlowLayout: UICollectionViewFlowLayout {
         for attribute in attributes {
             if currentRowY != attribute.frame.origin.y {
                 currentRowY = attribute.frame.origin.y
-                rows.append(Row(spacing: 10))
+                rows.append(Row(spacing: minimumInteritemSpacing))
             }
             rows.last?.add(attribute: attribute)
         }
         
+        let collectionViewWidth = collectionView?.frame.width ?? 0
         rows.forEach {
-            $0.tagLayout(collectionViewWidth: ((collectionView?.frame.width ?? 0) - 60))
+            $0.tagLayout(collectionViewWidth: collectionViewWidth)
         }
+        
         return rows.flatMap { $0.attributes }
     }
 }

@@ -1,5 +1,5 @@
 //
-//  SDWebImageManager.swift
+//  SDWebImageManagerRevamp.swift
 //  Alsaree3App
 //
 //  Created by Neosoft on 09/01/24.
@@ -8,8 +8,8 @@
 import Foundation
 import SDWebImage
 
-class SDWebImageManager {
-    static let shared = SDWebImageManager()
+class SDWebImageManagerRevamp {
+    static let shared = SDWebImageManagerRevamp()
     var imageBaseUrl = ""
 
     private init() {}

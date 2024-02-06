@@ -52,14 +52,7 @@ class HomeTabViewController: BaseViewController {
         super.viewDidLayoutSubviews()
 
         let buttonY: CGFloat
-        if UIScreen.main.bounds.height > 900 {
-            buttonY = hometabTableView.frame.origin.y + 170 + 82
-        } else if UIScreen.main.bounds.height > 700 {
-            buttonY = hometabTableView.frame.origin.y + 170 + 25
-        } else {
-            buttonY = hometabTableView.frame.origin.y + 80
-        }
-        
+        buttonY = hometabTableView.frame.origin.y + 80
         backButton.frame = CGRect(x: view.bounds.width / 2 - 50, y: buttonY, width: 100, height: 35)
     }
     

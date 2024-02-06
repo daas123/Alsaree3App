@@ -41,6 +41,8 @@ class FoodCatrgoryCell: UITableViewCell {
         foodCategoryCollectionView.showsHorizontalScrollIndicator = false
         foodCategoryCollectionView.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
         
+        self.selectionStyle = .none
+        
     }
     
     override func systemLayoutSizeFitting(_ targetSize: CGSize, withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority, verticalFittingPriority: UILayoutPriority) -> CGSize {
@@ -83,7 +85,7 @@ extension FoodCatrgoryCell : UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return CGSize(width: (foodCategoryCollectionView.bounds.width )/4 , height: (foodCategoryCollectionView.bounds.height))
+        return CGSize(width: (foodCategoryCollectionView.bounds.width-20)/4 , height: (foodCategoryCollectionView.bounds.height))
     }
 }
 
