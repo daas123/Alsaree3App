@@ -48,11 +48,11 @@ class BaseViewController: UIViewController {
         headerNavigationView.addBottomBorderWithColor(color: ColorConstant.borderColorGray, width: 1)
         
         // Setting the label and button values Manually
-        view.setLabelText(lblrefrence: applicationNamelbl, lbltext: TextConstant.alsaree3App.localized, fontSize: 16,alignmentLeft: true)
-        view.setLabelText(lblrefrence: locationLbl, lbltext: TextConstant.alFurjanArea.rawValue, fontSize: 12,lineHeightMultiple: 0.8)
-        view.setImage(imageView: downArrowImage, imageName: ImageConstant.downArrow.rawValue)
-        view.setImage(imageView: scooterimg, imageName: ImageConstant.scooter.rawValue)
-        view.setCircleWithBorderColor(imageView: scooterimg, borderColor: ColorConstant.borderColorYellow, borderWidth: 1)
+        applicationNamelbl.setProperties(lbltext: TextConstant.alsaree3App.localized, fontSize: 16,alignmentLeft: true)
+        locationLbl.setProperties(lbltext: TextConstant.alFurjanArea.rawValue, fontSize: 12,lineHeightMultiple: 0.8)
+        downArrowImage.setProperties(imageName: ImageConstant.downArrow.rawValue)
+        scooterimg.setProperties(imageName: ImageConstant.scooter.rawValue)
+        scooterimg.setPropertiesCircleWithBorderColor(borderColor: ColorConstant.borderColorYellow, borderWidth: 1)
     }
     
     
@@ -73,7 +73,8 @@ class BaseViewController: UIViewController {
         // for demo Added some Value
         circularProgressView.setProgress(to: currentProgress)
         let percentage = Int(currentProgress * 100)
-        view.setLabelText(lblrefrence: progressLbl, lbltext: "\(percentage)%", fontSize: 12)
+        progressLbl.setProperties( lbltext: "\(percentage)%", fontSize: 12)
+        
         
     }
    

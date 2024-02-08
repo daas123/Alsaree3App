@@ -49,12 +49,11 @@ class ActiveOrderHomeTabCell: UITableViewCell {
     func setupUI(){
         
         // setting the label text and images
-        setLabelText(lblrefrence: activeOrderlbl, lbltext: TextConstant.activeOrder.rawValue, fontSize: 12 ,alignmentLeft: true)
-        setLabelText(lblrefrence: orderDescriptionlbl, lbltext: TextConstant.orderNumber5thAvenueAlFurjanArea.rawValue, fontSize: 10 ,alignmentLeft: true)
+        activeOrderlbl.setProperties(lbltext: TextConstant.activeOrder.rawValue, fontSize: 12 ,alignmentLeft: true)
+        orderDescriptionlbl.setProperties(lbltext: TextConstant.orderNumber5thAvenueAlFurjanArea.rawValue, fontSize: 10 ,alignmentLeft: true)
         
         orderProgressimg.image = UIImage(named: ImageConstant.orderUpdate.rawValue)
-        setImageOnButton(button: detailsBtn, image: ImageConstant.arrowRight.rawValue,isSystemImage: false)
-        
+        detailsBtn.setImageOnButton(image: ImageConstant.arrowRight.rawValue,isSystemImage: false)
         subViewWithBorder.layer.cornerRadius = 10
         subViewWithBorder.layer.borderColor = ColorConstant.primaryYellowColor.cgColor
         subViewWithBorder.layer.borderWidth = 2

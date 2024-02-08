@@ -19,9 +19,9 @@ class LoadingTableViewCell: UITableViewCell {
         super.awakeFromNib()
         self.backgroundColor = UIColor.clear
         self.selectionStyle = .none
-        setLabelText(lblrefrence: loadingTitle, lbltext: "Try searching with food emojis today", fontSize: 20,lineHeightMultiple: 0.7)
+        loadingTitle.setProperties(lbltext: "Try searching with food emojis today", fontSize: 20,lineHeightMultiple: 0.7)
         let imageSize = CGSize(width: 25, height: 25)
-        setButtonWithTextAndImage(button: retryButton, label: "  Retry Loading", image: "retry", fontSize: 20, imageSize: imageSize)
+        retryButton.setPropertiesWithImage(label: "  Retry Loading", image: "retry", fontSize: 20, imageSize: imageSize)
     }
     
     

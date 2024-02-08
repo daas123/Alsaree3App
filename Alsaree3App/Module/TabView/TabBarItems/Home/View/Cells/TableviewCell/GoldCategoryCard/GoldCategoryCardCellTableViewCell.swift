@@ -23,12 +23,12 @@ class GoldCategoryCardCellTableViewCell: UITableViewCell {
     }
     
     func setupUI(){
-        setLabelText(lblrefrence: goldCatCardTitle,lbltext: TextConstant.yourGoldCategoryCard.rawValue,fontSize: 16 , isBold: true ,alignmentLeft: true)
+        goldCatCardTitle.setProperties(lbltext: TextConstant.yourGoldCategoryCard.rawValue,fontSize: 16 , isBold: true ,alignmentLeft: true)
         
         let range = NSRange(location: 0, length: 18)
         let coloredText = coloredText(text:TextConstant.goldCategoryCard.rawValue , range: range, color: ColorConstant.primaryYellowColor)
         
-        setLabelText(lblrefrence: goldCaterogryLbl, lbltext: TextConstant.youveplacedthreeorderswithusOrdermoretoobtainour.rawValue, fontSize: 12, color: ColorConstant.blackcolor,alignmentLeft: true,lineHeightMultiple: 0.7)
+        goldCaterogryLbl.setProperties(lbltext: TextConstant.youveplacedthreeorderswithusOrdermoretoobtainour.rawValue, fontSize: 12, color: ColorConstant.blackcolor,alignmentLeft: true,lineHeightMultiple: 0.7)
         
         if let currentAttributedText = goldCaterogryLbl.attributedText {
             let mutableAttributedText = NSMutableAttributedString(attributedString: currentAttributedText)

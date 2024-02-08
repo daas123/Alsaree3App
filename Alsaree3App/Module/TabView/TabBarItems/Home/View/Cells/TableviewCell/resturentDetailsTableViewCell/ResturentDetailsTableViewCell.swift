@@ -45,11 +45,11 @@ class ResturentDetailsTableViewCell: UITableViewCell {
     
     func reloadCellData(){
         SDWebImageManagerRevamp.shared.loadImage(with: resturentDetailsTableViewCellData?.image_url ?? "", into: resturentImage)
-        setLabelText(lblrefrence: resturentTitle, lbltext: resturentDetailsTableViewCellData?.name ?? "", fontSize: 20,alignmentLeft:true)
+        resturentTitle.setProperties(lbltext: resturentDetailsTableViewCellData?.name ?? "", fontSize: 20,alignmentLeft:true)
         if resturentDetailsTableViewCellData?.offer == "" {
-            setLabelText(lblrefrence: selectedItemOffLbl, lbltext: TextConstant.getoffonselecteditems.rawValue, fontSize: 12,alignmentLeft:true)
+            selectedItemOffLbl.setProperties( lbltext: TextConstant.getoffonselecteditems.rawValue, fontSize: 12,alignmentLeft:true)
         }else{
-            setLabelText(lblrefrence: selectedItemOffLbl, lbltext: resturentDetailsTableViewCellData?.offer ?? TextConstant.getoffonselecteditems.rawValue, fontSize: 12,alignmentLeft:true)
+            selectedItemOffLbl.setProperties(lbltext: resturentDetailsTableViewCellData?.offer ?? TextConstant.getoffonselecteditems.rawValue, fontSize: 12,alignmentLeft:true)
         }
         
         setupFeatureDetails()
@@ -87,7 +87,7 @@ class ResturentDetailsTableViewCell: UITableViewCell {
         }else{
             applyCornerRadius(to: lowdeleveryView, radius: 5, corners: .Right,borderColor: ColorConstant.borderColorGray, borderWidth: 0.5)
         }
-        setLabelText(lblrefrence: lowDeleveryfeelbl, lbltext: "Low delivery fee", fontSize: 12,alignmentLeft:true)
+        lowDeleveryfeelbl.setProperties(lbltext: "Low delivery fee", fontSize: 12,alignmentLeft:true)
         
         //OfferView : selectedItemView
         selectedItemView.backgroundColor = ColorConstant.primaryYellowColor

@@ -33,7 +33,7 @@ class HomeTabCategoryHeader: UIView {
         self.backgroundColor = UIColor.clear
         // Initialization code
         
-        setLabelText(lblrefrence: alsareeMarketLbl, lbltext: "Alsaree3 Market", fontSize: 10,lineHeightMultiple: 0.7)
+        alsareeMarketLbl.setProperties(lbltext: "Alsaree3 Market", fontSize: 10,lineHeightMultiple: 0.7)
         
         originalHeigth = self.bounds.height
     }

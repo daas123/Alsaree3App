@@ -32,6 +32,8 @@ struct Stores : Codable {
     let price_rating : Int?
     let offer : String?
     let is_taking_schedule_order : Bool?
+    //closed store=
+    var is_StoreClosed : Bool = false
 
     enum CodingKeys: String, CodingKey {
 

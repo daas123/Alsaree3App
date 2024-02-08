@@ -23,10 +23,11 @@ class ProfileInfoListCell: UITableViewCell {
     }
 
     func setupUi(){
-        setLabelText(lblrefrence:categoryHeadingLbl , lbltext: listDetails?.catListLabel ?? "", fontSize: 16)
-        setLabelText(lblrefrence: categoryAdditionalLbl, lbltext: listDetails?.catAdditionalDetails ?? "", fontSize: 12)
-        setImage(imageView: categoryImg, imageName: listDetails?.iconName ?? "placeholder")
-        setImage(imageView: categoryRightIndicatorImg, imageName: "HalfRightArrow")
+        categoryHeadingLbl
+        categoryHeadingLbl.setProperties(lbltext: listDetails?.catListLabel ?? "", fontSize: 16)
+        categoryAdditionalLbl.setProperties( lbltext: listDetails?.catAdditionalDetails ?? "", fontSize: 12)
+        categoryImg.setProperties(imageName: listDetails?.iconName ?? "placeholder")
+        categoryRightIndicatorImg.setProperties(imageName: "HalfRightArrow")
         
         baseView.layer.cornerRadius = 10
         baseView.layer.borderWidth = 0.5

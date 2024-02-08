@@ -202,8 +202,12 @@ class HomeScreenServices{
         APIManager.sharedInstance.performRequest(serviceType: .HomeScreenGetCloseStoreList(parameters: param)) { response in
             switch response{
             case .success(let responseData):
-
                 if let decodedResponseData = try? JSONDecoder().decode(StoreListModel.self, from: responseData){
+//                    if let responceStore = decodedResponseData.stores{
+//                        for Store in responceStore{
+////                            Store.is_StoreClosed = true
+//                        }
+//                    }
                     completion(.success((decodedResponseData)))
                 } else if let apiError = try? JSONDecoder().decode(ApiErrorModel.self, from: responseData) {
                     completion(.failure(.apiError(success: apiError.success, errorCode: apiError.error_code)))

@@ -33,11 +33,11 @@ class ResturentTableViewCell: UITableViewCell {
     
 
     func setText(StoreTitile : String){
-        setLabelText(lblrefrence: collectionViewTitile, lbltext: StoreTitile, fontSize: 18,isBold : true)
+        collectionViewTitile.setProperties(lbltext: StoreTitile, fontSize: 18,isBold : true)
     }
     
     func setupUI(){
-        setButtonText(button: seemoreBtn, label: ButtonTextConstant.seeMore.rawValue,color: ColorConstant.borderColorYellow, size: 14,isUnderline: true)
+        seemoreBtn.setProperties(label: ButtonTextConstant.seeMore.rawValue,color: ColorConstant.borderColorYellow, size: 14,isUnderline: true)
         self.backgroundColor = UIColor.clear
         self.selectionStyle = .none
         resturentCollectionView.backgroundColor = UIColor.clear

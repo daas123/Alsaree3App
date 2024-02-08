@@ -8,6 +8,9 @@
 import Foundation
 import UIKit
 
+
+
+
 public class ShimmeringView {
     public init() {}
     public func startShining(_ view: UIView) {
@@ -38,7 +41,7 @@ public class ShimmeringView {
         if start {
             // 1. Add Color Layer
             let colorLayer = CALayer()
-            colorLayer.backgroundColor = UIColor(white: 0.82, alpha: 1).cgColor
+            colorLayer.backgroundColor = UIColor(white: 0.82, alpha: 1).cgColor // Darker color
             colorLayer.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height)
             colorLayer.name = "colorLayer"
             view.layer.addSublayer(colorLayer)
@@ -47,9 +50,9 @@ public class ShimmeringView {
             
             // 2. Add loader Layer
             let gradientLayer = CAGradientLayer()
-            gradientLayer.colors = [UIColor(white: 0.82, alpha: 1).cgColor,
-                                    UIColor(white: 0.86, alpha: 1).cgColor,
-                                    UIColor(white: 0.82, alpha: 1).cgColor]
+            gradientLayer.colors = [UIColor(white: 0.82, alpha: 1).cgColor, // Darker color
+                                    UIColor(white: 0.90, alpha: 1).cgColor, // Shinier color
+                                    UIColor(white: 0.82, alpha: 1).cgColor] // Darker color
             gradientLayer.locations = [0,0.4,0.8, 1]
             gradientLayer.name = "loaderLayer"
             gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.5)
@@ -70,4 +73,5 @@ public class ShimmeringView {
             }
         }
     }
+
 }

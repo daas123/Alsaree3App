@@ -29,9 +29,7 @@ class HomeTabViewController: BaseViewController {
     var previousScrollOffset: CGFloat = 0
     var tabBarVisible = true
     
-    override func viewWillAppear(_ animated: Bool) {
-    }
-    
+    //MARK: lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupObserver()
@@ -46,6 +44,9 @@ class HomeTabViewController: BaseViewController {
         setUpCircularprogress(circularProgresView: circularProgresView, currentProgress: 0.2, progressLbl: progressLbl)
         refreshControl.addTarget(self, action: #selector(refreshData(_:)), for: .valueChanged)
         hometabTableView.addSubview(refreshControl)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
     }
     
     override func viewDidLayoutSubviews() {
@@ -75,7 +76,7 @@ class HomeTabViewController: BaseViewController {
     }
     
     func registerTableViewCell(){
-        // MARK: TableViewCell
+        // MARK: Register TableViewCell
         hometabTableView.registerNib(of: ActiveOrderHomeTabCell.self)
         hometabTableView.registerNib(of: BannerHomeTabCell.self)
         hometabTableView.registerNib(of: CategoryHomeTabCell.self)
@@ -88,7 +89,6 @@ class HomeTabViewController: BaseViewController {
         hometabTableView.registerNib(of:HomeTabShimmerCell.self)
     }
 
-    
     func setupObserver(){
         NotificationManager().addObserver(forName: .reloadData) { _ in
             self.dismiss(animated: true)
@@ -99,7 +99,7 @@ class HomeTabViewController: BaseViewController {
     func setupUI(){
         self.navigationController?.isNavigationBarHidden = true
         // set Back to top button
-        view.setButtonWithTextAndImage(button: backButton, label: ButtonTextConstant.backtoTop.rawValue, image: ImageConstant.arrow_up.rawValue, textColor: UIColor.white, fontSize: 12, imageSize: CGSize(width: 15, height: 15), imagePosition: .left, imageTintColor: UIColor.white, backColor: UIColor.black, cornerRadius: 35/2)
+        backButton.setPropertiesWithImage(label: ButtonTextConstant.backtoTop.rawValue, image: ImageConstant.arrow_up.rawValue, textColor: UIColor.white, fontSize: 12, imageSize: CGSize(width: 15, height: 15), imagePosition: .left, imageTintColor: UIColor.white, backColor: UIColor.black, cornerRadius: 35/2)
         
         backButton.addTarget(self, action: #selector(scrollToFirstRow), for: .touchUpInside)
         

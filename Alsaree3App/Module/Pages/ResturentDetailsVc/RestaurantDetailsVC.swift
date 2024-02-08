@@ -22,10 +22,10 @@ class RestaurantDetailsVC: UIViewController {
     }
     
     func setupUI(){
-        view.setImageOnButton(button: popButton, image: "arrowleft")
-        view.setImageOnButton(button: bookMarkBtn, image: "Bookmark")
-        view.setImageOnButton(button: shareBtn, image: "share")
-        view.setImageOnButton(button: cartBtn, image: "bag")
+        popButton.setImageOnButton(image: "arrowleft")
+        bookMarkBtn.setImageOnButton(image: "Bookmark")
+        shareBtn.setImageOnButton(image: "share")
+        cartBtn.setImageOnButton(image: "bag")
     }
     
     @IBAction func onPopButton(_ sender: UIButton) {

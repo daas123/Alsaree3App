@@ -145,11 +145,11 @@ class ResturentDetailsCollectionViewCell: UICollectionViewCell {
     func setupReloadedData(){
         SDWebImageManagerRevamp.shared.loadImage(with: resturentDetailsData?.image_url ?? "", into: resturentImage)
         resturentTitle.text = resturentDetailsData?.name ?? ""
-        setLabelText(lblrefrence: resturentTitle, lbltext: resturentDetailsData?.name ?? "", fontSize: 20,alignmentLeft:true)
+        resturentTitle.setProperties(lbltext: resturentDetailsData?.name ?? "", fontSize: 20,alignmentLeft:true)
         if resturentDetailsData?.offer == "" {
-            setLabelText(lblrefrence: selectedItemOffLbl, lbltext: "Get off on selected items", fontSize: 12,alignmentLeft:true)
+            selectedItemOffLbl.setProperties(lbltext: "Get off on selected items", fontSize: 12,alignmentLeft:true)
         }else{
-            setLabelText(lblrefrence: selectedItemOffLbl, lbltext: resturentDetailsData?.offer ?? "Get off on selected items", fontSize: 12,alignmentLeft:true)
+            selectedItemOffLbl.setProperties(lbltext: resturentDetailsData?.offer ?? "Get off on selected items", fontSize: 12,alignmentLeft:true)
         }
         
     }
@@ -178,7 +178,7 @@ class ResturentDetailsCollectionViewCell: UICollectionViewCell {
         }else{
             applyCornerRadius(to: lowdeleveryView, radius: 5, corners: .Right,borderColor: ColorConstant.borderColorGray, borderWidth: 0.5)
         }
-        setLabelText(lblrefrence: lowDeleveryfeelbl, lbltext: "Low delivery fee", fontSize: 12,alignmentLeft:true)
+        lowDeleveryfeelbl.setProperties(lbltext: "Low delivery fee", fontSize: 12,alignmentLeft:true)
         
         //OfferView : selectedItemView
         selectedItemView.backgroundColor = ColorConstant.primaryYellowColor

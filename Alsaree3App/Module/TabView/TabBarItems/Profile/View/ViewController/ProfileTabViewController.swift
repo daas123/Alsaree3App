@@ -40,23 +40,21 @@ class ProfileTabViewController: BaseViewController {
     }
     
     func setupUi(){
-        view.setLabelText(lblrefrence: languagelbl, lbltext: "Language", fontSize: 16)
+        
+        languagelbl.setProperties(lbltext: "Language", fontSize: 16)
         setEnglishBtnSelected()
         languageSelectionView.addTopBorderWithColor(color: ColorConstant.borderColorGray, width: 1)
+        
     }
     
     func setEnglishBtnSelected(){
-        view.setButtonText(button: selectEnglishBtn, label: "English", color: ColorConstant.whitecolor,size: 16,backcolor: ColorConstant.primaryYellowColor,cornerRadius: 10)
-        view.setButtonText(button: selectArabicBtn, label: "Arabic",color: ColorConstant.blackcolor, size: 16,backcolor: ColorConstant.whitecolor,cornerRadius: 10)
-        selectArabicBtn.layer.borderWidth = 0.5
-        selectArabicBtn.layer.borderColor = ColorConstant.borderColorGray.cgColor
+        selectEnglishBtn.setProperties(label: "English", color: ColorConstant.whitecolor,size: 16,backcolor: ColorConstant.primaryYellowColor,cornerRadius: 10)
+        selectArabicBtn.setProperties( label: "Arabic",color: ColorConstant.blackcolor, size: 16,borderColor:ColorConstant.borderColorGray, backcolor: ColorConstant.whitecolor,cornerRadius: 10,borderWidth: 0.5)
     }
     
     func setArabicBtnSelected(){
-        view.setButtonText(button: selectEnglishBtn, label: "English", color: ColorConstant.blackcolor,size: 16,backcolor: ColorConstant.whitecolor,cornerRadius: 10)
-        view.setButtonText(button: selectArabicBtn, label: "Arabic",color: ColorConstant.whitecolor, size: 16,backcolor: ColorConstant.primaryYellowColor,cornerRadius: 10)
-        selectEnglishBtn.layer.borderWidth = 0.5
-        selectEnglishBtn.layer.borderColor = ColorConstant.borderColorGray.cgColor
+        selectEnglishBtn.setProperties(label: "English", color: ColorConstant.blackcolor,size: 16,borderColor:ColorConstant.borderColorGray, backcolor: ColorConstant.whitecolor,cornerRadius: 10,borderWidth: 0.5 )
+        selectArabicBtn.setProperties(label: "Arabic",color: ColorConstant.whitecolor, size: 16,backcolor: ColorConstant.primaryYellowColor,cornerRadius: 10)
     }
     
     func setupdeligate(){
@@ -76,11 +74,19 @@ class ProfileTabViewController: BaseViewController {
     
     @IBAction func onClickEnglishbtn(_ sender: UIButton) {
         self.setEnglishBtnSelected()
+        setApplicationLanguage(languageCode: "en-US")
     }
     
     @IBAction func onClickArabicBtn(_ sender: UIButton) {
         self.setArabicBtnSelected()
+        setApplicationLanguage(languageCode: "ar")
     }
+    
+    func setApplicationLanguage(languageCode : String)
+        {
+            UserDefaults.standard.set([languageCode], forKey: "AppleLanguages")
+            UserDefaults.standard.synchronize()
+        }
     
 }
 

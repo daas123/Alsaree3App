@@ -32,7 +32,7 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <viewLayoutGuide key="contentLayoutGuide" id="UN0-8X-rBT"/>
                                         <viewLayoutGuide key="frameLayoutGuide" id="JSy-XI-kvM"/>
-                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ZsG-Ue-Ywn" customClass="AlignedCollectionViewFlowLayout" customModule="Alsaree3App" customModuleProvider="target">
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ZsG-Ue-Ywn">
                                             <size key="itemSize" width="128" height="128"/>
                                             <size key="estimatedItemSize" width="200" height="300"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>

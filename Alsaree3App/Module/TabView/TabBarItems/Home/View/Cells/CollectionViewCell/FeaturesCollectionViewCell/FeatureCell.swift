@@ -41,8 +41,7 @@ class FeatureCell: UICollectionViewCell {
     
     
     func setuplblText(){
-        setLabelText(lblrefrence: featurelbl, lbltext: featurelbl.text ?? "", fontSize: 10,font_Family: FontConstant.light.rawValue)
-        
+        featurelbl.setProperties(lbltext: featurelbl.text ?? "", fontSize: 10,font_Family: FontConstant.light.rawValue)
     }
     
     func setupUi(){
