@@ -106,7 +106,7 @@ class HomeTabViewModel{
         }
     }
     
-    func checkLocationAccess(){
+    func instantiateApiCalls(){
         if LocationManagerRevamp.shared.isLocationAccess{
             self.homeTabDeligate?.reloadTableView()
             callHomeScreenApis()

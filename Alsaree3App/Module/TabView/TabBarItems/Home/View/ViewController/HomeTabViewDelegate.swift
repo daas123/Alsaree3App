@@ -7,6 +7,7 @@
 
 import UIKit
 extension HomeTabViewController : UITableViewDelegate{
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         animateCellSelection(at: indexPath)
     }

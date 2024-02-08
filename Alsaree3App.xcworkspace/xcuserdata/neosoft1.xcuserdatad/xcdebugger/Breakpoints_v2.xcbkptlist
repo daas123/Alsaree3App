@@ -36,5 +36,53 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "74816CB8-056B-40D5-8370-3AA8B7253A6F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Alsaree3App/Module/TabView/TabBarItems/Home/View/ViewController/HomeTabViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
+            landmarkName = "labelTapped()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "74816CB8-056B-40D5-8370-3AA8B7253A6F - d6d1552612e05dbc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Bool) -&gt; () in Alsaree3App.HomeTabViewController.animateCellSelection(at: Foundation.IndexPath) -&gt; ()"
+                  moduleName = "Alsaree3App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Module/TabView/TabBarItems/Home/View/ViewController/HomeTabViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "141"
+                  endingLineNumber = "141"
+                  offsetFromSymbolStart = "42">
+               </Location>
+               <Location
+                  uuid = "74816CB8-056B-40D5-8370-3AA8B7253A6F - de38340a16a1e7c4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #2 (Swift.Bool) -&gt; () in Alsaree3App.HomeTabViewController.animateCellSelection(at: Foundation.IndexPath) -&gt; ()"
+                  moduleName = "Alsaree3App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Module/TabView/TabBarItems/Home/View/ViewController/HomeTabViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "142"
+                  endingLineNumber = "142"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
