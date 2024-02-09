@@ -9,14 +9,16 @@ import UIKit
 extension HomeTabViewController:UITableViewDataSource{
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return (viewModel.recentlyAddedStores == nil && viewModel.homeScreenStoreListData == nil) ? 1 : 2
+        return (viewModel.recentlyAddedStores == nil && viewModel.homeScreenStoreListData == nil) ? 1 : 3
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0{
             return viewModel.getTableViewCount(Section: 0)
-        }else{
+        }else if section == 1{
             return viewModel.getTableViewCount(Section: 1)
+        }else{
+            return 1
         }
     }
     
@@ -52,7 +54,7 @@ extension HomeTabViewController:UITableViewDataSource{
             default:
                 return UITableViewCell()
             }
-        }else{
+        }else if indexPath.section == 1{
             
             switch indexPath.row{
             case 0 :
@@ -69,25 +71,26 @@ extension HomeTabViewController:UITableViewDataSource{
                 cell.hometabDelegate = self
                 cell.resturentTableViewCellData = viewModel.recentlyAddedStores
                 cell.setUpCellData(storeTitle: viewModel.recentlyAddedTitle ?? TextConstant.resturent.rawValue)
+                cell.reloadCOllectionView()
                 return cell
             case 3:
                 let cell = tableView.getCell(identifier: CellConstant.resturentTableViewCell.rawValue) as! ResturentTableViewCell
                 cell.hometabDelegate = self
                 cell.resturentTableViewCellData = viewModel.nearbyResturentStore
                 cell.setUpCellData(storeTitle: viewModel.nearbyResturentTitle ?? TextConstant.resturent.rawValue)
+                cell.reloadCOllectionView()
                 return cell
             case 4:
                 let cell = tableView.getCell(identifier: CellConstant.resturentTableViewCell.rawValue) as! ResturentTableViewCell
                 cell.hometabDelegate = self
                 cell.resturentTableViewCellData = viewModel.mostPopularStore
                 cell.setUpCellData(storeTitle: viewModel.mostPopularTitle ?? TextConstant.resturent.rawValue)
+                cell.reloadCOllectionView()
                 return cell
             default:
                 
-                if let homeScreenStorelistCount = viewModel.homeScreenStoreListData?.count{
-                    if homeScreenStorelistCount == (indexPath.row - 4) {
-                        viewModel.callHomeScreenStorelistNextPageApi()
-                    }
+                if viewModel.homeScreenStoreListData?.count == ( indexPath.row - 4 ){
+                    viewModel.callHomeScreenStorelistNextPageApi()
                 }
                 
                 let cell = tableView.getCell(identifier: CellConstant.resturentDetailsTableViewCell.rawValue) as! ResturentDetailsTableViewCell
@@ -95,6 +98,9 @@ extension HomeTabViewController:UITableViewDataSource{
                 cell.reloadCellData()
                 return cell
             }
+        }else{
+            let cell = tableView.getCell(identifier: "StoreShimmerCell") as! StoreShimmerCell
+            return cell
         }
         
     }

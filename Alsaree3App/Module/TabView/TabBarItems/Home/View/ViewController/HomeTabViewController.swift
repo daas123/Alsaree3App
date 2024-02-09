@@ -20,7 +20,6 @@ class HomeTabViewController: BaseViewController {
     @IBOutlet weak var progressLbl: UILabel!
     
     let backButton = UIButton(type: .system)
-//    var circularProgressView: CircularProgressView!
     var viewModel = HomeTabViewModel()
     var headerView : HomeTabCategoryHeader?
     var refreshControl = UIRefreshControl()
@@ -92,7 +91,7 @@ class HomeTabViewController: BaseViewController {
     
     func setUpGesture(){
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(labelTapped))
-        applicationNamelbl.addGestureRecognizer(tapGesture)
+        locationLbl.addGestureRecognizer(tapGesture)
     }
     
     func setupPullToRefresh(){
@@ -112,6 +111,7 @@ class HomeTabViewController: BaseViewController {
         hometabTableView.registerNib(of: ResturentDetailsTableViewCell.self)
         hometabTableView.registerNib(of: LoadingTableViewCell.self)
         hometabTableView.registerNib(of:HomeTabShimmerCell.self)
+        hometabTableView.registerNib(of: StoreShimmerCell.self)
     }
 
     func setupObserver(){

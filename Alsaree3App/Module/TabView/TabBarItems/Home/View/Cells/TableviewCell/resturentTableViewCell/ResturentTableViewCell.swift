@@ -21,10 +21,8 @@ class ResturentTableViewCell: UITableViewCell {
         configureCollectionViewLayout()
     }
     
-    func scrollToIndex(){
-        if ((resturentTableViewCellData != nil) && (resturentCollectionView.effectiveUserInterfaceLayoutDirection == .rightToLeft)){
-                resturentCollectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .centeredHorizontally, animated: true)
-        }
+    func reloadCOllectionView(){
+        resturentCollectionView.reloadData()
     }
     
     func setUpCellData(storeTitle:String){

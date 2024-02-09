@@ -46,6 +46,7 @@ class HomeTabViewModel{
     var closeStorePage = 1
     var isApiCallFailed = false
     var isCallCloseStore = false
+    var isAllApiCallDone = false
     
     var HomeTabData = [
         SectionAboveHeader.allCases,
@@ -117,12 +118,14 @@ class HomeTabViewModel{
     
     
     func callHomeScreenStorelistNextPageApi(){
-        if isCallCloseStore{
-            closeStorePage += 1
-            callHomeScreenGetCloseStoreListApi(pageNo:String(closeStorePage))
-        }else{
-            currentPage += 1
-            callHomeScreenStoreListApi(pageNo: String(currentPage))
+        if !isAllApiCallDone{
+            if isCallCloseStore{
+                closeStorePage += 1
+                callHomeScreenGetCloseStoreListApi(pageNo:String(closeStorePage))
+            }else{
+                currentPage += 1
+                callHomeScreenStoreListApi(pageNo: String(currentPage))
+            }
         }
     }
     

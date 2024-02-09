@@ -75,6 +75,8 @@ class ResturentDetailsTableViewCell: UITableViewCell {
         
         // image Curve code
         applyCornerRadius(to: resturentImage, radius: 15, corners: .Top, borderColor: ColorConstant.borderColorGray, borderWidth: 0.2)
+        
+        self.selectionStyle = .none
     }
     
     func setupOfferView(){

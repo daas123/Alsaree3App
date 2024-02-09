@@ -34,6 +34,8 @@
 		4A8F65352B749B91000E5F32 /* UiLabel+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8F65342B749B91000E5F32 /* UiLabel+Extention.swift */; };
 		4A8F65372B749B9F000E5F32 /* UiButton+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8F65362B749B9F000E5F32 /* UiButton+Extention.swift */; };
 		4A8F65392B749BBC000E5F32 /* UIImage+Exxtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8F65382B749BBC000E5F32 /* UIImage+Exxtention.swift */; };
+		4A8F657B2B74D42F000E5F32 /* StoreShimmerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8F65792B74D42F000E5F32 /* StoreShimmerCell.swift */; };
+		4A8F657C2B74D42F000E5F32 /* StoreShimmerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A8F657A2B74D42F000E5F32 /* StoreShimmerCell.xib */; };
 		4AA831D22B664482003185AB /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AA831D12B664482003185AB /* Splash.storyboard */; };
 		4AA831D52B6693A6003185AB /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA831D42B6693A6003185AB /* SplashViewController.swift */; };
 		4AA831D72B66CC31003185AB /* HomeTabViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA831D62B66CC31003185AB /* HomeTabViewDelegate.swift */; };
@@ -267,6 +269,8 @@
 		4A8F65342B749B91000E5F32 /* UiLabel+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiLabel+Extention.swift"; sourceTree = "<group>"; };
 		4A8F65362B749B9F000E5F32 /* UiButton+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiButton+Extention.swift"; sourceTree = "<group>"; };
 		4A8F65382B749BBC000E5F32 /* UIImage+Exxtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Exxtention.swift"; sourceTree = "<group>"; };
+		4A8F65792B74D42F000E5F32 /* StoreShimmerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreShimmerCell.swift; sourceTree = "<group>"; };
+		4A8F657A2B74D42F000E5F32 /* StoreShimmerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoreShimmerCell.xib; sourceTree = "<group>"; };
 		4AA831D12B664482003185AB /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
 		4AA831D42B6693A6003185AB /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		4AA831D62B66CC31003185AB /* HomeTabViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabViewDelegate.swift; sourceTree = "<group>"; };
@@ -564,6 +568,15 @@
 				4A8D3A8D2B625D3600D8F29C /* BaseViewController.swift */,
 			);
 			path = BaseViewController;
+			sourceTree = "<group>";
+		};
+		4A8F65762B74D3B6000E5F32 /* StoreCellShimmer */ = {
+			isa = PBXGroup;
+			children = (
+				4A8F65792B74D42F000E5F32 /* StoreShimmerCell.swift */,
+				4A8F657A2B74D42F000E5F32 /* StoreShimmerCell.xib */,
+			);
+			path = StoreCellShimmer;
 			sourceTree = "<group>";
 		};
 		4AA831D32B66938F003185AB /* SplashScreen */ = {
@@ -903,6 +916,7 @@
 		929F1B982B480A5C00B0F08F /* CommonUi */ = {
 			isa = PBXGroup;
 			children = (
+				4A8F65762B74D3B6000E5F32 /* StoreCellShimmer */,
 				92FA144C2B321E8700148974 /* LoadingTableViewCell */,
 				4AB152882B6794B8008CD7A5 /* StoryBoardController */,
 				4A8D3A8C2B6257FB00D8F29C /* BaseViewController */,
@@ -1598,6 +1612,7 @@
 				929F8F9F2B2F653800536E70 /* FoodCatrgoryCell.xib in Resources */,
 				92FA14482B31E36800148974 /* Cairo-Black.ttf in Resources */,
 				4AB152952B67DB00008CD7A5 /* ProfileInfoListCell.xib in Resources */,
+				4A8F657C2B74D42F000E5F32 /* StoreShimmerCell.xib in Resources */,
 				92FA14502B321EAF00148974 /* LoadingTableViewCell.xib in Resources */,
 				92BDA23A2B39F8DC008E7228 /* HomeTabCategoryHeader.xib in Resources */,
 				929F8FA42B2F656700536E70 /* FoodCatCollectionViewCell.xib in Resources */,
@@ -1883,6 +1898,7 @@
 				929F1C5A2B48366C00B0F08F /* CMAC.swift in Sources */,
 				929F1C8E2B48366D00B0F08F /* ECB.swift in Sources */,
 				929F1C712B48366C00B0F08F /* SecureBytes.swift in Sources */,
+				4A8F657B2B74D42F000E5F32 /* StoreShimmerCell.swift in Sources */,
 				4A39A3E62B6A470300D82375 /* TagsRevamp.swift in Sources */,
 				4A39A3E52B6A470300D82375 /* AdsRevamp.swift in Sources */,
 				929F1C522B48366C00B0F08F /* Cipher.swift in Sources */,

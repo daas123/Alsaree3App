@@ -151,17 +151,17 @@ extension HomeTabViewModel{
                         self.homeScreenStoreListData = []
                     }
                     self.homeScreenStoreListData! += storeData
+                    DispatchQueue.main.async {
+                        self.homeTabDeligate?.reloadTableView()
+                    }
                 }
                 
                 if data.message == nil || data.success == false{
                     self.isCallCloseStore = true
                     self.callHomeScreenGetCloseStoreListApi()
                 }
-                if pageNo != "1"{
-                    DispatchQueue.main.async {
-                        self.homeTabDeligate?.reloadTableView()
-                    }
-                }else{
+
+                if pageNo == "1"{
                     self.dispatchGroup.leave()
                 }
             case .failure(let error):
@@ -210,13 +210,13 @@ extension HomeTabViewModel{
                 if let storeData = data.stores{
                     if self.homeScreenStoreListData == nil {
                         self.homeScreenStoreListData = []
-                    }else{
-                        self.homeScreenStoreListData! += storeData
-                        DispatchQueue.main.async {
-                            self.homeTabDeligate?.reloadTableView()
-                        }
                     }
-                    
+                        self.homeScreenStoreListData! += storeData
+                }else{
+                    self.isAllApiCallDone = true
+                }
+                DispatchQueue.main.async {
+                    self.homeTabDeligate?.reloadTableView()
                 }
             case .failure(let error):
 //                self.apiCallFailed()
