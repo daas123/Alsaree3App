@@ -11,6 +11,9 @@ extension HomeTabViewController : UIScrollViewDelegate{
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         //MARK:  for sticky header
         if viewModel.recentlyAddedStores == nil || viewModel.homeScreenStoreListData == nil {
+                    return
+                }
+        if viewModel.isLoadingState || viewModel.isApiCallFailed {
             return
         }
         setupSteckyHeader(scrollView)
@@ -55,9 +58,12 @@ extension HomeTabViewController : UIScrollViewDelegate{
     }
     
     func setupSteckyHeader(_ scrollView: UIScrollView){
-        if viewModel.recentlyAddedStores == nil || viewModel.homeScreenStoreListData == nil {
+        if viewModel.isLoadingState || viewModel.isApiCallFailed {
             return
         }
+//        if viewModel.recentlyAddedStores == nil || viewModel.homeScreenStoreListData == nil {
+//            return
+//        }
         let headerRect = hometabTableView.rect(forSection: 1)
         if headerRect.origin.y <= scrollView.contentOffset.y && scrollView.contentOffset.y <= headerRect.origin.y + headerRect.size.height {
             headerView?.hideImages()
@@ -74,9 +80,12 @@ extension HomeTabViewController : UIScrollViewDelegate{
     }
     
     func setupScrollToTop(_ scrollView: UIScrollView ){
-        if viewModel.recentlyAddedStores == nil || viewModel.homeScreenStoreListData == nil {
+        if viewModel.isLoadingState || viewModel.isApiCallFailed {
             return
         }
+//        if viewModel.recentlyAddedStores == nil || viewModel.homeScreenStoreListData == nil {
+//            return
+//        }
         
         let yOffset = scrollView.contentOffset.y
         let threshold: CGFloat = hometabTableView.bounds.height

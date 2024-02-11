@@ -47,6 +47,8 @@ class HomeTabViewModel{
     var isApiCallFailed = false
     var isCallCloseStore = false
     var isAllApiCallDone = false
+    var isLoadingState = true
+    var isStoreApiFailed = false
     
     var HomeTabData = [
         SectionAboveHeader.allCases,
@@ -82,11 +84,13 @@ class HomeTabViewModel{
         dispatchGroup.enter()
         callPushZoneApi()
         dispatchGroup.notify(queue: .main) {
+            self.isLoadingState = false
             self.homeTabDeligate?.reloadTableView()
         }
     }
     
     func callFullHomeScreenApi(){
+        resetApiFectechedData()
         self.homeTabDeligate?.reloadTableView()
         dispatchGroup.enter()
         callAppSettingApi()
@@ -94,8 +98,8 @@ class HomeTabViewModel{
             self.callHomeScreenApis()
         }
     }
-    
     func reloadOnPull(){
+        resetApiFectechedData()
         dispatchGroup.enter()
         callLoyaltyDetailApi()
         dispatchGroup.enter()
@@ -116,6 +120,15 @@ class HomeTabViewModel{
         }
     }
     
+    func resetApiFectechedData(){
+        recentlyAddedStores = []
+        mostPopularStore = []
+        nearbyResturentStore = []
+        brands = []
+        tags = []
+        banner = []
+        homeScreenStoreListData = []
+    }
     
     func callHomeScreenStorelistNextPageApi(){
         if !isAllApiCallDone{
@@ -129,13 +142,21 @@ class HomeTabViewModel{
         }
     }
     
-    func apiCallFailed(isRemoveDispatchGroup : Bool = true , isApicallfailed : Bool = false){
+    func apiCallFailed(isRemoveDispatchGroup : Bool = true , isApicallfailed : Bool = false ,isStoreApiFailed : Bool = false){
         if isRemoveDispatchGroup{
             dispatchGroup.leave()
         }
         
         if isApicallfailed{
+            isLoadingState = true
             isApiCallFailed = true
+            DispatchQueue.main.async {
+                self.homeTabDeligate?.reloadTableView()
+            }
+        }
+        
+        if isStoreApiFailed{
+            self.isStoreApiFailed = true
         }
     }
 }

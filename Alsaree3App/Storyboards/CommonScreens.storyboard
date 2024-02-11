@@ -72,7 +72,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Grant Permission"/>
                                 <connections>
-                                    <action selector="onGrantPermissionClick:" destination="OD4-iD-DPb" eventType="touchUpInside" id="iXk-9F-iWV"/>
+                                    <action selector="onGrantPermissionBtn:" destination="OD4-iD-DPb" eventType="touchUpInside" id="KVc-dm-RN1"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nointernet" translatesAutoresizingMaskIntoConstraints="NO" id="YjA-mB-KI5">

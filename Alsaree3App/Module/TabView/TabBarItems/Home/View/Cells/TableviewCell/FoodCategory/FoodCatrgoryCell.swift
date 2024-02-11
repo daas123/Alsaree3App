@@ -85,7 +85,7 @@ extension FoodCatrgoryCell : UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return CGSize(width: (foodCategoryCollectionView.bounds.width-20)/4 , height: (foodCategoryCollectionView.bounds.height))
+        return CGSize(width: (foodCategoryCollectionView.bounds.width-22)/4 , height: (foodCategoryCollectionView.bounds.height))
     }
 }
 

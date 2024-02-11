@@ -16,11 +16,23 @@ class BaseViewController: UIViewController {
         NotificationManager().addObserver(forName: .networkStatusChanged) { _  in
             self.networkStatusDidChange()
         }
-        NotificationManager().addObserver(forName: .networkStatusChanged) { _  in
+        NotificationManager().addObserver(forName: .locationAccessRestricted) { _  in
             self.locationStatusChanged()
         }
         NotificationManager().addObserver(forName: .noLocationDeliverable) { _ in
             
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if !ReachabilityRevamp.isConnectedToNetwork() {
+            DispatchQueue.main.async{
+                NotificationManager().postNetworkStatusChanged()
+            }
+        } else if !LocationManagerRevamp.shared.isLocationAccess {
+            DispatchQueue.main.async{
+                NotificationManager().postLocationAccessRestricted()
+            }
         }
     }
     

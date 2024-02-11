@@ -11,8 +11,9 @@ class StoreShimmerCell: UITableViewCell {
 
     @IBOutlet weak var parentView: UIView!
     @IBOutlet var shimmerView: [UIView]!
-
     @IBOutlet weak var shimmerImageView: UIView!
+    
+    var isStoreApiFailed : Bool = false
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,7 +27,24 @@ class StoreShimmerCell: UITableViewCell {
         self.selectionStyle = .none
     }
     
+    func SetupUi(){
+        if isStoreApiFailed{
+            stopShimmer()
+            showErrorMessage(nameNib: nibNamesConstant.cellErrorHandlingView.rawValue, uiView:parentView)
+        }
+    }
+    
     func setUpShimmerViews(){
+        ShimmeringView().startShining(shimmerImageView)
+        for shimmerView in shimmerView{
+            shimmerView.backgroundColor = UIColor.clear
+            shimmerView.layer.cornerRadius = 8
+            ShimmeringView().startShining(shimmerView)
+        }
+        
+    }
+    
+    func stopShimmer(){
         ShimmeringView().startShining(shimmerImageView)
         for shimmerView in shimmerView{
             shimmerView.backgroundColor = UIColor.clear
@@ -40,7 +58,6 @@ class StoreShimmerCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
     }
     
 }

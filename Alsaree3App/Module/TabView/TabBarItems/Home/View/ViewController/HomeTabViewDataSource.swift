@@ -9,10 +9,14 @@ import UIKit
 extension HomeTabViewController:UITableViewDataSource{
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return (viewModel.recentlyAddedStores == nil && viewModel.homeScreenStoreListData == nil) ? 1 : 3
+        return (viewModel.recentlyAddedStores == nil && viewModel.homeScreenStoreListData == nil || viewModel.isLoadingState || viewModel.isApiCallFailed) ? 1 : 3
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if viewModel.isLoadingState || viewModel.isApiCallFailed{
+            return 1
+        }
+        
         if section == 0{
             return viewModel.getTableViewCount(Section: 0)
         }else if section == 1{
@@ -23,18 +27,18 @@ extension HomeTabViewController:UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if viewModel.recentlyAddedStores == nil && viewModel.homeScreenStoreListData == nil {
-            if viewModel.isApiCallFailed{
-                let loadingCell = tableView.getCell(identifier: CellConstant.loadingTableViewCell.rawValue) as! LoadingTableViewCell
-                loadingCell.homeTabdeilgate = self
-                loadingCell.showRetryButton()
-                return loadingCell
-            }else{
-                let cell = tableView.getCell(identifier: CellConstant.homeTabShimmerCell.rawValue) as! HomeTabShimmerCell
-                return cell
-            }
+        if viewModel.isApiCallFailed{
+            let loadingCell = tableView.getCell(identifier: CellConstant.loadingTableViewCell.rawValue) as! LoadingTableViewCell
+            loadingCell.homeTabdeilgate = self
+            loadingCell.showRetryButton()
+            return loadingCell
         }
         
+        if viewModel.isLoadingState {
+            let cell = tableView.getCell(identifier: CellConstant.homeTabShimmerCell.rawValue) as! HomeTabShimmerCell
+            return cell
+        }
+
         if indexPath.section == 0 {
             
             switch indexPath.row{
@@ -100,6 +104,7 @@ extension HomeTabViewController:UITableViewDataSource{
             }
         }else{
             let cell = tableView.getCell(identifier: "StoreShimmerCell") as! StoreShimmerCell
+            cell.isStoreApiFailed = viewModel.isStoreApiFailed
             return cell
         }
         

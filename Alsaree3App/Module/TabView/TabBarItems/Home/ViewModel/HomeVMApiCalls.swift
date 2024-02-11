@@ -101,6 +101,7 @@ extension HomeTabViewModel{
             longitude: String(describing: LocationManagerRevamp.shared.currentLocation?.longitude ?? 0),
             cart_unique_token: kCartUniqueToken,
             store_delivery_id: kStoreDeliveryId,
+//            store_delivery_id: "",
             user_id: kUserId,
             latitude: String(describing: LocationManagerRevamp.shared.currentLocation?.latitude ?? 0),
             language:  DeviceInfo.englishLang.rawValue,
@@ -151,21 +152,22 @@ extension HomeTabViewModel{
                         self.homeScreenStoreListData = []
                     }
                     self.homeScreenStoreListData! += storeData
-                    DispatchQueue.main.async {
-                        self.homeTabDeligate?.reloadTableView()
-                    }
                 }
                 
-                if data.message == nil || data.success == false{
+                if (data.message == nil || data.success == false){
                     self.isCallCloseStore = true
                     self.callHomeScreenGetCloseStoreListApi()
                 }
 
                 if pageNo == "1"{
                     self.dispatchGroup.leave()
+                }else{
+                    DispatchQueue.main.async {
+                        self.homeTabDeligate?.reloadTableView()
+                    }
                 }
             case .failure(let error):
-                self.apiCallFailed(isApicallfailed: true)
+                self.apiCallFailed(isStoreApiFailed: true)
                 debugPrint("callHomeScreenStoreListApi failed")
                 debugPrint(error.localizedDescription)
             }

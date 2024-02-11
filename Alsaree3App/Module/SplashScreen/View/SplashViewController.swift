@@ -19,7 +19,7 @@ class SplashViewController: UIViewController {
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = true
         setupAnimation()
-        checkInternet()
+        checkInternetLocationAccess()
         viewmodel.splashScreenDeligate = self
         
     }
@@ -27,12 +27,16 @@ class SplashViewController: UIViewController {
         animationView?.stop()
     }
     
-    func checkInternet() {
+    func checkInternetLocationAccess() {
         if !ReachabilityRevamp.isConnectedToNetwork() {
             DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
                 self.navigateToHomeTab()
             }
-        } else {
+        } else if !LocationManagerRevamp.shared.isLocationAccess {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                self.navigateToHomeTab()
+            }
+        }else{
             viewmodel.callSplashScreeenApis()
         }
     }

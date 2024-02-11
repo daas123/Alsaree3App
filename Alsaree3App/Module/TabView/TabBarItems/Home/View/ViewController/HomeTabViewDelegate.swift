@@ -13,9 +13,10 @@ extension HomeTabViewController : UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if viewModel.recentlyAddedStores == nil && viewModel.homeScreenStoreListData == nil {
+        if viewModel.isApiCallFailed || viewModel.isLoadingState{
             return tableView.bounds.height
         }
+
         let screenHeight = UIScreen.main.bounds.height
         switch (indexPath.section, indexPath.row) {
         case (0, 0):
@@ -84,6 +85,11 @@ extension HomeTabViewController : UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        
+        if viewModel.isApiCallFailed || viewModel.isLoadingState{
+            return 0
+        }
+        
         if viewModel.recentlyAddedStores == nil && viewModel.homeScreenStoreListData == nil {
             return 0
         }

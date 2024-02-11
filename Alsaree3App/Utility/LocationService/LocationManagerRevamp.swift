@@ -70,6 +70,8 @@ class LocationManagerRevamp: NSObject, CLLocationManagerDelegate {
                     completion(self.currentLocation)
                 }
             } else {
+                //33.186011
+                //44.607282
                 completion(nil)
             }
             

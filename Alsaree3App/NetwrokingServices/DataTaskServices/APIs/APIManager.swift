@@ -2,8 +2,10 @@
 
 import Foundation
 
-enum NetworkError: Error {
+enum APiResponceError : Error {
     case noNetwork
+    case noLocation
+    case apiFailed
 }
 class APIManager {
     
@@ -16,14 +18,14 @@ class APIManager {
         //  Reachability to check network connected or not
         if !ReachabilityRevamp.isConnectedToNetwork() {
             NotificationManager().postNetworkStatusChanged()
-            completionHandler(.failure(NetworkError.noNetwork))
+            completionHandler(.failure(APiResponceError.noNetwork))
             return
         }
         
         if !LocationManagerRevamp.shared.isLocationAccess {
             NotificationManager().postLocationAccessRestricted()
             if case .AppSettings = serviceType {
-                
+                completionHandler(.failure(APiResponceError.noLocation))
             }else{
                 return
             }
@@ -57,7 +59,7 @@ class APIManager {
         request.allHTTPHeaderFields = serviceType.header
         
         let task = session.dataTask(with: request as URLRequest){
-            data, response, error in
+            data, responce, error in
             
             // ensure there is no error for this HTTP response
             guard error == nil else {
@@ -73,11 +75,18 @@ class APIManager {
                 return
             }
             
+            guard ( (responce as! HTTPURLResponse).statusCode == 200 ) else{
+                completionHandler(.failure(APiResponceError.apiFailed))
+                return
+            }
+            
             do {
                 let json = try JSONSerialization.jsonObject(with: content, options: JSONSerialization.ReadingOptions.mutableContainers)
                 completionHandler(.success(content))
             } catch let decodingError {
-                completionHandler(.failure(decodingError))
+                if (responce as! HTTPURLResponse).statusCode == 200{
+                    completionHandler(.failure(decodingError))
+                }
                 debugPrint("Decoding error: \(decodingError)")
             }
             
