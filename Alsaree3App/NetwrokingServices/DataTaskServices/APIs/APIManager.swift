@@ -16,17 +16,16 @@ class APIManager {
     public func performRequest(serviceType: APIServices, completionHandler: @escaping(Result<Data,Error>)->Void){
         
         //  Reachability to check network connected or not
-        if !ReachabilityRevamp.isConnectedToNetwork() {
-            NotificationManager().postNetworkStatusChanged()
+        if !Connectivity.checkInternetAccess(){
             completionHandler(.failure(APiResponceError.noNetwork))
             return
         }
         
-        if !LocationManagerRevamp.shared.isLocationAccess {
-            NotificationManager().postLocationAccessRestricted()
+        if !Connectivity.checkLocationAccess() {
             if case .AppSettings = serviceType {
-                completionHandler(.failure(APiResponceError.noLocation))
+                
             }else{
+                completionHandler(.failure(APiResponceError.noLocation))
                 return
             }
         }

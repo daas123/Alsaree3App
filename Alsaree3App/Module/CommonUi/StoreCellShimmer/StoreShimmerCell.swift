@@ -13,6 +13,7 @@ class StoreShimmerCell: UITableViewCell {
     @IBOutlet var shimmerView: [UIView]!
     @IBOutlet weak var shimmerImageView: UIView!
     
+    var errorView = UIView()
     var isStoreApiFailed : Bool = false
     
     override func awakeFromNib() {
@@ -24,14 +25,31 @@ class StoreShimmerCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         setUpShimmerViews()
+//        SetupUi()
         self.selectionStyle = .none
     }
     
     func SetupUi(){
-        if isStoreApiFailed{
-            stopShimmer()
-            showErrorMessage(nameNib: nibNamesConstant.cellErrorHandlingView.rawValue, uiView:parentView)
-        }
+//        if isStoreApiFailed{
+//            stopShimmer()
+//            showCustomErrorMessage(nameNib: nibNamesConstant.cellErrorHandlingView.rawValue, uiView: parentView)
+//        }else{
+//            setUpShimmerViews()
+//        }
+//        errorView.removeFromSuperview()
+        
+    }
+    
+    func showCustomErrorMessage(nameNib:String, uiView:UIView) {
+        errorView = loadErrorViewFromNib(nibName:nameNib) ?? UIView()
+        uiView.addSubview(errorView)
+        parentView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            parentView.topAnchor.constraint(equalTo: uiView.topAnchor),
+            parentView.leadingAnchor.constraint(equalTo: uiView.leadingAnchor),
+            parentView.trailingAnchor.constraint(equalTo: uiView.trailingAnchor),
+            parentView.bottomAnchor.constraint(equalTo: uiView.bottomAnchor)
+        ])
     }
     
     func setUpShimmerViews(){

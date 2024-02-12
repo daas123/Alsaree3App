@@ -181,7 +181,7 @@ class ResturentDetailsTableViewCell: UITableViewCell {
     }
     
     func setupCloseStore(){
-        showErrorMessage(nameNib: nibNamesConstant.closeStoreView.rawValue, uiView: self)
+//        showErrorMessage(nameNib: nibNamesConstant.closeStoreView.rawValue, uiView: self, parentView: &<#UIView#>)
     }
     
     

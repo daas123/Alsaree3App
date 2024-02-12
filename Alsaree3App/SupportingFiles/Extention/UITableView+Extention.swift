@@ -8,17 +8,18 @@
 import Foundation
 import UIKit
 extension UITableViewCell{
-    func showErrorMessage(nameNib:String, uiView:UIView) {
-        if let customErrorView = loadErrorViewFromNib(nibName:nameNib) {
-            uiView.addSubview(customErrorView)
-            customErrorView.translatesAutoresizingMaskIntoConstraints = false
-            NSLayoutConstraint.activate([
-                customErrorView.topAnchor.constraint(equalTo: uiView.topAnchor),
-                customErrorView.leadingAnchor.constraint(equalTo: uiView.leadingAnchor),
-                customErrorView.trailingAnchor.constraint(equalTo: uiView.trailingAnchor),
-                customErrorView.bottomAnchor.constraint(equalTo: uiView.bottomAnchor)
-            ])
-        }
+    func showErrorMessage(nameNib:String, uiView:UIView, parentView:inout UIView) {
+        parentView = loadErrorViewFromNib(nibName:nameNib) ?? UIView()
+        uiView.addSubview(parentView)
+        parentView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            parentView.topAnchor.constraint(equalTo: uiView.topAnchor),
+            parentView.leadingAnchor.constraint(equalTo: uiView.leadingAnchor),
+            parentView.trailingAnchor.constraint(equalTo: uiView.trailingAnchor),
+            parentView.bottomAnchor.constraint(equalTo: uiView.bottomAnchor)
+        ])
+        
+        
     }
     
     func loadErrorViewFromNib(nibName:String) -> UIView? {

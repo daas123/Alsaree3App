@@ -76,6 +76,7 @@
                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                     </view>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="h0H-XH-Q0K" secondAttribute="trailing" constant="20" id="2IN-Pg-u1O"/>
                     <constraint firstItem="sXu-c8-TQY" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.151093" id="95l-kA-47A"/>
@@ -99,6 +100,7 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outletCollection property="shimmmerViews" destination="sXu-c8-TQY" collectionClass="NSMutableArray" id="et9-gt-iQO"/>
                 <outletCollection property="circleShimmerViews" destination="Ao2-SB-fdm" collectionClass="NSMutableArray" id="7nN-H5-CXm"/>
@@ -117,7 +119,7 @@
     </objects>
     <resources>
         <systemColor name="systemGray5Color">
-            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -58,24 +58,22 @@ extension HomeTabViewController : UIScrollViewDelegate{
     }
     
     func setupSteckyHeader(_ scrollView: UIScrollView){
-        if viewModel.isLoadingState || viewModel.isApiCallFailed {
+        if viewModel.isLoadingState || viewModel.isApiCallFailed || viewModel.recentlyAddedStores == nil || viewModel.homeScreenStoreListData == nil {
             return
         }
-//        if viewModel.recentlyAddedStores == nil || viewModel.homeScreenStoreListData == nil {
-//            return
-//        }
-        let headerRect = hometabTableView.rect(forSection: 1)
-        if headerRect.origin.y <= scrollView.contentOffset.y && scrollView.contentOffset.y <= headerRect.origin.y + headerRect.size.height {
-            headerView?.hideImages()
-            headerView?.setCustomConstrain(heigtht: 40)
-            //            showProgressView()
-            headerView?.categroyBackView.backgroundColor = ColorConstant.borderColorGray
-        } else {
-            headerView?.backgroundColor = UIColor.clear
-            headerView?.showImages()// Reset to original height here
-            headerView?.setDefaultConstrain()
-            hideProgressView()
-            headerView?.categroyBackView.backgroundColor = UIColor.clear
+        if hometabTableView.numberOfSections > 1 {
+            let headerRect = hometabTableView.rect(forSection: 1)
+            if headerRect.origin.y <= scrollView.contentOffset.y && scrollView.contentOffset.y <= headerRect.origin.y + headerRect.size.height {
+                headerView?.hideImages()
+                headerView?.setCustomConstrain(heigtht: 40)
+                headerView?.categroyBackView.backgroundColor = ColorConstant.borderColorGray
+            } else {
+                headerView?.backgroundColor = UIColor.clear
+                headerView?.showImages()// Reset to original height here
+                headerView?.setDefaultConstrain()
+                hideProgressView()
+                headerView?.categroyBackView.backgroundColor = UIColor.clear
+            }
         }
     }
     

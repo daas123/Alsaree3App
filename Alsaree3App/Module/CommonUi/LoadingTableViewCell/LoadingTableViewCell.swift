@@ -26,8 +26,8 @@ class LoadingTableViewCell: UITableViewCell {
     
     
     @IBAction func onRetryClick(_ sender: UIButton) {
-        homeTabdeilgate?.viewModel.isApiCallFailed = false
-        homeTabdeilgate?.viewModel.isLoadingState = true
+//        homeTabdeilgate?.viewModel.isApiCallFailed = false
+//        homeTabdeilgate?.viewModel.isLoadingState = true
         homeTabdeilgate?.viewModel.callFullHomeScreenApi()
     }
     

@@ -10,14 +10,12 @@ extension HomeTabViewModel{
     
     func callAppSettingApi(){
         let parameters = AppSettingParams(device_type: DeviceInfo.deviceType.rawValue, type: DeviceInfo.type.rawValue, device_token:kDeviceToken, device_unique_id:kDeviceUniqueId )
-        //        LoaderManager.shared.showLoading()
         HomeScreenServices().getAppSettings(parameters: parameters) { responce  in
             switch responce{
             case.success(let data):
                 authKey = data.authKey
                 SDWebImageManagerRevamp.shared.imageBaseUrl = data.imageBaseURL
                 self.dispatchGroup.leave()
-                //                LoaderManager.shared.hideLoader()
                 debugPrint("callAppSettingApi Done")
             case.failure(let error):
                 debugPrint("callAppSettingApi falied")
@@ -87,7 +85,7 @@ extension HomeTabViewModel{
                 self.deliveryListForNearestCityData = data
             case .failure(let error):
                 debugPrint("callDeliveryListForNearestCityApi failed")
-                self.apiCallFailed()
+                self.apiCallFailed(isApicallfailed: true)
                 debugPrint(error.localizedDescription)
             }
         }
@@ -112,6 +110,7 @@ extension HomeTabViewModel{
             switch responce{
             case .success(let data):
                 debugPrint("callHomeScreenMainDetailWithBannerImagesOffersApi Done")
+                self.isApiCallFailed = false
                 self.recentlyAddedTitle = data.horizontal_store_title
                 self.mostPopularTitle = data.ads_title
                 self.nearbyResturentTitle = data.store_listing_title
@@ -163,6 +162,7 @@ extension HomeTabViewModel{
                     self.dispatchGroup.leave()
                 }else{
                     DispatchQueue.main.async {
+                        self.isStoreApiFailed = false
                         self.homeTabDeligate?.reloadTableView()
                     }
                 }
@@ -218,6 +218,7 @@ extension HomeTabViewModel{
                     self.isAllApiCallDone = true
                 }
                 DispatchQueue.main.async {
+                    self.isStoreApiFailed = false
                     self.homeTabDeligate?.reloadTableView()
                 }
             case .failure(let error):

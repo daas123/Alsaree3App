@@ -19,9 +19,12 @@ class SplashViewController: UIViewController {
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = true
         setupAnimation()
-        checkInternetLocationAccess()
         viewmodel.splashScreenDeligate = self
+        setupObserver()
         
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        checkInternetLocationAccess()
     }
     override func viewDidDisappear(_ animated: Bool) {
         animationView?.stop()
@@ -49,6 +52,13 @@ class SplashViewController: UIViewController {
         animationView?.backgroundBehavior = .pauseAndRestore
         view.addSubview(animationView!)
         animationView!.play()
+    }
+    
+    func setupObserver(){
+        NotificationManager().addObserver(forName: .reloadData) { _ in
+            self.dismiss(animated: true)
+            self.viewmodel.callSplashScreeenApis()
+        }
     }
 }
 

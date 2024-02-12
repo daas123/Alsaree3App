@@ -32,11 +32,10 @@ class HomeTabViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        viewModel.instantiateApiCalls()
-        settingDelegateDataSource()
-        setupTableview()
         registerTableViewCell()
-        
+        settingDelegateDataSource()
+        viewModel.instantiateApiCalls()
+        setupTableview()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -120,7 +119,7 @@ class HomeTabViewController: BaseViewController {
     func setupObserver(){
         NotificationManager().addObserver(forName: .reloadData) { _ in
             self.dismiss(animated: true)
-            self.viewModel.instantiateApiCalls()
+            self.viewModel.callFullHomeScreenApi()
         }
     }
     

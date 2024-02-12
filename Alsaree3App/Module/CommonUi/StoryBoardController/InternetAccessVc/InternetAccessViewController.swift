@@ -16,19 +16,17 @@ class InternetAccessViewController: UIViewController {
 
     @IBAction func onGrantPermissionBtn(_ sender: UIButton) {
         
-        if let settingsURL = URL(string: "App-Prefs:root=WIFI") {
-                UIApplication.shared.open(settingsURL)
-            }
+//        if let settingsURL = URL(string: "App-Prefs:root=WIFI") {
+//                UIApplication.shared.open(settingsURL)
+//            }
         
         if let settingsURL = URL(string: "App-Prefs:root=MOBILE_DATA_SETTINGS_ID") {
                 UIApplication.shared.open(settingsURL)
             }
         
-        
-        
-        if let settingsURL = URL(string: UIApplication.openSettingsURLString) {
-                UIApplication.shared.open(settingsURL)
-            }
+//        if let settingsURL = URL(string: UIApplication.openSettingsURLString) {
+//                UIApplication.shared.open(settingsURL)
+//            }
     }
     
 }

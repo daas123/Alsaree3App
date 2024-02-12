@@ -90,33 +90,33 @@ class HomeTabViewModel{
     }
     
     func callFullHomeScreenApi(){
-        resetApiFectechedData()
-        self.homeTabDeligate?.reloadTableView()
-        dispatchGroup.enter()
-        callAppSettingApi()
-        dispatchGroup.notify(queue: .main) {
-            self.callHomeScreenApis()
+        if Connectivity.checkNetAndLoc(){
+            resetApiFectechedData()
+            isLoadingState = true
+            isApiCallFailed = false
+            self.homeTabDeligate?.reloadTableView()
+            dispatchGroup.enter()
+            callAppSettingApi()
+            dispatchGroup.notify(queue: .main) {
+                self.callHomeScreenApis()
+            }
+        }else{
+            apiCallFailed(isRemoveDispatchGroup: false,isApicallfailed: true)
         }
     }
     func reloadOnPull(){
-        resetApiFectechedData()
-        dispatchGroup.enter()
-        callLoyaltyDetailApi()
-        dispatchGroup.enter()
-        callHomeScreenMainDetailWithBannerImagesOffersApi()
-        dispatchGroup.enter()
-        callHomeScreenStoreListApi()
-        dispatchGroup.notify(queue: .main) {
-            self.homeTabDeligate?.reloadTableView()
-        }
+        callFullHomeScreenApi()
     }
     
     func instantiateApiCalls(){
-        if LocationManagerRevamp.shared.isLocationAccess{
+        if Connectivity.checkNetAndLoc(){
+            isLoadingState = true
+            isApiCallFailed = false
+            print("Before callingHomeScreen")
             self.homeTabDeligate?.reloadTableView()
             callHomeScreenApis()
         }else{
-            homeTabDeligate?.showLocationAccessScreen()
+            apiCallFailed(isRemoveDispatchGroup: false,isApicallfailed: true)
         }
     }
     
@@ -134,29 +134,41 @@ class HomeTabViewModel{
         if !isAllApiCallDone{
             if isCallCloseStore{
                 closeStorePage += 1
-                callHomeScreenGetCloseStoreListApi(pageNo:String(closeStorePage))
+                if Connectivity.checkNetAndLoc(){
+                    callHomeScreenGetCloseStoreListApi(pageNo:String(closeStorePage))}
             }else{
                 currentPage += 1
-                callHomeScreenStoreListApi(pageNo: String(currentPage))
+                if Connectivity.checkNetAndLoc(){
+                    callHomeScreenStoreListApi(pageNo: String(currentPage))
+                }
             }
         }
     }
     
     func apiCallFailed(isRemoveDispatchGroup : Bool = true , isApicallfailed : Bool = false ,isStoreApiFailed : Bool = false){
         if isRemoveDispatchGroup{
-            dispatchGroup.leave()
+            if !ReachabilityRevamp.isConnectedToNetwork() {
+                NotificationManager().postNetworkStatusChanged()
+            }else if !LocationManagerRevamp.shared.isLocationAccess {
+                NotificationManager().postLocationAccessRestricted()
+            }else{
+                dispatchGroup.leave()
+            }
+            
         }
         
         if isApicallfailed{
-            isLoadingState = true
             isApiCallFailed = true
             DispatchQueue.main.async {
+                print("before getting the error")
                 self.homeTabDeligate?.reloadTableView()
             }
         }
         
         if isStoreApiFailed{
             self.isStoreApiFailed = true
+            currentPage -= 1
+            self.homeTabDeligate?.reloadTableView()
         }
     }
 }

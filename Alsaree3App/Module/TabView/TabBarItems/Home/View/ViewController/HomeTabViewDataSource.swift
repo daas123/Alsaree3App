@@ -9,7 +9,7 @@ import UIKit
 extension HomeTabViewController:UITableViewDataSource{
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return (viewModel.recentlyAddedStores == nil && viewModel.homeScreenStoreListData == nil || viewModel.isLoadingState || viewModel.isApiCallFailed) ? 1 : 3
+        return (viewModel.isLoadingState || viewModel.isApiCallFailed) ? 1 : 3
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -36,6 +36,7 @@ extension HomeTabViewController:UITableViewDataSource{
         
         if viewModel.isLoadingState {
             let cell = tableView.getCell(identifier: CellConstant.homeTabShimmerCell.rawValue) as! HomeTabShimmerCell
+            backButton.isHidden = true
             return cell
         }
 
@@ -104,7 +105,8 @@ extension HomeTabViewController:UITableViewDataSource{
             }
         }else{
             let cell = tableView.getCell(identifier: "StoreShimmerCell") as! StoreShimmerCell
-            cell.isStoreApiFailed = viewModel.isStoreApiFailed
+//            cell.isStoreApiFailed = viewModel.isStoreApiFailed
+//            cell.SetupUi()
             return cell
         }
         

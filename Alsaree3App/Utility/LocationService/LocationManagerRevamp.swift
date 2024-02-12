@@ -66,7 +66,7 @@ class LocationManagerRevamp: NSObject, CLLocationManagerDelegate {
                 } else {
                     self.currentLocation?.longitude = 44.416270
                     self.currentLocation?.latitude = 33.341658
-                    NotificationManager().postReloadData()
+//                    NotificationManager().postReloadData()
                     completion(self.currentLocation)
                 }
             } else {
@@ -83,6 +83,7 @@ class LocationManagerRevamp: NSObject, CLLocationManagerDelegate {
         switch status {
         case .authorizedWhenInUse, .authorizedAlways:
             startMonitoringSignificantLocationChanges()
+            NotificationManager().postReloadData()
         case .denied, .restricted:
             locationManager.requestWhenInUseAuthorization()
             isLocationAccess = false

@@ -11,6 +11,7 @@ class BannerHomeTabCell: UITableViewCell {
     
     @IBOutlet weak var bannerImageView: UIImageView!
     var bannerData : LoyaltyDetailsModel?
+    var errorView = UIView()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,9 +27,10 @@ class BannerHomeTabCell: UITableViewCell {
         bannerImageView.layer.cornerRadius = 11
         
         if bannerData == nil {
-            showErrorMessage(nameNib: nibNamesConstant.cellErrorHandlingView.rawValue, uiView:bannerImageView)
+            showErrorMessage(nameNib: nibNamesConstant.cellErrorHandlingView.rawValue, uiView:bannerImageView, parentView: &errorView)
             SDWebImageManagerRevamp.shared.loadImage(with:bannerData?.zero_point_image_url ?? "", into: bannerImageView, isbaseUrlRequired: false)
         } else {
+            errorView.removeFromSuperview()
             loadBannerImage()
         }
         
