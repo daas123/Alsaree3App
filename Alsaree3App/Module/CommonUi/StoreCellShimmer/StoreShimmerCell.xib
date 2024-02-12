@@ -97,20 +97,51 @@
                             <constraint firstItem="0It-Zr-Y81" firstAttribute="top" secondItem="LDb-Vy-NGX" secondAttribute="top" constant="10" id="cvR-nm-rRe"/>
                         </constraints>
                     </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8ON-lU-lRN">
+                        <rect key="frame" x="30" y="0.0" width="272" height="365"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HOb-Pi-x3d">
+                                <rect key="frame" x="88.333333333333343" y="197.66666666666666" width="95.333333333333343" height="34.333333333333343"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Try Again"/>
+                                <connections>
+                                    <action selector="onClickTryAgain:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="MBs-ds-GSS"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Something Went Wrong" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="csX-ag-T6U">
+                                <rect key="frame" x="45.666666666666686" y="172.33333333333334" width="181" height="20.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="HOb-Pi-x3d" firstAttribute="top" secondItem="csX-ag-T6U" secondAttribute="bottom" constant="5" id="4rl-7R-kWh"/>
+                            <constraint firstItem="HOb-Pi-x3d" firstAttribute="centerX" secondItem="8ON-lU-lRN" secondAttribute="centerX" id="6wE-JW-zDt"/>
+                            <constraint firstItem="csX-ag-T6U" firstAttribute="centerX" secondItem="8ON-lU-lRN" secondAttribute="centerX" id="hng-ta-Oj6"/>
+                            <constraint firstItem="csX-ag-T6U" firstAttribute="centerY" secondItem="8ON-lU-lRN" secondAttribute="centerY" id="l6C-i3-pgD"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
+                    <constraint firstItem="8ON-lU-lRN" firstAttribute="trailing" secondItem="LDb-Vy-NGX" secondAttribute="trailing" id="2U8-gI-99i"/>
                     <constraint firstItem="LDb-Vy-NGX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="30" id="5he-pP-DGt"/>
                     <constraint firstAttribute="bottom" secondItem="LDb-Vy-NGX" secondAttribute="bottom" id="7EX-wj-KcG"/>
+                    <constraint firstItem="8ON-lU-lRN" firstAttribute="top" secondItem="LDb-Vy-NGX" secondAttribute="top" id="7xQ-Q4-RnO"/>
                     <constraint firstAttribute="trailing" secondItem="LDb-Vy-NGX" secondAttribute="trailing" constant="30" id="CxA-97-9FM"/>
                     <constraint firstItem="LDb-Vy-NGX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="NS0-sH-wct"/>
+                    <constraint firstItem="8ON-lU-lRN" firstAttribute="bottom" secondItem="LDb-Vy-NGX" secondAttribute="bottom" id="bLn-JH-uR1"/>
                     <constraint firstItem="BhA-Gj-djS" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.1" id="dla-qB-jy1"/>
                     <constraint firstItem="bat-dv-fAt" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.1" id="gwI-WH-pcu"/>
+                    <constraint firstItem="8ON-lU-lRN" firstAttribute="leading" secondItem="LDb-Vy-NGX" secondAttribute="leading" id="wBl-sa-JDc"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
+                <outlet property="ErrorView" destination="8ON-lU-lRN" id="n3d-at-3a9"/>
                 <outlet property="parentView" destination="0It-Zr-Y81" id="Ygp-32-17i"/>
                 <outlet property="shimmerImageView" destination="JMF-k5-k3u" id="fdo-Sl-RLM"/>
                 <outletCollection property="shimmerView" destination="M63-aN-wdW" collectionClass="NSMutableArray" id="8Ro-NT-rrC"/>
@@ -126,7 +157,7 @@
     </objects>
     <resources>
         <systemColor name="opaqueSeparatorColor">
-            <color red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

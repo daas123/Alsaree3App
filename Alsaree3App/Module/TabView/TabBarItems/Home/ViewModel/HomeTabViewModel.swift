@@ -133,13 +133,18 @@ class HomeTabViewModel{
     func callHomeScreenStorelistNextPageApi(){
         if !isAllApiCallDone{
             if isCallCloseStore{
-                closeStorePage += 1
                 if Connectivity.checkNetAndLoc(){
-                    callHomeScreenGetCloseStoreListApi(pageNo:String(closeStorePage))}
+                    closeStorePage += 1
+                    callHomeScreenGetCloseStoreListApi(pageNo:String(closeStorePage))
+                }else{
+                    isStoreApiFailed = true
+                }
             }else{
-                currentPage += 1
                 if Connectivity.checkNetAndLoc(){
+                    currentPage += 1
                     callHomeScreenStoreListApi(pageNo: String(currentPage))
+                }else{
+                    isStoreApiFailed = true
                 }
             }
         }

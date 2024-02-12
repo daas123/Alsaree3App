@@ -12,9 +12,10 @@ class StoreShimmerCell: UITableViewCell {
     @IBOutlet weak var parentView: UIView!
     @IBOutlet var shimmerView: [UIView]!
     @IBOutlet weak var shimmerImageView: UIView!
+    @IBOutlet weak var ErrorView: UIView!
     
-    var errorView = UIView()
     var isStoreApiFailed : Bool = false
+    var deligate : HomeTabViewController?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,28 +31,15 @@ class StoreShimmerCell: UITableViewCell {
     }
     
     func SetupUi(){
-//        if isStoreApiFailed{
-//            stopShimmer()
-//            showCustomErrorMessage(nameNib: nibNamesConstant.cellErrorHandlingView.rawValue, uiView: parentView)
-//        }else{
-//            setUpShimmerViews()
-//        }
-//        errorView.removeFromSuperview()
+        if isStoreApiFailed{
+            setUpShimmerViews()
+            ErrorView.isHidden = false
+        }else{
+            ErrorView.isHidden = true
+            stopShimmer()
+        }
         
     }
-    
-    func showCustomErrorMessage(nameNib:String, uiView:UIView) {
-        errorView = loadErrorViewFromNib(nibName:nameNib) ?? UIView()
-        uiView.addSubview(errorView)
-        parentView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            parentView.topAnchor.constraint(equalTo: uiView.topAnchor),
-            parentView.leadingAnchor.constraint(equalTo: uiView.leadingAnchor),
-            parentView.trailingAnchor.constraint(equalTo: uiView.trailingAnchor),
-            parentView.bottomAnchor.constraint(equalTo: uiView.bottomAnchor)
-        ])
-    }
-    
     func setUpShimmerViews(){
         ShimmeringView().startShining(shimmerImageView)
         for shimmerView in shimmerView{
@@ -63,13 +51,17 @@ class StoreShimmerCell: UITableViewCell {
     }
     
     func stopShimmer(){
-        ShimmeringView().startShining(shimmerImageView)
+        ShimmeringView().stopShining(shimmerImageView)
         for shimmerView in shimmerView{
             shimmerView.backgroundColor = UIColor.clear
             shimmerView.layer.cornerRadius = 8
-            ShimmeringView().startShining(shimmerView)
+            ShimmeringView().stopShining(shimmerView)
         }
         
+    }
+    
+    @IBAction func onClickTryAgain(_ sender: UIButton) {
+        deligate?.viewModel.callHomeScreenStorelistNextPageApi()
     }
     
 

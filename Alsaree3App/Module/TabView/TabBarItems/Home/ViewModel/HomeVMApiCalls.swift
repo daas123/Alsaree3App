@@ -222,7 +222,7 @@ extension HomeTabViewModel{
                     self.homeTabDeligate?.reloadTableView()
                 }
             case .failure(let error):
-//                self.apiCallFailed()
+                self.apiCallFailed(isStoreApiFailed: true)
                 debugPrint("callHomeScreenGetCloseStoreListApi failed")
                 debugPrint(error.localizedDescription)
             }
