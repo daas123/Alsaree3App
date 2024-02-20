@@ -22,7 +22,7 @@ class SearchTabViewController: UIViewController{
         settingDelegate()
         registerTableViewCell()
         searchtabTableView.separatorStyle = .none
-        searchtabTableView.backgroundColor = ColorConstant.primaryWhiteBgcolor
+        searchtabTableView.backgroundColor = ColorConstant.whitecolor
         self.navigationController?.isNavigationBarHidden = true
     }
     

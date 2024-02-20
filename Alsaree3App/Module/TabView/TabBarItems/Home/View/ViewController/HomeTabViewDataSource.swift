@@ -107,7 +107,7 @@ extension HomeTabViewController:UITableViewDataSource{
             let cell = tableView.getCell(identifier: "StoreShimmerCell") as! StoreShimmerCell
             cell.deligate = self
             cell.isStoreApiFailed = viewModel.isStoreApiFailed
-            cell.SetupUi()
+            cell.setUpCellState()
             return cell
         }
         

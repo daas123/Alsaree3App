@@ -14,7 +14,7 @@ extension UIButton{
         case right
     }
     
-    func setProperties(label: String, color: UIColor = ColorConstant.blackcolor, size: Int, font_Family: String = FontConstant.regular.rawValue, isBold: Bool = false, isUnderline: Bool = false, borderColor: UIColor = UIColor.clear,backcolor : UIColor = UIColor.clear,cornerRadius : Int = 0 ,borderWidth:CGFloat = 0) {
+    func setProperties(label: String, color: UIColor = ColorConstant.blackcolor, size: Int, font_Family: String = FontConstant.regular.rawValue, isBold: Bool = false, isUnderline: Bool = false, borderColor: UIColor = UIColor.clear,backcolor : UIColor = UIColor.clear,cornerRadius : Int = 0 ,borderWidth:CGFloat = 0 , tintcolor:UIColor = UIColor.clear) {
         
         var attributes: [NSAttributedString.Key: Any] = [
             .foregroundColor: color
@@ -29,6 +29,7 @@ extension UIButton{
         
         let attributedText = NSAttributedString(string: label, attributes: attributes)
         
+        self.tintColor = tintcolor
         self.layer.cornerRadius = CGFloat(cornerRadius)
         self.layer.borderColor = borderColor.cgColor
         self.layer.borderWidth = borderWidth
@@ -36,10 +37,10 @@ extension UIButton{
         self.setAttributedTitle(attributedText, for: .normal)
     }
     
-    func setPropertiesWithImage(label: String, image: String, textColor: UIColor = ColorConstant.blackcolor, fontSize: Int, imageSize: CGSize, imagePosition: ImagePosition = .left, font_Family: String = FontConstant.regular.rawValue, isBold: Bool = false, isUnderline: Bool = false, borderColor: UIColor = UIColor.clear, imageTintColor: UIColor? = nil,backColor:UIColor = UIColor.clear,cornerRadius:Int = 0) {
+    func setPropertiesWithImage(label: String, image: String, textColor: UIColor = ColorConstant.blackcolor, fontSize: Int, imageSize: CGSize, imagePosition: ImagePosition = .left, font_Family: String = FontConstant.regular.rawValue, isBold: Bool = false, isUnderline: Bool = false, borderColor: UIColor = UIColor.clear, imageTintColor: UIColor? = nil,backColor:UIColor = UIColor.clear,cornerRadius:Int = 0,tintcolor:UIColor = UIColor.clear) {
 
         // Set button text
-        setProperties(label: label, color: textColor, size: fontSize, font_Family: font_Family, isBold: isBold, isUnderline: isUnderline, borderColor: borderColor,backcolor: backColor,cornerRadius: cornerRadius)
+        setProperties(label: label, color: textColor, size: fontSize, font_Family: font_Family, isBold: isBold, isUnderline: isUnderline, borderColor: borderColor,backcolor: backColor,cornerRadius: cornerRadius,tintcolor: tintcolor)
 
         // Set button image
         if let originalImage = UIImage(named: image, in: nil, with: nil)?.resizedImage(with: imageSize) {

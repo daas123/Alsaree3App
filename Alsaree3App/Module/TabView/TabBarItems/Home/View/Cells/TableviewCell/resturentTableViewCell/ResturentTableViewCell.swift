@@ -35,7 +35,7 @@ class ResturentTableViewCell: UITableViewCell {
     }
     
     func setupUI(){
-        seemoreBtn.setProperties(label: ButtonTextConstant.seeMore.rawValue,color: ColorConstant.borderColorYellow, size: 14,isUnderline: true)
+        seemoreBtn.setProperties(label: ButtonTextConstant.seeMore.rawValue,color: ColorConstant.primaryYellowColor, size: 14,isUnderline: true)
         self.backgroundColor = UIColor.clear
         self.selectionStyle = .none
         resturentCollectionView.backgroundColor = UIColor.clear

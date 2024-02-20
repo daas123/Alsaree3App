@@ -54,6 +54,8 @@
 		4ABC9D2C2B5E5471006EFCBD /* CloseStoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABC9D2B2B5E5471006EFCBD /* CloseStoreView.swift */; };
 		4AC1379E2B79EBC7001F3B6B /* CheckConnectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC1379D2B79EBC7001F3B6B /* CheckConnectivity.swift */; };
 		4ACD2B3F2B6CBD52005C1D46 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4ACD2B412B6CBD52005C1D46 /* Localizable.strings */; };
+		4ADE697B2B848B17004E500F /* StaticAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4ADE697A2B848B16004E500F /* StaticAlert.xib */; };
+		4ADE697D2B848B4D004E500F /* StaticAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADE697C2B848B4D004E500F /* StaticAlert.swift */; };
 		4AEEB7A32B669C19008C3347 /* Animation in Resources */ = {isa = PBXBuildFile; fileRef = 4AEEB7A12B669C18008C3347 /* Animation */; };
 		4AEEB7A42B669C19008C3347 /* AnimationImages in Resources */ = {isa = PBXBuildFile; fileRef = 4AEEB7A22B669C19008C3347 /* AnimationImages */; };
 		4AEEB7A92B66A722008C3347 /* SplashScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEEB7A82B66A722008C3347 /* SplashScreenViewModel.swift */; };
@@ -291,6 +293,8 @@
 		4AC1379D2B79EBC7001F3B6B /* CheckConnectivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckConnectivity.swift; sourceTree = "<group>"; };
 		4ACD2B402B6CBD52005C1D46 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4ACD2B422B6CBD54005C1D46 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4ADE697A2B848B16004E500F /* StaticAlert.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StaticAlert.xib; sourceTree = "<group>"; };
+		4ADE697C2B848B4D004E500F /* StaticAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticAlert.swift; sourceTree = "<group>"; };
 		4AEEB7A12B669C18008C3347 /* Animation */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Animation; sourceTree = "<group>"; };
 		4AEEB7A22B669C19008C3347 /* AnimationImages */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AnimationImages; sourceTree = "<group>"; };
 		4AEEB7A82B66A722008C3347 /* SplashScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewModel.swift; sourceTree = "<group>"; };
@@ -677,6 +681,15 @@
 			path = ClosedStore;
 			sourceTree = "<group>";
 		};
+		4ADE69792B848057004E500F /* CustomStaticAlert */ = {
+			isa = PBXGroup;
+			children = (
+				4ADE697A2B848B16004E500F /* StaticAlert.xib */,
+				4ADE697C2B848B4D004E500F /* StaticAlert.swift */,
+			);
+			path = CustomStaticAlert;
+			sourceTree = "<group>";
+		};
 		4AEEB7A52B66A6FE008C3347 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -918,6 +931,7 @@
 		929F1B982B480A5C00B0F08F /* CommonUi */ = {
 			isa = PBXGroup;
 			children = (
+				4ADE69792B848057004E500F /* CustomStaticAlert */,
 				4A8F65762B74D3B6000E5F32 /* StoreCellShimmer */,
 				92FA144C2B321E8700148974 /* LoadingTableViewCell */,
 				4AB152882B6794B8008CD7A5 /* StoryBoardController */,
@@ -1612,6 +1626,7 @@
 				922CB75D2B2E34E00067805A /* BannerHomeTabCell.xib in Resources */,
 				929F51D12B569A5000C468AA /* CommonScreens.storyboard in Resources */,
 				92A66D4D2B2C185500CB8EF5 /* Main.storyboard in Resources */,
+				4ADE697B2B848B17004E500F /* StaticAlert.xib in Resources */,
 				929F8F9F2B2F653800536E70 /* FoodCatrgoryCell.xib in Resources */,
 				92FA14482B31E36800148974 /* Cairo-Black.ttf in Resources */,
 				4AB152952B67DB00008CD7A5 /* ProfileInfoListCell.xib in Resources */,
@@ -1784,6 +1799,7 @@
 				929F51CC2B56760700C468AA /* UserDefaultsManager.swift in Sources */,
 				929FF9092B301F6400E9C34A /* ResturentTableViewCell.swift in Sources */,
 				92BDA2382B39F8C3008E7228 /* HomeTabCategoryHeader.swift in Sources */,
+				4ADE697D2B848B4D004E500F /* StaticAlert.swift in Sources */,
 				929F1C832B48366D00B0F08F /* SHA2.swift in Sources */,
 				929F1C6F2B48366C00B0F08F /* BatchedCollection.swift in Sources */,
 				929F1C6B2B48366C00B0F08F /* UInt8+Extension.swift in Sources */,

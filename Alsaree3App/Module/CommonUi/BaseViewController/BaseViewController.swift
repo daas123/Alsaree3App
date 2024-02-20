@@ -70,7 +70,7 @@ class BaseViewController: UIViewController {
         locationLbl.setProperties(lbltext: TextConstant.alFurjanArea.rawValue, fontSize: 12,lineHeightMultiple: 0.8)
         downArrowImage.setProperties(imageName: ImageConstant.downArrow.rawValue)
         scooterimg.setProperties(imageName: ImageConstant.scooter.rawValue)
-        scooterimg.setPropertiesCircleWithBorderColor(borderColor: ColorConstant.borderColorYellow, borderWidth: 1)
+        scooterimg.setPropertiesCircleWithBorderColor(borderColor: ColorConstant.primaryYellowColor, borderWidth: 1)
     }
     
     

@@ -8,31 +8,39 @@
 import Foundation
 class Connectivity{
     
-    static func checkNetAndLoc() -> Bool{
+    static func checkNetAndLoc(isPresentScreen:Bool = true) -> Bool{
         if !ReachabilityRevamp.isConnectedToNetwork() {
-            NotificationManager().postNetworkStatusChanged()
+            if isPresentScreen{
+                NotificationManager().postNetworkStatusChanged()
+            }
             return false
         }
         
         if !LocationManagerRevamp.shared.isLocationAccess {
-            NotificationManager().postLocationAccessRestricted()
+            if isPresentScreen{
+                NotificationManager().postLocationAccessRestricted()
+            }
             return false
         }
         
         return true
     }
     
-    static func checkLocationAccess() -> Bool{
+    static func checkLocationAccess(isPresentScreen:Bool = true) -> Bool{
         if !LocationManagerRevamp.shared.isLocationAccess {
-            NotificationManager().postLocationAccessRestricted()
+            if isPresentScreen{
+                NotificationManager().postLocationAccessRestricted()
+            }
             return false
         }
         return true
     }
     
-    static func checkInternetAccess() -> Bool{
+    static func checkInternetAccess(isPresentScreen:Bool = true) -> Bool{
         if !ReachabilityRevamp.isConnectedToNetwork() {
-            NotificationManager().postNetworkStatusChanged()
+            if isPresentScreen{
+                NotificationManager().postNetworkStatusChanged()
+            }
             return false
         }
         return true

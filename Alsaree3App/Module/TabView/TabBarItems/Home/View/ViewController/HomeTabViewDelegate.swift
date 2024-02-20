@@ -59,12 +59,13 @@ extension HomeTabViewController : UITableViewDelegate{
             }
             return heightForStore(screenHeight: screenHeight, store: viewModel.mostPopularStore, tableView: hometabTableView)
         case (2,0):
-            guard !((viewModel.mostPopularStore?.isEmpty ?? true) || viewModel.mostPopularStore == nil) else{
+            guard !((viewModel.mostPopularStore?.isEmpty ?? true) || viewModel.mostPopularStore == nil || viewModel.isAllApiCallDone) else{
                 return 0
             }
-            if viewModel.isAllApiCallDone{
-                return 0
-            }
+//            if viewModel.isAllApiCallDone{
+//                return 0
+//            }
+            
             return heightForStore(screenHeight: screenHeight, store: viewModel.mostPopularStore, tableView: hometabTableView)
         default:
             return UITableView.automaticDimension

@@ -20,7 +20,7 @@ class SingleCategoryCollectionViewCell: UICollectionViewCell {
     override var isSelected: Bool{
         didSet{
             if isSelected{
-                parentView.layer.borderColor = ColorConstant.borderColorYellow.cgColor
+                parentView.layer.borderColor = ColorConstant.primaryYellowColor.cgColor
             }else{
                 parentView.layer.borderColor = ColorConstant.borderColorGray.cgColor
             }

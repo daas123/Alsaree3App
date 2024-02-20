@@ -11,43 +11,68 @@ class StoreShimmerCell: UITableViewCell {
 
     @IBOutlet weak var parentView: UIView!
     @IBOutlet var shimmerView: [UIView]!
-    @IBOutlet weak var shimmerImageView: UIView!
+    @IBOutlet weak var shimmerImageView: UIImageView!
     @IBOutlet weak var ErrorView: UIView!
+    @IBOutlet weak var errorlbl: UILabel!
+    @IBOutlet weak var tryAgainbtn: UIButton!
+    @IBOutlet weak var errorImageView: UIImageView!
+    @IBOutlet weak var parentShimmerview: UIView!
     
     var isStoreApiFailed : Bool = false
     var deligate : HomeTabViewController?
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        applyCornerRadius(to: parentView, radius: 20,corners: .All,borderColor: ColorConstant.borderColorGray,borderWidth: 0.5)
-        // Initialization code
+        SetupUi()
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        setUpShimmerViews()
-//        SetupUi()
         self.selectionStyle = .none
+        setUpCellState()
     }
     
     func SetupUi(){
-        if isStoreApiFailed{
-            setUpShimmerViews()
-            ErrorView.isHidden = false
-        }else{
-            ErrorView.isHidden = true
-            stopShimmer()
-        }
+        setUpCellState()
+        shimmerImageView.layer.borderWidth = 0.5
+        shimmerImageView.layer.borderColor = ColorConstant.borderColorGray.cgColor
+        tryAgainbtn.setPropertiesWithImage(label: "Try Again  ", image: ImageConstant.retry.rawValue, textColor: ColorConstant.whitecolor, fontSize: 14, imageSize: CGSize(width: 20, height: 20), imagePosition: .right, backColor: ColorConstant.primaryLightOrange, cornerRadius: 5,tintcolor: ColorConstant.primaryYellowColor)
+        applyCornerRadius(to: parentView, radius: 20,corners: .All,borderColor: ColorConstant.borderColorGray,borderWidth: 0.5)
         
     }
-    func setUpShimmerViews(){
-        ShimmeringView().startShining(shimmerImageView)
+    
+    func setUpCellState(){
+        LoaderManager.shared.hideLoader()
+        if !Connectivity.checkInternetAccess(isPresentScreen: false){
+            ErrorView.isHidden = false
+            parentShimmerview.isHidden = true
+            errorlbl.setProperties(lbltext: "No Internet Access", fontSize: 18,isBold: true)
+            errorImageView.setProperties(imageName: ImageConstant.noInternet.rawValue,isAspectFit: true)
+        }else if !Connectivity.checkLocationAccess(isPresentScreen: false){
+            errorlbl.isHidden = false
+            parentShimmerview.isHidden = true
+            errorlbl.setProperties(lbltext: "No Location Access", fontSize: 18,isBold: true)
+            errorImageView.setProperties(imageName: ImageConstant.nolocation.rawValue,isAspectFit: true)
+        }else{
+            parentShimmerview.isHidden = false
+            ErrorView.isHidden = true
+            setUpShimmerViews()
+            errorImageView.setProperties(imageName: ImageConstant.noInternet.rawValue,isAspectFit: true)
+            errorlbl.setProperties(lbltext: "Something Went Wrong", fontSize: 18,isBold: true)
+        }
+    }
+    
+    func setUpTagShimmer(){
         for shimmerView in shimmerView{
             shimmerView.backgroundColor = UIColor.clear
             shimmerView.layer.cornerRadius = 8
             ShimmeringView().startShining(shimmerView)
         }
-        
+    }
+    
+    func setUpShimmerViews(){
+        ShimmeringView().startShining(shimmerImageView)
+        setUpTagShimmer()
     }
     
     func stopShimmer(){
@@ -61,13 +86,21 @@ class StoreShimmerCell: UITableViewCell {
     }
     
     @IBAction func onClickTryAgain(_ sender: UIButton) {
-        deligate?.viewModel.callHomeScreenStorelistNextPageApi()
+        if Connectivity.checkNetAndLoc(isPresentScreen: false){
+            LoaderManager.shared.showLoading(on: self.contentView)
+            deligate?.viewModel.callHomeScreenStorelistNextPageApi()
+        }else{
+            if !Connectivity.checkInternetAccess(isPresentScreen: false){
+                deligate?.showCustomAlert(errorText: "No Internet Access, kindly switch On Or check Network Avablity Zone")
+            }else{
+                deligate?.showCustomAlert(errorText: "No Location Access, kindly Allow the Access For Better Results")
+            }
+        }
     }
     
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
     }
     
 }

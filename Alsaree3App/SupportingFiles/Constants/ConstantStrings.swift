@@ -9,11 +9,12 @@ import Foundation
 import UIKit
 
 struct ColorConstant{
-    static var primaryWhiteBgcolor = UIColor(red: 0.96, green: 0.96, blue: 0.96, alpha: 1)
+    //Primary orangeblue
     static var primaryYellowColor = UIColor(red: 0.87, green: 0.5, blue: 0.21, alpha: 1)
-    static var whitecolor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
+    //Light Orange
+    static var primaryLightOrange = UIColor(red: 0.96, green: 0.63, blue: 0.36, alpha: 1.00)
+    static var whitecolor = UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00)
     static var blackcolor = UIColor.black
-    static var borderColorYellow = UIColor(red: 0.87, green: 0.5, blue: 0.21, alpha: 1)
     static var borderColorGray = UIColor(red: 0.84, green: 0.83, blue: 0.83, alpha: 1)
 }
 
@@ -59,6 +60,9 @@ enum ImageConstant:String{
     case bannerAdvertisement = "bannerAdvertisement"
     case arrow_up = "arrow_up"
     case placeholder = "placeholder"
+    case retry = "retry"
+    case noInternet = "nointernet"
+    case nolocation = "aaset_no_location"
 }
 
 enum ViewControllerConstant : String {

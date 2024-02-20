@@ -19,7 +19,10 @@ class HomeTabViewController: BaseViewController {
     @IBOutlet weak var circularProgresView: UIView!
     @IBOutlet weak var progressLbl: UILabel!
     
+    //MARK: Custom Views
     let backButton = UIButton(type: .system)
+    var alertView : StaticAlert!
+    
     var viewModel = HomeTabViewModel()
     var headerView : HomeTabCategoryHeader?
     var refreshControl = UIRefreshControl()
@@ -46,10 +49,22 @@ class HomeTabViewController: BaseViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-
+        
+        //Setup UIFrames for BackButton
         let buttonY: CGFloat
         buttonY = hometabTableView.frame.origin.y + 80
         backButton.frame = CGRect(x: view.bounds.width / 2 - 50, y: buttonY, width: 100, height: 35)
+        
+        //Setup Static Alert
+        if alertView == nil {
+            let alertY: CGFloat = self.tabBarController?.tabBar.frame.origin.y ?? 0
+            let nib = UINib(nibName: "StaticAlert", bundle: nil)
+            alertView = nib.instantiate(withOwner: nil, options: nil).first as? StaticAlert
+            alertView.frame = CGRect(x: 0, y: alertY - CGFloat(80), width: view.bounds.width, height: alertView.bounds.height)
+            view.addSubview(alertView)
+            alertView.isHidden = true
+        }
+        
     }
     
     func setupUI(){
@@ -69,18 +84,20 @@ class HomeTabViewController: BaseViewController {
         backButton.addTarget(self, action: #selector(scrollToFirstRow), for: .touchUpInside)
         view.addSubview(backButton)
         backButton.isHidden = true
+        
+        // set custom Alert At the bottom of screen
+        
     }
     
     func settingDelegateDataSource(){
         hometabTableView.delegate = self
         hometabTableView.dataSource = self
-        
         viewModel.homeTabDeligate = self
     }
     
     func setupTableview(){
         hometabTableView.separatorStyle = .none
-        hometabTableView.backgroundColor = ColorConstant.primaryWhiteBgcolor
+        hometabTableView.backgroundColor = ColorConstant.whitecolor
         hometabTableView.sectionHeaderHeight = 0
         hometabTableView.sectionFooterHeight = 0
         if #available(iOS 15.0, *) {
@@ -115,7 +132,7 @@ class HomeTabViewController: BaseViewController {
         hometabTableView.registerNib(of:HomeTabShimmerCell.self)
         hometabTableView.registerNib(of: StoreShimmerCell.self)
     }
-
+    
     func setupObserver(){
         NotificationManager().addObserver(forName: .reloadData) { _ in
             self.dismiss(animated: true)
@@ -134,9 +151,26 @@ class HomeTabViewController: BaseViewController {
         progressLbl.isHidden = false
     }
     
-    func callHomeScreenApi(){
-        self.hometabTableView.reloadData()
+    func showCustomAlert(errorText:String){
+        alertView.messageLbl.text = errorText
+        alertView.alpha = 0 // start with the alert view invisible
+        alertView.isHidden = false
+
+        // animate the alert view to fade in
+        UIView.animate(withDuration: 0.5, animations: {
+            self.alertView.alpha = 1
+        })
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0 ) {
+            // animate the alert view to fade out
+            UIView.animate(withDuration: 0.5, animations: {
+                self.alertView.alpha = 0
+            }, completion: { _ in
+                self.alertView.isHidden = true
+            })
+        }
     }
+
     
     @objc func scrollToFirstRow() {
         let indexPath = IndexPath(row: 0, section: 0)
@@ -145,7 +179,7 @@ class HomeTabViewController: BaseViewController {
     
     @objc func labelTapped() {
         debugPrint("Location Label tapped")
-        }
+    }
     
     func animateCellSelection(at indexPath: IndexPath) {
         if let cell = hometabTableView.cellForRow(at: indexPath) {
