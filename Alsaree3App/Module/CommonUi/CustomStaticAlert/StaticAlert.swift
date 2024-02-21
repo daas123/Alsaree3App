@@ -15,7 +15,8 @@ class StaticAlert: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         parentView.layer.cornerRadius = 10
-        messageLbl.setProperties(lbltext: "Some thing went Wrong,try to Check your Internet Access or Location Access", fontSize: 16)
+        parentView.backgroundColor = ColorConstant.primaryYellowColor
+        messageLbl.setProperties(lbltext: "Some thing went Wrong,try to Check your Internet Access or Location Access", fontSize: 16,color: ColorConstant.whitecolor)
     }
     
 }

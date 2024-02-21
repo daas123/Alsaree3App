@@ -153,13 +153,16 @@ class HomeTabViewController: BaseViewController {
     
     func showCustomAlert(errorText:String){
         alertView.messageLbl.text = errorText
-        alertView.alpha = 0 // start with the alert view invisible
-        alertView.isHidden = false
+        alertView.alpha = 0 // invisible
+        alertView.isHidden = true
 
         // animate the alert view to fade in
-        UIView.animate(withDuration: 0.5, animations: {
-            self.alertView.alpha = 1
-        })
+        if alertView.isHidden{
+            alertView.isHidden = false
+            UIView.animate(withDuration: 0.5, animations: {
+                self.alertView.alpha = 1
+            })
+        }
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0 ) {
             // animate the alert view to fade out

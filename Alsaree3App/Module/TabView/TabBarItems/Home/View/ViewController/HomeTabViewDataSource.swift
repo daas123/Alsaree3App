@@ -30,6 +30,7 @@ extension HomeTabViewController:UITableViewDataSource{
         if viewModel.isApiCallFailed{
             let loadingCell = tableView.getCell(identifier: CellConstant.loadingTableViewCell.rawValue) as! LoadingTableViewCell
             loadingCell.homeTabdeilgate = self
+            backButton.isHidden = true
             loadingCell.showRetryButton()
             return loadingCell
         }
