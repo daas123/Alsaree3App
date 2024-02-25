@@ -37,7 +37,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="5Ta-v0-ewx">
-                                        <rect key="frame" x="10" y="235.33333333333334" width="240" height="90.666666666666657"/>
+                                        <rect key="frame" x="10" y="235" width="252" height="91"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="NPn-p2-Ye9">
                                             <size key="itemSize" width="128" height="128"/>
@@ -54,11 +54,11 @@
                                     <constraint firstAttribute="trailing" secondItem="KR9-kX-eOb" secondAttribute="trailing" constant="20" id="D82-s5-Uq4"/>
                                     <constraint firstItem="KR9-kX-eOb" firstAttribute="leading" secondItem="fMN-a1-uJE" secondAttribute="leading" constant="20" id="FGb-Lx-SXB"/>
                                     <constraint firstItem="5Ta-v0-ewx" firstAttribute="height" secondItem="fMN-a1-uJE" secondAttribute="height" multiplier="0.278119" id="Gp4-B0-4o3"/>
-                                    <constraint firstAttribute="trailing" secondItem="5Ta-v0-ewx" secondAttribute="trailing" constant="20" id="Jb2-0R-4SP"/>
                                     <constraint firstItem="5Ta-v0-ewx" firstAttribute="leading" secondItem="fMN-a1-uJE" secondAttribute="leading" constant="10" id="SeO-KZ-Zlc"/>
                                     <constraint firstItem="vLY-qR-5iN" firstAttribute="top" secondItem="fMN-a1-uJE" secondAttribute="top" id="U07-1Y-HZ9"/>
                                     <constraint firstAttribute="bottom" secondItem="5Ta-v0-ewx" secondAttribute="bottom" id="dcR-8j-5ex"/>
                                     <constraint firstAttribute="trailing" secondItem="vLY-qR-5iN" secondAttribute="trailing" id="h8O-Kn-oeS"/>
+                                    <constraint firstItem="5Ta-v0-ewx" firstAttribute="width" secondItem="fMN-a1-uJE" secondAttribute="width" multiplier="0.933333" id="jLQ-tC-haw"/>
                                     <constraint firstItem="vLY-qR-5iN" firstAttribute="leading" secondItem="fMN-a1-uJE" secondAttribute="leading" id="vdW-aM-Lu6"/>
                                 </constraints>
                             </view>

@@ -52,7 +52,7 @@ class HomeTabViewController: BaseViewController {
         
         //Setup UIFrames for BackButton
         let buttonY: CGFloat
-        buttonY = hometabTableView.frame.origin.y + 80
+        buttonY = hometabTableView.frame.origin.y + 90
         backButton.frame = CGRect(x: view.bounds.width / 2 - 50, y: buttonY, width: 100, height: 35)
         
         //Setup Static Alert

@@ -22,7 +22,7 @@ class ResturentTableViewCell: UITableViewCell {
     }
     
     func reloadCOllectionView(){
-        resturentCollectionView.reloadData()
+//        resturentCollectionView.reloadData()
     }
     
     func setUpCellData(storeTitle:String){

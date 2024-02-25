@@ -47,9 +47,9 @@ class ResturentDetailsTableViewCell: UITableViewCell {
         SDWebImageManagerRevamp.shared.loadImage(with: resturentDetailsTableViewCellData?.image_url ?? "", into: resturentImage)
         resturentTitle.setProperties(lbltext: resturentDetailsTableViewCellData?.name ?? "", fontSize: 20,alignmentLeft:true)
         if resturentDetailsTableViewCellData?.offer == "" {
-            selectedItemOffLbl.setProperties( lbltext: TextConstant.getoffonselecteditems.rawValue, fontSize: 12,alignmentLeft:true)
+            selectedItemOffLbl.setProperties( lbltext: TextConstant.getoffonselecteditems.rawValue, fontSize: 12,color:ColorConstant.whitecolor, alignmentLeft:true)
         }else{
-            selectedItemOffLbl.setProperties(lbltext: resturentDetailsTableViewCellData?.offer ?? TextConstant.getoffonselecteditems.rawValue, fontSize: 12,alignmentLeft:true)
+            selectedItemOffLbl.setProperties(lbltext: resturentDetailsTableViewCellData?.offer ?? TextConstant.getoffonselecteditems.rawValue, fontSize: 12,color:ColorConstant.whitecolor, alignmentLeft:true)
         }
         
         setupFeatureDetails()

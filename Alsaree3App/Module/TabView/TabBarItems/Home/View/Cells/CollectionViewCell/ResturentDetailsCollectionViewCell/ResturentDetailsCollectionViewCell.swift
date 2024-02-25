@@ -19,6 +19,9 @@ class ResturentDetailsCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var resturentImage: UIImageView!
     @IBOutlet weak var resturentFeatureCollectionView: UICollectionView!
     
+    var selectedViewTriangleLayer = CAShapeLayer()
+    var lowViewTriangleLayer = CAShapeLayer()
+    
     var resturentDetailsData : Stores?
     var isHeigthChnaged = false
     var resturentFeatureDate : [featureDetails]?
@@ -32,8 +35,8 @@ class ResturentDetailsCollectionViewCell: UICollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        drawTriangleforSelectedView()
         drawTriangleforlowdeleveryView()
+        drawTriangleforSelectedView()
     }
     
     func reloadCollectionView(){
@@ -48,21 +51,8 @@ class ResturentDetailsCollectionViewCell: UICollectionViewCell {
             featureDetails(featureValue: "\(resturentDetailsData?.delivery_time ?? 0) - \(resturentDetailsData?.delivery_time_max ?? 0) Mins", image:"Location", istinted: true),
             featureDetails(featureValue: " IQD \(resturentDetailsData?.delivery_price_after_discount ?? 0) ", image: "MotorCycle", istinted: true),
             featureDetails(featureValue: "\(String(format: "%.2f", resturentDetailsData?.user_rate ?? 0.0)) Excellent", image: "Star",istinted: true)
-            
         ]
-    }
-    override func systemLayoutSizeFitting(_ targetSize: CGSize, withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority, verticalFittingPriority: UILayoutPriority) -> CGSize {
         
-        self.resturentFeatureCollectionView.frame = self.bounds
-        self.resturentFeatureCollectionView.layoutIfNeeded()
-        
-        if isHeigthChnaged{
-            return self.resturentFeatureCollectionView.contentSize
-        }else{
-            resturentFeatureCollectionView.contentSize.height += 50
-            isHeigthChnaged = true
-            return self.resturentFeatureCollectionView.contentSize
-        }
     }
     
     func setupCollectionView(){
@@ -82,7 +72,7 @@ class ResturentDetailsCollectionViewCell: UICollectionViewCell {
     }
     
     func drawTriangleforSelectedView() {
-        let triangleLayer = CAShapeLayer()
+        selectedViewTriangleLayer.removeFromSuperlayer()
         let trianglePath = UIBezierPath()
         
         if UIApplication.shared.userInterfaceLayoutDirection == .rightToLeft{
@@ -94,26 +84,27 @@ class ResturentDetailsCollectionViewCell: UICollectionViewCell {
             trianglePath.addLine(to: CGPoint(x: startX-10, y: startY))
             trianglePath.close()
         }else{
-            let startX = selectedItemView.frame.minX
+            let startX = parentCellView.frame.minX+2.5
             let startY = selectedItemView.frame.maxY
             
-            trianglePath.move(to: CGPoint(x: startX-2, y: startY-13))
-            trianglePath.addLine(to: CGPoint(x: startX+10 , y: startY-13))
-            trianglePath.addLine(to: CGPoint(x: startX+10, y: startY))
+            // Move to starting point
+            trianglePath.move(to: CGPoint(x: startX , y: startY))
+            trianglePath.addLine(to: CGPoint(x: startX , y: startY+12))
+            trianglePath.addLine(to: CGPoint(x: startX-7, y: startY))
             trianglePath.close()
+            
         }
         
         // Configure the layer
-        triangleLayer.path = trianglePath.cgPath
-        triangleLayer.fillColor = UIColor(red: 0.72, green: 0.39, blue: 0.14, alpha: 1).cgColor
-        triangleLayer.zPosition = -1
-        self.layer.addSublayer(triangleLayer)
+        selectedViewTriangleLayer.path = trianglePath.cgPath
+        selectedViewTriangleLayer.fillColor = UIColor(red: 0.72, green: 0.39, blue: 0.14, alpha: 1).cgColor
+        selectedViewTriangleLayer.zPosition = -1
+        self.layer.addSublayer(selectedViewTriangleLayer)
     }
     
     func drawTriangleforlowdeleveryView() {
-        let triangleLayer = CAShapeLayer()
+        lowViewTriangleLayer.removeFromSuperlayer()
         let trianglePath = UIBezierPath()
-        
         if UIApplication.shared.userInterfaceLayoutDirection == .rightToLeft{
             let startX = parentCellView.frame.maxX+5
             let startY = lowdeleveryView.frame.maxY
@@ -123,19 +114,19 @@ class ResturentDetailsCollectionViewCell: UICollectionViewCell {
             trianglePath.addLine(to: CGPoint(x: startX-10, y: startY))
             trianglePath.close()
         }else{
-            let startX = lowdeleveryView.frame.minX
+            let startX = parentCellView.frame.minX+2.5
             let startY = lowdeleveryView.frame.maxY
             
-            trianglePath.move(to: CGPoint(x: startX-5, y: startY-26))
-            trianglePath.addLine(to: CGPoint(x: startX+15 , y: startY-26))
-            trianglePath.addLine(to: CGPoint(x: startX+10, y: startY-10))
+            trianglePath.move(to: CGPoint(x: startX , y: startY))
+            trianglePath.addLine(to: CGPoint(x: startX , y: startY+15))
+            trianglePath.addLine(to: CGPoint(x: startX-7, y: startY))
             trianglePath.close()
         }
         // Configure the layer
-        triangleLayer.path = trianglePath.cgPath
-        triangleLayer.fillColor = UIColor(red: 0.67, green: 0.66, blue: 0.66, alpha: 1).cgColor
-        triangleLayer.zPosition = -1
-        self.layer.addSublayer(triangleLayer)
+        lowViewTriangleLayer.path = trianglePath.cgPath
+        lowViewTriangleLayer.fillColor = UIColor(red: 0.67, green: 0.66, blue: 0.66, alpha: 1).cgColor
+        lowViewTriangleLayer.zPosition = -1
+        self.layer.addSublayer(lowViewTriangleLayer)
     }
     
     func hidelowDeleveryView(){
@@ -147,9 +138,9 @@ class ResturentDetailsCollectionViewCell: UICollectionViewCell {
         resturentTitle.text = resturentDetailsData?.name ?? ""
         resturentTitle.setProperties(lbltext: resturentDetailsData?.name ?? "", fontSize: 20,alignmentLeft:true)
         if resturentDetailsData?.offer == "" {
-            selectedItemOffLbl.setProperties(lbltext: "Get off on selected items", fontSize: 12,alignmentLeft:true)
+            selectedItemOffLbl.setProperties(lbltext: "Get off on selected items", fontSize: 12,color:ColorConstant.whitecolor, alignmentLeft:true)
         }else{
-            selectedItemOffLbl.setProperties(lbltext: resturentDetailsData?.offer ?? "Get off on selected items", fontSize: 12,alignmentLeft:true)
+            selectedItemOffLbl.setProperties(lbltext: resturentDetailsData?.offer ?? "Get off on selected items", fontSize: 12,color:ColorConstant.whitecolor, alignmentLeft:true)
         }
         
     }

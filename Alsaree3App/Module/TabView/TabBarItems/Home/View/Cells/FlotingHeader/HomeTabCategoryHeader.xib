@@ -25,19 +25,19 @@
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="Ez4-X5-aXP">
                             <rect key="frame" x="20" y="10" width="379" height="124"/>
                             <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TO3-fz-Pdf">
+                                <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TO3-fz-Pdf">
                                     <rect key="frame" x="0.0" y="0.0" width="85" height="124"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Ebo-0z-xgE">
                                             <rect key="frame" x="0.0" y="15" width="85" height="94"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="foodDish" translatesAutoresizingMaskIntoConstraints="NO" id="mLe-gN-PpK">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="foodDish" translatesAutoresizingMaskIntoConstraints="NO" id="mLe-gN-PpK">
                                                     <rect key="frame" x="0.0" y="0.0" width="85" height="32"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="32" id="0WF-jW-Him"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zLY-J5-1hX">
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zLY-J5-1hX">
                                                     <rect key="frame" x="0.0" y="37" width="85" height="57"/>
                                                     <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="10"/>
                                                     <nil key="textColor"/>
@@ -54,19 +54,19 @@
                                         <constraint firstAttribute="bottom" secondItem="Ebo-0z-xgE" secondAttribute="bottom" constant="15" id="vM5-eO-RDO"/>
                                     </constraints>
                                 </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aLU-qt-FDP">
+                                <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aLU-qt-FDP">
                                     <rect key="frame" x="98" y="0.0" width="85" height="124"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Yih-7N-pO5">
                                             <rect key="frame" x="15" y="15" width="55" height="94"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="market" translatesAutoresizingMaskIntoConstraints="NO" id="3KQ-Fe-7at">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="market" translatesAutoresizingMaskIntoConstraints="NO" id="3KQ-Fe-7at">
                                                     <rect key="frame" x="0.0" y="0.0" width="55" height="32"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="32" id="3lk-fj-DAL"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alsaree3 Market" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rXw-Za-lBS">
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rXw-Za-lBS">
                                                     <rect key="frame" x="0.0" y="42" width="55" height="52"/>
                                                     <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="10"/>
                                                     <nil key="textColor"/>
@@ -83,19 +83,19 @@
                                         <constraint firstAttribute="trailing" secondItem="Yih-7N-pO5" secondAttribute="trailing" constant="15" id="axu-Ey-h5v"/>
                                     </constraints>
                                 </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iJ9-28-Mdm">
+                                <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iJ9-28-Mdm">
                                     <rect key="frame" x="196" y="0.0" width="85" height="124"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="oxB-JD-KZX">
                                             <rect key="frame" x="0.0" y="15" width="85" height="94"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="parcelImage" translatesAutoresizingMaskIntoConstraints="NO" id="9yU-ME-F2J">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="3" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="parcelImage" translatesAutoresizingMaskIntoConstraints="NO" id="9yU-ME-F2J">
                                                     <rect key="frame" x="0.0" y="0.0" width="85" height="32"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="32" id="XBj-kK-OST"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Parcel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UR0-kn-4aW">
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UR0-kn-4aW">
                                                     <rect key="frame" x="0.0" y="37" width="85" height="57"/>
                                                     <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="10"/>
                                                     <nil key="textColor"/>
@@ -112,19 +112,19 @@
                                         <constraint firstItem="oxB-JD-KZX" firstAttribute="leading" secondItem="iJ9-28-Mdm" secondAttribute="leading" id="h2r-Me-Erd"/>
                                     </constraints>
                                 </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pui-pp-o7w">
+                                <view tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pui-pp-o7w">
                                     <rect key="frame" x="294" y="0.0" width="85" height="124"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="yjI-HS-DBG">
                                             <rect key="frame" x="0.0" y="15" width="85" height="94"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hamburgur" translatesAutoresizingMaskIntoConstraints="NO" id="twJ-Yz-wJd">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="4" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hamburgur" translatesAutoresizingMaskIntoConstraints="NO" id="twJ-Yz-wJd">
                                                     <rect key="frame" x="0.0" y="0.0" width="85" height="32"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="32" id="nh7-tg-tMI"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="More" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sfz-gE-1TK">
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sfz-gE-1TK">
                                                     <rect key="frame" x="0.0" y="37" width="85" height="57"/>
                                                     <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="10"/>
                                                     <nil key="textColor"/>
@@ -178,14 +178,18 @@
                 <outletCollection property="categoryHeigthConstrain" destination="nh7-tg-tMI" collectionClass="NSMutableArray" id="QdZ-Df-cA5"/>
                 <outletCollection property="categoryImages" destination="twJ-Yz-wJd" collectionClass="NSMutableArray" id="BDO-Qa-DW7"/>
                 <outletCollection property="categoryImages" destination="3KQ-Fe-7at" collectionClass="NSMutableArray" id="ZIK-Xu-VsF"/>
+                <outletCollection property="categoryLbl" destination="zLY-J5-1hX" collectionClass="NSMutableArray" id="Y6K-fA-ZUz"/>
+                <outletCollection property="categoryLbl" destination="rXw-Za-lBS" collectionClass="NSMutableArray" id="cer-Y4-Hdm"/>
+                <outletCollection property="categoryLbl" destination="UR0-kn-4aW" collectionClass="NSMutableArray" id="FeJ-Yj-3tm"/>
+                <outletCollection property="categoryLbl" destination="Sfz-gE-1TK" collectionClass="NSMutableArray" id="2zV-cS-HLa"/>
             </connections>
             <point key="canvasLocation" x="156.4885496183206" y="-203.52112676056339"/>
         </view>
     </objects>
     <resources>
-        <image name="foodDish" width="32" height="32"/>
+        <image name="foodDish" width="24" height="24"/>
         <image name="hamburgur" width="32" height="32"/>
-        <image name="market" width="32" height="32"/>
-        <image name="parcelImage" width="32" height="32"/>
+        <image name="market" width="24" height="24"/>
+        <image name="parcelImage" width="24" height="24"/>
     </resources>
 </document>

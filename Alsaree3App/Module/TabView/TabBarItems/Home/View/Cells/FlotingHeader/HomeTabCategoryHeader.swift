@@ -8,34 +8,71 @@
 import UIKit
 
 class HomeTabCategoryHeader: UIView {
-
     
     @IBOutlet var categoryView: [UIView]!
     @IBOutlet var categoryImages: [UIImageView]!
     @IBOutlet weak var alsareeMarketLbl: UILabel!
     @IBOutlet var categoryHeigthConstrain: [NSLayoutConstraint]!
-    
     @IBOutlet weak var floatingBottomConstrian: NSLayoutConstraint!
-    
     @IBOutlet weak var categroyBackView: UIView!
     
+    @IBOutlet var categoryLbl: [UILabel]!
+    
+    // Selected Tag
+    var selectedTag : Int = 1
     
     var originalHeigth : CGFloat?
     override func awakeFromNib() {
         super.awakeFromNib()
+        setupUI()
+    }
+    
+    func setupUI(){
         
-        for views in categoryView{
-            views.layer.cornerRadius = 10
-            views.layer.borderColor = ColorConstant.borderColorGray.cgColor
-            views.layer.borderWidth = 1
-            
+        for catview in categoryView{
+            catview.layer.cornerRadius = 10
+            catview.layer.borderWidth = 1
+            if catview.tag == selectedTag{
+                catview.layer.borderColor = ColorConstant.primaryYellowColor.cgColor
+                
+            }else{
+                catview.layer.borderColor = ColorConstant.borderColorGray.cgColor
+            }
+        }
+        
+        for catlabel in categoryLbl{
+            switch catlabel.tag{
+            case 1:
+                if catlabel.tag == selectedTag{
+                    catlabel.setProperties(lbltext: "Food", fontSize: 10,isBold: true,color: ColorConstant.primaryYellowColor)
+                }else{
+                    catlabel.setProperties(lbltext: "Food" , fontSize: 10)
+                }
+            case 2:
+                if catlabel.tag == selectedTag{
+                    catlabel.setProperties(lbltext: "Alsaree3 Market", fontSize: 10,isBold: true, color: ColorConstant.primaryYellowColor, lineHeightMultiple: 0.7)
+                }else{
+                    catlabel.setProperties(lbltext: "Alsaree3 Market", fontSize: 10,lineHeightMultiple: 0.7)
+                }
+            case 3:
+                if catlabel.tag == selectedTag{
+                    catlabel.setProperties(lbltext: "Parcel", fontSize: 10,isBold: true,color: ColorConstant.primaryYellowColor)
+                }else{
+                    catlabel.setProperties(lbltext: "Parcel" , fontSize: 10)
+                }
+            case 4:
+                if catlabel.tag == selectedTag{
+                    catlabel.setProperties(lbltext: "More", fontSize: 10,isBold: true,color: ColorConstant.primaryYellowColor)
+                }else{
+                    catlabel.setProperties(lbltext: "More" , fontSize: 10)
+                }
+            default:
+                break
+            }
         }
         self.backgroundColor = UIColor.clear
-        // Initialization code
-        
-        alsareeMarketLbl.setProperties(lbltext: "Alsaree3 Market", fontSize: 10,lineHeightMultiple: 0.7)
-        
         originalHeigth = self.bounds.height
+        
     }
     
     func hideImages(){
