@@ -73,19 +73,6 @@ extension HomeTabViewController : UITableViewDelegate{
     }
     
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        
-        switch section{
-        case 1:
-            headerView = Bundle.main.loadNibNamed(nibNamesConstant.homeTabCategoryHeader.rawValue, owner: self, options: nil)?.first as? HomeTabCategoryHeader
-            headerView?.selectedTag = 1
-            return headerView
-            
-        default:
-            return nil
-        }
-    }
-    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         
         if viewModel.isApiCallFailed || viewModel.isLoadingState{

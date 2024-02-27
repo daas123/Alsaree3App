@@ -7,15 +7,14 @@
 
 import Foundation
 class ProfileTabViewModel{
-    var islogin = true
+    var islogin = false
     
     func getTableViewCount() -> Int{
         if islogin{
-            return 8
+            return profiletabDemoData.count + 1
         }else{
-            return 1
+            return 2
         }
     }
-    
-    
+
 }

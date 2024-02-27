@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" restorationIdentifier="LoginHeader" id="iN0-l3-epB" customClass="LoginHeader" customModule="Alsaree3App" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="502" height="72"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HQ2-b2-u8i">
+                    <rect key="frame" x="20" y="5" width="462" height="62"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZaV-xu-2XE">
+                            <rect key="frame" x="0.0" y="0.0" width="462" height="62"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="ZaV-xu-2XE" secondAttribute="trailing" id="15f-c6-42u"/>
+                        <constraint firstAttribute="bottom" secondItem="ZaV-xu-2XE" secondAttribute="bottom" id="5Fo-nQ-wkg"/>
+                        <constraint firstItem="ZaV-xu-2XE" firstAttribute="leading" secondItem="HQ2-b2-u8i" secondAttribute="leading" id="Fch-lc-z5z"/>
+                        <constraint firstItem="ZaV-xu-2XE" firstAttribute="top" secondItem="HQ2-b2-u8i" secondAttribute="top" id="Uvd-Rm-IGi"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="HQ2-b2-u8i" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="5M4-am-gKu"/>
+                <constraint firstItem="HQ2-b2-u8i" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="F9c-9r-bwk"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="HQ2-b2-u8i" secondAttribute="trailing" constant="20" id="pqd-lL-xlk"/>
+                <constraint firstAttribute="bottom" secondItem="HQ2-b2-u8i" secondAttribute="bottom" constant="5" id="t4y-bY-TML"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="headerLbl" destination="ZaV-xu-2XE" id="dbX-Kg-QJq"/>
+                <outlet property="parentView" destination="HQ2-b2-u8i" id="Gfb-UI-frI"/>
+            </connections>
+            <point key="canvasLocation" x="132.82442748091603" y="-254.92957746478874"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

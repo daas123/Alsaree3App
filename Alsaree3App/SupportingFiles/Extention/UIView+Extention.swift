@@ -24,9 +24,9 @@ extension UIView{
         self.layer.addSublayer(border)
     }
     
-//    func applyShadow(to view: UIView) {
-//        
-//    }
+    //    func applyShadow(to view: UIView) {
+    //
+    //    }
     
     func coloredText(text: String, range: NSRange, color: UIColor) -> NSAttributedString {
         let attributedString = NSMutableAttributedString(string: text)
@@ -61,5 +61,13 @@ extension UIView{
         case .All:
             view.layer.cornerRadius = radius
         }
+    }
+    
+    func roundCorners(_ corners: UIRectCorner, radius: CGFloat) {
+        let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners,
+                                cornerRadii: CGSize(width: radius, height: radius))
+        let mask = CAShapeLayer()
+        mask.path = path.cgPath
+        layer.mask = mask
     }
 }

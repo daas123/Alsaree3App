@@ -1,22 +1,26 @@
 PODS:
+  - IQKeyboardManager (6.5.17)
   - lottie-ios (4.3.4)
   - SDWebImage (5.18.10):
     - SDWebImage/Core (= 5.18.10)
   - SDWebImage/Core (5.18.10)
 
 DEPENDENCIES:
+  - IQKeyboardManager
   - lottie-ios
   - SDWebImage (~> 5.0)
 
 SPEC REPOS:
   trunk:
+    - IQKeyboardManager
     - lottie-ios
     - SDWebImage
 
 SPEC CHECKSUMS:
+  IQKeyboardManager: 904d013844bbae0abe073f015487bfebe5476335
   lottie-ios: 3d98679b41fa6fd6aff2352b3953dbd3df8a397e
   SDWebImage: fc8f2d48bbfd72ef39d70e981bd24a3f3be53fec
 
-PODFILE CHECKSUM: b348faee7ceecae3e37252750ab63716e5a8f136
+PODFILE CHECKSUM: 12712cd655ba519d1ce5c2560084f2d362dcb169
 
-COCOAPODS: 1.12.0
+COCOAPODS: 1.14.3

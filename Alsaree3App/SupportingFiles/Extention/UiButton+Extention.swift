@@ -70,7 +70,11 @@ extension UIButton{
     
     func setImageOnButton(image : String , isSystemImage : Bool = false , isAspectFill : Bool = false){
         if isSystemImage {
-            self.setImage(UIImage(systemName: image), for: .normal)
+            if #available(iOS 13.0, *) {
+                self.setImage(UIImage(systemName: image), for: .normal)
+            } else {
+                self.setImage(UIImage(named: image), for: .normal)
+            }
         } else {
             self.setImage(UIImage(named: image), for: .normal)
         }
@@ -80,5 +84,6 @@ extension UIButton{
             self.clipsToBounds = true
         }
     }
+
     
 }

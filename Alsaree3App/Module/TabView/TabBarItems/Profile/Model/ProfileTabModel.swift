@@ -13,17 +13,14 @@ struct ProfileTabDetails{
 }
 
 var profiletabDemoData  = [
-    ProfileTabDetails(iconName:"loginIcon" , catListLabel: "Login/SignUp", catAdditionalDetails: ""),
-    ProfileTabDetails(iconName:"loginIcon" , catListLabel: "Login/SignUp", catAdditionalDetails: ""),
-    ProfileTabDetails(iconName:"loginIcon" , catListLabel: "Login/SignUp", catAdditionalDetails: ""),
-    ProfileTabDetails(iconName:"loginIcon" , catListLabel: "Login/SignUp", catAdditionalDetails: ""),
-    ProfileTabDetails(iconName:"loginIcon" , catListLabel: "Login/SignUp", catAdditionalDetails: ""),
-    ProfileTabDetails(iconName:"loginIcon" , catListLabel: "Login/SignUp", catAdditionalDetails: ""),
-    ProfileTabDetails(iconName:"loginIcon" , catListLabel: "Login/SignUp", catAdditionalDetails: ""),
-    ProfileTabDetails(iconName:"loginIcon" , catListLabel: "Login/SignUp", catAdditionalDetails: ""),
-    ProfileTabDetails(iconName:"loginIcon" , catListLabel: "Login/SignUp", catAdditionalDetails: ""),
-    ProfileTabDetails(iconName:"loginIcon" , catListLabel: "Login/SignUp", catAdditionalDetails: "")
+    ProfileTabDetails(iconName:"loginIcon" , catListLabel: "Alsaree3 Wallet", catAdditionalDetails: ""),
+    ProfileTabDetails(iconName:"loginIcon" , catListLabel: "My Orders", catAdditionalDetails: ""),
+    ProfileTabDetails(iconName:"loginIcon" , catListLabel: "Referral a Friend", catAdditionalDetails: ""),
+    ProfileTabDetails(iconName:"loginIcon" , catListLabel: "Digital Card", catAdditionalDetails: ""),
+    ProfileTabDetails(iconName:"loginIcon" , catListLabel: "Loyalty Points", catAdditionalDetails: ""),
+    ProfileTabDetails(iconName:"loginIcon" , catListLabel: "Addresses", catAdditionalDetails: ""),
+    ProfileTabDetails(iconName:"loginIcon" , catListLabel: "Bookmark", catAdditionalDetails: ""),
+    ProfileTabDetails(iconName:"loginIcon" , catListLabel: "Notifications", catAdditionalDetails: "")
 ]
-
 
 

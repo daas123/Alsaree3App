@@ -7,8 +7,8 @@
 
 import UIKit
 
-class ProfileTabViewController: BaseViewController {
-
+class ProfileTabViewController: BaseViewController, UIViewControllerTransitioningDelegate {
+    
     //MARK: header View Outlets
     @IBOutlet weak var ProfileTabTableView: UITableView!
     @IBOutlet weak var scooterimg: UIImageView!
@@ -27,6 +27,7 @@ class ProfileTabViewController: BaseViewController {
     @IBOutlet weak var selectArabicBtn: UIButton!
     
     var viewModel = ProfileTabViewModel()
+    var presentedViewcontroller = UIViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,10 +40,12 @@ class ProfileTabViewController: BaseViewController {
         hideProgressView()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        UIApplication.shared.userInterfaceLayoutDirection == .rightToLeft ? setArabicBtnSelected() : setEnglishBtnSelected()
+    }
+    
     func setupUi(){
-        
         languagelbl.setProperties(lbltext: "Language", fontSize: 16)
-        setEnglishBtnSelected()
         languageSelectionView.addTopBorderWithColor(color: ColorConstant.borderColorGray, width: 1)
         
     }
@@ -81,12 +84,28 @@ class ProfileTabViewController: BaseViewController {
         self.setArabicBtnSelected()
         setApplicationLanguage(languageCode: "ar")
     }
+
     
     func setApplicationLanguage(languageCode : String)
-        {
-            UserDefaults.standard.set([languageCode], forKey: "AppleLanguages")
-            UserDefaults.standard.synchronize()
+    {
+        var transition: UIView.AnimationOptions = .transitionFlipFromLeft
+        if languageCode == "en-US" {
+            transition = .transitionFlipFromRight
+            UIView.appearance().semanticContentAttribute = .forceLeftToRight
+        } else {
+            UIView.appearance().semanticContentAttribute = .forceRightToLeft
         }
+        UserDefaults.standard.set([languageCode], forKey: "AppleLanguages")
+        UserDefaults.standard.synchronize()
+        let storyboard = UIStoryboard(name: StoryBoardConstant.main.rawValue, bundle: nil)
+        if let initialViewController = storyboard.instantiateInitialViewController() {
+            if let window = self.view.window {
+                UIView.transition(with: window, duration: 0.5, options: transition, animations: {
+                    window.rootViewController = initialViewController
+                }, completion: nil)
+            }
+        }
+    }
     
 }
 
@@ -96,25 +115,64 @@ extension ProfileTabViewController: UITableViewDataSource,UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch indexPath.row{
-        case 0 :
+        
+        // For First cell
+        if indexPath.row == 0{
             let cell = tableView.getCell(identifier: "ProfileBannerAdvCell") as ProfileBannerAdvCell
             return cell
-        case 1 :
-            let cell = tableView.getCell(identifier: "ProfileInfoListCell") as ProfileInfoListCell
-            cell.listDetails = profiletabDemoData[0]
-            cell.setupUi()
-            return cell
-        default :
+        }
+        
+        //If user login
+        if viewModel.islogin{
             let cell = tableView.getCell(identifier: "ProfileInfoListCell") as ProfileInfoListCell
             cell.listDetails = profiletabDemoData[indexPath.row - 1]
             cell.setupUi()
             return cell
+        }else{
+            let cell = tableView.getCell(identifier: "ProfileInfoListCell") as ProfileInfoListCell
+            cell.listDetails = ProfileTabDetails(iconName: "loginIcon", catListLabel: "Login/SignUp", catAdditionalDetails: "")
+            cell.setupUi()
+            return cell
         }
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
-
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "LoginSignUpScreen", bundle: nil)
+        presentedViewcontroller = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController ?? UIViewController()
+            var presentingheigth = 0.5
+            if UIScreen.main.bounds.height > 900 {
+                presentingheigth = 0.55
+            } else if UIScreen.main.bounds.height > 700 {
+                presentingheigth = 0.63
+            } else {
+                presentingheigth = 0.75
+            }
+            let presentationController = PresentationController(presentedViewController: presentedViewcontroller, presenting: self, customHeight: presentingheigth)
+        presentedViewcontroller.modalPresentationStyle = .custom
+        presentedViewcontroller.transitioningDelegate = presentationController
+            self.present(presentedViewcontroller, animated: true, completion: nil)
+        
+    }
+    
 }
+
+//extension ProfileTabViewController:UpadatePresentedScreenHeigth{
+//    func updatePresentedScreenHeigth() {
+//        presentedViewcontroller.modalPresentationStyle = .formSheet
+//    }
+//    
+//    func reloadSubviews() {
+//        presentedViewcontroller.containerViewDidLayoutSubviews()
+//    }
+//    
+//    
+//}
+
+
+
+
