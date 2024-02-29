@@ -41,7 +41,9 @@ class AdvertisementCell: UITableViewCell {
     }
     
     func startTimer() {
-        timer = Timer.scheduledTimer(timeInterval: 3.5, target: self, selector: #selector(autoScroll), userInfo: nil, repeats: true)
+        if !(advertisementBannerData?.isEmpty ?? false){
+            timer = Timer.scheduledTimer(timeInterval: 3.5, target: self, selector: #selector(autoScroll), userInfo: nil, repeats: true)
+        }
     }
     
     @objc func autoScroll() {

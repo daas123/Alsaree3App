@@ -12,6 +12,10 @@ class UserNameTblVwCell: UITableViewCell {
     @IBOutlet weak var headingLbl: UILabel!
     @IBOutlet weak var lblBackView: UIView!
     @IBOutlet weak var usernameLbl: UITextField!
+    @IBOutlet weak var errortext: UILabel!
+    
+    var errorString : String?
+    var text :String?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,10 +25,15 @@ class UserNameTblVwCell: UITableViewCell {
         headingLbl.setProperties(lbltext: lblText, fontSize: 14)
     }
     
+    func setUpErrorText(errText:String = ""){
+        text = usernameLbl.text
+        errortext.setProperties(lbltext: errText, fontSize: 12,color: .red)
+        usernameLbl.text = text
+    }
+    
     func setupUi(){
         self.selectionStyle = .none
         applyCornerRadius(to: lblBackView, radius: 10,borderColor: ColorConstant.borderColorGray,borderWidth: 1)
-        
     }
     
 }

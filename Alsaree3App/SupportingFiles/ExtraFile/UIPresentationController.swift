@@ -28,8 +28,8 @@ class PresentationController: UIPresentationController,UIViewControllerTransitio
     }
     
     override var frameOfPresentedViewInContainerView: CGRect {
-        CGRect(origin: CGPoint(x: 0, y: self.containerView!.frame.height * (1 - customHeight)),
-               size: CGSize(width: self.containerView!.frame.width, height: self.containerView!.frame.height * customHeight))
+        CGRect(origin: CGPoint(x: 0, y: UIScreen.main.bounds.height * (1 - customHeight)),
+                          size: CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * customHeight))
     }
     
     override func presentationTransitionWillBegin() {
@@ -56,7 +56,7 @@ class PresentationController: UIPresentationController,UIViewControllerTransitio
     override func containerViewDidLayoutSubviews() {
         super.containerViewDidLayoutSubviews()
         presentedView?.frame = frameOfPresentedViewInContainerView
-        blurEffectView.frame = containerView!.bounds
+        blurEffectView.frame = UIScreen.main.bounds
     }
     
     @objc func dismissController(){

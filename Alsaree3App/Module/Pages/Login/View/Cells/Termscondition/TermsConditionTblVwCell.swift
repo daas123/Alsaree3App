@@ -12,7 +12,9 @@ class TermsConditionTblVwCell: UITableViewCell {
     @IBOutlet weak var termsAndConditionlbl: UILabel!
     @IBOutlet weak var chkBoxbtn: UIButton!
     
+    var loginviewControllerDeligate : updateProceedbtnState?
     var isChkBoxSelected = true
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setUpUi()
@@ -20,6 +22,11 @@ class TermsConditionTblVwCell: UITableViewCell {
     
     override func layoutSubviews() {
         addTopBorderWithColor(color: ColorConstant.borderColorGray, width: 1)
+    }
+    
+    func setUpUi(){
+        chkBoxbtn.setProperties(label: "", size: 0)
+        isChkBoxSelected ? chkBoxbtn.setImageOnButton(image: "checkboxSelected") : chkBoxbtn.setImageOnButton(image: "checkbox")
     }
     
     func setTermsConditionLbl(text:String){
@@ -54,16 +61,11 @@ class TermsConditionTblVwCell: UITableViewCell {
             print("Tapped none")
         }
     }
-
-    func setUpUi(){
-        chkBoxbtn.setProperties(label: "", size: 0)
-        isChkBoxSelected ? chkBoxbtn.setImageOnButton(image: "checkboxSelected") : chkBoxbtn.setImageOnButton(image: "checkbox")
-    }
-    
     
     @IBAction func chkBoxBtnClicked(_ sender: UIButton) {
         isChkBoxSelected.toggle()
         isChkBoxSelected ? chkBoxbtn.setImageOnButton(image: "checkboxSelected") : chkBoxbtn.setImageOnButton(image: "checkbox")
+        loginviewControllerDeligate?.updateProceedBtn(isActive: isChkBoxSelected)
     }
 }
 

@@ -41,12 +41,12 @@ class ProfileTabViewController: BaseViewController, UIViewControllerTransitionin
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        languageSelectionView.addTopBorderWithColor(color: ColorConstant.borderColorGray, width: 1)
         UIApplication.shared.userInterfaceLayoutDirection == .rightToLeft ? setArabicBtnSelected() : setEnglishBtnSelected()
     }
     
     func setupUi(){
         languagelbl.setProperties(lbltext: "Language", fontSize: 16)
-        languageSelectionView.addTopBorderWithColor(color: ColorConstant.borderColorGray, width: 1)
         
     }
     
@@ -144,35 +144,23 @@ extension ProfileTabViewController: UITableViewDataSource,UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "LoginSignUpScreen", bundle: nil)
         presentedViewcontroller = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController ?? UIViewController()
-            var presentingheigth = 0.5
+            var presentingheigth = 0.54
             if UIScreen.main.bounds.height > 900 {
                 presentingheigth = 0.55
             } else if UIScreen.main.bounds.height > 700 {
-                presentingheigth = 0.63
+                presentingheigth = 0.61
             } else {
-                presentingheigth = 0.75
+                presentingheigth = 0.73
             }
             let presentationController = PresentationController(presentedViewController: presentedViewcontroller, presenting: self, customHeight: presentingheigth)
         presentedViewcontroller.modalPresentationStyle = .custom
         presentedViewcontroller.transitioningDelegate = presentationController
-            self.present(presentedViewcontroller, animated: true, completion: nil)
+        (presentedViewcontroller as? LoginViewController)?.customPresentationController = presentationController
+        self.present(presentedViewcontroller, animated: true, completion: nil)
         
     }
     
 }
-
-//extension ProfileTabViewController:UpadatePresentedScreenHeigth{
-//    func updatePresentedScreenHeigth() {
-//        presentedViewcontroller.modalPresentationStyle = .formSheet
-//    }
-//    
-//    func reloadSubviews() {
-//        presentedViewcontroller.containerViewDidLayoutSubviews()
-//    }
-//    
-//    
-//}
-
 
 
 

@@ -6,3 +6,28 @@
 //
 
 import Foundation
+class LoginViewModel{
+    var userNameErorr : String?
+    var passwordErorr : String?
+    
+    func setupUsernameError()->String{
+        return userNameErorr ?? ""
+    }
+    
+    func setupMobileNoError() -> String{
+        return passwordErorr ?? ""
+    }
+    
+    func getCountryList(){
+        LoginScreenServices().getCountryList { responce in
+            switch responce{
+            case.success(let data):
+                print(data)
+                debugPrint("getCountryList Done")
+            case.failure(let error):
+                debugPrint("getCountryList falied")
+                debugPrint(error.localizedDescription)
+            }
+        }
+    }
+}

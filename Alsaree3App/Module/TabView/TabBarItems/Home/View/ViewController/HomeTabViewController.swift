@@ -152,7 +152,7 @@ class HomeTabViewController: BaseViewController {
     }
     
     func showCustomAlert(errorText:String){
-        alertView.messageLbl.text = errorText
+        alertView.setupMessageLbl(errorText: errorText)
         alertView.alpha = 0 // invisible
         alertView.isHidden = true
 

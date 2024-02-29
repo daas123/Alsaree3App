@@ -18,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cej-NF-AZ7">
-                        <rect key="frame" x="22" y="12" width="311" height="47"/>
+                        <rect key="frame" x="22" y="8" width="311" height="43"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -27,8 +27,8 @@
                 <constraints>
                     <constraint firstItem="cej-NF-AZ7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="22" id="MFJ-Fo-C2l"/>
                     <constraint firstAttribute="trailing" secondItem="cej-NF-AZ7" secondAttribute="trailing" constant="18" id="hDS-SY-zf4"/>
-                    <constraint firstItem="cej-NF-AZ7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="jxs-WW-fgK"/>
-                    <constraint firstAttribute="bottom" secondItem="cej-NF-AZ7" secondAttribute="bottom" constant="12" id="oGJ-IL-M1D"/>
+                    <constraint firstItem="cej-NF-AZ7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="jxs-WW-fgK"/>
+                    <constraint firstAttribute="bottom" secondItem="cej-NF-AZ7" secondAttribute="bottom" constant="20" id="oGJ-IL-M1D"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

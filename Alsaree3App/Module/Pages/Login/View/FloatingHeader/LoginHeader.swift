@@ -13,7 +13,6 @@ class LoginHeader: UIView {
     @IBOutlet weak var parentView: UIView!
     
     override func awakeFromNib() {
-        setHeaderLbl()
     }
     override func layoutSubviews() {
         addBottomBorderWithColor(color:ColorConstant.borderColorGray , width: 1)
