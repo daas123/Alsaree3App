@@ -7,15 +7,15 @@
 
 import Foundation
 class LoginViewModel{
-    var userNameErorr : String?
-    var passwordErorr : String?
+    var userNameErorr : String? = ""
+    var mobileNoErorr : String? = ""
     
     func setupUsernameError()->String{
         return userNameErorr ?? ""
     }
     
     func setupMobileNoError() -> String{
-        return passwordErorr ?? ""
+        return mobileNoErorr ?? ""
     }
     
     func getCountryList(){

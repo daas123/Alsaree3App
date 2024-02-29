@@ -7,8 +7,7 @@
 
 import UIKit
 import IQKeyboardManager
-class LoginViewController: UIViewController {
-    
+class LoginViewController: BaseViewController {
     @IBOutlet var loginTableView : UITableView!
     @IBOutlet weak var proceedBtnParentView: UIView!
     @IBOutlet var proceedBtn : UIButton!
@@ -80,7 +79,7 @@ class LoginViewController: UIViewController {
         loginTableView.showsVerticalScrollIndicator = false
     }
     
-    func setupProceedBtn(isActive : Bool = true){
+    func setupProceedBtn(isActive : Bool = false){
         if isActive{
             proceedBtn.setProperties(label: "Proceed",color: ColorConstant.whitecolor ,size: 18,backcolor: ColorConstant.primaryYellowColor,cornerRadius: 10,tintcolor: ColorConstant.borderColorGray)
             isProceedBtnActive = true
@@ -93,8 +92,6 @@ class LoginViewController: UIViewController {
     @IBAction func onClickProceedBtn(_ sender: UIButton) {
         if isProceedBtnActive{
             print("proceed")
-        }else{
-//            showCustomAlert(errorText: "Agree terms and Condition")
         }
     }
     
@@ -170,74 +167,7 @@ class LoginViewController: UIViewController {
     }
     
 }
-extension LoginViewController : UITableViewDelegate,UITableViewDataSource{
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        4
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch indexPath.row{
-        case 0:
-            let cell = tableView.getCell(identifier: "UserNameTblVwCell") as! UserNameTblVwCell
-            cell.usernameLbl.delegate = self
-            cell.setHeadingLbl(lblText: "User Name")
-            cell.setUpErrorText(errText: viewModel.setupUsernameError())
-            return cell
-        case 1:
-            let cell = tableView.getCell(identifier: "MobileNoTblVwCell") as! MobileNoTblVwCell
-            cell.mobileNoLbl.delegate = self
-            cell.setHeadingLbl(lblText: "Mobile Number")
-            cell.setUpErrorText(errText: viewModel.setupMobileNoError())
-            return cell
-        case 2:
-            if isUserWantsReferal{
-                let cell = tableView.getCell(identifier: "ReferralCodeTblVwCell") as! ReferralCodeTblVwCell
-                cell.referralCodeLbl.delegate = self
-                cell.setHeadingLbl(lblText: "Referral Code")
-                return cell
-            }else{
-                let cell = tableView.getCell(identifier: "ReferralLblTblVwCell") as! ReferralLblTblVwCell
-                cell.setHeadingLbl(lblText: "Did your friend refer you? Press here to enter referral code")
-                cell.profileTabdeligate = self
-                return cell
-            }
-        case 3:
-            let cell = tableView.getCell(identifier: "TermsConditionTblVwCell") as! TermsConditionTblVwCell
-            cell.setTermsConditionLbl(text: "By continuing with login, you agree to have read and accept our Terms & Conditions and Privacy Policy")
-            cell.loginviewControllerDeligate = self
-            return cell
-        default:
-            return UITableViewCell()
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        switch section{
-        case 0:
-            let headerView = Bundle.main.loadNibNamed("LoginHeader", owner: self, options: nil)?.first as? LoginHeader
-            headerView?.setHeaderLbl()
-            return headerView
-            
-        default:
-            return nil
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        switch section{
-        case 0:
-            return UITableView.automaticDimension
-        default:
-            return 0
-        }
-    }
-    
-    
-}
+
 
 extension LoginViewController : LoginCellAlignment{
     func addReferalCodecell() {
@@ -250,58 +180,6 @@ extension LoginViewController : LoginCellAlignment{
             self.loginTableView.reloadData()
         }
     }
-}
-
-extension LoginViewController : UITextFieldDelegate{
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        let pointInTable = textField.convert(textField.bounds.origin, to: self.loginTableView)
-        let textFieldIndexPath = self.loginTableView.indexPathForRow(at: pointInTable)
-        if let indexPath = textFieldIndexPath {
-            let nextIndexPath = IndexPath(row: indexPath.row + 1, section: indexPath.section)
-            if let nextCell = self.loginTableView.cellForRow(at: nextIndexPath) {
-                switch nextIndexPath.row {
-                case 1:
-                    (nextCell as? MobileNoTblVwCell)?.mobileNoLbl.becomeFirstResponder()
-                case 2:
-                    if isUserWantsReferal {
-                        (nextCell as? ReferralCodeTblVwCell)?.referralCodeLbl.becomeFirstResponder()
-                    }else{
-                        textField.resignFirstResponder()
-                    }
-                default:
-                    textField.resignFirstResponder()
-                }
-            }
-        }
-        return true
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        guard textField.text != "" else{
-            return
-        }
-        
-        switch textField.tag{
-        case 1:
-            if let userNameText = textField.text{
-                if let userNameError = ValidationManager().userNameValidation(userName: userNameText){
-                    viewModel.userNameErorr = userNameError
-                    loginTableView.reloadData()
-                }
-            }
-        case 2:
-            if let mobileNoText = textField.text{
-                if let mobileNoError = ValidationManager().userNameValidation(userName: mobileNoText){
-                    viewModel.userNameErorr = mobileNoError
-                    loginTableView.reloadData()
-                }
-            }
-        default:
-            return
-        }
-    }
-    
-    
 }
 
 extension LoginViewController : updateProceedbtnState{
