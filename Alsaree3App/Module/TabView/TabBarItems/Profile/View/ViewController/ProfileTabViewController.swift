@@ -84,7 +84,7 @@ class ProfileTabViewController: BaseViewController, UIViewControllerTransitionin
         self.setArabicBtnSelected()
         setApplicationLanguage(languageCode: "ar")
     }
-
+    
     
     func setApplicationLanguage(languageCode : String)
     {
@@ -142,22 +142,13 @@ extension ProfileTabViewController: UITableViewDataSource,UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyboard = UIStoryboard(name: "LoginSignUpScreen", bundle: nil)
-        presentedViewcontroller = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController ?? UIViewController()
-            var presentingheigth = 0.54
-            if UIScreen.main.bounds.height > 900 {
-                presentingheigth = 0.55
-            } else if UIScreen.main.bounds.height > 700 {
-                presentingheigth = 0.61
-            } else {
-                presentingheigth = 0.73
-            }
-            let presentationController = PresentationController(presentedViewController: presentedViewcontroller, presenting: self, customHeight: presentingheigth)
-        presentedViewcontroller.modalPresentationStyle = .custom
-        presentedViewcontroller.transitioningDelegate = presentationController
-        (presentedViewcontroller as? LoginViewController)?.customPresentationController = presentationController
-        self.present(presentedViewcontroller, animated: true, completion: nil)
         
+        let storyboard = UIStoryboard(name: "LoginSignUpScreen", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController
+        let presentingcontroller = customPresent(viewController: vc ?? UIViewController() , presentingHeigth: viewModel.getpresentingHeight(screenHeigth: UIScreen.main.bounds.height))
+        vc?.customPresentationController = presentingcontroller
+        vc?.presentingcontroller = self
+        self.present(vc ?? UIViewController(), animated: true)
     }
     
 }

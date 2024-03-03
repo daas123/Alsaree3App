@@ -19,6 +19,7 @@ class LoginViewController: BaseViewController {
     var isKeybordVisible = false
     var customPresentationController: PresentationController?
     var isProceedBtnActive = true
+    var presentingcontroller : ProfileTabViewController?
     
     override func viewWillAppear(_ animated: Bool) {
         IQKeyboardManager.shared().isEnabled = false
@@ -80,7 +81,7 @@ class LoginViewController: BaseViewController {
     }
     
     func setupProceedBtn(isActive : Bool = false){
-        if isActive{
+        if isActive && !viewModel.isAnyError(){
             proceedBtn.setProperties(label: "Proceed",color: ColorConstant.whitecolor ,size: 18,backcolor: ColorConstant.primaryYellowColor,cornerRadius: 10,tintcolor: ColorConstant.borderColorGray)
             isProceedBtnActive = true
         }else{
@@ -90,8 +91,21 @@ class LoginViewController: BaseViewController {
     }
     
     @IBAction func onClickProceedBtn(_ sender: UIButton) {
-        if isProceedBtnActive{
-            print("proceed")
+        if isProceedBtnActive && !viewModel.isAnyError(){
+            self.dismiss(animated: true) {
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyboard.instantiateViewController(withIdentifier: "RestaurantDetailsVC") as! RestaurantDetailsVC
+                let presetingVc = self.customPresent(viewController: vc, presentingHeigth: self.viewModel.getpresentingHeight(screenHeigth: UIScreen.main.bounds.height))
+                self.presentingcontroller?.navigationController?.present(vc, animated: true)
+            }
+        }else{
+           if viewModel.userNameErorr != nil{
+               
+           }else if viewModel.mobileNoErorr != nil{
+               print("Mobile No error")
+           }else if !isProceedBtnActive{
+               print("select terms and condition")
+           }
         }
     }
     
@@ -117,14 +131,7 @@ class LoginViewController: BaseViewController {
     
     @objc func keyboardWillHide(notification: NSNotification) {
         if self.view.frame.origin.y != 0 {
-            var presentingheigth = 0.5
-            if UIScreen.main.bounds.height > 900 {
-                presentingheigth = 0.55
-            } else if UIScreen.main.bounds.height > 700 {
-                presentingheigth = 0.61
-            } else {
-                presentingheigth = 0.73
-            }
+            var presentingheigth = viewModel.getpresentingHeight(screenHeigth: UIScreen.main.bounds.height)
             if isUserWantsReferal {
                 customPresentationController?.customHeight = presentingheigth + 0.06
             }else{
@@ -184,6 +191,9 @@ extension LoginViewController : LoginCellAlignment{
 
 extension LoginViewController : updateProceedbtnState{
     func updateProceedBtn(isActive: Bool) {
+        if isActive{
+            isProceedBtnActive = true
+        }
         setupProceedBtn(isActive: isActive)
     }
     

@@ -16,5 +16,15 @@ class ProfileTabViewModel{
             return 2
         }
     }
-
+    
+    func getpresentingHeight(screenHeigth:CGFloat) -> Double{
+        if screenHeigth > 900 {
+            return 0.55
+        } else if screenHeigth > 700 {
+            return 0.61
+        } else {
+            return 0.73
+        }
+    }
+    
 }

@@ -44,6 +44,9 @@ extension LoginViewController : UITextFieldDelegate{
                     cell.errortext.text = userNameError
                 }else{
                     viewModel.userNameErorr = nil
+                    if !viewModel.isAnyError(){
+                        updateProceedBtn(isActive: true)
+                    }
                     cell.errortext.text = ""
                 }
             }
@@ -56,6 +59,9 @@ extension LoginViewController : UITextFieldDelegate{
                     cell.errorText.text = mobileNoError
                 }else{
                     viewModel.mobileNoErorr = nil
+                    if !viewModel.isAnyError(){
+                        updateProceedBtn(isActive: true)
+                    }
                     cell.errorText.text = ""
                 }
             }

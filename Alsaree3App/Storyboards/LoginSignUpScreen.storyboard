@@ -18,14 +18,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aYH-7P-jhk">
-                                <rect key="frame" x="141.33333333333334" y="64" width="110.33333333333334" height="5"/>
+                                <rect key="frame" x="141.33333333333334" y="108" width="110.33333333333334" height="5"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="5" id="JVh-Qw-EpA"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="DNA-XI-VqD">
-                                <rect key="frame" x="0.0" y="69" width="393" height="629.66666666666663"/>
+                                <rect key="frame" x="0.0" y="113" width="393" height="585.66666666666663"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EcQ-nt-AQT">
@@ -67,6 +67,7 @@
                             <constraint firstItem="DNA-XI-VqD" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="ttG-Bq-xjD"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="VSV-QJ-z9U"/>
                     <connections>
                         <outlet property="loginTableView" destination="DNA-XI-VqD" id="dDf-Zg-mDQ"/>
                         <outlet property="proceedBtn" destination="urS-Jl-dR1" id="H8s-EM-1E3"/>
@@ -75,6 +76,24 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="976.33587786259534" y="3.5211267605633805"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="VUS-4O-913">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Gps-6l-vmg" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gZK-Lc-CHe">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="Nde-PZ-LaH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jo8-Xq-H9Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="49.618320610687022" y="3.5211267605633805"/>
         </scene>
