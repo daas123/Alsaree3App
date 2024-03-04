@@ -38,31 +38,31 @@ extension LoginViewController : UITextFieldDelegate{
         case 1:
             if let userNameText = textField.text{
                 let indexPath = IndexPath(item: 0, section: 0)
-                let cell = loginTableView.cellForRow(at: indexPath) as! UserNameTblVwCell
+                weak var cell = loginTableView.cellForRow(at: indexPath) as? UserNameTblVwCell
                 if let userNameError = ValidationManager().userNameValidation(userName: userNameText){
                     viewModel.userNameErorr = userNameError
-                    cell.errortext.text = userNameError
+                    cell?.errortext.text = userNameError
                 }else{
                     viewModel.userNameErorr = nil
                     if !viewModel.isAnyError(){
                         updateProceedBtn(isActive: true)
                     }
-                    cell.errortext.text = ""
+                    cell?.errortext.text = ""
                 }
             }
         case 2:
             if let mobileNoText = textField.text{
                 let indexPath = IndexPath(item: 1, section: 0)
-                let cell = loginTableView.cellForRow(at: indexPath) as! MobileNoTblVwCell
+                weak var cell = loginTableView.cellForRow(at: indexPath) as? MobileNoTblVwCell
                 if let mobileNoError = ValidationManager().mobileNoValidation(mobileNo: mobileNoText){
                     viewModel.mobileNoErorr = mobileNoError
-                    cell.errorText.text = mobileNoError
+                    cell?.errorText.text = mobileNoError
                 }else{
                     viewModel.mobileNoErorr = nil
                     if !viewModel.isAnyError(){
                         updateProceedBtn(isActive: true)
                     }
-                    cell.errorText.text = ""
+                    cell?.errorText.text = ""
                 }
             }
         default:

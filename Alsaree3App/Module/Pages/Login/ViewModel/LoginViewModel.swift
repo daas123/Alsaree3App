@@ -7,8 +7,10 @@
 
 import Foundation
 class LoginViewModel{
+    var loginDelegate : viewModelActions?
     var userNameErorr : String? = ""
     var mobileNoErorr : String? = ""
+    var countrylist : [Country]?
     
     func setupUsernameError()->String{
         return userNameErorr ?? ""
@@ -41,6 +43,8 @@ class LoginViewModel{
             switch responce{
             case.success(let data):
                 print(data)
+                self.countrylist = data.countries
+                self.loginDelegate?.reloadLoginTableView()
                 debugPrint("getCountryList Done")
             case.failure(let error):
                 debugPrint("getCountryList falied")

@@ -13,6 +13,7 @@ class LoginViewController: BaseViewController {
     @IBOutlet var proceedBtn : UIButton!
     @IBOutlet weak var topBarView: UIView!
     
+    let pickerView = UIPickerView()
     var alertView : StaticAlert!
     var viewModel = LoginViewModel()
     var isUserWantsReferal = false
@@ -33,13 +34,13 @@ class LoginViewController: BaseViewController {
     }
     
     override func viewWillLayoutSubviews() {
-//        let alertY: CGFloat = self.proceedBtnParentView.frame.origin.y - UIScreen.main.bounds.height*0.04 - 5
-//        let nib = UINib(nibName: "StaticAlert", bundle: nil)
-//        alertView = nib.instantiate(withOwner: nil, options: nil).first as? StaticAlert
-//        alertView.setupMessageLbl(errorText: "Agree terms and Condition")
-//        alertView.frame = CGRect(x: 0, y: alertY, width: view.bounds.width, height: UIScreen.main.bounds.height*0.04)
-//        view.addSubview(alertView)
-//        alertView.isHidden = true
+        //        let alertY: CGFloat = self.proceedBtnParentView.frame.origin.y - UIScreen.main.bounds.height*0.04 - 5
+        //        let nib = UINib(nibName: "StaticAlert", bundle: nil)
+        //        alertView = nib.instantiate(withOwner: nil, options: nil).first as? StaticAlert
+        //        alertView.setupMessageLbl(errorText: "Agree terms and Condition")
+        //        alertView.frame = CGRect(x: 0, y: alertY, width: view.bounds.width, height: UIScreen.main.bounds.height*0.04)
+        //        view.addSubview(alertView)
+        //        alertView.isHidden = true
         
         proceedBtnParentView.addTopBorderWithColor(color: ColorConstant.borderColorGray, width: 1)
     }
@@ -61,6 +62,9 @@ class LoginViewController: BaseViewController {
     func setupDeligate(){
         loginTableView.delegate = self
         loginTableView.dataSource = self
+        pickerView.delegate = self
+        pickerView.dataSource = self
+        viewModel.loginDelegate = self
     }
     
     func setupTopbar(){
@@ -99,13 +103,13 @@ class LoginViewController: BaseViewController {
                 self.presentingcontroller?.navigationController?.present(vc, animated: true)
             }
         }else{
-           if viewModel.userNameErorr != nil{
-               
-           }else if viewModel.mobileNoErorr != nil{
-               print("Mobile No error")
-           }else if !isProceedBtnActive{
-               print("select terms and condition")
-           }
+            if viewModel.userNameErorr != nil{
+                
+            }else if viewModel.mobileNoErorr != nil{
+                print("Mobile No error")
+            }else if !isProceedBtnActive{
+                print("select terms and condition")
+            }
         }
     }
     
@@ -131,7 +135,7 @@ class LoginViewController: BaseViewController {
     
     @objc func keyboardWillHide(notification: NSNotification) {
         if self.view.frame.origin.y != 0 {
-            var presentingheigth = viewModel.getpresentingHeight(screenHeigth: UIScreen.main.bounds.height)
+            let presentingheigth = viewModel.getpresentingHeight(screenHeigth: UIScreen.main.bounds.height)
             if isUserWantsReferal {
                 customPresentationController?.customHeight = presentingheigth + 0.06
             }else{
@@ -171,6 +175,8 @@ class LoginViewController: BaseViewController {
     deinit {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        print("login vc Refernce Removed")
     }
     
 }
@@ -197,4 +203,19 @@ extension LoginViewController : updateProceedbtnState{
         setupProceedBtn(isActive: isActive)
     }
     
+}
+
+extension LoginViewController : MobileNoDelegate{
+    func showCountryPickerview() {
+        
+    }
+}
+
+
+extension LoginViewController : viewModelActions{
+    func reloadLoginTableView() {
+        DispatchQueue.main.async {
+            self.loginTableView.reloadData()
+        }
+    }
 }

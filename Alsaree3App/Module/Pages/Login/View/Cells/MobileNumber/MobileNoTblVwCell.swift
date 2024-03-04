@@ -12,10 +12,8 @@ class MobileNoTblVwCell: UITableViewCell {
     @IBOutlet weak var headingLbl: UILabel!
     @IBOutlet weak var lblBackView: UIView!
     @IBOutlet weak var mobileNoLbl: UITextField!
-    @IBOutlet weak var cntyCodeSelector: UILabel!
+    @IBOutlet weak var cntyCodeLbl: UITextField!
     @IBOutlet weak var errorText: UILabel!
-    
-    var loginVcDeligate : updateMobileNoError?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -33,7 +31,7 @@ class MobileNoTblVwCell: UITableViewCell {
     func setupUi(){
         self.selectionStyle = .none
         applyCornerRadius(to: lblBackView, radius: 10,borderColor: ColorConstant.borderColorGray,borderWidth: 1)
-        cntyCodeSelector.setProperties(lbltext: "+964", fontSize: 12)
+        cntyCodeLbl.text = "+355"
         errorText.setProperties(lbltext: "", fontSize: 12)
     }
 }

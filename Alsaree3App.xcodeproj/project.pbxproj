@@ -58,6 +58,7 @@
 		4ACB8A382B906386009B371C /* LoginViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACB8A372B906386009B371C /* LoginViewDataSource.swift */; };
 		4ACB8A3A2B9066CB009B371C /* LoginViewTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACB8A392B9066CB009B371C /* LoginViewTextFieldDelegate.swift */; };
 		4ACB8A3C2B91BBE2009B371C /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACB8A3B2B91BBE2009B371C /* UIViewController+Extension.swift */; };
+		4ACB8A3E2B95929D009B371C /* LoginPickerViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACB8A3D2B95929D009B371C /* LoginPickerViewDelegate.swift */; };
 		4ACD2B3F2B6CBD52005C1D46 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4ACD2B412B6CBD52005C1D46 /* Localizable.strings */; };
 		4ADD7DCD2B8BBE8B00725D6C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADD7DCC2B8BBE8B00725D6C /* LoginViewController.swift */; };
 		4ADD7DCF2B8BBEA300725D6C /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADD7DCE2B8BBEA300725D6C /* LoginModel.swift */; };
@@ -320,6 +321,7 @@
 		4ACB8A372B906386009B371C /* LoginViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewDataSource.swift; sourceTree = "<group>"; };
 		4ACB8A392B9066CB009B371C /* LoginViewTextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewTextFieldDelegate.swift; sourceTree = "<group>"; };
 		4ACB8A3B2B91BBE2009B371C /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		4ACB8A3D2B95929D009B371C /* LoginPickerViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPickerViewDelegate.swift; sourceTree = "<group>"; };
 		4ACD2B402B6CBD52005C1D46 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4ACD2B422B6CBD54005C1D46 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4ADD7DCC2B8BBE8B00725D6C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -780,6 +782,7 @@
 				4ACB8A352B90636D009B371C /* LoginViewDelegate.swift */,
 				4ACB8A372B906386009B371C /* LoginViewDataSource.swift */,
 				4ACB8A392B9066CB009B371C /* LoginViewTextFieldDelegate.swift */,
+				4ACB8A3D2B95929D009B371C /* LoginPickerViewDelegate.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -2076,6 +2079,7 @@
 				929F1C622B48366C00B0F08F /* String+FoundationExtension.swift in Sources */,
 				929F1C972B48366D00B0F08F /* Array+Extension.swift in Sources */,
 				929F1C862B48366D00B0F08F /* PKCS5.swift in Sources */,
+				4ACB8A3E2B95929D009B371C /* LoginPickerViewDelegate.swift in Sources */,
 				4A39A3E92B6A470300D82375 /* HomeTabLoyaltyDetailsModel.swift in Sources */,
 				929F1C692B48366C00B0F08F /* AES+Foundation.swift in Sources */,
 				929F8FAB2B2F8CEE00536E70 /* GoldCategoryCardCellTableViewCell.swift in Sources */,

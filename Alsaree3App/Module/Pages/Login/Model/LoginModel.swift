@@ -15,12 +15,12 @@ protocol updateProceedbtnState{
     func updateProceedBtn(isActive:Bool)
 }
 
-protocol updateUsernameError{
-    func updateUsernameErrorState()
+protocol viewModelActions{
+    func reloadLoginTableView()
 }
 
-protocol updateMobileNoError{
-    func updateMobileNoErrorState()
+protocol MobileNoDelegate{
+    func showCountryPickerview()
 }
 
 // MARK: - CountryList

@@ -26,7 +26,10 @@ extension LoginViewController : UITableViewDataSource{
             return cell
         case 1:
             let cell = tableView.getCell(identifier: "MobileNoTblVwCell") as! MobileNoTblVwCell
-                cell.mobileNoLbl.delegate = self
+            cell.mobileNoLbl.delegate = self
+            cell.loginVcDeligate = self
+            cell.cntyCodeLbl.inputView = pickerView
+            cell.cntyCodeLbl.text = viewModel.countrylist?[0].countryPhoneCode
             cell.setHeadingLbl(lblText: "Mobile Number")
             cell.setUpErrorText(errText: viewModel.setupMobileNoError())
             return cell

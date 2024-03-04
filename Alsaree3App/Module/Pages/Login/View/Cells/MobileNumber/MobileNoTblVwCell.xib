@@ -18,33 +18,34 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BoF-kp-uBk">
-                        <rect key="frame" x="20" y="0.0" width="42" height="29.666666666666668"/>
+                        <rect key="frame" x="20" y="0.0" width="42" height="20.333333333333332"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jox-be-jYh">
-                        <rect key="frame" x="20" y="34.666666666666657" width="347" height="50.333333333333343"/>
+                        <rect key="frame" x="20" y="25.333333333333332" width="347" height="59.666666666666671"/>
                         <subviews>
                             <textField opaque="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="798 752 197" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="3SX-OU-TLg">
-                                <rect key="frame" x="56.333333333333343" y="14.999999999999998" width="280.66666666666663" height="20.333333333333329"/>
+                                <rect key="frame" x="56.666666666666657" y="15.000000000000002" width="280.33333333333337" height="29.666666666666671"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oKj-SE-4uq">
-                                <rect key="frame" x="10" y="14.999999999999998" width="41.333333333333336" height="20.333333333333329"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZYu-Nb-l5I">
+                                <rect key="frame" x="10" y="15.000000000000002" width="41.666666666666664" height="29.666666666666671"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="oKj-SE-4uq" firstAttribute="bottom" secondItem="3SX-OU-TLg" secondAttribute="bottom" id="2nO-qH-9mb"/>
-                            <constraint firstItem="oKj-SE-4uq" firstAttribute="top" secondItem="3SX-OU-TLg" secondAttribute="top" id="4zm-aF-8LQ"/>
                             <constraint firstAttribute="bottom" secondItem="3SX-OU-TLg" secondAttribute="bottom" constant="15" id="8U2-XI-h46"/>
-                            <constraint firstItem="oKj-SE-4uq" firstAttribute="leading" secondItem="Jox-be-jYh" secondAttribute="leading" constant="10" id="SqU-0R-OjY"/>
+                            <constraint firstItem="ZYu-Nb-l5I" firstAttribute="leading" secondItem="Jox-be-jYh" secondAttribute="leading" constant="10" id="BBK-CA-5Zr"/>
+                            <constraint firstItem="ZYu-Nb-l5I" firstAttribute="top" secondItem="3SX-OU-TLg" secondAttribute="top" id="BGB-qB-h80"/>
+                            <constraint firstItem="ZYu-Nb-l5I" firstAttribute="width" secondItem="Jox-be-jYh" secondAttribute="width" multiplier="0.12" id="OL5-v0-w1K"/>
+                            <constraint firstItem="3SX-OU-TLg" firstAttribute="leading" secondItem="ZYu-Nb-l5I" secondAttribute="trailing" constant="5" id="kmD-L4-GDV"/>
+                            <constraint firstItem="ZYu-Nb-l5I" firstAttribute="bottom" secondItem="3SX-OU-TLg" secondAttribute="bottom" id="nga-jk-6r9"/>
                             <constraint firstAttribute="trailing" secondItem="3SX-OU-TLg" secondAttribute="trailing" constant="10" id="pR2-GR-4zv"/>
-                            <constraint firstItem="3SX-OU-TLg" firstAttribute="leading" secondItem="oKj-SE-4uq" secondAttribute="trailing" constant="5" id="svA-YP-wbS"/>
                             <constraint firstItem="3SX-OU-TLg" firstAttribute="top" secondItem="Jox-be-jYh" secondAttribute="top" constant="15" id="vxM-vC-Ruq"/>
                         </constraints>
                     </view>
@@ -68,13 +69,13 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="cntyCodeSelector" destination="oKj-SE-4uq" id="Zzu-W7-gIx"/>
+                <outlet property="cntyCodeLbl" destination="ZYu-Nb-l5I" id="n6z-47-Fkz"/>
                 <outlet property="errorText" destination="kQR-xA-688" id="FFT-SP-y8Q"/>
                 <outlet property="headingLbl" destination="BoF-kp-uBk" id="Tt5-Bc-VXt"/>
                 <outlet property="lblBackView" destination="Jox-be-jYh" id="zQ6-RS-ftz"/>
                 <outlet property="mobileNoLbl" destination="3SX-OU-TLg" id="sjd-06-0mb"/>
             </connections>
-            <point key="canvasLocation" x="100" y="36.619718309859159"/>
+            <point key="canvasLocation" x="100" y="35.563380281690144"/>
         </tableViewCell>
     </objects>
 </document>
