@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -22,16 +22,16 @@
                         <rect key="frame" x="20" y="10" width="350" height="81"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="0kN-PG-QOR">
-                                <rect key="frame" x="20.000000000000004" y="12" width="41.333333333333343" height="57"/>
+                                <rect key="frame" x="20" y="12" width="235" height="57"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TRv-FT-Qit">
-                                        <rect key="frame" x="0.0" y="0.0" width="41.333333333333336" height="28.666666666666668"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="235" height="28.666666666666668"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ub8-Gl-STT">
-                                        <rect key="frame" x="0.0" y="28.666666666666664" width="41.333333333333336" height="28.333333333333336"/>
+                                        <rect key="frame" x="0.0" y="28.666666666666664" width="235" height="28.333333333333336"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -72,6 +72,7 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="dBE-LJ-8Ee" secondAttribute="trailing" constant="20" id="14m-cq-oIa"/>
                             <constraint firstAttribute="bottom" secondItem="0kN-PG-QOR" secondAttribute="bottom" constant="12" id="GRW-Ox-YqA"/>
+                            <constraint firstItem="dBE-LJ-8Ee" firstAttribute="leading" secondItem="0kN-PG-QOR" secondAttribute="trailing" constant="5" id="Yyh-cB-NtW"/>
                             <constraint firstItem="0kN-PG-QOR" firstAttribute="leading" secondItem="jh9-Th-khr" secondAttribute="leading" constant="20" id="q31-Il-Hsy"/>
                             <constraint firstItem="dBE-LJ-8Ee" firstAttribute="centerY" secondItem="jh9-Th-khr" secondAttribute="centerY" id="ug3-GS-UhQ"/>
                             <constraint firstItem="0kN-PG-QOR" firstAttribute="top" secondItem="jh9-Th-khr" secondAttribute="top" constant="12" id="vHy-fj-99c"/>

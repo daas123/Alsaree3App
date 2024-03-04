@@ -31,7 +31,6 @@ class MobileNoTblVwCell: UITableViewCell {
     func setupUi(){
         self.selectionStyle = .none
         applyCornerRadius(to: lblBackView, radius: 10,borderColor: ColorConstant.borderColorGray,borderWidth: 1)
-        cntyCodeLbl.text = "+355"
         errorText.setProperties(lbltext: "", fontSize: 12)
     }
 }

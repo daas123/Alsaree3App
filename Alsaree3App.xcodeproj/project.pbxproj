@@ -59,6 +59,8 @@
 		4ACB8A3A2B9066CB009B371C /* LoginViewTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACB8A392B9066CB009B371C /* LoginViewTextFieldDelegate.swift */; };
 		4ACB8A3C2B91BBE2009B371C /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACB8A3B2B91BBE2009B371C /* UIViewController+Extension.swift */; };
 		4ACB8A3E2B95929D009B371C /* LoginPickerViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACB8A3D2B95929D009B371C /* LoginPickerViewDelegate.swift */; };
+		4ACB8A452B95B6F2009B371C /* OtpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACB8A442B95B6F2009B371C /* OtpViewController.swift */; };
+		4ACB8A492B95CFB2009B371C /* OtpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACB8A482B95CFB2009B371C /* OtpViewModel.swift */; };
 		4ACD2B3F2B6CBD52005C1D46 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4ACD2B412B6CBD52005C1D46 /* Localizable.strings */; };
 		4ADD7DCD2B8BBE8B00725D6C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADD7DCC2B8BBE8B00725D6C /* LoginViewController.swift */; };
 		4ADD7DCF2B8BBEA300725D6C /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADD7DCE2B8BBEA300725D6C /* LoginModel.swift */; };
@@ -322,6 +324,8 @@
 		4ACB8A392B9066CB009B371C /* LoginViewTextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewTextFieldDelegate.swift; sourceTree = "<group>"; };
 		4ACB8A3B2B91BBE2009B371C /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		4ACB8A3D2B95929D009B371C /* LoginPickerViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPickerViewDelegate.swift; sourceTree = "<group>"; };
+		4ACB8A442B95B6F2009B371C /* OtpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtpViewController.swift; sourceTree = "<group>"; };
+		4ACB8A482B95CFB2009B371C /* OtpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtpViewModel.swift; sourceTree = "<group>"; };
 		4ACD2B402B6CBD52005C1D46 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4ACD2B422B6CBD54005C1D46 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4ADD7DCC2B8BBE8B00725D6C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -737,6 +741,39 @@
 				4ABC9D2B2B5E5471006EFCBD /* CloseStoreView.swift */,
 			);
 			path = ClosedStore;
+			sourceTree = "<group>";
+		};
+		4ACB8A3F2B95B18F009B371C /* OtpScreen */ = {
+			isa = PBXGroup;
+			children = (
+				4ACB8A422B95B1A2009B371C /* ViewModel */,
+				4ACB8A412B95B19E009B371C /* Model */,
+				4ACB8A402B95B196009B371C /* View */,
+			);
+			path = OtpScreen;
+			sourceTree = "<group>";
+		};
+		4ACB8A402B95B196009B371C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4ACB8A442B95B6F2009B371C /* OtpViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4ACB8A412B95B19E009B371C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4ACB8A422B95B1A2009B371C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4ACB8A482B95CFB2009B371C /* OtpViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		4ADD7DC82B8BBE5000725D6C /* Login */ = {
@@ -1665,6 +1702,7 @@
 		92FA145A2B32329B00148974 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				4ACB8A3F2B95B18F009B371C /* OtpScreen */,
 				4ADD7DC82B8BBE5000725D6C /* Login */,
 				4AA831DD2B66D8D8003185AB /* ResturentDetailsVc */,
 			);
@@ -2059,6 +2097,7 @@
 				929F8F9E2B2F653800536E70 /* FoodCatrgoryCell.swift in Sources */,
 				929F1C542B48366C00B0F08F /* AEAD.swift in Sources */,
 				929F1C662B48366C00B0F08F /* Data+Extension.swift in Sources */,
+				4ACB8A492B95CFB2009B371C /* OtpViewModel.swift in Sources */,
 				922CB7712B2E477C0067805A /* SingleCategoryCollectionViewCell.swift in Sources */,
 				4A8F65392B749BBC000E5F32 /* UIImage+Exxtention.swift in Sources */,
 				929E60F42B2C79FE00FD038A /* TabBarController.swift in Sources */,
@@ -2116,6 +2155,7 @@
 				4A39A3E72B6A470300D82375 /* HomeScreenMainDetailWithBannerImagesOffersModel.swift in Sources */,
 				929F8FA72B2F741400536E70 /* UIImage+Extention.swift in Sources */,
 				4A39A3E82B6A470300D82375 /* HomeTabPushZoneModel.swift in Sources */,
+				4ACB8A452B95B6F2009B371C /* OtpViewController.swift in Sources */,
 				929F1B9F2B480E7D00B0F08F /* HomeScreenServices.swift in Sources */,
 				92AE0B0D2B43EAF400E71A32 /* APIManager.swift in Sources */,
 				929F1C5A2B48366C00B0F08F /* CMAC.swift in Sources */,
