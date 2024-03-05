@@ -95,12 +95,13 @@ class LoginViewController: BaseViewController {
     }
     
     @IBAction func onClickProceedBtn(_ sender: UIButton) {
-        if isProceedBtnActive || viewModel.isAnyError(){
+        if isProceedBtnActive && !viewModel.isAnyError(){
             self.dismiss(animated: true) {
                 let storyboard = UIStoryboard(name: "LoginSignUpScreen", bundle: nil)
                 let vc = storyboard.instantiateViewController(withIdentifier: "OtpViewController") as! OtpViewController
                 let presetingVc = self.customPresent(viewController: vc, presentingHeigth: self.viewModel.getpresentingHeight(screenHeigth: UIScreen.main.bounds.height))
                 vc.customPresentationController = presetingVc
+                vc.presentingcontroller = self.presentingcontroller
                 self.presentingcontroller?.navigationController?.present(vc, animated: true)
             }
         }else{

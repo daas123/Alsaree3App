@@ -22,6 +22,7 @@ class OtpViewController: UIViewController {
     
     
     var viewModel = OtpViewModel()
+    var presentingcontroller : ProfileTabViewController?
     var customPresentationController: PresentationController?
     var isKeybordVisible = false
     
@@ -64,7 +65,7 @@ class OtpViewController: UIViewController {
     @objc func keyboardWillHide(notification: NSNotification) {
         if self.view.frame.origin.y != 0 {
             let presentingheigth = viewModel.getpresentingHeight(screenHeigth: UIScreen.main.bounds.height)
-                customPresentationController?.customHeight = presentingheigth
+            customPresentationController?.customHeight = presentingheigth
             UIView.animate(withDuration: 0.3, animations: {
                 self.customPresentationController?.containerViewDidLayoutSubviews()
             })
@@ -98,5 +99,15 @@ class OtpViewController: UIViewController {
             otpLbl.textAlignment = .center
         }
     }
-
+    
+    @IBAction func onClickReSendCode(_ sender: UIButton) {
+        self.dismiss(animated: true) {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let newViewController = storyboard.instantiateViewController(withIdentifier: ViewControllerConstant.restaurantDetailsVC.rawValue) as! RestaurantDetailsVC
+            newViewController.hidesBottomBarWhenPushed = true
+            self.presentingcontroller?.navigationController?.pushViewController(newViewController, animated: true)
+        }
+    }
+    
+    
 }

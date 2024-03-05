@@ -29,7 +29,7 @@ class LoginViewModel{
     }
     
     func getpresentingHeight(screenHeigth:CGFloat) -> Double{
-        if screenHeigth > 900 {
+        if screenHeigth > 890 {
             return 0.55
         } else if screenHeigth > 700 {
             return 0.61
