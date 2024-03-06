@@ -18,6 +18,7 @@ class ResturentDetailsTableViewCell: UITableViewCell {
     @IBOutlet weak var resturentImage: UIImageView!
     @IBOutlet weak var resturentFutrCollectionView: UICollectionView!
     
+    var homeTabDelegate : HomeTableviewStoresAction?
     var isStoreClose : Bool = false
     var resturentDetailsTableViewCellData : Stores?
     var resturentFeatureDate : [featureDetails]?
@@ -69,6 +70,10 @@ class ResturentDetailsTableViewCell: UITableViewCell {
         
         // hide the scroll indicator
         resturentFutrCollectionView.showsHorizontalScrollIndicator = false
+        
+        // setupTapgesture
+        setupTapgesture()
+        
         
         // setup rsturent details view
         applyCornerRadius(to: resturentDetailsView, radius: 15, corners: .All, borderColor:ColorConstant.borderColorGray , borderWidth: 1)
@@ -180,8 +185,25 @@ class ResturentDetailsTableViewCell: UITableViewCell {
         self.layer.addSublayer(triangleLayer)
     }
     
+    func setupTapgesture(){
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(labelTapped))
+        resturentFutrCollectionView.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func labelTapped() {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
+        }) { (_) in
+            UIView.animate(withDuration: 0.3) {
+                self.transform = .identity
+            }completion: { (_) in
+                self.homeTabDelegate?.callStoreApi(storeId:self.resturentDetailsTableViewCellData?._id ?? "" )
+            }
+        }
+    }
+    
     func setupCloseStore(){
-//        showErrorMessage(nameNib: nibNamesConstant.closeStoreView.rawValue, uiView: self, parentView: &<#UIView#>)
+        //        showErrorMessage(nameNib: nibNamesConstant.closeStoreView.rawValue, uiView: self, parentView: &<#UIView#>)
     }
     
     

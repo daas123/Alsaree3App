@@ -13,6 +13,7 @@ class AdvertisementCell: UITableViewCell {
     @IBOutlet weak var advCollectionView: UICollectionView!
     @IBOutlet weak var advPageControl: UIPageControl!
     
+    var homeTabDelegate : HomeTableviewStoresAction?
     var advertisementBannerData : [BannerRevamp]?
     var isHeigthChnaged = false
     var isScrollingLeft = false
@@ -65,23 +66,6 @@ class AdvertisementCell: UITableViewCell {
         advCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
     }
 
-
-    
-//    override func systemLayoutSizeFitting(_ targetSize: CGSize, withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority, verticalFittingPriority: UILayoutPriority) -> CGSize {
-//        
-//        self.advCollectionView.frame = self.bounds
-//        self.advCollectionView.layoutIfNeeded()
-//        
-//        if isHeigthChnaged{
-//            return self.advCollectionView.contentSize
-//        }else{
-//            advCollectionView.contentSize.height += 50
-//            isHeigthChnaged = true
-//            return self.advCollectionView.contentSize
-//        }
-//        
-//    }
-
     func setCollectionview() {
         advCollectionView.delegate = self
         advCollectionView.dataSource = self
@@ -129,6 +113,20 @@ extension AdvertisementCell : UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: (collectionView.bounds.width - 40) , height: collectionView.bounds.height)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+           if let cell = advCollectionView.cellForItem(at: indexPath) {
+               UIView.animate(withDuration: 0.3, animations: {
+                   cell.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
+               }) { (_) in
+                   UIView.animate(withDuration: 0.3) {
+                       cell.transform = .identity
+                   }completion: { (_) in
+                       self.homeTabDelegate?.callStoreApi(storeId:self.advertisementBannerData?[indexPath.row].store_id ?? "" )
+                   }
+               }
+           }
+       }
 }
 
 extension AdvertisementCell :UIScrollViewDelegate {

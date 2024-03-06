@@ -10,12 +10,6 @@
 import Foundation
 import UIKit
 //main enum
-protocol NavigateFormHomeTab{
-    func seeMoreBtnNavigation()
-    func showLocationAccessScreen()
-    func setValueOfCurrentLocation(value:String)
-    func reloadTableView()
-}
 
 class HomeTabViewModel{
     
@@ -121,6 +115,12 @@ class HomeTabViewModel{
     }
     
     func resetApiFectechedData(){
+        currentPage = 1
+                closeStorePage = 1
+                isLoadingState = true
+                isApiCallFailed = false
+                isCallCloseStore = false
+                isAllApiCallDone = false
         recentlyAddedStores = []
         mostPopularStore = []
         nearbyResturentStore = []
@@ -150,6 +150,15 @@ class HomeTabViewModel{
         }
     }
     
+    func callStoreApi(storeId : String){
+           // some it comes empty store id
+           if storeId == "" {
+               print("store id is empty")
+               return
+           }
+           print("store id is called \(storeId)")
+       }
+    
     func apiCallFailed(isRemoveDispatchGroup : Bool = true , isApicallfailed : Bool = false ,isStoreApiFailed : Bool = false){
         if isRemoveDispatchGroup{
             if !ReachabilityRevamp.isConnectedToNetwork() {
@@ -163,6 +172,7 @@ class HomeTabViewModel{
         }
         
         if isApicallfailed{
+            
             isApiCallFailed = true
             DispatchQueue.main.async {
                 print("before getting the error")

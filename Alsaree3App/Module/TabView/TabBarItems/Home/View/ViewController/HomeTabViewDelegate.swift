@@ -135,15 +135,6 @@ extension HomeTabViewController:NavigateFormHomeTab{
     }
     
     
-    func seeMoreBtnNavigation() {
-        let newViewController = storyboard?.instantiateViewController(withIdentifier: ViewControllerConstant.restaurantDetailsVC.rawValue) as! RestaurantDetailsVC
-        // extra function
-        viewModel.activeOrder = true
-        newViewController.hidesBottomBarWhenPushed = true
-        //        navigationController?.pushViewController(newViewController, animated: true)
-        showLocationAccessScreen()
-    }
-    
     func showLocationAccessScreen() {
         LocationManagerRevamp.shared.requestLocationPermission { islocationAccess in
             if !islocationAccess{
@@ -155,4 +146,17 @@ extension HomeTabViewController:NavigateFormHomeTab{
     }
 }
 
-
+extension HomeTabViewController : HomeTableviewStoresAction{
+    func callStoreApi(storeId: String) {
+        viewModel.callStoreApi(storeId: storeId)
+    }
+    
+    func seeMoreBtnNavigation() {
+        let newViewController = storyboard?.instantiateViewController(withIdentifier: ViewControllerConstant.restaurantDetailsVC.rawValue) as! RestaurantDetailsVC
+        // extra function
+        viewModel.activeOrder = true
+        newViewController.hidesBottomBarWhenPushed = true
+        //        navigationController?.pushViewController(newViewController, animated: true)
+        showLocationAccessScreen()
+    }
+}

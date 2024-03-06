@@ -65,33 +65,32 @@ extension HomeTabViewController:UITableViewDataSource{
             switch indexPath.row{
             case 0 :
                 let cell = tableView.getCell(identifier: CellConstant.advertisementCell.rawValue) as! AdvertisementCell
+                cell.homeTabDelegate = self
                 cell.advertisementBannerData = viewModel.banner
                 cell.reloadData()
                 return cell
             case 1:
                 let cell = tableView.getCell(identifier: CellConstant.foodCatrgoryCell.rawValue) as! FoodCatrgoryCell
+                cell.homeTabDelegate = self
                 cell.foodCategoryData = viewModel.tags
                 return cell
             case 2:
                 let cell = tableView.getCell(identifier: CellConstant.resturentTableViewCell.rawValue) as! ResturentTableViewCell
-                cell.hometabDelegate = self
+                cell.homeTabDelegate = self
                 cell.resturentTableViewCellData = viewModel.recentlyAddedStores
                 cell.setUpCellData(storeTitle: viewModel.recentlyAddedTitle ?? TextConstant.resturent.rawValue)
-                cell.reloadCOllectionView()
                 return cell
             case 3:
                 let cell = tableView.getCell(identifier: CellConstant.resturentTableViewCell.rawValue) as! ResturentTableViewCell
-                cell.hometabDelegate = self
+                cell.homeTabDelegate = self
                 cell.resturentTableViewCellData = viewModel.nearbyResturentStore
                 cell.setUpCellData(storeTitle: viewModel.nearbyResturentTitle ?? TextConstant.resturent.rawValue)
-                cell.reloadCOllectionView()
                 return cell
             case 4:
                 let cell = tableView.getCell(identifier: CellConstant.resturentTableViewCell.rawValue) as! ResturentTableViewCell
-                cell.hometabDelegate = self
+                cell.homeTabDelegate = self
                 cell.resturentTableViewCellData = viewModel.mostPopularStore
                 cell.setUpCellData(storeTitle: viewModel.mostPopularTitle ?? TextConstant.resturent.rawValue)
-                cell.reloadCOllectionView()
                 return cell
             default:
                 
@@ -101,6 +100,7 @@ extension HomeTabViewController:UITableViewDataSource{
                 
                 let cell = tableView.getCell(identifier: CellConstant.resturentDetailsTableViewCell.rawValue) as! ResturentDetailsTableViewCell
                 cell.resturentDetailsTableViewCellData = viewModel.homeScreenStoreListData?[indexPath.row - 5]
+                cell.homeTabDelegate = self
                 cell.reloadCellData()
                 return cell
             }

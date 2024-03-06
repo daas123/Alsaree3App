@@ -16,3 +16,18 @@ enum APIError: Error {
     case decodingError
     case apiError(success: Bool, errorCode: Int)
 }
+
+protocol HomeTableviewStoresAction {
+    func callStoreApi(storeId: String)
+    func seeMoreBtnNavigation()
+}
+
+protocol HomeTblCollViewAction{
+    func animateResturentCell(Indexpath:IndexPath)
+}
+
+protocol NavigateFormHomeTab{
+    func showLocationAccessScreen()
+    func setValueOfCurrentLocation(value:String)
+    func reloadTableView()
+}

@@ -192,17 +192,48 @@ class HomeTabViewController: BaseViewController {
                 UIView.animate(withDuration: 0.3) {
                     cell.transform = .identity
                 }completion: { (_) in
-                    //                    self.pushToNextScreen(indexPath: indexPath)
+                    self.pushToNextScreen(indexPath: indexPath)
                 }
             }
         }
     }
     
     func pushToNextScreen(indexPath: IndexPath) {
-        let newViewController = storyboard?.instantiateViewController(withIdentifier: ViewControllerConstant.restaurantDetailsVC.rawValue) as! RestaurantDetailsVC
-        viewModel.activeOrder = true
-        newViewController.hidesBottomBarWhenPushed = true
-        navigationController?.pushViewController(newViewController, animated: true)
+        print(indexPath.row)
+                switch indexPath.section{
+                case 0:
+                    print("section 0")
+                    switch indexPath.row{
+                    case 0 :
+                        print("clicked on active ordercell")
+                    case 1 :
+                        print("clicked on banner cell")
+                        
+                    default:
+                        print("section 0 default")
+                    }
+                case 1:
+                    print("section 1")
+                    switch indexPath.row{
+                    case 0 :
+                        print("section 1 row 0")
+                    case 1 :
+                        print("section 1 row 1")
+                    case 2 :
+                        print("section 1 row 2")
+                    case 3:
+                        print("section 1 row 3")
+                    case 4:
+                        print("section 1 row 4")
+                    default:
+                        let cell = hometabTableView.cellForRow(at: indexPath) as? ResturentDetailsTableViewCell
+                        callStoreApi(storeId: cell?.resturentDetailsTableViewCellData?._id ?? "")
+                    }
+                case 3:
+                    print("section 3")
+                default:
+                    print("default")
+                }
     }
     
     deinit{
@@ -218,3 +249,8 @@ extension HomeTabViewController{
         viewModel.reloadOnPull()
     }
 }
+
+//                let newViewController = storyboard?.instantiateViewController(withIdentifier: ViewControllerConstant.restaurantDetailsVC.rawValue) as! RestaurantDetailsVC
+//                viewModel.activeOrder = true
+//                newViewController.hidesBottomBarWhenPushed = true
+//                navigationController?.pushViewController(newViewController, animated: true)
