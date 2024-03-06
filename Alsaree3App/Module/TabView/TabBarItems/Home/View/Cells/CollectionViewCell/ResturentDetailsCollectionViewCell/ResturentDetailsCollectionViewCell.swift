@@ -22,12 +22,9 @@ class ResturentDetailsCollectionViewCell: UICollectionViewCell {
     var selectedViewTriangleLayer = CAShapeLayer()
     var lowViewTriangleLayer = CAShapeLayer()
     
-    var resturentDelegate : HomeTblCollViewAction?
-    var currentCellIndexpath : IndexPath?
     var resturentDetailsData : Stores?
     var isHeigthChnaged = false
     var resturentFeatureDate : [featureDetails]?
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         setupUI()
@@ -56,15 +53,6 @@ class ResturentDetailsCollectionViewCell: UICollectionViewCell {
             featureDetails(featureValue: "\(String(format: "%.2f", resturentDetailsData?.user_rate ?? 0.0)) Excellent", image: "Star",istinted: true)
         ]
         
-    }
-    
-    func setupTapgesture(){
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(labelTapped))
-        resturentFeatureCollectionView.addGestureRecognizer(tapGesture)
-    }
-    
-    @objc func labelTapped() {
-        resturentDelegate?.animateResturentCell(Indexpath: currentCellIndexpath ?? IndexPath())
     }
     
     func setupCollectionView(){
@@ -167,9 +155,6 @@ class ResturentDetailsCollectionViewCell: UICollectionViewCell {
         // setup rsturent details view
         applyCornerRadius(to: resturentInternelView, radius: 15, corners: .Bottom, borderColor:ColorConstant.borderColorGray , borderWidth: 1)
         
-        // setupTap gesture
-        setupTapgesture()
-        
         // image Curve code
         applyCornerRadius(to: resturentImage, radius: 15, corners: .Top, borderColor: ColorConstant.borderColorGray, borderWidth: 0.2)
     }
@@ -214,7 +199,6 @@ extension ResturentDetailsCollectionViewCell : UICollectionViewDataSource{
         
         return cell
     }
-    
 }
 
 extension ResturentDetailsCollectionViewCell:UICollectionViewDelegate{

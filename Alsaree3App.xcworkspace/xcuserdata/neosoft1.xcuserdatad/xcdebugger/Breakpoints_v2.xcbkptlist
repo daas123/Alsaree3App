@@ -3,4 +3,294 @@
    uuid = "5E35D85C-6DFF-4A32-8D83-A081F4960EB2"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "77556B74-4FA5-4C48-A263-565C524884AC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Alsaree3App/Module/TabView/TabBarItems/Home/View/ViewController/HomeTabViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "viewDidLayoutSubviews()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "77556B74-4FA5-4C48-A263-565C524884AC - a91e92b6bc65d9fc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Alsaree3App.HomeTabViewController.viewDidLayoutSubviews() -&gt; ()"
+                  moduleName = "Alsaree3App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Module/TabView/TabBarItems/Home/View/ViewController/HomeTabViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
+                  offsetFromSymbolStart = "2500">
+               </Location>
+               <Location
+                  uuid = "77556B74-4FA5-4C48-A263-565C524884AC - a91e92b6bc65d9fc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Alsaree3App.HomeTabViewController.viewDidLayoutSubviews() -&gt; ()"
+                  moduleName = "Alsaree3App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Module/TabView/TabBarItems/Home/View/ViewController/HomeTabViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
+                  offsetFromSymbolStart = "3041">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D60DD95C-3798-4673-8A42-F331E58EAA2B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Alsaree3App/Module/TabView/TabBarItems/Home/View/ViewController/HomeTabViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
+            landmarkName = "showCustomAlert(errorText:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D60DD95C-3798-4673-8A42-F331E58EAA2B - cf1d79dd0919df1e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Alsaree3App.HomeTabViewController.showCustomAlert(errorText: Swift.String) -&gt; ()"
+                  moduleName = "Alsaree3App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Module/TabView/TabBarItems/Home/View/ViewController/HomeTabViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "160"
+                  endingLineNumber = "160"
+                  offsetFromSymbolStart = "1344">
+               </Location>
+               <Location
+                  uuid = "D60DD95C-3798-4673-8A42-F331E58EAA2B - cf1d79dd0919df1e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Alsaree3App.HomeTabViewController.showCustomAlert(errorText: Swift.String) -&gt; ()"
+                  moduleName = "Alsaree3App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Module/TabView/TabBarItems/Home/View/ViewController/HomeTabViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "160"
+                  endingLineNumber = "160"
+                  offsetFromSymbolStart = "1096">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A0769BD8-00C9-44B8-95B6-AA8153F44C9B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Alsaree3App/Module/TabView/TabBarItems/Home/View/Cells/FlotingHeader/HomeTabCategoryHeader.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "setupUI()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A0769BD8-00C9-44B8-95B6-AA8153F44C9B - efd6c6e197ad6e1b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Alsaree3App.HomeTabCategoryHeader.setupUI() -&gt; ()"
+                  moduleName = "Alsaree3App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Module/TabView/TabBarItems/Home/View/Cells/FlotingHeader/HomeTabCategoryHeader.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "55"
+                  endingLineNumber = "55"
+                  offsetFromSymbolStart = "2020">
+               </Location>
+               <Location
+                  uuid = "A0769BD8-00C9-44B8-95B6-AA8153F44C9B - efd6c6e197ad6e1b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Alsaree3App.HomeTabCategoryHeader.setupUI() -&gt; ()"
+                  moduleName = "Alsaree3App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Module/TabView/TabBarItems/Home/View/Cells/FlotingHeader/HomeTabCategoryHeader.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "55"
+                  endingLineNumber = "55"
+                  offsetFromSymbolStart = "2399">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "07DCC789-BDA2-49A8-B661-5F4B88917ECC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Alsaree3App/Module/TabView/TabBarItems/Home/View/Cells/FlotingHeader/HomeTabCategoryHeader.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "setupUI()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "07DCC789-BDA2-49A8-B661-5F4B88917ECC - efd6c6e197ad6e59"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Alsaree3App.HomeTabCategoryHeader.setupUI() -&gt; ()"
+                  moduleName = "Alsaree3App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Module/TabView/TabBarItems/Home/View/Cells/FlotingHeader/HomeTabCategoryHeader.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "1812">
+               </Location>
+               <Location
+                  uuid = "07DCC789-BDA2-49A8-B661-5F4B88917ECC - efd6c6e197ad6e59"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Alsaree3App.HomeTabCategoryHeader.setupUI() -&gt; ()"
+                  moduleName = "Alsaree3App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Module/TabView/TabBarItems/Home/View/Cells/FlotingHeader/HomeTabCategoryHeader.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "2130">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D2CADDD0-E96D-4E3A-8E8F-4F90F06BBC7D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Alsaree3App/Module/TabView/TabBarItems/Home/View/Cells/FlotingHeader/HomeTabCategoryHeader.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "setupUI()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D2CADDD0-E96D-4E3A-8E8F-4F90F06BBC7D - efd6c6e197ad6e7e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Alsaree3App.HomeTabCategoryHeader.setupUI() -&gt; ()"
+                  moduleName = "Alsaree3App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Module/TabView/TabBarItems/Home/View/Cells/FlotingHeader/HomeTabCategoryHeader.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "1700">
+               </Location>
+               <Location
+                  uuid = "D2CADDD0-E96D-4E3A-8E8F-4F90F06BBC7D - efd6c6e197ad6e7e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Alsaree3App.HomeTabCategoryHeader.setupUI() -&gt; ()"
+                  moduleName = "Alsaree3App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Module/TabView/TabBarItems/Home/View/Cells/FlotingHeader/HomeTabCategoryHeader.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "2039">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D9C3C2C7-C92D-41D5-AA95-CF6B315AF2C6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Alsaree3App/Module/TabView/TabBarItems/Home/View/Cells/FlotingHeader/HomeTabCategoryHeader.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "setupUI()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D9C3C2C7-C92D-41D5-AA95-CF6B315AF2C6 - efd6c6e197ad6da7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Alsaree3App.HomeTabCategoryHeader.setupUI() -&gt; ()"
+                  moduleName = "Alsaree3App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Module/TabView/TabBarItems/Home/View/Cells/FlotingHeader/HomeTabCategoryHeader.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "888">
+               </Location>
+               <Location
+                  uuid = "D9C3C2C7-C92D-41D5-AA95-CF6B315AF2C6 - efd6c6e197ad6da7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Alsaree3App.HomeTabCategoryHeader.setupUI() -&gt; ()"
+                  moduleName = "Alsaree3App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Module/TabView/TabBarItems/Home/View/Cells/FlotingHeader/HomeTabCategoryHeader.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "1062">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

@@ -155,7 +155,7 @@ class HomeTabViewController: BaseViewController {
         alertView.messageLbl.text = errorText
         alertView.alpha = 0 // invisible
         alertView.isHidden = true
-        
+
         // animate the alert view to fade in
         if alertView.isHidden{
             alertView.isHidden = false
@@ -163,7 +163,7 @@ class HomeTabViewController: BaseViewController {
                 self.alertView.alpha = 1
             })
         }
-        
+
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0 ) {
             // animate the alert view to fade out
             UIView.animate(withDuration: 0.5, animations: {
@@ -173,7 +173,7 @@ class HomeTabViewController: BaseViewController {
             })
         }
     }
-    
+
     
     @objc func scrollToFirstRow() {
         let indexPath = IndexPath(row: 0, section: 0)
@@ -192,49 +192,17 @@ class HomeTabViewController: BaseViewController {
                 UIView.animate(withDuration: 0.3) {
                     cell.transform = .identity
                 }completion: { (_) in
-                    self.pushToNextScreen(indexPath: indexPath)
-                    
+                    //                    self.pushToNextScreen(indexPath: indexPath)
                 }
             }
         }
     }
     
     func pushToNextScreen(indexPath: IndexPath) {
-        print(indexPath.row)
-        switch indexPath.section{
-        case 0:
-            print("section 0")
-            switch indexPath.row{
-            case 0 :
-                print("clicked on active ordercell")
-            case 1 :
-                print("clicked on banner cell")
-                
-            default:
-                print("section 0 default")
-            }
-        case 1:
-            print("section 1")
-            switch indexPath.row{
-            case 0 :
-                print("section 1 row 0")
-            case 1 :
-                print("section 1 row 1")
-            case 2 :
-                print("section 1 row 2")
-            case 3:
-                print("section 1 row 3")
-            case 4:
-                print("section 1 row 4")
-                
-            default:
-                print("section 1 default")
-            }
-        case 3:
-            print("section 3")
-        default:
-            print("default")
-        }
+        let newViewController = storyboard?.instantiateViewController(withIdentifier: ViewControllerConstant.restaurantDetailsVC.rawValue) as! RestaurantDetailsVC
+        viewModel.activeOrder = true
+        newViewController.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(newViewController, animated: true)
     }
     
     deinit{
@@ -250,9 +218,3 @@ extension HomeTabViewController{
         viewModel.reloadOnPull()
     }
 }
-
-
-//                let newViewController = storyboard?.instantiateViewController(withIdentifier: ViewControllerConstant.restaurantDetailsVC.rawValue) as! RestaurantDetailsVC
-//                viewModel.activeOrder = true
-//                newViewController.hidesBottomBarWhenPushed = true
-//                navigationController?.pushViewController(newViewController, animated: true)

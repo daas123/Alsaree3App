@@ -65,13 +65,11 @@ extension HomeTabViewController:UITableViewDataSource{
             switch indexPath.row{
             case 0 :
                 let cell = tableView.getCell(identifier: CellConstant.advertisementCell.rawValue) as! AdvertisementCell
-                cell.homeTabDelegate = self
                 cell.advertisementBannerData = viewModel.banner
                 cell.reloadData()
                 return cell
             case 1:
                 let cell = tableView.getCell(identifier: CellConstant.foodCatrgoryCell.rawValue) as! FoodCatrgoryCell
-                cell.homeTabDelegate = self
                 cell.foodCategoryData = viewModel.tags
                 return cell
             case 2:
@@ -103,7 +101,6 @@ extension HomeTabViewController:UITableViewDataSource{
                 
                 let cell = tableView.getCell(identifier: CellConstant.resturentDetailsTableViewCell.rawValue) as! ResturentDetailsTableViewCell
                 cell.resturentDetailsTableViewCellData = viewModel.homeScreenStoreListData?[indexPath.row - 5]
-                cell.homeTabDelegate = self
                 cell.reloadCellData()
                 return cell
             }

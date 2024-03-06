@@ -18,7 +18,6 @@ class ResturentDetailsTableViewCell: UITableViewCell {
     @IBOutlet weak var resturentImage: UIImageView!
     @IBOutlet weak var resturentFutrCollectionView: UICollectionView!
     
-    var homeTabDelegate : HomeTableviewStoresAction?
     var isStoreClose : Bool = false
     var resturentDetailsTableViewCellData : Stores?
     var resturentFeatureDate : [featureDetails]?
@@ -73,9 +72,6 @@ class ResturentDetailsTableViewCell: UITableViewCell {
         
         // setup rsturent details view
         applyCornerRadius(to: resturentDetailsView, radius: 15, corners: .All, borderColor:ColorConstant.borderColorGray , borderWidth: 1)
-        
-        // setupTapgesture
-        setupTapgesture()
         
         // image Curve code
         applyCornerRadius(to: resturentImage, radius: 15, corners: .Top, borderColor: ColorConstant.borderColorGray, borderWidth: 0.2)
@@ -184,23 +180,6 @@ class ResturentDetailsTableViewCell: UITableViewCell {
         self.layer.addSublayer(triangleLayer)
     }
     
-    func setupTapgesture(){
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(labelTapped))
-        resturentFutrCollectionView.addGestureRecognizer(tapGesture)
-    }
-    
-    @objc func labelTapped() {
-            UIView.animate(withDuration: 0.3, animations: {
-                self.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
-            }) { (_) in
-                UIView.animate(withDuration: 0.3) {
-                    self.transform = .identity
-                }completion: { (_) in
-                    self.homeTabDelegate?.callStoreApi(storeId:self.resturentDetailsTableViewCellData?._id ?? "" )
-                }
-        }
-    }
-    
     func setupCloseStore(){
 //        showErrorMessage(nameNib: nibNamesConstant.closeStoreView.rawValue, uiView: self, parentView: &<#UIView#>)
     }
@@ -221,6 +200,7 @@ extension ResturentDetailsTableViewCell : UICollectionViewDelegate,UICollectionV
         cell.fillDetails()
         return cell
     }
+    
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: resturentFutrCollectionView.layer.bounds.width, height: resturentFutrCollectionView.layer.bounds.height)

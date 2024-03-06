@@ -92,6 +92,8 @@ class HomeTabViewModel{
     func callFullHomeScreenApi(){
         if Connectivity.checkNetAndLoc(){
             resetApiFectechedData()
+            isLoadingState = true
+            isApiCallFailed = false
             self.homeTabDeligate?.reloadTableView()
             dispatchGroup.enter()
             callAppSettingApi()
@@ -126,12 +128,6 @@ class HomeTabViewModel{
         tags = []
         banner = []
         homeScreenStoreListData = []
-        currentPage = 1
-        closeStorePage = 1
-        isLoadingState = true
-        isApiCallFailed = false
-        isCallCloseStore = false
-        isAllApiCallDone = false
     }
     
     func callHomeScreenStorelistNextPageApi(){
@@ -152,15 +148,6 @@ class HomeTabViewModel{
                 }
             }
         }
-    }
-    
-    func callStoreApi(storeId : String){
-        // some it comes empty store id
-        if storeId == "" {
-            print("store id is empty")
-            return
-        }
-        print("store id is called \(storeId)")
     }
     
     func apiCallFailed(isRemoveDispatchGroup : Bool = true , isApicallfailed : Bool = false ,isStoreApiFailed : Bool = false){
