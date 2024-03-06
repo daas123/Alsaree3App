@@ -13,6 +13,7 @@ class AdvertisementCell: UITableViewCell {
     @IBOutlet weak var advCollectionView: UICollectionView!
     @IBOutlet weak var advPageControl: UIPageControl!
     
+    var homeTabDelegate : HomeTableviewStoresAction?
     var advertisementBannerData : [BannerRevamp]?
     var isHeigthChnaged = false
     var isScrollingLeft = false
@@ -65,31 +66,13 @@ class AdvertisementCell: UITableViewCell {
         advCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
     }
 
-
-    
-//    override func systemLayoutSizeFitting(_ targetSize: CGSize, withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority, verticalFittingPriority: UILayoutPriority) -> CGSize {
-//        
-//        self.advCollectionView.frame = self.bounds
-//        self.advCollectionView.layoutIfNeeded()
-//        
-//        if isHeigthChnaged{
-//            return self.advCollectionView.contentSize
-//        }else{
-//            advCollectionView.contentSize.height += 50
-//            isHeigthChnaged = true
-//            return self.advCollectionView.contentSize
-//        }
-//        
-//    }
-
     func setCollectionview() {
         advCollectionView.delegate = self
         advCollectionView.dataSource = self
         advCollectionView.registerNib(of: AdvCollectionViewCell.self)
         
         centeredCollectionViewFlowLayout = (advCollectionView.collectionViewLayout as! CenteredCollectionViewFlowLayout)
-//        centeredCollectionViewFlowLayout.itemSize = CGSize(width: UIScreen.main.bounds.width - 40, height: advCollectionView.bounds.height)
-
+        
         advCollectionView.decelerationRate = UIScrollView.DecelerationRate.fast
         centeredCollectionViewFlowLayout.minimumLineSpacing = 20
         advCollectionView.showsHorizontalScrollIndicator = false
@@ -123,6 +106,21 @@ extension AdvertisementCell: UICollectionViewDelegate, UICollectionViewDataSourc
         cell.setupUI()
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let cell = advCollectionView.cellForItem(at: indexPath) {
+            UIView.animate(withDuration: 0.3, animations: {
+                cell.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
+            }) { (_) in
+                UIView.animate(withDuration: 0.3) {
+                    cell.transform = .identity
+                }completion: { (_) in
+                    self.homeTabDelegate?.callStoreApi(storeId:self.advertisementBannerData?[indexPath.row].store_id ?? "" )
+                }
+            }
+        }
+    }
+    
     
 }
 extension AdvertisementCell : UICollectionViewDelegateFlowLayout{

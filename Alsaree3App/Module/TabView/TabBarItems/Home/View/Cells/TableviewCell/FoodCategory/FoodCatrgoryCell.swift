@@ -13,6 +13,7 @@ class FoodCatrgoryCell: UITableViewCell {
     
     var foodCategoryData : [TagsRevamp]?
     var isHeigthChnaged = false
+    var homeTabDelegate : HomeTableviewStoresAction?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -74,6 +75,20 @@ extension FoodCatrgoryCell : UICollectionViewDataSource{
         cell.singleFoodCategoryData = foodCategoryData?[indexPath.row]
         cell.setupUI()
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let cell = foodCategoryCollectionView.cellForItem(at: indexPath) {
+            UIView.animate(withDuration: 0.3, animations: {
+                cell.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
+            }) { (_) in
+                UIView.animate(withDuration: 0.3) {
+                    cell.transform = .identity
+                }completion: { (_) in
+                    self.homeTabDelegate?.callStoreApi(storeId:self.foodCategoryData?[indexPath.row]._id ?? "" )
+                }
+            }
+        }
     }
     
 }

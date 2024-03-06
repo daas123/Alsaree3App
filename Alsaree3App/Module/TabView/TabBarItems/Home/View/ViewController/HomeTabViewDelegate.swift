@@ -156,3 +156,9 @@ extension HomeTabViewController:NavigateFormHomeTab{
 }
 
 
+
+extension HomeTabViewController : HomeTableviewStoresAction{
+    func callStoreApi(storeId: String) {
+        viewModel.callStoreApi(storeId: storeId)
+    }
+}
