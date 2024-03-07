@@ -15,13 +15,11 @@ class HomeTabCategoryHeader: UIView {
     @IBOutlet var categoryHeigthConstrain: [NSLayoutConstraint]!
     @IBOutlet weak var floatingBottomConstrian: NSLayoutConstraint!
     @IBOutlet weak var categroyBackView: UIView!
-    
     @IBOutlet var categoryLbl: [UILabel]!
-    
-    // Selected Tag
+
     var selectedTag : Int = 1
-    
     var originalHeigth : CGFloat?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setupUI()
@@ -38,6 +36,8 @@ class HomeTabCategoryHeader: UIView {
             }else{
                 catview.layer.borderColor = ColorConstant.borderColorGray.cgColor
             }
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
+            catview.addGestureRecognizer(tapGesture)
         }
         
         for catlabel in categoryLbl{
@@ -75,6 +75,30 @@ class HomeTabCategoryHeader: UIView {
         
     }
     
+    @objc func handleTap(_ sender: UITapGestureRecognizer) {
+        if let tappedView = sender.view {
+            animateCell(tapView: tappedView)
+        }
+    }
+
+    func animateCell(tapView : UIView){
+            UIView.animate(withDuration: 0.3, animations: {
+                tapView.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
+            }) { (_) in
+                UIView.animate(withDuration: 0.3) {
+                    tapView.transform = .identity
+                }completion: { (_) in
+                    switch tapView.tag{
+                    case 1: print("view1")
+                    case 2: print("view2")
+                    case 3: print("view3")
+                    case 4: print("view4")
+                    default : print("default")
+                    }
+                }
+            }
+    }
+    
     func hideImages(){
         for images in categoryImages{
             images.isHidden = true
@@ -99,11 +123,11 @@ class HomeTabCategoryHeader: UIView {
     func setCustomConstrain(heigtht:Int = 40){
         UIView.animate(withDuration: 0.9) {
             self.floatingBottomConstrian.constant = CGFloat(heigtht)
-            }
+        }
     }
     
     func setDefaultConstrain(){
         floatingBottomConstrian.constant = 0
     }
-
+    
 }
