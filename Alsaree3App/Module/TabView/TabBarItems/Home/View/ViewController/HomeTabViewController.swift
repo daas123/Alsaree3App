@@ -122,7 +122,6 @@ class HomeTabViewController: BaseViewController {
         // MARK: Register TableViewCell
         hometabTableView.registerNib(of: ActiveOrderHomeTabCell.self)
         hometabTableView.registerNib(of: BannerHomeTabCell.self)
-        hometabTableView.registerNib(of: CategoryHomeTabCell.self)
         hometabTableView.registerNib(of: AdvertisementCell.self)
         hometabTableView.registerNib(of: FoodCatrgoryCell.self)
         hometabTableView.registerNib(of: GoldCategoryCardCellTableViewCell.self)

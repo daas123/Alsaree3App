@@ -78,6 +78,7 @@ enum CellConstant : String{
     case advertisementCell = "AdvertisementCell"
     case foodCatrgoryCell = "FoodCatrgoryCell"
     case resturentTableViewCell = "ResturentTableViewCell"
+    case bannerHomeTabCell = "BannerHomeTabCell"
     case goldCategoryCardCellTableViewCell = "GoldCategoryCardCellTableViewCell"
     case resturentDetailsTableViewCell = "ResturentDetailsTableViewCell"
     case errorStateTableViewCell = "ErrorStateTableViewCell"
