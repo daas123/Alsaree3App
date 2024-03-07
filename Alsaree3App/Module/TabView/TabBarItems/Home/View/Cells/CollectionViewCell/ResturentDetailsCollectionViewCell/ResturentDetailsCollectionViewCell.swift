@@ -18,6 +18,8 @@ class ResturentDetailsCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var resturentTitle: UILabel!
     @IBOutlet weak var resturentImage: UIImageView!
     @IBOutlet weak var resturentFeatureCollectionView: UICollectionView!
+    @IBOutlet weak var selectedItemImg: UIImageView!
+    @IBOutlet weak var lowdeleveryImg: UIImageView!
     
     var selectedViewTriangleLayer = CAShapeLayer()
     var lowViewTriangleLayer = CAShapeLayer()
@@ -37,8 +39,6 @@ class ResturentDetailsCollectionViewCell: UICollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        drawTriangleforlowdeleveryView()
-        drawTriangleforSelectedView()
     }
     
     func reloadCollectionView(){
@@ -149,8 +149,12 @@ class ResturentDetailsCollectionViewCell: UICollectionViewCell {
         resturentTitle.text = resturentDetailsData?.name ?? ""
         resturentTitle.setProperties(lbltext: resturentDetailsData?.name ?? "", fontSize: 20,alignmentLeft:true)
         if resturentDetailsData?.offer == "" {
+            selectedItemImg.isHidden = true
+            selectedItemView.isHidden = true
             selectedItemOffLbl.setProperties(lbltext: "Get off on selected items", fontSize: 12,color:ColorConstant.whitecolor, alignmentLeft:true)
         }else{
+            selectedItemImg.isHidden = false
+            selectedItemView.isHidden = false
             selectedItemOffLbl.setProperties(lbltext: resturentDetailsData?.offer ?? "Get off on selected items", fontSize: 12,color:ColorConstant.whitecolor, alignmentLeft:true)
         }
         
@@ -168,6 +172,7 @@ class ResturentDetailsCollectionViewCell: UICollectionViewCell {
         
         // setupTap gesture
         setupTapgesture()
+        setupCornerImage()
         
         // image Curve code
         applyCornerRadius(to: resturentImage, radius: 15, corners: .Top, borderColor: ColorConstant.borderColorGray, borderWidth: 0.2)
@@ -195,6 +200,14 @@ class ResturentDetailsCollectionViewCell: UICollectionViewCell {
         
     }
     
+    func setupCornerImage(){
+        if UIApplication.shared.userInterfaceLayoutDirection == .rightToLeft { selectedItemImg.setProperties(imageName: "orangeTraingleAr",isAspectFill: true)
+            lowdeleveryImg.setProperties(imageName: "grayTriangleAr",isAspectFill: true)
+        }else{
+            selectedItemImg.setProperties(imageName: "orangeTraingleEng",isAspectFill: true)
+            lowdeleveryImg.setProperties(imageName: "grayTriangleEng",isAspectFill: true)
+        }
+    }
     
 }
 

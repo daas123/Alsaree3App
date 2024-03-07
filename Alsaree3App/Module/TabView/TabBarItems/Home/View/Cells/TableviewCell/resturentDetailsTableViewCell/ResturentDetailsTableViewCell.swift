@@ -17,6 +17,8 @@ class ResturentDetailsTableViewCell: UITableViewCell {
     @IBOutlet weak var resturentTitle: UILabel!
     @IBOutlet weak var resturentImage: UIImageView!
     @IBOutlet weak var resturentFutrCollectionView: UICollectionView!
+    @IBOutlet weak var selectedItemImg: UIImageView!
+    @IBOutlet weak var lowdeleveryImg: UIImageView!
     
     var homeTabDelegate : HomeTableviewStoresAction?
     var isStoreClose : Bool = false
@@ -33,8 +35,6 @@ class ResturentDetailsTableViewCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        drawTriangleforSelectedView()
-        drawTriangleforlowdeleveryView()
     }
     
     func setupCollectionViewLayout(){
@@ -49,8 +49,14 @@ class ResturentDetailsTableViewCell: UITableViewCell {
         resturentTitle.setProperties(lbltext: resturentDetailsTableViewCellData?.name ?? "", fontSize: 20,alignmentLeft:true)
         if resturentDetailsTableViewCellData?.offer == "" {
             selectedItemOffLbl.setProperties( lbltext: TextConstant.getoffonselecteditems.rawValue, fontSize: 12,color:ColorConstant.whitecolor, alignmentLeft:true)
+            selectedItemView.isHidden = true
+            selectedItemImg.isHidden = true
         }else{
+            selectedItemView.isHidden = false
+            selectedItemImg.isHidden = false
             selectedItemOffLbl.setProperties(lbltext: resturentDetailsTableViewCellData?.offer ?? TextConstant.getoffonselecteditems.rawValue, fontSize: 12,color:ColorConstant.whitecolor, alignmentLeft:true)
+            
+            
         }
         
         setupFeatureDetails()
@@ -73,7 +79,7 @@ class ResturentDetailsTableViewCell: UITableViewCell {
         
         // setupTapgesture
         setupTapgesture()
-        
+        setupCornerImage()
         
         // setup rsturent details view
         applyCornerRadius(to: resturentDetailsView, radius: 15, corners: .All, borderColor:ColorConstant.borderColorGray , borderWidth: 1)
@@ -82,6 +88,15 @@ class ResturentDetailsTableViewCell: UITableViewCell {
         applyCornerRadius(to: resturentImage, radius: 15, corners: .Top, borderColor: ColorConstant.borderColorGray, borderWidth: 0.2)
         
         self.selectionStyle = .none
+    }
+    
+    func setupCornerImage(){
+        if UIApplication.shared.userInterfaceLayoutDirection == .rightToLeft { selectedItemImg.setProperties(imageName: "orangeTraingleAr",isAspectFill: true)
+            lowdeleveryImg.setProperties(imageName: "grayTriangleAr",isAspectFill: true)
+        }else{
+            selectedItemImg.setProperties(imageName: "orangeTraingleEng",isAspectFill: true)
+            lowdeleveryImg.setProperties(imageName: "grayTriangleEng",isAspectFill: true)
+        }
     }
     
     func setupOfferView(){
@@ -124,66 +139,6 @@ class ResturentDetailsTableViewCell: UITableViewCell {
         view.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
     }
     
-    
-    func drawTriangleforSelectedView() {
-        let triangleLayer = CAShapeLayer()
-        let trianglePath = UIBezierPath()
-        
-        if UIApplication.shared.userInterfaceLayoutDirection == .rightToLeft{
-            let startX = resturentDetailsView.frame.maxX+5
-            let startY = selectedItemView.frame.maxY
-            
-            trianglePath.move(to: CGPoint(x: startX , y: startY))
-            trianglePath.addLine(to: CGPoint(x: startX-10 , y: startY+10))
-            trianglePath.addLine(to: CGPoint(x: startX-10, y: startY))
-            trianglePath.close()
-        }else{
-            // Starting point for the path (the bottom left of the triangle)
-            let startX = selectedItemView.frame.minX
-            let startY = selectedItemView.frame.maxY
-            
-            // Move to starting point
-            trianglePath.move(to: CGPoint(x: startX+10, y: startY)) //rigth side point
-            trianglePath.addLine(to: CGPoint(x: startX , y: startY)) // left side point
-            trianglePath.addLine(to: CGPoint(x: startX+10, y: startY+15)) // bottem point
-            trianglePath.close()
-            
-        }
-        
-        // Configure the layer
-        triangleLayer.path = trianglePath.cgPath
-        triangleLayer.fillColor = UIColor(red: 0.72, green: 0.39, blue: 0.14, alpha: 1).cgColor
-        triangleLayer.zPosition = -1
-        self.layer.addSublayer(triangleLayer)
-    }
-    
-    func drawTriangleforlowdeleveryView() {
-        let triangleLayer = CAShapeLayer()
-        let trianglePath = UIBezierPath()
-        
-        if UIApplication.shared.userInterfaceLayoutDirection == .rightToLeft{
-            let startX = resturentDetailsView.frame.maxX+5
-            let startY = lowdeleveryView.frame.maxY
-            
-            trianglePath.move(to: CGPoint(x: startX , y: startY))
-            trianglePath.addLine(to: CGPoint(x: startX-10 , y: startY+10))
-            trianglePath.addLine(to: CGPoint(x: startX-10, y: startY))
-            trianglePath.close()
-        }else{
-            let startX = lowdeleveryView.frame.minX
-            let startY = lowdeleveryView.frame.maxY
-            
-            trianglePath.move(to: CGPoint(x: startX+10, y: startY))
-            trianglePath.addLine(to: CGPoint(x: startX , y: startY))
-            trianglePath.addLine(to: CGPoint(x: startX+10, y: startY+15))
-            trianglePath.close()
-        }
-        // Configure the layer
-        triangleLayer.path = trianglePath.cgPath
-        triangleLayer.fillColor = UIColor(red: 0.67, green: 0.66, blue: 0.66, alpha: 1).cgColor
-        triangleLayer.zPosition = -1
-        self.layer.addSublayer(triangleLayer)
-    }
     
     func setupTapgesture(){
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(labelTapped))

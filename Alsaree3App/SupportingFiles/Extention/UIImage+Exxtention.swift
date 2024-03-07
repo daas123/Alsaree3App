@@ -7,7 +7,7 @@
 
 import UIKit
 extension UIImageView{
-    func setProperties(imageName: String, isAspectFit: Bool = true, isSystemImage: Bool = false) {
+    func setProperties(imageName: String, isAspectFit: Bool = true, isSystemImage: Bool = false,isAspectFill:Bool = true) {
         if isSystemImage {
             self.image = UIImage(systemName: imageName)
         } else {
@@ -16,7 +16,9 @@ extension UIImageView{
         
         if isAspectFit {
             self.contentMode = .scaleAspectFit
-        } else {
+        }else if isAspectFill {
+            self.contentMode = .scaleAspectFill
+        }else {
             self.contentMode = .scaleToFill
         }
     }
