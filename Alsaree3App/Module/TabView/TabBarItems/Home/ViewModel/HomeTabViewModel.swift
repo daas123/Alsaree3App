@@ -64,18 +64,12 @@ class HomeTabViewModel{
     }
     
     func callHomeScreenApis(){
-        dispatchGroup.enter()
         callFeedBackApi()
-        dispatchGroup.enter()
         callLoyaltyDetailApi()
-        dispatchGroup.enter()
         callDeliveryListForNearestCityApi()
         dispatchGroup.wait()
-        dispatchGroup.enter()
         callHomeScreenMainDetailWithBannerImagesOffersApi()
-        dispatchGroup.enter()
         callHomeScreenStoreListApi()
-        dispatchGroup.enter()
         callPushZoneApi()
         dispatchGroup.notify(queue: .main) {
             self.isLoadingState = false
@@ -89,7 +83,6 @@ class HomeTabViewModel{
             isLoadingState = true
             isApiCallFailed = false
             self.homeTabDeligate?.reloadTableView()
-            dispatchGroup.enter()
             callAppSettingApi()
             dispatchGroup.notify(queue: .main) {
                 self.callHomeScreenApis()
@@ -147,6 +140,13 @@ class HomeTabViewModel{
                     isStoreApiFailed = true
                 }
             }
+        }
+    }
+    
+    func callBannerApi(){
+        callLoyaltyDetailApi()
+        dispatchGroup.notify(queue: .main) {
+            self.homeTabDeligate?.reloadTableView()
         }
     }
     

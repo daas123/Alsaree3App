@@ -10,8 +10,12 @@ import UIKit
 class BannerHomeTabCell: UITableViewCell {
     
     @IBOutlet weak var bannerImageView: UIImageView!
+    @IBOutlet weak var errorView: UIView!
+    @IBOutlet weak var errorBtn: UIButton!
+    @IBOutlet weak var errorLbl: UILabel!
+    
     var bannerData : LoyaltyDetailsModel?
-    var errorView = UIView()
+    var homeTabDelegate : NavigateFormHomeTab?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,12 +29,15 @@ class BannerHomeTabCell: UITableViewCell {
         bannerImageView.layer.borderColor = ColorConstant.borderColorGray.cgColor
         bannerImageView.contentMode = .scaleAspectFill
         bannerImageView.layer.cornerRadius = 11
+        errorLbl.setProperties(lbltext: "Something Went Wrong", fontSize: 16,color: ColorConstant.primaryYellowColor)
+        errorBtn.setPropertiesWithImage(label: "  Retry",image: ImageConstant.retry.rawValue, textColor: ColorConstant.whitecolor ,fontSize: 16, imageSize: CGSize(width: 20, height: 20),backColor: ColorConstant.primaryYellowColor,cornerRadius:10)
+        errorBtn.addBounceBackAnimation()
         
         if bannerData == nil {
-            showErrorMessage(nameNib: nibNamesConstant.cellErrorHandlingView.rawValue, uiView:bannerImageView, parentView: &errorView)
             SDWebImageManagerRevamp.shared.loadImage(with:bannerData?.zero_point_image_url ?? "", into: bannerImageView, isbaseUrlRequired: false)
+            errorView.isHidden = false
         } else {
-            errorView.removeFromSuperview()
+            errorView.isHidden = true
             loadBannerImage()
         }
         
@@ -40,6 +47,8 @@ class BannerHomeTabCell: UITableViewCell {
         SDWebImageManagerRevamp.shared.loadImage(with: bannerData?.zero_point_image_url ?? "", into: bannerImageView, isbaseUrlRequired: false)
     }
     
-
+    @IBAction func onRetry(_ sender: UIButton) {
+        homeTabDelegate?.reloadBanner()
+    }
     
 }

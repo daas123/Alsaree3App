@@ -30,4 +30,5 @@ protocol NavigateFormHomeTab{
     func showLocationAccessScreen()
     func setValueOfCurrentLocation(value:String)
     func reloadTableView()
+    func reloadBanner()
 }

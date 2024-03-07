@@ -38,13 +38,13 @@ extension UIButton{
     }
     
     func setPropertiesWithImage(label: String, image: String, textColor: UIColor = ColorConstant.blackcolor, fontSize: Int, imageSize: CGSize, imagePosition: ImagePosition = .left, font_Family: String = FontConstant.regular.rawValue, isBold: Bool = false, isUnderline: Bool = false, borderColor: UIColor = UIColor.clear, imageTintColor: UIColor? = nil,backColor:UIColor = UIColor.clear,cornerRadius:Int = 0,tintcolor:UIColor = UIColor.clear) {
-
+        
         // Set button text
         setProperties(label: label, color: textColor, size: fontSize, font_Family: font_Family, isBold: isBold, isUnderline: isUnderline, borderColor: borderColor,backcolor: backColor,cornerRadius: cornerRadius,tintcolor: tintcolor)
-
+        
         // Set button image
         if let originalImage = UIImage(named: image, in: nil, with: nil)?.resizedImage(with: imageSize) {
-
+            
             if let tintColor = imageTintColor {
                 // Tint the image with the specified color
                 let tintedImage = originalImage.withRenderingMode(.alwaysTemplate)
@@ -54,7 +54,7 @@ extension UIButton{
                 self.setImage(originalImage, for: .normal)
             }
         }
-
+        
         // Set semantic content attribute and content horizontal alignment based on image position
         switch imagePosition {
         case .left:
@@ -81,4 +81,18 @@ extension UIButton{
         }
     }
     
+    func addBounceBackAnimation() {
+        addTarget(self, action: #selector(bounceBack), for: .touchUpInside)
+    }
+    
+    @objc private func bounceBack() {
+        UIView.animate(withDuration: 0.2,
+                       animations: {
+            self.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
+        }) { _ in
+            UIView.animate(withDuration: 0.5) {
+                self.transform = .identity
+            }
+        }
+    }
 }

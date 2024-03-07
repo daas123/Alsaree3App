@@ -144,6 +144,10 @@ extension HomeTabViewController:NavigateFormHomeTab{
             }
         }
     }
+    
+    func reloadBanner() {
+        viewModel.callBannerApi()
+    }
 }
 
 extension HomeTabViewController : HomeTableviewStoresAction{

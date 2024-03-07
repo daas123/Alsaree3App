@@ -54,6 +54,7 @@ extension HomeTabViewController:UITableViewDataSource{
                 }
             case 1:
                 let cell = tableView.getCell(identifier: CellConstant.bannerHomeTabCell.rawValue) as! BannerHomeTabCell
+                cell.homeTabDelegate = self
                 cell.bannerData = viewModel.loyaltyDetail
                 cell.setupUi()
                 return cell

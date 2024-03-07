@@ -75,8 +75,6 @@ enum ViewControllerConstant : String {
 
 enum CellConstant : String{
     case activeOrderHomeTabCell = "ActiveOrderHomeTabCell"
-    case bannerHomeTabCell = "BannerHomeTabCell"
-    case categoryHomeTabCell = "CategoryHomeTabCell"
     case advertisementCell = "AdvertisementCell"
     case foodCatrgoryCell = "FoodCatrgoryCell"
     case resturentTableViewCell = "ResturentTableViewCell"

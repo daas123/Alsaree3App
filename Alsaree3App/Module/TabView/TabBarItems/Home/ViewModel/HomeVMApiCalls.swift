@@ -9,6 +9,7 @@ import Foundation
 extension HomeTabViewModel{
     
     func callAppSettingApi(){
+        dispatchGroup.enter()
         let parameters = AppSettingParams(device_type: DeviceInfo.deviceType.rawValue, type: DeviceInfo.type.rawValue, device_token:kDeviceToken, device_unique_id:kDeviceUniqueId )
         HomeScreenServices().getAppSettings(parameters: parameters) { responce  in
             switch responce{
@@ -27,6 +28,7 @@ extension HomeTabViewModel{
     }
     
     func callFeedBackApi(){
+        dispatchGroup.enter()
         let parameter = CheckFeedBackParams(user_id: kUserId, server_token: kServerToken)
         HomeScreenServices().getFeedBackResponce(parameters: parameter) { responce in
             switch responce{
@@ -43,6 +45,7 @@ extension HomeTabViewModel{
     }
     
     func callLoyaltyDetailApi(){
+        dispatchGroup.enter()
         let parameter = LoyaltyDetailParams(user_id: kUserId)
         HomeScreenServices().getLoyaltyDetail(parameters: parameter) { responce in
             switch responce{
@@ -59,6 +62,7 @@ extension HomeTabViewModel{
     }
     
     func callDeliveryListForNearestCityApi(){
+        dispatchGroup.enter()
         let parameter = DeliveryListForNearestCityParams(
             city3: kCity3,
             user_id: kUserId,
@@ -93,6 +97,7 @@ extension HomeTabViewModel{
     
     //error Calling the data
     func callHomeScreenMainDetailWithBannerImagesOffersApi(){
+        dispatchGroup.enter()
         let parameter = HomeScreenStoreListParams(
             city_id: kCityId,
             page: "1",
@@ -130,6 +135,7 @@ extension HomeTabViewModel{
     }
     
     func callHomeScreenStoreListApi(pageNo:String = "1"){
+        dispatchGroup.enter()
         let parameter = HomeScreenStoreListParams(
             city_id: kCityId,
             page: pageNo,
@@ -175,6 +181,7 @@ extension HomeTabViewModel{
     }
     
     func callPushZoneApi(){
+        dispatchGroup.enter()
         let parameter = PushZoneParams(
             longitude:String(describing: LocationManagerRevamp.shared.currentLocation?.longitude ?? 0),
             latitude: String(describing: LocationManagerRevamp.shared.currentLocation?.latitude ?? 0))
