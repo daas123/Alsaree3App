@@ -15,27 +15,26 @@ class HomeTabViewModel{
     
     var activeOrder = false
     let dispatchGroup = DispatchGroup()
-    // All APi Data
+    //MARK: Data for home tab
     var checkFeedBackData : CheckFeedBackModel?
     var loyaltyDetail : LoyaltyDetailsModel?
     var deliveryListForNearestCityData : DeliveryListForNearestCityModel?
-    //MARK: Data for home tab
-    var recentlyAddedTitle : String?
-    var mostPopularTitle : String?
-    var nearbyResturentTitle : String?
-    
     var recentlyAddedStores : [Stores]?
     var mostPopularStore : [Stores]?
     var nearbyResturentStore : [Stores]?
     var brands : [BrandsRevamp]?
     var tags : [TagsRevamp]?
     var banner : [BannerRevamp]?
-    
     var homeScreenStoreListData : [Stores]?
     var pushZoneData : PushZoneModel?
+    
+    var recentlyAddedTitle : String?
+    var mostPopularTitle : String?
+    var nearbyResturentTitle : String?
+    
     var homeTabDeligate : NavigateFormHomeTab?
     
-    // MARK: paging count
+    // MARK: Appstate
     var currentPage = 1
     var closeStorePage = 1
     var isApiCallFailed = false
@@ -99,7 +98,6 @@ class HomeTabViewModel{
         if Connectivity.checkNetAndLoc(){
             isLoadingState = true
             isApiCallFailed = false
-            print("Before callingHomeScreen")
             self.homeTabDeligate?.reloadTableView()
             callHomeScreenApis()
         }else{
@@ -159,20 +157,16 @@ class HomeTabViewModel{
            print("store id is called \(storeId)")
        }
     
-    func apiCallFailed(isRemoveDispatchGroup : Bool = true , isApicallfailed : Bool = false ,isStoreApiFailed : Bool = false){
+    func apiCallFailed(isRemoveDispatchGroup : Bool = true , isApicallfailed : Bool = false ,isStoreApiFailed : Bool = false,isClosestoreApiFailed:Bool = false){
         if isRemoveDispatchGroup{
             if !ReachabilityRevamp.isConnectedToNetwork() {
                 NotificationManager().postNetworkStatusChanged()
             }else if !LocationManagerRevamp.shared.isLocationAccess {
                 NotificationManager().postLocationAccessRestricted()
-            }else{
-                dispatchGroup.leave()
             }
-            
         }
         
         if isApicallfailed{
-            
             isApiCallFailed = true
             DispatchQueue.main.async {
                 print("before getting the error")
@@ -183,6 +177,12 @@ class HomeTabViewModel{
         if isStoreApiFailed{
             self.isStoreApiFailed = true
             currentPage -= 1
+            self.homeTabDeligate?.reloadTableView()
+        }
+        
+        if isClosestoreApiFailed{
+            self.isStoreApiFailed = true
+            closeStorePage -= 1
             self.homeTabDeligate?.reloadTableView()
         }
     }

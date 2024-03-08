@@ -19,6 +19,7 @@ extension HomeTabViewModel{
                 self.dispatchGroup.leave()
                 debugPrint("callAppSettingApi Done")
             case.failure(let error):
+                self.dispatchGroup.leave()
                 debugPrint("callAppSettingApi falied")
                 self.apiCallFailed()
                 debugPrint(error.localizedDescription)
@@ -37,6 +38,7 @@ extension HomeTabViewModel{
                 self.checkFeedBackData = data
                 self.dispatchGroup.leave()
             case .failure(let error):
+                self.dispatchGroup.leave()
                 self.apiCallFailed()
                 debugPrint("callFeedBackApi failed")
                 debugPrint(error.localizedDescription)
@@ -54,6 +56,7 @@ extension HomeTabViewModel{
                 self.loyaltyDetail = data
                 self.dispatchGroup.leave()
             case .failure(let error):
+                self.dispatchGroup.leave()
                 self.apiCallFailed()
                 debugPrint("callLoyaltyDetailApi failed")
                 debugPrint(error.localizedDescription)
@@ -82,12 +85,13 @@ extension HomeTabViewModel{
             switch responce{
             case .success(let data):
                 debugPrint("callDeliveryListForNearestCityApi Done")
-                self.dispatchGroup.leave()
                 kCityId = data.city.id
                 kStoreDeliveryId = data.deliveries[0].id
                 self.homeTabDeligate?.setValueOfCurrentLocation(value: data.city.cityCode)
                 self.deliveryListForNearestCityData = data
+                self.dispatchGroup.leave()
             case .failure(let error):
+                self.dispatchGroup.leave()
                 debugPrint("callDeliveryListForNearestCityApi failed")
                 self.apiCallFailed(isApicallfailed: true)
                 debugPrint(error.localizedDescription)
@@ -127,6 +131,7 @@ extension HomeTabViewModel{
                 self.banner = data.banner
                 self.dispatchGroup.leave()
             case .failure(let error):
+                self.dispatchGroup.leave()
                 debugPrint("callHomeScreenMainDetailWithBannerImagesOffersApi failed")
                 self.apiCallFailed(isApicallfailed: true)
                 debugPrint(error.localizedDescription)
@@ -173,6 +178,7 @@ extension HomeTabViewModel{
                     }
                 }
             case .failure(let error):
+                self.dispatchGroup.leave()
                 self.apiCallFailed(isStoreApiFailed: true)
                 debugPrint("callHomeScreenStoreListApi failed")
                 debugPrint(error.localizedDescription)
@@ -193,6 +199,7 @@ extension HomeTabViewModel{
                 self.dispatchGroup.leave()
             case .failure(let error):
                 self.apiCallFailed()
+                self.dispatchGroup.leave()
                 debugPrint("callPushZoneApi failed")
                 debugPrint(error.localizedDescription)
             }
@@ -229,7 +236,7 @@ extension HomeTabViewModel{
                     self.homeTabDeligate?.reloadTableView()
                 }
             case .failure(let error):
-                self.apiCallFailed(isStoreApiFailed: true)
+                self.apiCallFailed(isClosestoreApiFailed:true)
                 debugPrint("callHomeScreenGetCloseStoreListApi failed")
                 debugPrint(error.localizedDescription)
             }

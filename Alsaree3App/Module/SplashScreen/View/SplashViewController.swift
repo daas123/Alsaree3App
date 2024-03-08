@@ -19,29 +19,13 @@ class SplashViewController: UIViewController {
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = true
         setupAnimation()
+        viewmodel.callSplashScreeenApis()
         viewmodel.splashScreenDeligate = self
         setupObserver()
-        
     }
-    override func viewWillAppear(_ animated: Bool) {
-        checkInternetLocationAccess()
-    }
+
     override func viewDidDisappear(_ animated: Bool) {
         animationView?.stop()
-    }
-    
-    func checkInternetLocationAccess() {
-        if !ReachabilityRevamp.isConnectedToNetwork() {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-                self.navigateToHomeTab()
-            }
-        } else if !LocationManagerRevamp.shared.isLocationAccess {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-                self.navigateToHomeTab()
-            }
-        }else{
-            viewmodel.callSplashScreeenApis()
-        }
     }
     
     func setupAnimation(){
@@ -80,7 +64,9 @@ extension SplashViewController : splashScreenActions{
     func navigateToHomeTab() {
         let storyboard = UIStoryboard(name: StoryBoardConstant.main.rawValue, bundle: nil)
         if let initialViewController = storyboard.instantiateInitialViewController() {
-            self.view.window?.rootViewController = initialViewController
+            DispatchQueue.main.async {
+                self.view.window?.rootViewController = initialViewController
+            }
         }
     }
     

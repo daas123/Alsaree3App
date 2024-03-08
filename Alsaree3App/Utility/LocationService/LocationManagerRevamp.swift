@@ -83,7 +83,7 @@ class LocationManagerRevamp: NSObject, CLLocationManagerDelegate {
         switch status {
         case .authorizedWhenInUse, .authorizedAlways:
             startMonitoringSignificantLocationChanges()
-            NotificationManager().postReloadData()
+//            NotificationManager().postReloadData()
         case .denied, .restricted:
             locationManager.requestWhenInUseAuthorization()
             isLocationAccess = false
@@ -100,10 +100,10 @@ class LocationManagerRevamp: NSObject, CLLocationManagerDelegate {
         isLocationAccess = true
         if self.isSimulator {
             currentLocation = newLocation
-            NotificationManager().postReloadData()
+//            NotificationManager().postReloadData()
         } else {
             currentLocation = CLLocationCoordinate2D(latitude: 33.341658, longitude: 44.416270)
-            NotificationManager().postReloadData()
+//            NotificationManager().postReloadData()
         }
     }
     

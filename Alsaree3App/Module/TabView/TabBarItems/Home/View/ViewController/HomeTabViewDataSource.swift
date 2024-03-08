@@ -80,18 +80,21 @@ extension HomeTabViewController:UITableViewDataSource{
                 cell.homeTabDelegate = self
                 cell.resturentTableViewCellData = viewModel.recentlyAddedStores
                 cell.setUpCellData(storeTitle: viewModel.recentlyAddedTitle ?? TextConstant.resturent.rawValue)
+                cell.reloadCOllectionView()
                 return cell
             case 3:
                 let cell = tableView.getCell(identifier: CellConstant.resturentTableViewCell.rawValue) as! ResturentTableViewCell
                 cell.homeTabDelegate = self
                 cell.resturentTableViewCellData = viewModel.nearbyResturentStore
                 cell.setUpCellData(storeTitle: viewModel.nearbyResturentTitle ?? TextConstant.resturent.rawValue)
+                cell.reloadCOllectionView()
                 return cell
             case 4:
                 let cell = tableView.getCell(identifier: CellConstant.resturentTableViewCell.rawValue) as! ResturentTableViewCell
                 cell.homeTabDelegate = self
                 cell.resturentTableViewCellData = viewModel.mostPopularStore
                 cell.setUpCellData(storeTitle: viewModel.mostPopularTitle ?? TextConstant.resturent.rawValue)
+                cell.reloadCOllectionView()
                 return cell
             default:
                 

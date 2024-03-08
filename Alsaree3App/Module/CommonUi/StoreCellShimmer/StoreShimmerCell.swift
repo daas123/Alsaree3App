@@ -36,7 +36,8 @@ class StoreShimmerCell: UITableViewCell {
         setUpCellState()
         shimmerImageView.layer.borderWidth = 0.5
         shimmerImageView.layer.borderColor = ColorConstant.borderColorGray.cgColor
-        tryAgainbtn.setPropertiesWithImage(label: "Try Again  ", image: ImageConstant.retry.rawValue, textColor: ColorConstant.whitecolor, fontSize: 14, imageSize: CGSize(width: 20, height: 20), imagePosition: .right, backColor: ColorConstant.primaryLightOrange, cornerRadius: 5,tintcolor: ColorConstant.primaryYellowColor)
+        tryAgainbtn.setPropertiesWithImage(label: "  Try Again ", image: ImageConstant.retry.rawValue, textColor: ColorConstant.whitecolor, fontSize: 14, imageSize: CGSize(width: 20, height: 20), backColor: ColorConstant.primaryYellowColor, cornerRadius: 5)
+        tryAgainbtn.addBounceBackAnimation()
         applyCornerRadius(to: parentView, radius: 20,corners: .All,borderColor: ColorConstant.borderColorGray,borderWidth: 0.5)
         
     }

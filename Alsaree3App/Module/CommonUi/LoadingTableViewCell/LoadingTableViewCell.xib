@@ -18,13 +18,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Try searching with food emojis today" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NfB-38-1yX">
-                        <rect key="frame" x="50" y="34" width="240" height="40.666666666666657"/>
+                        <rect key="frame" x="50" y="39" width="240" height="40.666666666666657"/>
                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="Xty-fN-uxg">
-                        <rect key="frame" x="132.66666666666666" y="84.666666666666686" width="75" height="119"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="Xty-fN-uxg">
+                        <rect key="frame" x="132.66666666666666" y="89.666666666666686" width="75" height="109"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f1K-ta-miq">
                                 <rect key="frame" x="12.333333333333343" y="0.0" width="50" height="50"/>
@@ -33,10 +33,13 @@
                                     <constraint firstAttribute="width" constant="50" id="EmO-zZ-vfj"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JDf-Gw-HrO">
-                                <rect key="frame" x="0.0" y="68.999999999999986" width="75" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JDf-Gw-HrO">
+                                <rect key="frame" x="0.0" y="68.999999999999986" width="75" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="rHk-Ii-kFH"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                 <connections>
                                     <action selector="onRetryClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Ty9-Qc-PFA"/>
                                 </connections>

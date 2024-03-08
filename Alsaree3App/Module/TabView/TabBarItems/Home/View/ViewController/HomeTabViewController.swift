@@ -135,7 +135,7 @@ class HomeTabViewController: BaseViewController {
     func setupObserver(){
         NotificationManager().addObserver(forName: .reloadData) { _ in
             self.dismiss(animated: true)
-            self.viewModel.callFullHomeScreenApi()
+//            self.viewModel.callFullHomeScreenApi()
         }
     }
     

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,13 +23,13 @@
                     <rect key="frame" x="0.0" y="0.0" width="419" height="144"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="Ez4-X5-aXP">
-                            <rect key="frame" x="20" y="10" width="379" height="124"/>
+                            <rect key="frame" x="20" y="5" width="379" height="129"/>
                             <subviews>
                                 <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TO3-fz-Pdf">
-                                    <rect key="frame" x="0.0" y="0.0" width="85" height="124"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="85" height="129"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Ebo-0z-xgE">
-                                            <rect key="frame" x="0.0" y="15" width="85" height="94"/>
+                                            <rect key="frame" x="0.0" y="15" width="85" height="99"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="foodDish" translatesAutoresizingMaskIntoConstraints="NO" id="mLe-gN-PpK">
                                                     <rect key="frame" x="0.0" y="0.0" width="85" height="32"/>
@@ -38,7 +38,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zLY-J5-1hX">
-                                                    <rect key="frame" x="0.0" y="37" width="85" height="57"/>
+                                                    <rect key="frame" x="0.0" y="37" width="85" height="62"/>
                                                     <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="10"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -55,10 +55,10 @@
                                     </constraints>
                                 </view>
                                 <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aLU-qt-FDP">
-                                    <rect key="frame" x="98" y="0.0" width="85" height="124"/>
+                                    <rect key="frame" x="98" y="0.0" width="85" height="129"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Yih-7N-pO5">
-                                            <rect key="frame" x="15" y="15" width="55" height="94"/>
+                                            <rect key="frame" x="15" y="15" width="55" height="99"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="market" translatesAutoresizingMaskIntoConstraints="NO" id="3KQ-Fe-7at">
                                                     <rect key="frame" x="0.0" y="0.0" width="55" height="32"/>
@@ -67,7 +67,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rXw-Za-lBS">
-                                                    <rect key="frame" x="0.0" y="42" width="55" height="52"/>
+                                                    <rect key="frame" x="0.0" y="42" width="55" height="57"/>
                                                     <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="10"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -84,10 +84,10 @@
                                     </constraints>
                                 </view>
                                 <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iJ9-28-Mdm">
-                                    <rect key="frame" x="196" y="0.0" width="85" height="124"/>
+                                    <rect key="frame" x="196" y="0.0" width="85" height="129"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="oxB-JD-KZX">
-                                            <rect key="frame" x="0.0" y="15" width="85" height="94"/>
+                                            <rect key="frame" x="0.0" y="15" width="85" height="99"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="3" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="parcelImage" translatesAutoresizingMaskIntoConstraints="NO" id="9yU-ME-F2J">
                                                     <rect key="frame" x="0.0" y="0.0" width="85" height="32"/>
@@ -96,7 +96,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UR0-kn-4aW">
-                                                    <rect key="frame" x="0.0" y="37" width="85" height="57"/>
+                                                    <rect key="frame" x="0.0" y="37" width="85" height="62"/>
                                                     <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="10"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -113,10 +113,10 @@
                                     </constraints>
                                 </view>
                                 <view tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pui-pp-o7w">
-                                    <rect key="frame" x="294" y="0.0" width="85" height="124"/>
+                                    <rect key="frame" x="294" y="0.0" width="85" height="129"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="yjI-HS-DBG">
-                                            <rect key="frame" x="0.0" y="15" width="85" height="94"/>
+                                            <rect key="frame" x="0.0" y="15" width="85" height="99"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="4" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hamburgur" translatesAutoresizingMaskIntoConstraints="NO" id="twJ-Yz-wJd">
                                                     <rect key="frame" x="0.0" y="0.0" width="85" height="32"/>
@@ -125,7 +125,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sfz-gE-1TK">
-                                                    <rect key="frame" x="0.0" y="37" width="85" height="57"/>
+                                                    <rect key="frame" x="0.0" y="37" width="85" height="62"/>
                                                     <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="10"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -148,7 +148,7 @@
                     <constraints>
                         <constraint firstItem="Ez4-X5-aXP" firstAttribute="leading" secondItem="9iA-Py-mgO" secondAttribute="leading" constant="20" id="Bfe-K5-2Ev"/>
                         <constraint firstAttribute="bottom" secondItem="Ez4-X5-aXP" secondAttribute="bottom" constant="10" id="VZ8-6q-cck"/>
-                        <constraint firstItem="Ez4-X5-aXP" firstAttribute="top" secondItem="9iA-Py-mgO" secondAttribute="top" constant="10" id="XmY-Hg-cnk"/>
+                        <constraint firstItem="Ez4-X5-aXP" firstAttribute="top" secondItem="9iA-Py-mgO" secondAttribute="top" constant="5" id="XmY-Hg-cnk"/>
                         <constraint firstAttribute="trailing" secondItem="Ez4-X5-aXP" secondAttribute="trailing" constant="20" id="dtM-NX-rg7"/>
                     </constraints>
                 </view>

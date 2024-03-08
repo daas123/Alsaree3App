@@ -21,7 +21,8 @@ class LoadingTableViewCell: UITableViewCell {
         self.selectionStyle = .none
         loadingTitle.setProperties(lbltext: "Try searching with food emojis today", fontSize: 20,lineHeightMultiple: 0.7)
         let imageSize = CGSize(width: 25, height: 25)
-        retryButton.setPropertiesWithImage(label: "  Retry Loading", image: "retry", fontSize: 20, imageSize: imageSize)
+        retryButton.setPropertiesWithImage(label: "   Retry Loading  ", image: "retry",textColor: ColorConstant.whitecolor ,fontSize: 16, imageSize: imageSize ,backColor: ColorConstant.primaryYellowColor,cornerRadius: 10)
+        retryButton.addBounceBackAnimation()
     }
     
     

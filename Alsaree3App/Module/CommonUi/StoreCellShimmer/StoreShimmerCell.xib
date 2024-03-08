@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -106,10 +106,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HOb-Pi-x3d">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HOb-Pi-x3d">
                                 <rect key="frame" x="88.333333333333343" y="212.66666666666666" width="95.333333333333343" height="34.333333333333343"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Try Again"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Try Again"/>
                                 <connections>
                                     <action selector="onClickTryAgain:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="MBs-ds-GSS"/>
                                 </connections>
@@ -122,6 +122,7 @@
                         <constraints>
                             <constraint firstItem="HOb-Pi-x3d" firstAttribute="top" secondItem="csX-ag-T6U" secondAttribute="bottom" constant="20" id="4rl-7R-kWh"/>
                             <constraint firstItem="HOb-Pi-x3d" firstAttribute="centerX" secondItem="8ON-lU-lRN" secondAttribute="centerX" id="6wE-JW-zDt"/>
+                            <constraint firstItem="HOb-Pi-x3d" firstAttribute="height" secondItem="8ON-lU-lRN" secondAttribute="height" multiplier="0.0940639" id="IOG-D4-v0N"/>
                             <constraint firstItem="csX-ag-T6U" firstAttribute="top" secondItem="3mH-XC-W6y" secondAttribute="bottom" constant="30" id="Qtm-VT-xDf"/>
                             <constraint firstItem="3mH-XC-W6y" firstAttribute="centerX" secondItem="8ON-lU-lRN" secondAttribute="centerX" id="ZQl-zB-EKk"/>
                             <constraint firstItem="csX-ag-T6U" firstAttribute="centerX" secondItem="8ON-lU-lRN" secondAttribute="centerX" id="hng-ta-Oj6"/>
@@ -169,7 +170,7 @@
         <image name="aaset_no_location" width="85.333335876464844" height="85.333335876464844"/>
         <image name="placeholder" width="395.66665649414062" height="231"/>
         <systemColor name="opaqueSeparatorColor">
-            <color red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -13,28 +13,12 @@ protocol splashScreenActions{
     func navigateToHomeTab()
 }
 class SplashScreenViewModel{
-    
-    let dispatchGroup = DispatchGroup()
+    let endTime = DispatchTime.now() + 2.5
     var splashScreenDeligate : splashScreenActions?
     var isApiCallFailed = false
     
     func callSplashScreeenApis(){
-        let startTime = DispatchTime.now()
-        dispatchGroup.enter()
         callAppSettingApi()
-        dispatchGroup.notify(queue: .main) {
-            let endTime = DispatchTime.now()
-            let timeElapsed = endTime.uptimeNanoseconds - startTime.uptimeNanoseconds
-            let secondsElapsed = Double(timeElapsed) / 1_000_000_000
-            
-            if secondsElapsed >= 2.5 {
-                self.splashScreenDeligate?.navigateToHomeTab()
-            } else {
-                DispatchQueue.main.asyncAfter(deadline: .now() + (2.5 - secondsElapsed)) {
-                    self.splashScreenDeligate?.navigateToHomeTab()
-                }
-            }
-        }
     }
     
     func callAppSettingApi(){
@@ -44,18 +28,36 @@ class SplashScreenViewModel{
             case.success(let data):
                 authKey = data.authKey
                 SDWebImageManagerRevamp.shared.imageBaseUrl = data.imageBaseURL
-                self.dispatchGroup.leave()               
+                if DispatchTime.now() >= self.endTime{
+                    self.splashScreenDeligate?.navigateToHomeTab()
+                }else{
+                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
+                        self.splashScreenDeligate?.navigateToHomeTab()
+                    }
+                }
                 debugPrint("callAppSettingApi Done")
             case.failure(let error):
                 debugPrint("callAppSettingApi falied")
-                self.isApiCallFailed = true
-                self.dispatchGroup.leave()
+                if DispatchTime.now() >= self.endTime{
+                    self.splashScreenDeligate?.navigateToHomeTab()
+                }else{
+                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
+                        self.splashScreenDeligate?.navigateToHomeTab()
+                    }
+                }
                 debugPrint(error.localizedDescription)
             }
         }
     }
-    
-    func apiCallFailed(){
-        dispatchGroup.leave()
-    }
 }
+
+
+//        dispatchGroup.notify(queue: .main) {
+        
+//                self.splashScreenDeligate?.navigateToHomeTab()
+//            } else {
+//                DispatchQueue.main.asyncAfter(deadline: .now() + (2.5 - secondsElapsed)) {
+//                    self.splashScreenDeligate?.navigateToHomeTab()
+//                }
+//            }
+//        }
