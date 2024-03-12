@@ -85,6 +85,7 @@ enum CellConstant : String{
     case loadingTableViewCell = "LoadingTableViewCell"
     case homeTabShimmerCell = "HomeTabShimmerCell"
     case featureCell = "FeatureCell"
+    case storeShimmerCell = "StoreShimmerCell"
     
 }
 

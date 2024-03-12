@@ -13,7 +13,7 @@ extension HomeTabViewController : UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if viewModel.isApiCallFailed || viewModel.isLoadingState{
+        if viewModel.homeTabState.isApiCallFailed || viewModel.homeTabState.isLoadingState{
             return tableView.bounds.height
         }
 
@@ -59,7 +59,7 @@ extension HomeTabViewController : UITableViewDelegate{
             }
             return heightForStore(screenHeight: screenHeight, store: viewModel.mostPopularStore, tableView: hometabTableView)
         case (2,0):
-            guard !((viewModel.mostPopularStore?.isEmpty ?? true) || viewModel.mostPopularStore == nil || viewModel.isAllApiCallDone) else{
+            guard !((viewModel.mostPopularStore?.isEmpty ?? true) || viewModel.mostPopularStore == nil || viewModel.homeTabState.isAllApiCallDone) else{
                 return 0
             }
 //            if viewModel.isAllApiCallDone{
@@ -88,13 +88,13 @@ extension HomeTabViewController : UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         
-        if viewModel.isApiCallFailed || viewModel.isLoadingState{
+        if viewModel.homeTabState.isApiCallFailed || viewModel.homeTabState.isLoadingState{
             return 0
         }
         
-        if viewModel.recentlyAddedStores == nil && viewModel.homeScreenStoreListData == nil {
-            return 0
-        }
+//        if viewModel.recentlyAddedStores == nil && viewModel.homeScreenStoreListData == nil {
+//            return 0
+//        }
         if section == 0 || section == 2{
             return 0
         }else{

@@ -32,3 +32,11 @@ protocol NavigateFormHomeTab{
     func reloadTableView()
     func reloadBanner()
 }
+
+struct HomeTabState{
+    var isLoadingState : Bool
+    var isApiCallFailed : Bool
+    var isCallCloseStore : Bool
+    var isStoreApiFailed : Bool
+    var isAllApiCallDone : Bool
+}

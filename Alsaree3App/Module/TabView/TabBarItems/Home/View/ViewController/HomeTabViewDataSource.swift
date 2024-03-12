@@ -9,11 +9,11 @@ import UIKit
 extension HomeTabViewController:UITableViewDataSource{
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return (viewModel.isLoadingState || viewModel.isApiCallFailed) ? 1 : 3
+        return (viewModel.homeTabState.isLoadingState || viewModel.homeTabState.isApiCallFailed) ? 1 : 3
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if viewModel.isLoadingState || viewModel.isApiCallFailed{
+        if viewModel.homeTabState.isLoadingState || viewModel.homeTabState.isApiCallFailed{
             return 1
         }
         
@@ -27,7 +27,7 @@ extension HomeTabViewController:UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if viewModel.isApiCallFailed{
+        if viewModel.homeTabState.isApiCallFailed{
             let loadingCell = tableView.getCell(identifier: CellConstant.loadingTableViewCell.rawValue) as! LoadingTableViewCell
             loadingCell.homeTabdeilgate = self
             backButton.isHidden = true
@@ -35,7 +35,7 @@ extension HomeTabViewController:UITableViewDataSource{
             return loadingCell
         }
         
-        if viewModel.isLoadingState {
+        if viewModel.homeTabState.isLoadingState {
             let cell = tableView.getCell(identifier: CellConstant.homeTabShimmerCell.rawValue) as! HomeTabShimmerCell
             backButton.isHidden = true
             return cell
@@ -109,14 +109,12 @@ extension HomeTabViewController:UITableViewDataSource{
                 return cell
             }
         }else{
-            let cell = tableView.getCell(identifier: "StoreShimmerCell") as! StoreShimmerCell
+            let cell = tableView.getCell(identifier: CellConstant.storeShimmerCell.rawValue) as! StoreShimmerCell
             cell.deligate = self
-            cell.isStoreApiFailed = viewModel.isStoreApiFailed
+            cell.isStoreApiFailed = viewModel.homeTabState.isStoreApiFailed
             cell.setUpCellState()
             return cell
         }
         
     }
-    
-    
 }

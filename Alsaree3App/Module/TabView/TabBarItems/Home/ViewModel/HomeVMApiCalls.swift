@@ -20,8 +20,8 @@ extension HomeTabViewModel{
                 debugPrint("callAppSettingApi Done")
             case.failure(let error):
                 self.dispatchGroup.leave()
-                debugPrint("callAppSettingApi falied")
                 self.apiCallFailed()
+                debugPrint("callAppSettingApi falied")
                 debugPrint(error.localizedDescription)
             }
             
@@ -119,7 +119,7 @@ extension HomeTabViewModel{
             switch responce{
             case .success(let data):
                 debugPrint("callHomeScreenMainDetailWithBannerImagesOffersApi Done")
-                self.isApiCallFailed = false
+                self.homeTabState.isApiCallFailed = false
                 self.recentlyAddedTitle = data.horizontal_store_title
                 self.mostPopularTitle = data.ads_title
                 self.nearbyResturentTitle = data.store_listing_title
@@ -165,7 +165,7 @@ extension HomeTabViewModel{
                 }
                 
                 if (data.message == nil || data.success == false){
-                    self.isCallCloseStore = true
+                    self.homeTabState.isCallCloseStore = true
                     self.callHomeScreenGetCloseStoreListApi()
                 }
 
@@ -173,7 +173,7 @@ extension HomeTabViewModel{
                     self.dispatchGroup.leave()
                 }else{
                     DispatchQueue.main.async {
-                        self.isStoreApiFailed = false
+                        self.homeTabState.isStoreApiFailed = false
                         self.homeTabDeligate?.reloadTableView()
                     }
                 }
@@ -229,10 +229,10 @@ extension HomeTabViewModel{
                     }
                         self.homeScreenStoreListData! += storeData
                 }else{
-                    self.isAllApiCallDone = true
+                    self.homeTabState.isAllApiCallDone = true
                 }
                 DispatchQueue.main.async {
-                    self.isStoreApiFailed = false
+                    self.homeTabState.isStoreApiFailed = false
                     self.homeTabDeligate?.reloadTableView()
                 }
             case .failure(let error):

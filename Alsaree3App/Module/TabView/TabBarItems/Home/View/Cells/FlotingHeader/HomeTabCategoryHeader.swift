@@ -27,49 +27,7 @@ class HomeTabCategoryHeader: UIView {
     
     func setupUI(){
         
-        for catview in categoryView{
-            catview.layer.cornerRadius = 10
-            catview.layer.borderWidth = 1
-            if catview.tag == selectedTag{
-                catview.layer.borderColor = ColorConstant.primaryYellowColor.cgColor
-                
-            }else{
-                catview.layer.borderColor = ColorConstant.borderColorGray.cgColor
-            }
-            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
-            catview.addGestureRecognizer(tapGesture)
-        }
-        
-        for catlabel in categoryLbl{
-            switch catlabel.tag{
-            case 1:
-                if catlabel.tag == selectedTag{
-                    catlabel.setProperties(lbltext: "Food", fontSize: 10,isBold: true,color: ColorConstant.primaryYellowColor)
-                }else{
-                    catlabel.setProperties(lbltext: "Food" , fontSize: 10)
-                }
-            case 2:
-                if catlabel.tag == selectedTag{
-                    catlabel.setProperties(lbltext: "Alsaree3 Market", fontSize: 10,isBold: true, color: ColorConstant.primaryYellowColor, lineHeightMultiple: 0.7)
-                }else{
-                    catlabel.setProperties(lbltext: "Alsaree3 Market", fontSize: 10,lineHeightMultiple: 0.7)
-                }
-            case 3:
-                if catlabel.tag == selectedTag{
-                    catlabel.setProperties(lbltext: "Parcel", fontSize: 10,isBold: true,color: ColorConstant.primaryYellowColor)
-                }else{
-                    catlabel.setProperties(lbltext: "Parcel" , fontSize: 10)
-                }
-            case 4:
-                if catlabel.tag == selectedTag{
-                    catlabel.setProperties(lbltext: "More", fontSize: 10,isBold: true,color: ColorConstant.primaryYellowColor)
-                }else{
-                    catlabel.setProperties(lbltext: "More" , fontSize: 10)
-                }
-            default:
-                break
-            }
-        }
+        setupcategoryView()
         self.backgroundColor = UIColor.clear
         originalHeigth = self.bounds.height
         
@@ -89,12 +47,13 @@ class HomeTabCategoryHeader: UIView {
                     tapView.transform = .identity
                 }completion: { (_) in
                     switch tapView.tag{
-                    case 1: print("view1")
-                    case 2: print("view2")
-                    case 3: print("view3")
-                    case 4: print("view4")
+                    case 1: self.selectedTag = 1
+                    case 2: self.selectedTag = 2
+                    case 3: self.selectedTag = 3
+                    case 4: self.selectedTag = 4
                     default : print("default")
                     }
+                    self.setupcategoryView()
                 }
             }
     }
@@ -130,4 +89,49 @@ class HomeTabCategoryHeader: UIView {
         floatingBottomConstrian.constant = 0
     }
     
+    func setupcategoryView(){
+        for catview in categoryView{
+            catview.layer.cornerRadius = 10
+            catview.layer.borderWidth = 1
+            if catview.tag == selectedTag{
+                catview.layer.borderColor = ColorConstant.primaryYellowColor.cgColor
+                
+            }else{
+                catview.layer.borderColor = ColorConstant.borderColorGray.cgColor
+            }
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
+            catview.addGestureRecognizer(tapGesture)
+        }
+        
+        for catlabel in categoryLbl{
+            switch catlabel.tag{
+            case 1:
+                if catlabel.tag == selectedTag{
+                    catlabel.setProperties(lbltext: "Food", fontSize: 10,isBold: true,color: ColorConstant.primaryYellowColor)
+                }else{
+                    catlabel.setProperties(lbltext: "Food" , fontSize: 10)
+                }
+            case 2:
+                if catlabel.tag == selectedTag{
+                    catlabel.setProperties(lbltext: "Alsaree3 Market", fontSize: 10,isBold: true, color: ColorConstant.primaryYellowColor, lineHeightMultiple: 0.8)
+                }else{
+                    catlabel.setProperties(lbltext: "Alsaree3 Market", fontSize: 10,lineHeightMultiple: 0.8)
+                }
+            case 3:
+                if catlabel.tag == selectedTag{
+                    catlabel.setProperties(lbltext: "Parcel", fontSize: 10,isBold: true,color: ColorConstant.primaryYellowColor)
+                }else{
+                    catlabel.setProperties(lbltext: "Parcel" , fontSize: 10)
+                }
+            case 4:
+                if catlabel.tag == selectedTag{
+                    catlabel.setProperties(lbltext: "More", fontSize: 10,isBold: true,color: ColorConstant.primaryYellowColor)
+                }else{
+                    catlabel.setProperties(lbltext: "More" , fontSize: 10)
+                }
+            default:
+                break
+            }
+        }
+    }
 }

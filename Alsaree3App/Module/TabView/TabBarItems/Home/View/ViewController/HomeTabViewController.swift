@@ -41,12 +41,6 @@ class HomeTabViewController: BaseViewController {
         setupTableview()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-    }
-    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
@@ -68,15 +62,12 @@ class HomeTabViewController: BaseViewController {
     }
     
     func setupUI(){
-        setupObserver()
         setupPullToRefresh()
         setUpGesture()
         hideProgressView()
         
         //setupHeaderViewUi
         setupHeaderView(headerNavigationView: headerNavigationView, applicationNamelbl: applicationNamelbl, locationLbl: locationLbl, downArrowImage: downArrowImage, scooterimg: scooterimg)
-        
-        //SetupPorgressUi
         setUpCircularprogress(circularProgresView: circularProgresView, currentProgress: 0.2, progressLbl: progressLbl)
         
         // set Back to top button
@@ -84,8 +75,6 @@ class HomeTabViewController: BaseViewController {
         backButton.addTarget(self, action: #selector(scrollToFirstRow), for: .touchUpInside)
         view.addSubview(backButton)
         backButton.isHidden = true
-        
-        // set custom Alert At the bottom of screen
         
     }
     
@@ -132,13 +121,6 @@ class HomeTabViewController: BaseViewController {
         hometabTableView.registerNib(of: StoreShimmerCell.self)
     }
     
-    func setupObserver(){
-        NotificationManager().addObserver(forName: .reloadData) { _ in
-            self.dismiss(animated: true)
-//            self.viewModel.callFullHomeScreenApi()
-        }
-    }
-    
     func hideProgressView(){
         circularProgresView.isHidden = true
         progressLbl.isHidden = true
@@ -154,7 +136,7 @@ class HomeTabViewController: BaseViewController {
         alertView.messageLbl.text = errorText
         alertView.alpha = 0 // invisible
         alertView.isHidden = true
-
+        
         // animate the alert view to fade in
         if alertView.isHidden{
             alertView.isHidden = false
@@ -162,7 +144,7 @@ class HomeTabViewController: BaseViewController {
                 self.alertView.alpha = 1
             })
         }
-
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0 ) {
             // animate the alert view to fade out
             UIView.animate(withDuration: 0.5, animations: {
@@ -171,16 +153,6 @@ class HomeTabViewController: BaseViewController {
                 self.alertView.isHidden = true
             })
         }
-    }
-
-    
-    @objc func scrollToFirstRow() {
-        let indexPath = IndexPath(row: 0, section: 0)
-        self.hometabTableView.scrollToRow(at: indexPath, at: .top, animated: true)
-    }
-    
-    @objc func labelTapped() {
-        debugPrint("Location Label tapped")
     }
     
     func animateCellSelection(at indexPath: IndexPath) {
@@ -198,58 +170,57 @@ class HomeTabViewController: BaseViewController {
     }
     
     func pushToNextScreen(indexPath: IndexPath) {
-        print(indexPath.row)
-                switch indexPath.section{
-                case 0:
-                    print("section 0")
-                    switch indexPath.row{
-                    case 0 :
-                        print("clicked on active ordercell")
-                    case 1 :
-                        print("clicked on banner cell")
-                        
-                    default:
-                        print("section 0 default")
-                    }
-                case 1:
-                    print("section 1")
-                    switch indexPath.row{
-                    case 0 :
-                        print("section 1 row 0")
-                    case 1 :
-                        print("section 1 row 1")
-                    case 2 :
-                        print("section 1 row 2")
-                    case 3:
-                        print("section 1 row 3")
-                    case 4:
-                        print("section 1 row 4")
-                    default:
-                        let cell = hometabTableView.cellForRow(at: indexPath) as? ResturentDetailsTableViewCell
-                        callStoreApi(storeId: cell?.resturentDetailsTableViewCellData?._id ?? "")
-                    }
-                case 3:
-                    print("section 3")
-                default:
-                    print("default")
-                }
+        debugPrint(indexPath.row)
+        switch indexPath.section{
+        case 0:
+            debugPrint("section 0")
+            switch indexPath.row{
+            case 0 :
+                debugPrint("clicked on active ordercell")
+            case 1 :
+                debugPrint("clicked on banner cell")
+                
+            default:
+                debugPrint("section 0 default")
+            }
+        case 1:
+            debugPrint("section 1")
+            switch indexPath.row{
+            case 0 :
+                debugPrint("section 1 row 0")
+            case 1 :
+                debugPrint("section 1 row 1")
+            case 2 :
+                debugPrint("section 1 row 2")
+            case 3:
+                debugPrint("section 1 row 3")
+            case 4:
+                debugPrint("section 1 row 4")
+            default:
+                let cell = hometabTableView.cellForRow(at: indexPath) as? ResturentDetailsTableViewCell
+                callStoreApi(storeId: cell?.resturentDetailsTableViewCellData?._id ?? "")
+            }
+        case 3:
+            debugPrint("section 3")
+        default:
+            debugPrint("default")
+        }
+    }
+    //MARK: implimentation of BackToTop
+    @objc func scrollToFirstRow() {
+        let indexPath = IndexPath(row: 0, section: 0)
+        self.hometabTableView.scrollToRow(at: indexPath, at: .top, animated: true)
     }
     
-    deinit{
-        NotificationCenter.default.removeObserver(self, name: .reloadData, object: nil)
+    //MARK: location label tap action
+    @objc func labelTapped() {
+        debugPrint("Location Label tapped")
     }
     
-}
-
-//MARK: implimentation of pull to reload
-extension HomeTabViewController{
+    //MARK: implimentation of pull to reload
     @objc func refreshData(_ sender: Any) {
         refreshControl.endRefreshing()
         viewModel.reloadOnPull()
     }
 }
 
-//                let newViewController = storyboard?.instantiateViewController(withIdentifier: ViewControllerConstant.restaurantDetailsVC.rawValue) as! RestaurantDetailsVC
-//                viewModel.activeOrder = true
-//                newViewController.hidesBottomBarWhenPushed = true
-//                navigationController?.pushViewController(newViewController, animated: true)

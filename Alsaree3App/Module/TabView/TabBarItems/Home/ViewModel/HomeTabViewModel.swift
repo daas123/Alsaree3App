@@ -37,11 +37,8 @@ class HomeTabViewModel{
     // MARK: Appstate
     var currentPage = 1
     var closeStorePage = 1
-    var isApiCallFailed = false
-    var isCallCloseStore = false
-    var isAllApiCallDone = false
-    var isLoadingState = true
-    var isStoreApiFailed = false
+    
+    var homeTabState = HomeTabState(isLoadingState: true, isApiCallFailed: false, isCallCloseStore: false, isStoreApiFailed: false, isAllApiCallDone: false)
     
     var HomeTabData = [
         SectionAboveHeader.allCases,
@@ -50,16 +47,23 @@ class HomeTabViewModel{
     
     func getTableViewCount(Section:Int) -> Int{
         if Section == 0{
-            if recentlyAddedStores == nil || homeScreenStoreListData == nil {
-                return 2
-            }
-            return SectionAboveHeader.allCases.count
+            return 2
         }else if Section == 1{
             return (SectionBelowScrollingHeader.allCases.count + ((homeScreenStoreListData?.count ?? 0)-1))
         }
         else{
             return 1
         }
+    }
+    
+    func loadingState(){
+        homeTabState.isLoadingState = true
+        homeTabState.isApiCallFailed = false
+    }
+    
+    func apiFailedState(){
+        homeTabState.isLoadingState = false
+        homeTabState.isApiCallFailed = true
     }
     
     func callHomeScreenApis(){
@@ -71,7 +75,7 @@ class HomeTabViewModel{
         callHomeScreenStoreListApi()
         callPushZoneApi()
         dispatchGroup.notify(queue: .main) {
-            self.isLoadingState = false
+            self.homeTabState.isLoadingState = false
             self.homeTabDeligate?.reloadTableView()
         }
     }
@@ -79,15 +83,14 @@ class HomeTabViewModel{
     func callFullHomeScreenApi(){
         if Connectivity.checkNetAndLoc(){
             resetApiFectechedData()
-            isLoadingState = true
-            isApiCallFailed = false
+            loadingState()
             self.homeTabDeligate?.reloadTableView()
             callAppSettingApi()
             dispatchGroup.notify(queue: .main) {
                 self.callHomeScreenApis()
             }
         }else{
-            apiCallFailed(isRemoveDispatchGroup: false,isApicallfailed: true)
+            apiCallFailed(isApicallfailed: true)
         }
     }
     func reloadOnPull(){
@@ -96,22 +99,20 @@ class HomeTabViewModel{
     
     func instantiateApiCalls(){
         if Connectivity.checkNetAndLoc(){
-            isLoadingState = true
-            isApiCallFailed = false
+            loadingState()
             self.homeTabDeligate?.reloadTableView()
             callHomeScreenApis()
         }else{
-            apiCallFailed(isRemoveDispatchGroup: false,isApicallfailed: true)
+            apiCallFailed(isApicallfailed: true)
         }
     }
     
     func resetApiFectechedData(){
         currentPage = 1
-                closeStorePage = 1
-                isLoadingState = true
-                isApiCallFailed = false
-                isCallCloseStore = false
-                isAllApiCallDone = false
+        closeStorePage = 1
+        loadingState()
+        self.homeTabState.isCallCloseStore = false
+        self.homeTabState.isAllApiCallDone = false
         recentlyAddedStores = []
         mostPopularStore = []
         nearbyResturentStore = []
@@ -122,20 +123,20 @@ class HomeTabViewModel{
     }
     
     func callHomeScreenStorelistNextPageApi(){
-        if !isAllApiCallDone{
-            if isCallCloseStore{
+        if !self.homeTabState.isAllApiCallDone{
+            if self.homeTabState.isCallCloseStore{
                 if Connectivity.checkNetAndLoc(){
                     closeStorePage += 1
                     callHomeScreenGetCloseStoreListApi(pageNo:String(closeStorePage))
                 }else{
-                    isStoreApiFailed = true
+                    self.homeTabState.isStoreApiFailed = true
                 }
             }else{
                 if Connectivity.checkNetAndLoc(){
                     currentPage += 1
                     callHomeScreenStoreListApi(pageNo: String(currentPage))
                 }else{
-                    isStoreApiFailed = true
+                    self.homeTabState.isStoreApiFailed = true
                 }
             }
         }
@@ -149,25 +150,24 @@ class HomeTabViewModel{
     }
     
     func callStoreApi(storeId : String){
-           // some it comes empty store id
-           if storeId == "" {
-               print("store id is empty")
-               return
-           }
-           print("store id is called \(storeId)")
-       }
+        // some it comes empty store id
+        if storeId == "" {
+            print("store id is empty")
+            return
+        }
+        print("store id is called \(storeId)")
+    }
     
-    func apiCallFailed(isRemoveDispatchGroup : Bool = true , isApicallfailed : Bool = false ,isStoreApiFailed : Bool = false,isClosestoreApiFailed:Bool = false){
-        if isRemoveDispatchGroup{
-            if !ReachabilityRevamp.isConnectedToNetwork() {
-                NotificationManager().postNetworkStatusChanged()
-            }else if !LocationManagerRevamp.shared.isLocationAccess {
-                NotificationManager().postLocationAccessRestricted()
-            }
+    func apiCallFailed(isApicallfailed : Bool = false ,isStoreApiFailed : Bool = false,isClosestoreApiFailed:Bool = false){
+        
+        if !ReachabilityRevamp.isConnectedToNetwork() {
+            NotificationManager().postNetworkStatusChanged()
+        }else if !LocationManagerRevamp.shared.isLocationAccess {
+            NotificationManager().postLocationAccessRestricted()
         }
         
         if isApicallfailed{
-            isApiCallFailed = true
+            apiFailedState()
             DispatchQueue.main.async {
                 print("before getting the error")
                 self.homeTabDeligate?.reloadTableView()
@@ -175,13 +175,13 @@ class HomeTabViewModel{
         }
         
         if isStoreApiFailed{
-            self.isStoreApiFailed = true
+            self.homeTabState.isStoreApiFailed = true
             currentPage -= 1
             self.homeTabDeligate?.reloadTableView()
         }
         
         if isClosestoreApiFailed{
-            self.isStoreApiFailed = true
+            self.homeTabState.isStoreApiFailed = true
             closeStorePage -= 1
             self.homeTabDeligate?.reloadTableView()
         }

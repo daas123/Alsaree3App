@@ -56,9 +56,9 @@ class StoreShimmerCell: UITableViewCell {
             errorImageView.setProperties(imageName: ImageConstant.nolocation.rawValue,isAspectFit: true)
         }else{
             parentShimmerview.isHidden = false
-            ErrorView.isHidden = true
+            ErrorView.isHidden = false
             setUpShimmerViews()
-            errorImageView.setProperties(imageName: ImageConstant.noInternet.rawValue,isAspectFit: true)
+            errorImageView.setProperties(imageName: "apierror",isAspectFit: true)
             errorlbl.setProperties(lbltext: "Something Went Wrong", fontSize: 18,isBold: true)
         }
     }

@@ -10,10 +10,7 @@ import UIKit
 extension HomeTabViewController : UIScrollViewDelegate{
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         //MARK:  for sticky header
-        if viewModel.recentlyAddedStores == nil || viewModel.homeScreenStoreListData == nil {
-                    return
-                }
-        if viewModel.isLoadingState || viewModel.isApiCallFailed {
+        if viewModel.homeTabState.isLoadingState || viewModel.homeTabState.isApiCallFailed {
             return
         }
         setupSteckyHeader(scrollView)
@@ -58,9 +55,11 @@ extension HomeTabViewController : UIScrollViewDelegate{
     }
     
     func setupSteckyHeader(_ scrollView: UIScrollView){
-        if viewModel.isLoadingState || viewModel.isApiCallFailed || viewModel.recentlyAddedStores == nil || viewModel.homeScreenStoreListData == nil {
+        if viewModel.homeTabState.isLoadingState || viewModel.homeTabState.isApiCallFailed{
             return
         }
+        
+        
         if hometabTableView.numberOfSections > 1 {
             let headerRect = hometabTableView.rect(forSection: 1)
             if headerRect.origin.y <= scrollView.contentOffset.y && scrollView.contentOffset.y <= headerRect.origin.y + headerRect.size.height {
@@ -78,7 +77,7 @@ extension HomeTabViewController : UIScrollViewDelegate{
     }
     
     func setupScrollToTop(_ scrollView: UIScrollView ){
-        if viewModel.isLoadingState || viewModel.isApiCallFailed {
+        if viewModel.homeTabState.isLoadingState || viewModel.homeTabState.isApiCallFailed {
             return
         }
 //        if viewModel.recentlyAddedStores == nil || viewModel.homeScreenStoreListData == nil {
