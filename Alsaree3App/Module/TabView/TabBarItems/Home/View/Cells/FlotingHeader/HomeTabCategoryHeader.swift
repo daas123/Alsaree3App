@@ -26,11 +26,9 @@ class HomeTabCategoryHeader: UIView {
     }
     
     func setupUI(){
-        
         setupcategoryView()
         self.backgroundColor = UIColor.clear
         originalHeigth = self.bounds.height
-        
     }
     
     @objc func handleTap(_ sender: UITapGestureRecognizer) {
@@ -107,27 +105,27 @@ class HomeTabCategoryHeader: UIView {
             switch catlabel.tag{
             case 1:
                 if catlabel.tag == selectedTag{
-                    catlabel.setProperties(lbltext: "Food", fontSize: 10,isBold: true,color: ColorConstant.primaryYellowColor)
+                    catlabel.setProperties(lbltext: TextConstant.food.rawValue, fontSize: 10,isBold: true,color: ColorConstant.primaryYellowColor)
                 }else{
-                    catlabel.setProperties(lbltext: "Food" , fontSize: 10)
+                    catlabel.setProperties(lbltext: TextConstant.food.rawValue , fontSize: 10)
                 }
             case 2:
                 if catlabel.tag == selectedTag{
-                    catlabel.setProperties(lbltext: "Alsaree3 Market", fontSize: 10,isBold: true, color: ColorConstant.primaryYellowColor, lineHeightMultiple: 0.8)
+                    catlabel.setProperties(lbltext: TextConstant.alsaree3App.rawValue, fontSize: 10,isBold: true, color: ColorConstant.primaryYellowColor, lineHeightMultiple: 0.8)
                 }else{
-                    catlabel.setProperties(lbltext: "Alsaree3 Market", fontSize: 10,lineHeightMultiple: 0.8)
+                    catlabel.setProperties(lbltext: TextConstant.alsaree3App.rawValue, fontSize: 10,lineHeightMultiple: 0.8)
                 }
             case 3:
                 if catlabel.tag == selectedTag{
-                    catlabel.setProperties(lbltext: "Parcel", fontSize: 10,isBold: true,color: ColorConstant.primaryYellowColor)
+                    catlabel.setProperties(lbltext: TextConstant.parcel.rawValue, fontSize: 10,isBold: true,color: ColorConstant.primaryYellowColor)
                 }else{
-                    catlabel.setProperties(lbltext: "Parcel" , fontSize: 10)
+                    catlabel.setProperties(lbltext: TextConstant.parcel.rawValue , fontSize: 10)
                 }
             case 4:
                 if catlabel.tag == selectedTag{
-                    catlabel.setProperties(lbltext: "More", fontSize: 10,isBold: true,color: ColorConstant.primaryYellowColor)
+                    catlabel.setProperties(lbltext: TextConstant.more.rawValue, fontSize: 10,isBold: true,color: ColorConstant.primaryYellowColor)
                 }else{
-                    catlabel.setProperties(lbltext: "More" , fontSize: 10)
+                    catlabel.setProperties(lbltext: TextConstant.more.rawValue , fontSize: 10)
                 }
             default:
                 break

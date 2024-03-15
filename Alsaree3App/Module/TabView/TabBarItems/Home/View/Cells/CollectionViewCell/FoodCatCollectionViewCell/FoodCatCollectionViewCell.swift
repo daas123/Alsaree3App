@@ -19,11 +19,14 @@ class FoodCatCollectionViewCell: UICollectionViewCell {
         
     }
     
+    override func layoutSubviews() {
+        foodImage.layer.cornerRadius = foodImage.bounds.width/2
+        foodImage.clipsToBounds = true
+    }
+    
     func setupUI(){
         categoryTitle.setProperties(lbltext: singleFoodCategoryData?.name ?? "", fontSize: 12)
         SDWebImageManagerRevamp.shared.loadImage(with: singleFoodCategoryData?.image_url ?? "", into: foodImage)
-        foodImage.layer.cornerRadius = ((self.bounds.width-5)/2)
-        foodImage.clipsToBounds = true
         foodImage.layer.borderWidth = 0
         
         self.backgroundColor = UIColor.clear
@@ -44,5 +47,4 @@ class FoodCatCollectionViewCell: UICollectionViewCell {
         }
     }
     
-
 }

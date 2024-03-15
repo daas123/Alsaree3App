@@ -82,68 +82,11 @@ class ResturentDetailsCollectionViewCell: UICollectionViewCell {
         resturentFeatureCollectionView.dataSource = self
     }
     
-    func drawTriangleforSelectedView() {
-        selectedViewTriangleLayer.removeFromSuperlayer()
-        let trianglePath = UIBezierPath()
-        
-        if UIApplication.shared.userInterfaceLayoutDirection == .rightToLeft{
-            let startX = parentCellView.frame.maxX+5
-            let startY = selectedItemView.frame.maxY
-            
-            trianglePath.move(to: CGPoint(x: startX , y: startY))
-            trianglePath.addLine(to: CGPoint(x: startX-10 , y: startY+10))
-            trianglePath.addLine(to: CGPoint(x: startX-10, y: startY))
-            trianglePath.close()
-        }else{
-            let startX = parentCellView.frame.minX+2.5
-            let startY = selectedItemView.frame.maxY
-            
-            // Move to starting point
-            trianglePath.move(to: CGPoint(x: startX , y: startY))
-            trianglePath.addLine(to: CGPoint(x: startX , y: startY+12))
-            trianglePath.addLine(to: CGPoint(x: startX-7, y: startY))
-            trianglePath.close()
-            
-        }
-        
-        // Configure the layer
-        selectedViewTriangleLayer.path = trianglePath.cgPath
-        selectedViewTriangleLayer.fillColor = UIColor(red: 0.72, green: 0.39, blue: 0.14, alpha: 1).cgColor
-        selectedViewTriangleLayer.zPosition = -1
-        self.layer.addSublayer(selectedViewTriangleLayer)
-    }
-    
-    func drawTriangleforlowdeleveryView() {
-        lowViewTriangleLayer.removeFromSuperlayer()
-        let trianglePath = UIBezierPath()
-        if UIApplication.shared.userInterfaceLayoutDirection == .rightToLeft{
-            let startX = parentCellView.frame.maxX+5
-            let startY = lowdeleveryView.frame.maxY
-            
-            trianglePath.move(to: CGPoint(x: startX , y: startY))
-            trianglePath.addLine(to: CGPoint(x: startX-10 , y: startY+10))
-            trianglePath.addLine(to: CGPoint(x: startX-10, y: startY))
-            trianglePath.close()
-        }else{
-            let startX = parentCellView.frame.minX+2.5
-            let startY = lowdeleveryView.frame.maxY
-            
-            trianglePath.move(to: CGPoint(x: startX , y: startY))
-            trianglePath.addLine(to: CGPoint(x: startX , y: startY+15))
-            trianglePath.addLine(to: CGPoint(x: startX-7, y: startY))
-            trianglePath.close()
-        }
-        // Configure the layer
-        lowViewTriangleLayer.path = trianglePath.cgPath
-        lowViewTriangleLayer.fillColor = UIColor(red: 0.67, green: 0.66, blue: 0.66, alpha: 1).cgColor
-        lowViewTriangleLayer.zPosition = -1
-        self.layer.addSublayer(lowViewTriangleLayer)
-    }
-    
     func hidelowDeleveryView(){
         lowdeleveryView.isHidden = true
         lowDeleveryfeelbl.isHidden = true
     }
+    
     func setupReloadedData(){
         SDWebImageManagerRevamp.shared.loadImage(with: resturentDetailsData?.image_url ?? "", into: resturentImage)
         resturentTitle.text = resturentDetailsData?.name ?? ""
@@ -188,7 +131,7 @@ class ResturentDetailsCollectionViewCell: UICollectionViewCell {
         }else{
             applyCornerRadius(to: lowdeleveryView, radius: 5, corners: .Right,borderColor: ColorConstant.borderColorGray, borderWidth: 0.5)
         }
-        lowDeleveryfeelbl.setProperties(lbltext: "Low delivery fee", fontSize: 12,alignmentLeft:true)
+        lowDeleveryfeelbl.setProperties(lbltext: TextConstant.lowdeliveryfee.rawValue, fontSize: 12,alignmentLeft:true)
         
         //OfferView : selectedItemView
         selectedItemView.backgroundColor = ColorConstant.primaryYellowColor
@@ -201,11 +144,11 @@ class ResturentDetailsCollectionViewCell: UICollectionViewCell {
     }
     
     func setupCornerImage(){
-        if UIApplication.shared.userInterfaceLayoutDirection == .rightToLeft { selectedItemImg.setProperties(imageName: "orangeTraingleAr",isAspectFill: true)
-            lowdeleveryImg.setProperties(imageName: "grayTriangleAr",isAspectFill: true)
+        if UIApplication.shared.userInterfaceLayoutDirection == .rightToLeft { selectedItemImg.setProperties(imageName: ImageConstant.orangeTraingleAr.rawValue,isAspectFill: true)
+            lowdeleveryImg.setProperties(imageName: ImageConstant.grayTriangleAr.rawValue,isAspectFill: true)
         }else{
-            selectedItemImg.setProperties(imageName: "orangeTraingleEng",isAspectFill: true)
-            lowdeleveryImg.setProperties(imageName: "grayTriangleEng",isAspectFill: true)
+            selectedItemImg.setProperties(imageName: ImageConstant.orangeTraingleEng.rawValue,isAspectFill: true)
+            lowdeleveryImg.setProperties(imageName: ImageConstant.grayTriangleEng.rawValue ,isAspectFill: true)
         }
     }
     

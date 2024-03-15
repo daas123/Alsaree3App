@@ -8,22 +8,21 @@
 import UIKit
 
 class AdvertisementCell: UITableViewCell {
-
+    
     // MARK: IBOutlet
     @IBOutlet weak var advCollectionView: UICollectionView!
     @IBOutlet weak var advPageControl: UIPageControl!
     
+    // MARK: Local Variables
     var homeTabDelegate : HomeTableviewStoresAction?
     var advertisementBannerData : [BannerRevamp]?
     var isHeigthChnaged = false
     var isScrollingLeft = false
-    
-    // MARK: Local Variables
     var currentscrollIndex = 0
     var contentOffset = CGPoint()
     var timer : Timer?
     var centeredCollectionViewFlowLayout: CenteredCollectionViewFlowLayout!
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setCollectionview()
@@ -31,9 +30,9 @@ class AdvertisementCell: UITableViewCell {
         startTimer()
         self.backgroundColor = UIColor.clear
         self.selectionStyle = .none
-//        if UIApplication.shared.userInterfaceLayoutDirection == .rightToLeft{
-//            isScrollingLeft = true
-//        }
+        if UIApplication.shared.userInterfaceLayoutDirection == .rightToLeft{
+            isScrollingLeft = true
+        }
     }
     
     func reloadData(){
@@ -47,7 +46,7 @@ class AdvertisementCell: UITableViewCell {
     
     @objc func autoScroll() {
         let totalItems = advertisementBannerData?.count ?? 5
-
+        
         if isScrollingLeft {
             if currentscrollIndex > 0 {
                 currentscrollIndex -= 1
@@ -65,15 +64,15 @@ class AdvertisementCell: UITableViewCell {
         let indexPath = IndexPath(item: currentscrollIndex, section: 0)
         advCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
     }
-
+    
     func setCollectionview() {
         advCollectionView.delegate = self
         advCollectionView.dataSource = self
         advCollectionView.registerNib(of: AdvCollectionViewCell.self)
         
         centeredCollectionViewFlowLayout = (advCollectionView.collectionViewLayout as! CenteredCollectionViewFlowLayout)
-//        centeredCollectionViewFlowLayout.itemSize = CGSize(width: UIScreen.main.bounds.width - 40, height: advCollectionView.bounds.height)
-
+        //        centeredCollectionViewFlowLayout.itemSize = CGSize(width: UIScreen.main.bounds.width - 40, height: advCollectionView.bounds.height)
+        
         advCollectionView.decelerationRate = UIScrollView.DecelerationRate.fast
         centeredCollectionViewFlowLayout.minimumLineSpacing = 20
         advCollectionView.showsHorizontalScrollIndicator = false
@@ -81,7 +80,7 @@ class AdvertisementCell: UITableViewCell {
         advCollectionView.showsHorizontalScrollIndicator = false
         advCollectionView.contentInset = UIEdgeInsets.zero
     }
-
+    
     func setupPageControl() {
         advPageControl.isUserInteractionEnabled = false
         advPageControl.currentPageIndicatorTintColor = ColorConstant.primaryYellowColor
@@ -89,9 +88,9 @@ class AdvertisementCell: UITableViewCell {
         advPageControl.currentPage = 0
         advPageControl.numberOfPages = advertisementBannerData?.count ?? 5
     }
-
+    
     @IBAction func pageControlAction(_ sender: UIPageControl) {
-     
+        
     }
 }
 
@@ -115,24 +114,24 @@ extension AdvertisementCell : UICollectionViewDelegateFlowLayout{
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-           if let cell = advCollectionView.cellForItem(at: indexPath) {
-               UIView.animate(withDuration: 0.3, animations: {
-                   cell.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
-               }) { (_) in
-                   UIView.animate(withDuration: 0.3) {
-                       cell.transform = .identity
-                   }completion: { (_) in
-                       self.homeTabDelegate?.callStoreApi(storeId:self.advertisementBannerData?[indexPath.row].store_id ?? "" )
-                   }
-               }
-           }
-       }
+        if let cell = advCollectionView.cellForItem(at: indexPath) {
+            UIView.animate(withDuration: 0.3, animations: {
+                cell.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
+            }) { (_) in
+                UIView.animate(withDuration: 0.3) {
+                    cell.transform = .identity
+                }completion: { (_) in
+                    self.homeTabDelegate?.callStoreApi(storeId:self.advertisementBannerData?[indexPath.row].store_id ?? "" )
+                }
+            }
+        }
+    }
 }
 
 extension AdvertisementCell :UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-            let width = scrollView.frame.width
-            let currentPage = Int((scrollView.contentOffset.x + width / 2) / width)
-            advPageControl.currentPage = currentPage
-        }
+        let width = scrollView.frame.width
+        let currentPage = Int((scrollView.contentOffset.x + width / 2) / width)
+        advPageControl.currentPage = currentPage
+    }
 }

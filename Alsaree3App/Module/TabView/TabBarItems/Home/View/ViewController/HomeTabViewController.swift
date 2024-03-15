@@ -124,7 +124,6 @@ class HomeTabViewController: BaseViewController {
     func hideProgressView(){
         circularProgresView.isHidden = true
         progressLbl.isHidden = true
-        
     }
     
     func showProgressView(){

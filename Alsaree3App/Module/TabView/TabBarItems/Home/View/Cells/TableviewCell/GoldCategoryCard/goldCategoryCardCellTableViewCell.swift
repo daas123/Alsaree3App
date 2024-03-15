@@ -17,9 +17,7 @@ class GoldCategoryCardCellTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         setupUI()
-        let customProgress = CustomProgressView(frame: customProgressView.bounds)
-        customProgressView.addSubview(customProgress)
-        customProgress.progress = 0.2
+        customProgress()
     }
     
     func setupUI(){
@@ -41,12 +39,10 @@ class GoldCategoryCardCellTableViewCell: UITableViewCell {
         self.selectionStyle = .none
     }
     
-    
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
+    func customProgress(){
+        let customProgress = CustomProgressView(frame: customProgressView.bounds)
+        customProgressView.addSubview(customProgress)
+        customProgress.progress = 0.2
     }
-    
     
 }

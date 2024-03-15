@@ -23,14 +23,11 @@ class StoreShimmerCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        SetupUi()
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
         self.selectionStyle = .none
+        SetupUi()
         setUpCellState()
     }
+    
     
     func SetupUi(){
         setUpCellState()
@@ -54,12 +51,16 @@ class StoreShimmerCell: UITableViewCell {
             parentShimmerview.isHidden = true
             errorlbl.setProperties(lbltext: "No Location Access", fontSize: 18,isBold: true)
             errorImageView.setProperties(imageName: ImageConstant.nolocation.rawValue,isAspectFit: true)
-        }else{
+        }else if isStoreApiFailed{
             parentShimmerview.isHidden = false
             ErrorView.isHidden = false
             setUpShimmerViews()
             errorImageView.setProperties(imageName: "apierror",isAspectFit: true)
             errorlbl.setProperties(lbltext: "Something Went Wrong", fontSize: 18,isBold: true)
+        }else{
+            ErrorView.isHidden = true
+            parentShimmerview.isHidden = false
+            setUpShimmerViews()
         }
     }
     

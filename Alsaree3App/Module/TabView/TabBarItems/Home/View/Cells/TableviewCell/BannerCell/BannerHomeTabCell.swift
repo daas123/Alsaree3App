@@ -29,8 +29,8 @@ class BannerHomeTabCell: UITableViewCell {
         bannerImageView.layer.borderColor = ColorConstant.borderColorGray.cgColor
         bannerImageView.contentMode = .scaleAspectFill
         bannerImageView.layer.cornerRadius = 11
-        errorLbl.setProperties(lbltext: "Something Went Wrong", fontSize: 16,color: ColorConstant.primaryYellowColor)
-        errorBtn.setPropertiesWithImage(label: "  Retry",image: ImageConstant.retry.rawValue, textColor: ColorConstant.whitecolor ,fontSize: 16, imageSize: CGSize(width: 20, height: 20),backColor: ColorConstant.primaryYellowColor,cornerRadius:10)
+        errorLbl.setProperties(lbltext: TextConstant.somethingWentWrong.rawValue, fontSize: 16,color: ColorConstant.primaryYellowColor)
+        errorBtn.setPropertiesWithImage(label: ButtonTextConstant.seeMore.rawValue,image: ImageConstant.retry.rawValue, textColor: ColorConstant.whitecolor ,fontSize: 16, imageSize: CGSize(width: 20, height: 20),backColor: ColorConstant.primaryYellowColor,cornerRadius:10)
         errorBtn.addBounceBackAnimation()
         
         if bannerData == nil {

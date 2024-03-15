@@ -17,11 +17,9 @@ class FeatureCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         setupUi()
         setuplblText()
     }
-
     
     func fillDetails(){
         featurelbl.text = feature?.featureValue
@@ -39,7 +37,6 @@ class FeatureCell: UICollectionViewCell {
         
     }
     
-    
     func setuplblText(){
         featurelbl.setProperties(lbltext: featurelbl.text ?? "", fontSize: 10,font_Family: FontConstant.light.rawValue)
     }
@@ -51,6 +48,5 @@ class FeatureCell: UICollectionViewCell {
         self.backgroundColor = .lightGray
         self.featurelbl.textColor = .black
     }
-    
     
 }

@@ -80,9 +80,6 @@ extension HomeTabViewController : UIScrollViewDelegate{
         if viewModel.homeTabState.isLoadingState || viewModel.homeTabState.isApiCallFailed {
             return
         }
-//        if viewModel.recentlyAddedStores == nil || viewModel.homeScreenStoreListData == nil {
-//            return
-//        }
         
         let yOffset = scrollView.contentOffset.y
         let threshold: CGFloat = hometabTableView.bounds.height

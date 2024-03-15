@@ -39,6 +39,11 @@ enum TextConstant:String{
     case resturent = "Resturent"
     case getoffonselecteditems = "Get off on selected items"
     case lowdeliveryfee = "Low delivery fee"
+    case somethingWentWrong = "Something Went Wrong"
+    case food = "Food"
+    case alsaree3Market = "Alsaree3 Market"
+    case parcel = "Parcel"
+    case more = "More"
     
     var localized: String {
             return NSLocalizedString(rawValue, comment: "")
@@ -49,6 +54,7 @@ enum ButtonTextConstant:String{
     case alFurjanArea = "Al Furjan Area"
     case seeMore = "See More"
     case backtoTop = "    Back to Top"
+    case retry = "  Retry"
     
 }
 
@@ -63,6 +69,14 @@ enum ImageConstant:String{
     case retry = "retry"
     case noInternet = "nointernet"
     case nolocation = "aaset_no_location"
+    case orangeTraingleAr = "orangeTraingleAr"
+    case grayTriangleAr = "grayTriangleAr"
+    case orangeTraingleEng = "orangeTraingleEng"
+    case grayTriangleEng = "grayTriangleEng"
+    case heart = "Heart"
+    case location = "Location"
+    case motorCycle = "MotorCycle"
+    case star = "Star"
 }
 
 enum ViewControllerConstant : String {

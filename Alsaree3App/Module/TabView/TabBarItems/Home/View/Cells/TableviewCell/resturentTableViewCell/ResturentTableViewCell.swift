@@ -7,6 +7,7 @@ class ResturentTableViewCell: UITableViewCell {
     @IBOutlet weak var seemoreBtn: UIButton!
     @IBOutlet weak var resturentCollectionView: UICollectionView!
     
+    //    MARK: local Variable
     var homeTabDelegate : HomeTableviewStoresAction?
     var resturentTableViewCellData : [Stores]?
     var storeTitile : String?
@@ -29,7 +30,7 @@ class ResturentTableViewCell: UITableViewCell {
         setText(StoreTitile: storeTitle )
     }
     
-
+    
     func setText(StoreTitile : String){
         collectionViewTitile.setProperties(lbltext: StoreTitile, fontSize: 18,isBold : true)
     }
@@ -56,7 +57,7 @@ class ResturentTableViewCell: UITableViewCell {
     func registerCell() {
         resturentCollectionView.registerNib(of: ResturentDetailsCollectionViewCell.self)
     }
-
+    
     func animateCell(indexPath : IndexPath){
         if let cell = resturentCollectionView.cellForItem(at: indexPath) {
             UIView.animate(withDuration: 0.3, animations: {
@@ -78,6 +79,7 @@ class ResturentTableViewCell: UITableViewCell {
 }
 
 extension ResturentTableViewCell: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource{
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return resturentTableViewCellData?.count ?? 0
     }
@@ -90,9 +92,11 @@ extension ResturentTableViewCell: UICollectionViewDelegate, UICollectionViewDele
         cell.reloadCollectionView()
         return cell
     }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-            animateCell(indexPath: indexPath)
-        }
+        animateCell(indexPath: indexPath)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: resturentCollectionView.bounds.width * 0.80, height: resturentCollectionView.bounds.height)
     }

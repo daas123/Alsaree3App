@@ -74,8 +74,6 @@
 		922CB7622B2E3E500067805A /* CircluarProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922CB7612B2E3E500067805A /* CircluarProgressView.swift */; };
 		922CB7672B2E43CC0067805A /* ActiveOrderHomeTabCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922CB7652B2E43CC0067805A /* ActiveOrderHomeTabCell.swift */; };
 		922CB7682B2E43CC0067805A /* ActiveOrderHomeTabCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 922CB7662B2E43CC0067805A /* ActiveOrderHomeTabCell.xib */; };
-		922CB7712B2E477C0067805A /* SingleCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922CB76F2B2E477C0067805A /* SingleCategoryCollectionViewCell.swift */; };
-		922CB7722B2E477C0067805A /* SingleCategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 922CB7702B2E477C0067805A /* SingleCategoryCollectionViewCell.xib */; };
 		925F46642B3D6ADC00083D65 /* UICollectionviewFlowlayoutRTags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925F46632B3D6ADC00083D65 /* UICollectionviewFlowlayoutRTags.swift */; };
 		926141692B3AFF27005D3A40 /* CustomtabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926141682B3AFF27005D3A40 /* CustomtabBarController.swift */; };
 		92654B282B386CF000D1FB40 /* CustomUiProgresView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92654B272B386CF000D1FB40 /* CustomUiProgresView.swift */; };
@@ -306,8 +304,6 @@
 		922CB7612B2E3E500067805A /* CircluarProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircluarProgressView.swift; sourceTree = "<group>"; };
 		922CB7652B2E43CC0067805A /* ActiveOrderHomeTabCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveOrderHomeTabCell.swift; sourceTree = "<group>"; };
 		922CB7662B2E43CC0067805A /* ActiveOrderHomeTabCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActiveOrderHomeTabCell.xib; sourceTree = "<group>"; };
-		922CB76F2B2E477C0067805A /* SingleCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
-		922CB7702B2E477C0067805A /* SingleCategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SingleCategoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		925F46632B3D6ADC00083D65 /* UICollectionviewFlowlayoutRTags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionviewFlowlayoutRTags.swift; sourceTree = "<group>"; };
 		926141682B3AFF27005D3A40 /* CustomtabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomtabBarController.swift; sourceTree = "<group>"; };
 		92654B272B386CF000D1FB40 /* CustomUiProgresView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUiProgresView.swift; sourceTree = "<group>"; };
@@ -754,7 +750,6 @@
 				929FF90B2B301F6600E9C34A /* ResturentDetailsCollectionViewCell */,
 				929F8FA02B2F653B00536E70 /* FoodCatCollectionViewCell */,
 				929F8F9A2B2F139100536E70 /* AdvCollectionViewCell */,
-				922CB76E2B2E47430067805A /* CategoryCollectionViewCell */,
 			);
 			path = CollectionViewCell;
 			sourceTree = "<group>";
@@ -813,15 +808,6 @@
 				92C3CD682B4524BD00706D99 /* CenteredCollectionViewFlowLayout.swift */,
 			);
 			path = ExtraFile;
-			sourceTree = "<group>";
-		};
-		922CB76E2B2E47430067805A /* CategoryCollectionViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				922CB76F2B2E477C0067805A /* SingleCategoryCollectionViewCell.swift */,
-				922CB7702B2E477C0067805A /* SingleCategoryCollectionViewCell.xib */,
-			);
-			path = CategoryCollectionViewCell;
 			sourceTree = "<group>";
 		};
 		929BB7B12B31D90400ADCBD4 /* View */ = {
@@ -1570,7 +1556,6 @@
 				4AEEB7A32B669C19008C3347 /* Animation in Resources */,
 				92FA144B2B31E36800148974 /* Cairo-Light.ttf in Resources */,
 				92FA14492B31E36800148974 /* Cairo-Bold.ttf in Resources */,
-				922CB7722B2E477C0067805A /* SingleCategoryCollectionViewCell.xib in Resources */,
 				4ABC9D2A2B5E5419006EFCBD /* CloseStoreView.xib in Resources */,
 				4AA831D22B664482003185AB /* Splash.storyboard in Resources */,
 				92A66D522B2C185700CB8EF5 /* Assets.xcassets in Resources */,
@@ -1810,7 +1795,6 @@
 				929F8F9E2B2F653800536E70 /* FoodCatrgoryCell.swift in Sources */,
 				929F1C542B48366C00B0F08F /* AEAD.swift in Sources */,
 				929F1C662B48366C00B0F08F /* Data+Extension.swift in Sources */,
-				922CB7712B2E477C0067805A /* SingleCategoryCollectionViewCell.swift in Sources */,
 				4A8F65392B749BBC000E5F32 /* UIImage+Exxtention.swift in Sources */,
 				929E60F42B2C79FE00FD038A /* TabBarController.swift in Sources */,
 				929F1C632B48366C00B0F08F /* Blowfish+Foundation.swift in Sources */,

@@ -8,9 +8,10 @@
 import UIKit
 
 class FoodCatrgoryCell: UITableViewCell {
-
+    
     @IBOutlet weak var foodCategoryCollectionView: UICollectionView!
     
+    //MARK: Local Veriable
     var foodCategoryData : [TagsRevamp]?
     var isHeigthChnaged = false
     var homeTabDelegate : HomeTableviewStoresAction?
@@ -32,35 +33,16 @@ class FoodCatrgoryCell: UITableViewCell {
     }
     
     func setupUI(){
+        self.selectionStyle = .none
+        self.backgroundColor = UIColor.clear
         
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .horizontal
         foodCategoryCollectionView.collectionViewLayout = flowLayout
         foodCategoryCollectionView.backgroundColor = UIColor.clear
-        self.backgroundColor = UIColor.clear
-        
         foodCategoryCollectionView.showsHorizontalScrollIndicator = false
         foodCategoryCollectionView.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
-        
-        self.selectionStyle = .none
-        
     }
-    
-    override func systemLayoutSizeFitting(_ targetSize: CGSize, withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority, verticalFittingPriority: UILayoutPriority) -> CGSize {
-        
-        self.foodCategoryCollectionView.frame = self.bounds
-        self.foodCategoryCollectionView.layoutIfNeeded()
-        
-        if isHeigthChnaged{
-            return self.foodCategoryCollectionView.contentSize
-        }else{
-            foodCategoryCollectionView.contentSize.height += 20
-            isHeigthChnaged = true
-            return self.foodCategoryCollectionView.contentSize
-        }
-        
-    }
-
     
 }
 
@@ -78,18 +60,18 @@ extension FoodCatrgoryCell : UICollectionViewDataSource{
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-            if let cell = foodCategoryCollectionView.cellForItem(at: indexPath) {
-                UIView.animate(withDuration: 0.3, animations: {
-                    cell.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
-                }) { (_) in
-                    UIView.animate(withDuration: 0.3) {
-                        cell.transform = .identity
-                    }completion: { (_) in
-                        self.homeTabDelegate?.callStoreApi(storeId:self.foodCategoryData?[indexPath.row]._id ?? "" )
-                    }
+        if let cell = foodCategoryCollectionView.cellForItem(at: indexPath) {
+            UIView.animate(withDuration: 0.3, animations: {
+                cell.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
+            }) { (_) in
+                UIView.animate(withDuration: 0.3) {
+                    cell.transform = .identity
+                }completion: { (_) in
+                    self.homeTabDelegate?.callStoreApi(storeId:self.foodCategoryData?[indexPath.row]._id ?? "" )
                 }
             }
         }
+    }
     
 }
 extension FoodCatrgoryCell:UICollectionViewDelegate{
@@ -99,8 +81,7 @@ extension FoodCatrgoryCell:UICollectionViewDelegate{
 extension FoodCatrgoryCell : UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        return CGSize(width: (foodCategoryCollectionView.bounds.width-22)/4 , height: (foodCategoryCollectionView.bounds.height))
+        return CGSize(width: (foodCategoryCollectionView.bounds.width-40)/4 , height: (foodCategoryCollectionView.bounds.height))
     }
 }
 

@@ -20,6 +20,7 @@ class ResturentDetailsTableViewCell: UITableViewCell {
     @IBOutlet weak var selectedItemImg: UIImageView!
     @IBOutlet weak var lowdeleveryImg: UIImageView!
     
+//    MARK: Local Variables
     var homeTabDelegate : HomeTableviewStoresAction?
     var isStoreClose : Bool = false
     var resturentDetailsTableViewCellData : Stores?
@@ -31,10 +32,6 @@ class ResturentDetailsTableViewCell: UITableViewCell {
         setupCollectionViewLayout()
         resturentFutrCollectionView.registerNib(of: FeatureCell.self)
         setDeligate()
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
     }
     
     func setupCollectionViewLayout(){
@@ -55,11 +52,10 @@ class ResturentDetailsTableViewCell: UITableViewCell {
             selectedItemView.isHidden = false
             selectedItemImg.isHidden = false
             selectedItemOffLbl.setProperties(lbltext: resturentDetailsTableViewCellData?.offer ?? TextConstant.getoffonselecteditems.rawValue, fontSize: 12,color:ColorConstant.whitecolor, alignmentLeft:true)
-            
-            
         }
         
         setupFeatureDetails()
+        
         if isStoreClose{
             setupCloseStore()
         }
@@ -91,11 +87,11 @@ class ResturentDetailsTableViewCell: UITableViewCell {
     }
     
     func setupCornerImage(){
-        if UIApplication.shared.userInterfaceLayoutDirection == .rightToLeft { selectedItemImg.setProperties(imageName: "orangeTraingleAr",isAspectFill: true)
-            lowdeleveryImg.setProperties(imageName: "grayTriangleAr",isAspectFill: true)
+        if UIApplication.shared.userInterfaceLayoutDirection == .rightToLeft { selectedItemImg.setProperties(imageName: ImageConstant.orangeTraingleAr.rawValue,isAspectFill: true)
+            lowdeleveryImg.setProperties(imageName: ImageConstant.grayTriangleAr.rawValue,isAspectFill: true)
         }else{
-            selectedItemImg.setProperties(imageName: "orangeTraingleEng",isAspectFill: true)
-            lowdeleveryImg.setProperties(imageName: "grayTriangleEng",isAspectFill: true)
+            selectedItemImg.setProperties(imageName: ImageConstant.orangeTraingleEng.rawValue,isAspectFill: true)
+            lowdeleveryImg.setProperties(imageName: ImageConstant.grayTriangleEng.rawValue,isAspectFill: true)
         }
     }
     
@@ -109,7 +105,7 @@ class ResturentDetailsTableViewCell: UITableViewCell {
         }else{
             applyCornerRadius(to: lowdeleveryView, radius: 5, corners: .Right,borderColor: ColorConstant.borderColorGray, borderWidth: 0.5)
         }
-        lowDeleveryfeelbl.setProperties(lbltext: "Low delivery fee", fontSize: 12,alignmentLeft:true)
+        lowDeleveryfeelbl.setProperties(lbltext: TextConstant.somethingWentWrong.rawValue, fontSize: 12,alignmentLeft:true)
         
         //OfferView : selectedItemView
         selectedItemView.backgroundColor = ColorConstant.primaryYellowColor
@@ -123,11 +119,11 @@ class ResturentDetailsTableViewCell: UITableViewCell {
     
     func setupFeatureDetails(){
         resturentFeatureDate = [
-            featureDetails(featureValue: "500+", image: "Heart",istinted: false),
+            featureDetails(featureValue: "500+", image: ImageConstant.heart.rawValue,istinted: false),
             featureDetails(featureValue: (String(format: "%.2f", resturentDetailsTableViewCellData?.distance ?? 0.0)+" KM Away"), image: nil, istinted: true),
-            featureDetails(featureValue: "\(resturentDetailsTableViewCellData?.delivery_time ?? 0) - \(resturentDetailsTableViewCellData?.delivery_time_max ?? 0) Mins", image:"Location", istinted: true),
-            featureDetails(featureValue: " IQD \(resturentDetailsTableViewCellData?.delivery_price_after_discount ?? 0) ", image: "MotorCycle", istinted: true),
-            featureDetails(featureValue: "\(String(format: "%.2f", resturentDetailsTableViewCellData?.user_rate ?? 0.0)) Excellent", image: "Star",istinted: true)
+            featureDetails(featureValue: "\(resturentDetailsTableViewCellData?.delivery_time ?? 0) - \(resturentDetailsTableViewCellData?.delivery_time_max ?? 0) Mins", image:ImageConstant.location.rawValue, istinted: true),
+            featureDetails(featureValue: " IQD \(resturentDetailsTableViewCellData?.delivery_price_after_discount ?? 0) ", image: ImageConstant.motorCycle.rawValue, istinted: true),
+            featureDetails(featureValue: "\(String(format: "%.2f", resturentDetailsTableViewCellData?.user_rate ?? 0.0)) Excellent", image: ImageConstant.star.rawValue ,istinted: true)
             
         ]
     }
@@ -173,7 +169,6 @@ extension ResturentDetailsTableViewCell : UICollectionViewDelegate,UICollectionV
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellConstant.featureCell.rawValue, for: indexPath) as! FeatureCell
         cell.feature = resturentFeatureDate?[indexPath.row]
-        //        cell.featurelbl.preferredMaxLayoutWidth = collectionView.frame.width/1.5
         cell.fillDetails()
         return cell
     }
