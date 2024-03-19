@@ -83,7 +83,6 @@ class HomeTabViewModel{
     func callFullHomeScreenApi(){
         if Connectivity.checkNetAndLoc(){
             resetApiFectechedData()
-            loadingState()
             self.homeTabDeligate?.reloadTableView()
             callAppSettingApi()
             dispatchGroup.notify(queue: .main) {
@@ -110,9 +109,7 @@ class HomeTabViewModel{
     func resetApiFectechedData(){
         currentPage = 1
         closeStorePage = 1
-        loadingState()
-        self.homeTabState.isCallCloseStore = false
-        self.homeTabState.isAllApiCallDone = false
+        homeTabState = HomeTabState(isLoadingState: true, isApiCallFailed: false, isCallCloseStore: false, isStoreApiFailed: false, isAllApiCallDone: false)
         recentlyAddedStores = []
         mostPopularStore = []
         nearbyResturentStore = []

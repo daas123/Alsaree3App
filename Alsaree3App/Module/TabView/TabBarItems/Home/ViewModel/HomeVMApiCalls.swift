@@ -162,16 +162,16 @@ extension HomeTabViewModel{
                         self.homeScreenStoreListData = []
                     }
                     self.homeScreenStoreListData! += storeData
+                    self.dispatchGroup.leave()
                 }
                 
                 if (data.message == nil || data.success == false){
+                    self.dispatchGroup.leave()
                     self.homeTabState.isCallCloseStore = true
                     self.callHomeScreenGetCloseStoreListApi()
                 }
 
-                if pageNo == "1"{
-                    self.dispatchGroup.leave()
-                }else{
+                if pageNo != "1"{
                     DispatchQueue.main.async {
                         self.homeTabState.isStoreApiFailed = false
                         self.homeTabDeligate?.reloadTableView()

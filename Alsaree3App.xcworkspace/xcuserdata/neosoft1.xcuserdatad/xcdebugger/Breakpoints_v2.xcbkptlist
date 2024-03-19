@@ -7,111 +7,63 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "EC77F09D-9387-48E2-85A4-F437F9406B0A"
+            uuid = "704A517C-3526-4798-A389-F0B790D088D5"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Alsaree3App/Module/CommonUi/StoreCellShimmer/StoreShimmerCell.swift"
+            filePath = "Alsaree3App/Module/TabView/TabBarItems/Home/ViewModel/HomeTabViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "StoreShimmerCell"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "999DFDC2-7910-4B10-A45D-D02FBB995040"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Alsaree3App/Module/CommonUi/StoreCellShimmer/StoreShimmerCell.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
-            landmarkName = "setUpCellState()"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "callFullHomeScreenApi()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5C1DA736-3F67-4ABB-97B6-8FD06C248EB8"
+            uuid = "E911C640-9855-4F4C-969F-B2D5A9AFE348"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Alsaree3App/Module/CommonUi/StoreCellShimmer/StoreShimmerCell.swift"
+            filePath = "Alsaree3App/Module/TabView/TabBarItems/Home/ViewModel/HomeTabViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "setUpCellState()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "6C6C914B-6930-436E-9C5C-479F35392401"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Alsaree3App/Module/CommonUi/StoreCellShimmer/StoreShimmerCell.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "setUpCellState()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "1A7C4DF1-F76E-4175-A831-DBF70002E64E"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Alsaree3App/Module/TabView/TabBarItems/Home/ViewModel/HomeVMApiCalls.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "142"
-            endingLineNumber = "142"
-            landmarkName = "callHomeScreenStoreListApi(pageNo:)"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "callFullHomeScreenApi()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "1A7C4DF1-F76E-4175-A831-DBF70002E64E - f86500c63b957b4a"
+                  uuid = "E911C640-9855-4F4C-969F-B2D5A9AFE348 - 32be52eeee3684c0"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "default argument 0 of Alsaree3App.HomeTabViewModel.callHomeScreenStoreListApi(pageNo: Swift.String) -&gt; ()"
+                  symbolName = "Alsaree3App.HomeTabViewModel.callFullHomeScreenApi() -&gt; ()"
                   moduleName = "Alsaree3App"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Module/TabView/TabBarItems/Home/ViewModel/HomeVMApiCalls.swift"
+                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Module/TabView/TabBarItems/Home/ViewModel/HomeTabViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "142"
-                  endingLineNumber = "142"
-                  offsetFromSymbolStart = "4">
+                  startingLineNumber = "88"
+                  endingLineNumber = "88"
+                  offsetFromSymbolStart = "362">
                </Location>
                <Location
-                  uuid = "1A7C4DF1-F76E-4175-A831-DBF70002E64E - 34ece3a11dbf75ba"
+                  uuid = "E911C640-9855-4F4C-969F-B2D5A9AFE348 - 9ddaf1d86759d1ed"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Alsaree3App.HomeTabViewModel.callHomeScreenStoreListApi(pageNo: Swift.String) -&gt; ()"
+                  symbolName = "closure #1 () -&gt; () in Alsaree3App.HomeTabViewModel.callFullHomeScreenApi() -&gt; ()"
                   moduleName = "Alsaree3App"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Module/TabView/TabBarItems/Home/ViewModel/HomeVMApiCalls.swift"
+                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Module/TabView/TabBarItems/Home/ViewModel/HomeTabViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "143"
-                  endingLineNumber = "143"
-                  offsetFromSymbolStart = "114">
+                  startingLineNumber = "89"
+                  endingLineNumber = "89"
+                  offsetFromSymbolStart = "22">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -119,112 +71,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "1AC0FF47-9D0A-4DA8-BFB9-558CBCE04F7F"
+            uuid = "9C3C4213-46BF-4F9D-86B9-08957E2A5A0E"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Alsaree3App/Module/TabView/TabBarItems/Home/ViewModel/HomeVMApiCalls.swift"
+            filePath = "Alsaree3App/Module/TabView/TabBarItems/Home/ViewModel/HomeTabViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "156"
-            endingLineNumber = "156"
-            landmarkName = "callHomeScreenStoreListApi(pageNo:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "1AC0FF47-9D0A-4DA8-BFB9-558CBCE04F7F - 34ece3a11dbf7615"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Alsaree3App.HomeTabViewModel.callHomeScreenStoreListApi(pageNo: Swift.String) -&gt; ()"
-                  moduleName = "Alsaree3App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Module/TabView/TabBarItems/Home/ViewModel/HomeVMApiCalls.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "156"
-                  endingLineNumber = "156"
-                  offsetFromSymbolStart = "1342">
-               </Location>
-               <Location
-                  uuid = "1AC0FF47-9D0A-4DA8-BFB9-558CBCE04F7F - 1fef4f43984dde10"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;Alsaree3App.StoreListModel, Alsaree3App.APIError&gt;) -&gt; () in Alsaree3App.HomeTabViewModel.callHomeScreenStoreListApi(pageNo: Swift.String) -&gt; ()"
-                  moduleName = "Alsaree3App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/neosoft1/Documents/Internal%20Projects/Alsaree3App/Alsaree3App/Alsaree3App/Module/TabView/TabBarItems/Home/ViewModel/HomeVMApiCalls.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "158"
-                  endingLineNumber = "158"
-                  offsetFromSymbolStart = "266">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "1F97EAF3-2DD7-459B-89B2-E4107F2557A9"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Alsaree3App/Module/TabView/TabBarItems/Home/View/ViewController/HomeTabViewDataSource.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
-            landmarkName = "tableView(_:cellForRowAt:)"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "callFullHomeScreenApi()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D2DF4EDD-A6FF-4D32-82F3-167112287747"
+            uuid = "260D0913-C6F2-4ECB-B482-4BE93DCBFC6D"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Alsaree3App/Module/TabView/TabBarItems/Home/View/ViewController/HomeTabViewDataSource.swift"
+            filePath = "Alsaree3App/Module/TabView/TabBarItems/Home/ViewModel/HomeTabViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
-            landmarkName = "tableView(_:cellForRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "97BC6999-3C55-43D7-8F6C-4F74DAD11BAE"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Alsaree3App/Module/TabView/TabBarItems/Home/View/ViewController/HomeTabViewDataSource.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
-            landmarkName = "tableView(_:cellForRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "321C68FF-4312-40D4-9335-2880AC2ECB4F"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Alsaree3App/Module/TabView/TabBarItems/Home/View/ViewController/HomeTabViewDataSource.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
-            landmarkName = "tableView(_:cellForRowAt:)"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "callFullHomeScreenApi()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

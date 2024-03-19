@@ -105,7 +105,7 @@ class ResturentDetailsTableViewCell: UITableViewCell {
         }else{
             applyCornerRadius(to: lowdeleveryView, radius: 5, corners: .Right,borderColor: ColorConstant.borderColorGray, borderWidth: 0.5)
         }
-        lowDeleveryfeelbl.setProperties(lbltext: TextConstant.somethingWentWrong.rawValue, fontSize: 12,alignmentLeft:true)
+        lowDeleveryfeelbl.setProperties(lbltext: TextConstant.lowdeliveryfee.rawValue, fontSize: 12,alignmentLeft:true)
         
         //OfferView : selectedItemView
         selectedItemView.backgroundColor = ColorConstant.primaryYellowColor
